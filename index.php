@@ -121,7 +121,7 @@
 								$servername = "localhost";
 								$username = "root";
 								$password = "";
-								$dbname = "undangan_db";
+								$dbname = "undangandb";
 
 								// Create connection
 								$conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -130,30 +130,33 @@
 									die("Connection failed: " . mysqli_connect_error());
 								}
 
-								$sql_pria = "SELECT UserName FROM muser WHERE StatusId ='st_01'";
+								$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM muser WHERE txtUndanganId ='1'";
 								$result_pria = mysqli_query($conn, $sql_pria);
-								$sql_wanita = "SELECT UserName FROM muser WHERE StatusId ='st_02'";
+								$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM muser WHERE txtUndanganId ='2'";
 								$result_wanita = mysqli_query($conn, $sql_wanita);
+
+								$words = "SELECT txtKatakata FROM m"
 
 								if (mysqli_num_rows($result_pria) > 0) {
 									// output data of each row
 									while ($row = mysqli_fetch_assoc($result_pria)) {
-										echo "<h1/>" . $row["UserName"] . "</h1>";
+										echo "<h1/>" . $row["txtNamaDepan"];
 									}
 								} else {
 									echo "0 results";
 								}
-								echo "<h1> &amp; </h1>";
+								echo " &amp; ";
 								if (mysqli_num_rows($result_wanita) > 0) {
 									// output data of each row
 									while ($row = mysqli_fetch_assoc($result_wanita)) {
-										echo "<h1/>" . $row["UserName"] . "</h1>";
+										echo $row["txtNamaDepan"] . "</h1>";
 									}
 								} else {
 									echo "0 results";
 								}
 
 								mysqli_close($conn);
+								//https://stackoverflow.com/a/15864222/7772358
 								?>
 								<h2>We Are Getting Married</h2>
 								<div class="simply-countdown simply-countdown-one"></div>
