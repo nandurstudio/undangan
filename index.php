@@ -9,11 +9,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Wedding &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<title>Wedding &mdash; Noordiansyah &amp; Hilya Dina Rosyida</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
+	<meta name="description" content="Wedding &mdash; Noordiansyah &amp; Hilya Dina Rosyida" />
+	<meta name="keywords" content="wedding, Noordiansyah, hilya dina rosyida" />
+	<meta name="author" content="Nandur Digital Invitation" />
 
 	<!-- 
 	//////////////////////////////////////////////////////
@@ -82,7 +82,7 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
+							<li class="active"><a href="/">Home</a></li>
 							<li><a href="about.html">Story</a></li>
 							<li class="has-dropdown">
 								<a href="services.html">Services</a>
@@ -135,8 +135,6 @@
 								$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM muser WHERE txtUndanganId ='2'";
 								$result_wanita = mysqli_query($conn, $sql_wanita);
 
-								$words = "SELECT txtKatakata FROM m"
-
 								if (mysqli_num_rows($result_pria) > 0) {
 									// output data of each row
 									while ($row = mysqli_fetch_assoc($result_pria)) {
@@ -157,10 +155,14 @@
 
 								mysqli_close($conn);
 								//https://stackoverflow.com/a/15864222/7772358
+								//echo $_GET['to'];
+								//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+
 								?>
 								<h2>We Are Getting Married</h2>
+								<!-- <div id="demo"></div> -->
 								<div class="simply-countdown simply-countdown-one"></div>
-								<p><a href="#" class="btn btn-default btn-sm">Save the date</a></p>
+								<p><a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=M29jbGwyaGRtYnVxYzdqOXFoaGExbGlrYmggZmFtaWx5MDc3OTU1ODAxMDU0MzM0MjExOTVAZw&tmsrc=family07795580105433421195%40group.calendar.google.com" class="btn btn-default btn-sm">Save the date</a></p>
 							</div>
 						</div>
 					</div>
@@ -649,11 +651,14 @@
 
 	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
 	<script src="js/simplyCountdown.js"></script>
+	<!-- <script src="js/ws_countdown.js"></script> -->
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
 	<script>
-		var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+		var d = new Date(new Date("Mar 27, 2022 08:00:00").getTime());
+		//var countDownDate = new Date("Mar 27, 2022 08:00:00").getTime();
+
 
 		// default example
 		simplyCountdown('.simply-countdown-one', {
@@ -667,7 +672,7 @@
 			year: d.getFullYear(),
 			month: d.getMonth() + 1,
 			day: d.getDate(),
-			enableUtc: false
+			enableUtc: true
 		});
 	</script>
 
