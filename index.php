@@ -9,9 +9,40 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Wedding &mdash; Noordiansyah &amp; Hilya Dina Rosyida</title>
+	<?php
+	include "./php/connection.php";
+	$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
+	$result_pria = mysqli_query($conn, $sql_pria);
+	$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
+	$result_wanita = mysqli_query($conn, $sql_wanita);
+
+	if (mysqli_num_rows($result_pria) > 0) {
+		// output data of each row
+		while ($row = mysqli_fetch_assoc($result_pria)) {
+			$pengantin_pria = $row["txtNamaDepan"];
+		}
+	} else {
+		echo "0 results";
+	}
+	if (mysqli_num_rows($result_wanita) > 0) {
+		// output data of each row
+		while ($row = mysqli_fetch_assoc($result_wanita)) {
+			$pengantin_wanita = $row["txtNamaDepan"];
+		}
+	} else {
+		echo "0 results";
+	}
+	$the_wedding = "Wedding of " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	echo "<title>" . $the_wedding . "</title>";
+	echo "<meta name=\"description\" content=\"" . $the_wedding . "\" />";
+
+	mysqli_close($conn);
+	//https://stackoverflow.com/a/15864222/7772358
+	//echo $_GET['to'];
+	//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+
+	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Wedding &mdash; Noordiansyah &amp; Hilya Dina Rosyida" />
 	<meta name="keywords" content="wedding, Noordiansyah, hilya dina rosyida" />
 	<meta name="author" content="Nandur Digital Invitation" />
 
@@ -72,17 +103,16 @@
 <body>
 
 	<div class="fh5co-loader"></div>
-
 	<div id="page">
 		<nav class="fh5co-nav" role="navigation">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.html">Wedding<strong>.</strong></a></div>
+						<div id="fh5co-logo"><a href="./">Wedding<strong>.</strong></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="/">Home</a></li>
+							<li class="active"><a href="./">Home</a></li>
 							<li><a href="about.html">Story</a></li>
 							<li class="has-dropdown">
 								<a href="services.html">Services</a>
@@ -110,7 +140,7 @@
 			</div>
 		</nav>
 
-		<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+		<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/wedding_bg.png);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -118,27 +148,16 @@
 						<div class="display-t">
 							<div class="display-tc animate-box" data-animate-effect="fadeIn">
 								<?php
-								$servername = "localhost";
-								$username = "root";
-								$password = "";
-								$dbname = "undangandb";
-
-								// Create connection
-								$conn = mysqli_connect($servername, $username, $password, $dbname);
-								// Check connection
-								if (!$conn) {
-									die("Connection failed: " . mysqli_connect_error());
-								}
-
-								$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM muser WHERE txtUndanganId ='1'";
+								include "./php/connection.php";
+								$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
 								$result_pria = mysqli_query($conn, $sql_pria);
-								$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM muser WHERE txtUndanganId ='2'";
+								$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
 								$result_wanita = mysqli_query($conn, $sql_wanita);
 
 								if (mysqli_num_rows($result_pria) > 0) {
 									// output data of each row
 									while ($row = mysqli_fetch_assoc($result_pria)) {
-										echo "<h1/>" . $row["txtNamaDepan"];
+										echo "<h1>" . $row["txtNamaDepan"];
 									}
 								} else {
 									echo "0 results";
@@ -155,7 +174,7 @@
 
 								mysqli_close($conn);
 								//https://stackoverflow.com/a/15864222/7772358
-								//echo $_GET['to'];
+
 								//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
 
 								?>
@@ -174,29 +193,131 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<h2>Hello!</h2>
-						<h3>November 28th, 2016 New York, USA</h3>
+
+						<?php
+						if (isset($_GET['to'])) {
+							$string_to_encrypt = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+							$password = "password";
+							$encrypted_string = openssl_encrypt($string_to_encrypt, "AES-128-ECB", $password);
+							$decrypted_string = openssl_decrypt($encrypted_string, "AES-128-ECB", $password);
+							// echo $string_to_encrypt;
+							// echo $encrypted_string;
+							// echo $decrypted_string;
+							echo "<h2>Dear!</h2><h3>" . $decrypted_string . "</h3><img src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . "&amp;size=150x150\" alt=\"\" title=\"\" />";
+						} else {
+							// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
+							// echo $actual_link;
+							$actual_link = "Guest";
+							echo "<h2>Dear!</h2><h3>" . $actual_link . "</h3><img src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=150x150\" alt=\"\" title=\"\" />";
+						
+						}
+						?>
+						</br>
+						</br>
+						<h3>March 27th, 2022</br>Bandung, Jawa Barat</h3>
 						<p>We invited you to celebrate our wedding</p>
 					</div>
 				</div>
 				<div class="couple-wrap animate-box">
 					<div class="couple-half">
 						<div class="groom">
-							<img src="images/groom.jpg" alt="groom" class="img-responsive">
+							<img src="images/pengantin_pria_flip.png" alt="groom" class="img-responsive">
 						</div>
 						<div class="desc-groom">
-							<h3>Joefrey Mahusay</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+							<?php
+							include "./php/connection.php";
+							$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
+							$sql_ayah_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '3'";
+							$sql_ibu_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '4'";
+							$result_pria = mysqli_query($conn, $sql_pria);
+							$result_ayah_pria = mysqli_query($conn, $sql_ayah_pria);
+							$result_ibu_pria = mysqli_query($conn, $sql_ibu_pria);
+							$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
+							$sql_ayah_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '3'";
+							$sql_ibu_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '4'";
+							$result_wanita = mysqli_query($conn, $sql_wanita);
+
+							if (mysqli_num_rows($result_pria) > 0) {
+								// output data of each row
+								while ($row = mysqli_fetch_assoc($result_pria)) {
+									$pengantin_pria = $row["txtNamaDepan"];
+								}
+							} else {
+								echo "0 results";
+							}
+							if (mysqli_num_rows($result_ayah_pria) > 0) {
+								// output data of each row
+								while ($row = mysqli_fetch_assoc($result_ayah_pria)) {
+									$ayah_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
+								}
+							} else {
+								echo "0 results";
+							}
+							if (mysqli_num_rows($result_ibu_pria) > 0) {
+								// output data of each row
+								while ($row = mysqli_fetch_assoc($result_ibu_pria)) {
+									$ibu_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
+								}
+							} else {
+								echo "0 results";
+							}
+							if (mysqli_num_rows($result_wanita) > 0) {
+								// output data of each row
+								while ($row = mysqli_fetch_assoc($result_wanita)) {
+									$pengantin_wanita = $row["txtNamaDepan"];
+								}
+							} else {
+								echo "0 results";
+							}
+							echo "<h3>" . $pengantin_pria . "</h3>";
+							echo "<p>Anak ke-3 dari 3 bersaudara</br>Putra dari Bapak " . $ayah_pria . "</br>&amp;</br>Ibu " . $ibu_pria . "</p>";
+
+							mysqli_close($conn);
+							//https://stackoverflow.com/a/15864222/7772358
+							//echo $_GET['to'];
+							//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+
+							?>
 						</div>
 					</div>
 					<p class="heart text-center"><i class="icon-heart2"></i></p>
 					<div class="couple-half">
 						<div class="bride">
-							<img src="images/bride.jpg" alt="groom" class="img-responsive">
+							<img src="images/pengantin_wanita_flip.png" alt="groom" class="img-responsive">
 						</div>
 						<div class="desc-bride">
-							<h3>Sheila Mahusay</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+							<?php
+							include "./php/connection.php";
+							$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
+							$result_pria = mysqli_query($conn, $sql_pria);
+							$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
+							$result_wanita = mysqli_query($conn, $sql_wanita);
+
+							if (mysqli_num_rows($result_pria) > 0) {
+								// output data of each row
+								while ($row = mysqli_fetch_assoc($result_pria)) {
+									$pengantin_pria = $row["txtNamaDepan"];
+								}
+							} else {
+								echo "0 results";
+							}
+							if (mysqli_num_rows($result_wanita) > 0) {
+								// output data of each row
+								while ($row = mysqli_fetch_assoc($result_wanita)) {
+									$pengantin_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
+								}
+							} else {
+								echo "0 results";
+							}
+							echo "<h3>" . $pengantin_wanita . "</h3>";
+
+							mysqli_close($conn);
+							//https://stackoverflow.com/a/15864222/7772358
+							//echo $_GET['to'];
+							//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+
+							?>
+							<p>Anak ke-1 dari 2 bersaudara</br>Putri dari Bapak Pandu Sudewo (Alm.)</br>&amp;</br>Ibu Rima Khuriatul Rakhmatiah</p>
 						</div>
 					</div>
 				</div>
@@ -218,34 +339,36 @@
 							<div class="col-md-10 col-md-offset-1">
 								<div class="col-md-6 col-sm-6 text-center">
 									<div class="event-wrap animate-box">
-										<h3>Main Ceremony</h3>
+										<h3>Main Ceremony (Akad)</h3>
 										<div class="event-col">
 											<i class="icon-clock"></i>
-											<span>4:00 PM</span>
-											<span>6:00 PM</span>
+											<span>08:00 AM</span>
+											<span>10:00 AM</span>
 										</div>
 										<div class="event-col">
 											<i class="icon-calendar"></i>
-											<span>Monday 28</span>
-											<span>November, 2016</span>
+											<span>Sunday 27</span>
+											<span>March, 2022</span>
 										</div>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+										<i class="icon-map"></i>
+										<p>GRAHA PINDAD</br>Jalan Gatot Subroto No.517, Kebon Kangkung, Kiaracondong, Sukapura, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40284</p>
 									</div>
 								</div>
 								<div class="col-md-6 col-sm-6 text-center">
 									<div class="event-wrap animate-box">
-										<h3>Wedding Party</h3>
+										<h3>Wedding Party (Resepsi)</h3>
 										<div class="event-col">
 											<i class="icon-clock"></i>
-											<span>7:00 PM</span>
+											<span>10:00 AM</span>
 											<span>12:00 AM</span>
 										</div>
 										<div class="event-col">
 											<i class="icon-calendar"></i>
-											<span>Monday 28</span>
-											<span>November, 2016</span>
+											<span>Sunday 27</span>
+											<span>March, 2022</span>
 										</div>
-										<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+										<i class="icon-map"></i>
+										<p>GRAHA PINDAD</br>Jalan Gatot Subroto No.517, Kebon Kangkung, Kiaracondong, Sukapura, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40284</p>
 									</div>
 								</div>
 							</div>
@@ -260,11 +383,18 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 						<span>We Love Each Other</span>
-						<h2>Our Story</h2>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h2>Location</h2>
+						<div id="map" class="fh5co-map">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15842.506884519555!2d107.6481692!3d-6.9351389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6a9c2e210b3951e1!2sGraha%20Pindad!5e0!3m2!1sen!2sid!4v1644363024996!5m2!1sen!2sid" width="100%" height="100%" style="border:0;min-height:250px" allowfullscreen="" loading="lazy">
+							</iframe>
+							<div class="bride">
+								<a href="https://goo.gl/maps/Q76muirvoCRAswicA" target="_blank"><img src="images/buka-google-maps-logo-indo-1024x123.jpg" alt="groom" style="width:350px;"></a>
+							</div>
+						</div>
+						<!-- END map -->
 					</div>
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-md-12 col-md-offset-0">
 						<ul class="timeline animate-box">
 							<li class="animate-box">
@@ -305,11 +435,11 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 
-		<div id="fh5co-gallery" class="fh5co-section-gray">
+		<!-- <div id="fh5co-gallery" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -403,7 +533,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
 			<div class="overlay"></div>
@@ -422,7 +552,7 @@
 
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6 animate-box">
+							<!-- <div class="col-md-3 col-sm-6 animate-box">
 								<div class="feature-center">
 									<span class="icon">
 										<i class="icon-user"></i>
@@ -449,16 +579,15 @@
 
 									<span class="counter js-counter" data-from="0" data-to="2345" data-speed="5000" data-refresh-interval="50">1</span>
 									<span class="counter-label">Hours Spent</span>
-
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="fh5co-testimonial">
+		<!-- <div id="fh5co-testimonial">
 			<div class="container">
 				<div class="row">
 					<div class="row animate-box">
@@ -566,7 +695,7 @@
 
 
 			</div>
-		</div>
+		</div> -->
 
 
 		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
@@ -608,15 +737,17 @@
 				<div class="row copyright">
 					<div class="col-md-12 text-center">
 						<p>
-							<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
-							<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+							<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> -->
+							<small class="block">&copy; 2022 Nandur Studio. All Rights Reserved.</small>
+							<!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
+							<small class="block">Designed by <a href="https://www.nandur93.com/search/label/Undangan" target="_blank">Nandur Studio Event</a></br>Master Template: <a href="http://freehtml5.co/" target="_blank">&copy; 2016 Free HTML5. All Rights Reserved.</a></small>
 						</p>
 						<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="https://twitter.com/NandurStudio"><i class="icon-twitter"></i></a></li>
+							<li><a href="https://web.facebook.com/n93animasi"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/nandangduryat/"><i class="icon-linkedin"></i></a></li>
+							<li><a href="https://dribbble.com/nandur93"><i class="icon-dribbble"></i></a></li>
 						</ul>
 						</p>
 					</div>
@@ -675,7 +806,6 @@
 			enableUtc: true
 		});
 	</script>
-
 </body>
 
 </html>
