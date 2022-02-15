@@ -1841,3 +1841,14 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.custom-label {
+  color: #ffffff;
+  background: #f14e95;
+  text-align: left;
+  display: block;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin: initial;
+  padding-left: 10px;
+}
