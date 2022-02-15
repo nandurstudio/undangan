@@ -209,11 +209,14 @@
 							// echo $actual_link;
 							$actual_link = "Guest";
 							echo "<h2>Dear!</h2><h3>" . $actual_link . "</h3><img src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=150x150\" alt=\"\" title=\"\" />";
-						
 						}
 						?>
 						</br>
 						</br>
+						<?php
+						include "./php/connection.php";
+						$sql_date = "SELECT "
+						?>
 						<h3>March 27th, 2022</br>Bandung, Jawa Barat</h3>
 						<p>We invited you to celebrate our wedding</p>
 					</div>
@@ -226,16 +229,12 @@
 						<div class="desc-groom">
 							<?php
 							include "./php/connection.php";
-							$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
+							$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='1'";
 							$sql_ayah_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '3'";
 							$sql_ibu_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '4'";
 							$result_pria = mysqli_query($conn, $sql_pria);
 							$result_ayah_pria = mysqli_query($conn, $sql_ayah_pria);
 							$result_ibu_pria = mysqli_query($conn, $sql_ibu_pria);
-							$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
-							$sql_ayah_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '3'";
-							$sql_ibu_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '4'";
-							$result_wanita = mysqli_query($conn, $sql_wanita);
 
 							if (mysqli_num_rows($result_pria) > 0) {
 								// output data of each row
@@ -248,7 +247,7 @@
 							if (mysqli_num_rows($result_ayah_pria) > 0) {
 								// output data of each row
 								while ($row = mysqli_fetch_assoc($result_ayah_pria)) {
-									$ayah_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
+									$ayah_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
 								}
 							} else {
 								echo "0 results";
@@ -256,15 +255,7 @@
 							if (mysqli_num_rows($result_ibu_pria) > 0) {
 								// output data of each row
 								while ($row = mysqli_fetch_assoc($result_ibu_pria)) {
-									$ibu_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
-								}
-							} else {
-								echo "0 results";
-							}
-							if (mysqli_num_rows($result_wanita) > 0) {
-								// output data of each row
-								while ($row = mysqli_fetch_assoc($result_wanita)) {
-									$pengantin_wanita = $row["txtNamaDepan"];
+									$ibu_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
 								}
 							} else {
 								echo "0 results";
@@ -288,36 +279,48 @@
 						<div class="desc-bride">
 							<?php
 							include "./php/connection.php";
-							$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
-							$result_pria = mysqli_query($conn, $sql_pria);
-							$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
+							$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='2'";
+							$sql_ayah_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '5'";
+							$sql_ibu_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '6'";
 							$result_wanita = mysqli_query($conn, $sql_wanita);
+							$result_ayah_wanita = mysqli_query($conn, $sql_ayah_wanita);
+							$result_ibu_wanita = mysqli_query($conn, $sql_ibu_wanita);
 
-							if (mysqli_num_rows($result_pria) > 0) {
-								// output data of each row
-								while ($row = mysqli_fetch_assoc($result_pria)) {
-									$pengantin_pria = $row["txtNamaDepan"];
-								}
-							} else {
-								echo "0 results";
-							}
 							if (mysqli_num_rows($result_wanita) > 0) {
 								// output data of each row
 								while ($row = mysqli_fetch_assoc($result_wanita)) {
-									$pengantin_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
+									$pengantin_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];;
 								}
 							} else {
 								echo "0 results";
 							}
-							echo "<h3>" . $pengantin_wanita . "</h3>";
 
+							if (mysqli_num_rows($result_ayah_wanita) > 0) {
+								// output data of each row
+								while ($row = mysqli_fetch_assoc($result_ayah_wanita)) {
+									$ayah_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
+								}
+							} else {
+								echo "0 results";
+							}
+
+							if (mysqli_num_rows($result_ibu_wanita) > 0) {
+								// output data of each row
+								while ($row = mysqli_fetch_assoc($result_ibu_wanita)) {
+									$ibu_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
+								}
+							} else {
+								echo "0 results";
+							}
+
+							echo "<h3>" . $pengantin_wanita . "</h3>";
+							echo "<p>Anak ke-1 dari 2 bersaudara</br>Putri dari Bapak " . $ayah_wanita . "</br>&amp;</br>Ibu " . $ibu_wanita . "</p>";
 							mysqli_close($conn);
 							//https://stackoverflow.com/a/15864222/7772358
 							//echo $_GET['to'];
 							//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
 
 							?>
-							<p>Anak ke-1 dari 2 bersaudara</br>Putri dari Bapak Pandu Sudewo (Alm.)</br>&amp;</br>Ibu Rima Khuriatul Rakhmatiah</p>
 						</div>
 					</div>
 				</div>
