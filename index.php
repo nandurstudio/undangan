@@ -80,6 +80,7 @@
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/lightbox.min.css">
 
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="css/magnific-popup.css">
@@ -197,18 +198,25 @@
 						<?php
 						if (isset($_GET['to'])) {
 							$string_to_encrypt = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+							$alamat = htmlspecialchars($_GET['adr']);
 							$password = "password";
 							$encrypted_string = openssl_encrypt($string_to_encrypt, "AES-128-ECB", $password);
 							$decrypted_string = openssl_decrypt($encrypted_string, "AES-128-ECB", $password);
 							// echo $string_to_encrypt;
 							// echo $encrypted_string;
 							// echo $decrypted_string;
-							echo "<h2>Dear!</h2><h3>" . $decrypted_string . "</h3><img src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . "&amp;size=150x150\" alt=\"\" title=\"\" />";
+							echo "<h2>Dear!</h2><h3>" . $decrypted_string . "</h3>
+							<a class=\"demo\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . "\" data-lightbox=\"example-1\">
+							<img class=\"example-image\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . "&amp;size=150x150\" alt=\"QR Code " . $decrypted_string . "\">
+							</a>";
 						} else {
 							// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
 							// echo $actual_link;
-							$actual_link = "Guest";
-							echo "<h2>Dear!</h2><h3>" . $actual_link . "</h3><img src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=150x150\" alt=\"\" title=\"\" />";
+							$actual_link = "Anonymous";
+							echo "<h2>Dear!</h2><h3>" . $actual_link . "</h3>
+							<a class=\"demo\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
+							<img class=\"example-image\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=150x150\" alt=\"QR Code " . $actual_link . "\">
+							</a>";
 						}
 						?>
 						</br>
@@ -217,7 +225,7 @@
 						include "./php/connection.php";
 						$sql_date = "SELECT "
 						?>
-						<h3>March 27th, 2022</br>Bandung, Jawa Barat</h3>
+						<h3>March 27<sup>th</sup>, 2022</br>Bandung, West Java</h3>
 						<p>We invited you to celebrate our wedding</p>
 					</div>
 				</div>
@@ -261,7 +269,7 @@
 								echo "0 results";
 							}
 							echo "<h3>" . $pengantin_pria . "</h3>";
-							echo "<p>Anak ke-3 dari 3 bersaudara</br>Putra dari Bapak " . $ayah_pria . "</br>&amp;</br>Ibu " . $ibu_pria . "</p>";
+							echo "<p>3<sup>rd</sup> child of 3 siblings</br>Son of Mr. " . $ayah_pria . "</br>&amp;</br>Mrs. " . $ibu_pria . "</p>";
 
 							mysqli_close($conn);
 							//https://stackoverflow.com/a/15864222/7772358
@@ -314,7 +322,7 @@
 							}
 
 							echo "<h3>" . $pengantin_wanita . "</h3>";
-							echo "<p>Anak ke-1 dari 2 bersaudara</br>Putri dari Bapak " . $ayah_wanita . "</br>&amp;</br>Ibu " . $ibu_wanita . "</p>";
+							echo "<p>The 1<sup>st</sup> of 2 siblings</br>Daughter of Mr. " . $ayah_wanita . "</br>&amp;</br>Mrs. " . $ibu_wanita . "</p>";
 							mysqli_close($conn);
 							//https://stackoverflow.com/a/15864222/7772358
 							//echo $_GET['to'];
@@ -387,7 +395,7 @@
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 						<span>We Love Each Other</span>
 						<h2>Location</h2>
-						<div id="map" class="fh5co-map">
+						<div id="map" class="fh5co-map event-wrap">
 							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15842.506884519555!2d107.6481692!3d-6.9351389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6a9c2e210b3951e1!2sGraha%20Pindad!5e0!3m2!1sen!2sid!4v1644363024996!5m2!1sen!2sid" width="100%" height="100%" style="border:0;min-height:250px" allowfullscreen="" loading="lazy">
 							</iframe>
 							<div class="bride">
@@ -555,7 +563,7 @@
 
 								</div>
 							</div>
-							<!-- <div class="col-md-3 col-sm-6 animate-box">
+							<div class="col-md-3 col-sm-6 animate-box">
 								<div class="feature-center">
 									<span class="icon">
 										<i class="icon-user"></i>
@@ -583,7 +591,7 @@
 									<span class="counter js-counter" data-from="0" data-to="2345" data-speed="5000" data-refresh-interval="50">1</span>
 									<span class="counter-label">Hours Spent</span>
 								</div>
-							</div> -->
+							</div>
 						</div>
 					</div>
 				</div>
@@ -770,6 +778,7 @@
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/lightbox.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Carousel -->
