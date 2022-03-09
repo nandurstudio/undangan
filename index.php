@@ -73,6 +73,9 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Style+Script&display=swap" rel="stylesheet">
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -103,27 +106,66 @@
 
 <body id="body1" class="cover-height">
 	<div class="cover" id="cover">
-		<div class="container name-cover">
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> -->
-						<small class="block">© 2022 Nandur Studio. All Rights Reserved.</small>
-						<!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
-						<small class="block">Designed by <a href="https://www.nandur93.com/search/label/Undangan" target="_blank">Nandur Studio Event</a><br>Master Template: <a href="http://freehtml5.co/" target="_blank">© 2016 Free HTML5. All Rights Reserved.</a></small>
-					</p>
 
-					<div class="col-md-4 col-sm-4">
-						<button id="tombol-buka" type="submit" class="btn btn-default btn-block">I am Attending</button>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Perhatian</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
 					</div>
-					<ul class="fh5co-social-icons">
-						<li><a href="https://twitter.com/NandurStudio"><i class="icon-twitter"></i></a></li>
-						<li><a href="https://web.facebook.com/n93animasi"><i class="icon-facebook"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/nandangduryat/"><i class="icon-linkedin"></i></a></li>
-						<li><a href="https://dribbble.com/nandur93"><i class="icon-dribbble"></i></a></li>
-					</ul>
-					<p></p>
+					<div class="modal-body">
+						<?php
+						include "./php/protokol_kesehatan.php";
+						?>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
 				</div>
+			</div>
+		</div>
+
+		<div class="container name-cover" id="name-cover">
+			<div class="col-md-4 col-sm-4">
+				<div class="the-wedding-of">
+					THE WEDDING OF
+				</div>
+				<?php
+				include "./php/connection.php";
+				$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
+				$result_pria = mysqli_query($conn, $sql_pria);
+				$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
+				$result_wanita = mysqli_query($conn, $sql_wanita);
+
+				if (mysqli_num_rows($result_pria) > 0) {
+					// output data of each row
+					while ($row = mysqli_fetch_assoc($result_pria)) {
+						echo "<div class=\"nama-pengantin\">" . $row["txtNamaDepan"];
+					}
+				} else {
+					echo "0 results";
+				}
+				echo " &amp; ";
+				if (mysqli_num_rows($result_wanita) > 0) {
+					// output data of each row
+					while ($row = mysqli_fetch_assoc($result_wanita)) {
+						echo $row["txtNamaDepan"] . "</div>";
+					}
+				} else {
+					echo "0 results";
+				}
+
+				mysqli_close($conn);
+				//https://stackoverflow.com/a/15864222/7772358
+
+				//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+
+				?>
+				<button id="tombol-buka" type="submit" class="btn btn-default btn-block open-invitation">Open Invitation</button>
 			</div>
 		</div>
 	</div>
@@ -163,7 +205,7 @@
 
 			</div>
 		</nav>
-		<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/wedding_bg.png);" data-stellar-background-ratio="0.5">
+		<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/WAF06834.JPG);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -228,8 +270,8 @@
 							// echo $encrypted_string;
 							// echo $decrypted_string;
 							echo "<h2>Dear!</h2><h3>" . $decrypted_string . "</h3>
-							<a class=\"demo\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . "\" data-lightbox=\"example-1\">
-							<img class=\"example-image\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . "&amp;size=150x150\" alt=\"QR Code " . $decrypted_string . "\">
+							<a class=\"demo\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . " From " . $alamat . "\" data-lightbox=\"example-1\">
+							<img class=\"example-image\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . " From " . $alamat . "&amp;size=150x150\" alt=\"QR Code " . $decrypted_string . " From " . $alamat . "\">
 							</a>";
 							// https://www.jqueryscript.net/lightbox/lightbox2.html
 						} else {
@@ -393,8 +435,30 @@
 										<h3>Wedding Party (Resepsi)</h3>
 										<div class="event-col">
 											<i class="icon-clock"></i>
-											<span>10:00 AM</span>
-											<span>12:00 AM</span>
+											<?php
+											if (isset($_GET['s'])) {
+												$sesi = htmlspecialchars($_GET['s']); // Getting parameter value inside PHP variable
+												if ($sesi == "1") {
+													echo "
+													<span>11:00 AM</span>
+													<span>12:30 PM</span>
+													";
+												} elseif ($sesi == "2") {
+													echo "
+													<span>12:30 PM</span>
+													<span>02:00 PM</span>
+													";
+												} else {
+													echo "
+													<span>10:00 AM</span>
+													<span>02:00 PM</span>
+													";
+												}
+											} else {
+												// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
+												// echo $actual_link;
+											}
+											?>
 										</div>
 										<div class="event-col">
 											<i class="icon-calendar"></i>
@@ -448,7 +512,7 @@
 
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6 animate-box">
+							<!-- <div class="col-md-3 col-sm-6 animate-box">
 								<div class="feature-center">
 									<span class="icon">
 										<i class="icon-user"></i>
@@ -476,13 +540,35 @@
 									<span class="counter js-counter" data-from="0" data-to="2345" data-speed="5000" data-refresh-interval="50">1</span>
 									<span class="counter-label">Hours Spent</span>
 								</div>
-							</div>
+							</div> -->
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div id="fh5co-couple-story">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 
+						<figure>
+							<p class="color-theme">
+								وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ
+								لَءَايَٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+							<p>Wa min āyātihī an khalaqa lakum min anfusikum azwājal litaskunū ilaihā wa ja'ala bainakum mawaddataw wa raḥmah, inna fī żālika la`āyātil liqaumiy yatafakkarụn</p>
+							<blockquote cite="https://nandurstudio.com">
+								<p>Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.
+								</p>
+							</blockquote>
+							<figcaption>—QS. Ar - Rum : <cite>21</cite></figcaption>
+						</figure>
+
+						<!-- END map -->
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
@@ -541,11 +627,12 @@
 			</div>
 		</footer>
 	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	<div class="music-control">
 		<span class='pause'></span>
 		<span class='play'></span>
+	</div>
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 
 
@@ -615,7 +702,12 @@
 			audioElement.play();
 		});
 
-		$("button").on('click', function() {
+		$("#tombol-buka").on('click', function() {
+			$('#exampleModalCenter').modal('show');
+		});
+
+		$("#exampleModalCenter").on("hidden.bs.modal", function() {
+			// put your default event here
 			$("html").removeClass("cover-height");
 			$("body").removeClass("cover-height");
 			$("#cover").fadeOut(300, function() {

@@ -7338,17 +7338,30 @@ button.close {
   width: 50px;
   height: 50px;
   display: inline-block;
+  opacity: 0.5;
 }
 
 .play {
-  background: transparent url('https://cdn4.iconfinder.com/data/icons/social-messaging-productivity-1/128/play-icon-2-128.png') no-repeat;
+  background: transparent url('..//images/music_off_black_24dp.svg') no-repeat;
   background-size: cover;
 }
 
 .pause {
-  background: transparent url('https://cdn1.iconfinder.com/data/icons/material-audio-video/20/pause-circle-outline-128.png') no-repeat;
+  background: transparent url('../images/music_note_black_24dp.svg') no-repeat;
   background-size: cover;
   display: none;
+}
+
+.music-control {
+  margin-bottom: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  visibility: visible;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .cover-height {
@@ -7373,17 +7386,66 @@ button.close {
   top: 0px;
   left: 0px;
   z-index: 10001;
+  padding: 10px;
 }
 
 .name-cover {
   z-index: 10002;
-  position: fixed;
-  background-color: #ffffff36;
+  background-color: #00000094;
   border-radius: 4px;
-  top: 75%;
-  left: 10%;
-  -webkit-transform: translate(-5%, -50%);
-  transform: translate(-5%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 500px;
+  padding: 30px;
+  width: 100%;
 }
 
+.the-wedding-of {
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: large;
+  text-align: center;
+  color: #fff;
+}
+
+.nama-pengantin {
+  font-family: 'Style Script', cursive;
+  text-align: center;
+  font-size: xx-large;
+  color: #fff;
+}
+
+.open-invitation {
+  border-radius: 4px;
+  /* opacity: 0.5; */
+  font-family: monospace;
+  color: #fff;
+  /* font-weight: bold; */
+  background-color: #f14e95;
+}
+
+blockquote {
+  margin: 0;
+}
+
+blockquote p {
+  padding: 15px;
+  background: #eee;
+  border-radius: 5px;
+  color: #f14e95;
+}
+
+blockquote p::before {
+  content: '\201C';
+  color: #f14e95;
+}
+
+blockquote p::after {
+  content: '\201D';
+  color: #f14e95;
+}
+
+.color-theme {
+  color: #f14e95 !important;
+}
 /*# sourceMappingURL=bootstrap.css.map */

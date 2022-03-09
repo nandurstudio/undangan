@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   line-height: 40px;
-  font-family: "Sacramento", Arial, serif;
+  font-family: "Style Script", Arial, serif;
 }
 .fh5co-nav a {
   padding: 5px 10px;
@@ -844,7 +844,7 @@ form label {
   margin-bottom: 0px;
   font-size: 100px;
   line-height: 1.5;
-  font-family: "Sacramento", Arial, serif;
+  font-family: "Style Script", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header .display-tc h1,
@@ -940,8 +940,8 @@ form label {
 .simply-countdown > .simply-section {
   /* coutndown blocks */
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background: rgba(241, 78, 149, 0.8);
   margin: 0 4px;
   -webkit-border-radius: 50%;
@@ -966,7 +966,7 @@ form label {
 .simply-countdown > .simply-section > div {
   /* countdown block inner div */
   display: table-cell;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   height: 100px;
   width: 100px;
 }
@@ -1065,7 +1065,7 @@ form label {
   }
 }
 .couple-half h3 {
-  font-family: "Sacramento", Arial, serif;
+  font-family: "Style Script", Arial, serif;
   color: #F14E95;
   font-size: 30px;
 }
@@ -1182,7 +1182,7 @@ form label {
   line-height: 1.5;
   font-weight: bold;
   color: #F14E95;
-  font-family: "Sacramento", Arial, serif;
+  font-family: "Style Script", Arial, serif;
 }
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {
