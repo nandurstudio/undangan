@@ -1071,39 +1071,49 @@ form label {
 }
 .couple-half .groom, .couple-half .bride {
   float: left;
-  -webkit-border-radius: 50%;
+  /* -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  border-radius: 50%; */
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  width: 200px;
+  /* height: 150px; */
 }
 .couple-half .groom img, .couple-half .bride img {
-  width: 150px;
-  height: 150px;
-  -webkit-border-radius: 50%;
+  /* -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
-  border-radius: 50%;
+  border-radius: 50%; */
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  width: 200px;
+  /* height: 150px; */
 }
 @media screen and (max-width: 480px) {
   .couple-half .groom, .couple-half .bride {
     width: 100%;
-    height: 140px;
+    /* height: 140px; */
   }
   .couple-half .groom img, .couple-half .bride img {
     width: 120px;
-    height: 120px;
+    /* height: 120px; */
     margin: 0 auto;
   }
 }
 .couple-half .groom {
   float: right;
   margin-right: 5px;
+  margin-left: 25px;
 }
 .couple-half .bride {
   float: left;
   margin-left: 5px;
+  margin-right: 25px;
 }
 .couple-half .desc-groom {
   padding-right: 180px;
@@ -1851,4 +1861,11 @@ form label {
   border-top-right-radius: 4px;
   margin: initial;
   padding-left: 10px;
+}
+
+.just-center {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
 }

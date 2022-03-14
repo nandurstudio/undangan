@@ -112,15 +112,20 @@
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Perhatian</h5>
+						<h5 class="modal-title" id="exampleModalLongTitle">Attention!</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body">
-						<?php
-						include "./php/protokol_kesehatan.php";
-						?>
+						<div class="row">
+							<div class="animate-box just-center">
+								<p>This event is carried out by implementing the following health protocols:</br>
+									<img class="protokol-image" src="./images/protokol_en.png" />
+								<p>Without reducing respect, in order to reduce the spread of the pandemic, please always follow the health protocols and arrive on time according to the hours listed on the invitation.</p>
+								<p>Press the close button to close this information/this information will be closed automatically after <span id="countdown">15</span> seconds.</p>
+							</div>
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -297,7 +302,9 @@
 				<div class="couple-wrap animate-box">
 					<div class="couple-half">
 						<div class="groom">
-							<img src="images/pengantin_pria_flip.png" alt="groom" class="img-responsive">
+							<a href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/81972791996590427740514901082602460536277616799024112984058926406245493506049/" target="blank">
+								<img src="images/pengantin_pria_nft.png" alt="groom" class="img-responsive">
+							</a>
 						</div>
 						<div class="desc-groom">
 							<?php
@@ -333,7 +340,9 @@
 							} else {
 								echo "0 results";
 							}
-							echo "<h3>" . $pengantin_pria . "</h3>";
+							echo "<a href=\"https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/81972791996590427740514901082602460536277616799024112984058926407345005133825/\" target=\"blank\">
+							<h3>" . $pengantin_pria . "</h3>
+							</a>";
 							echo "<p>3<sup>rd</sup> child of 3 siblings</br>Son of Mr. " . $ayah_pria . "</br>&amp;</br>Mrs. " . $ibu_pria . "</p>";
 
 							mysqli_close($conn);
@@ -347,7 +356,9 @@
 					<p class="heart text-center"><i class="icon-heart2"></i></p>
 					<div class="couple-half">
 						<div class="bride">
-							<img src="images/pengantin_wanita_flip.png" alt="groom" class="img-responsive">
+							<a href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/81972791996590427740514901082602460536277616799024112984058926407345005133825/" target="blank">
+								<img src="images/pengantin_wanita_nft.png" alt="groom" class="img-responsive">
+							</a>
 						</div>
 						<div class="desc-bride">
 							<?php
@@ -386,7 +397,9 @@
 								echo "0 results";
 							}
 
-							echo "<h3>" . $pengantin_wanita . "</h3>";
+							echo "<a href=\"https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/81972791996590427740514901082602460536277616799024112984058926407345005133825/\" target=\"blank\">
+							<h3>" . $pengantin_wanita . "</h3>
+							</a>";
 							echo "<p>The 1<sup>st</sup> of 2 siblings</br>Daughter of Mr. " . $ayah_wanita . "</br>&amp;</br>Mrs. " . $ibu_wanita . "</p>";
 							mysqli_close($conn);
 							//https://stackoverflow.com/a/15864222/7772358
@@ -457,6 +470,10 @@
 											} else {
 												// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
 												// echo $actual_link;
+												echo "
+												<span>10:00 AM</span>
+												<span>02:00 PM</span>
+												";
 											}
 											?>
 										</div>
@@ -703,7 +720,29 @@
 		});
 
 		$("#tombol-buka").on('click', function() {
+			$("#name-cover").fadeOut(300, function() {
+				$(this).remove();
+			});
 			$('#exampleModalCenter').modal('show');
+			var timeleft = 20;
+			var downloadTimer = setInterval(function() {
+				if (timeleft <= 0) {
+					clearInterval(downloadTimer);
+					// put your default event here
+					$("#exampleModalCenter").modal('hide');
+					$("html").removeClass("cover-height");
+					$("body").removeClass("cover-height");
+					$("#cover").fadeOut(300, function() {
+						$(this).remove();
+					});
+					$('.play').hide();
+					$('.pause').css('display', 'inline-block');
+					audioElement.play();
+				} else {
+					document.getElementById("countdown").innerHTML = timeleft;
+				}
+				timeleft -= 1;
+			}, 1000);
 		});
 
 		$("#exampleModalCenter").on("hidden.bs.modal", function() {
