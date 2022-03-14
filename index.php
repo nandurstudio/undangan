@@ -123,7 +123,7 @@
 								<p>This event is carried out by implementing the following health protocols:</br>
 									<img class="protokol-image" src="./images/protokol_en.png" />
 								<p>Without reducing respect, in order to reduce the spread of the pandemic, please always follow the health protocols and arrive on time according to the hours listed on the invitation.</p>
-								<p>Press the close button to close this information/this information will be closed automatically after <span id="countdown">15</span> seconds.</p>
+								<p>Press the close button to close this information/this information will be closed automatically after <span id="countdown">15</span></p>
 							</div>
 						</div>
 					</div>
@@ -263,11 +263,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-
 						<?php
 						if (isset($_GET['to'])) {
 							$string_to_encrypt = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
-							$alamat = htmlspecialchars($_GET['adr']);
+							if (isset($_GET['adr'])) {
+								$alamat = htmlspecialchars($_GET['adr']);
+							} else {
+								$alamat = '';
+							}
 							$password = "password";
 							$encrypted_string = openssl_encrypt($string_to_encrypt, "AES-128-ECB", $password);
 							$decrypted_string = openssl_decrypt($encrypted_string, "AES-128-ECB", $password);
@@ -275,18 +278,22 @@
 							// echo $encrypted_string;
 							// echo $decrypted_string;
 							echo "<h2>Dear!</h2><h3>" . $decrypted_string . "</h3>
+							<p>\"Use this QR code as a sign to enter the event\"</p>
 							<a class=\"demo\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . " From " . $alamat . "\" data-lightbox=\"example-1\">
 							<img class=\"example-image\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . " From " . $alamat . "&amp;size=150x150\" alt=\"QR Code " . $decrypted_string . " From " . $alamat . "\">
-							</a>";
+							</a>
+							<p>Click to enlarge</p>";
 							// https://www.jqueryscript.net/lightbox/lightbox2.html
 						} else {
 							// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
 							// echo $actual_link;
 							$actual_link = "Anonymous";
 							echo "<h2>Dear!</h2><h3>" . $actual_link . "</h3>
+							<p>\"Use this QR code as a sign to enter the event\"</p>
 							<a class=\"demo\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
 							<img class=\"example-image\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=150x150\" alt=\"QR Code " . $actual_link . "\">
-							</a>";
+							</a>
+							<p>Click to enlarge</p>";
 						}
 						?>
 						</br>
@@ -586,7 +593,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+		<!-- <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row animate-box">
@@ -617,8 +624,63 @@
 					</div>
 				</div>
 			</div>
+		</div> -->
+		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>Wishes & Do'a</h2>
+						<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-10 col-md-offset-1">
+						<iframe name="content" style="display:none">
+						</iframe>
+						<form id="wishForm" class="form-inline" action="./php/wish.php" method="post" target="content">
+							<div class="col-md-4 col-sm-4">
+								<div class="form-group">
+									<label for="name" class="sr-only">Name</label>
+									<input type="name" name="name" id="name" class="form-control" placeholder="Name">
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4">
+								<div class="form-group">
+									<label for="email" class="sr-only">Wishes</label>
+									<textarea name="wish" class="form-control" id="wish" placeholder="Best wishes"></textarea>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-4">
+								<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Submit</button>
+							</div>
+						</form>
+						<p id="msg"></p>
+						<script type="text/javascript">
+							function clickButton() {
+								var name = document.getElementById('name').value;
+								var wish = document.getElementById('wish').value;
+								$.ajax({
+									type: "post",
+									url: "./php/wish.php",
+									data: {
+										'name': name,
+										'wish': wish
+									},
+									cache: false,
+									success: function(html) {
+										alert('Data Send');
+										$('#msg').html(html);
+										$('#wishForm').trigger('reset');
+									}
+								});
+								return false;
+							}
+						</script>
+					</div>
+				</div>
+			</div>
 		</div>
-
 		<footer id="fh5co-footer" role="contentinfo">
 			<div class="container">
 
@@ -680,10 +742,6 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<!-- jQuery Modal -->
-	<script src="./js/jquery.modal.min.js"></script>
-	<link rel="stylesheet" href="./css/jquery.modal.min.css" />
-
 	<script>
 		var d = new Date(new Date("Mar 27, 2022 08:00:00").getTime());
 		//var countDownDate = new Date("Mar 27, 2022 08:00:00").getTime();
@@ -739,7 +797,7 @@
 					$('.pause').css('display', 'inline-block');
 					audioElement.play();
 				} else {
-					document.getElementById("countdown").innerHTML = timeleft;
+					document.getElementById("countdown").innerHTML = timeleft+" seconds.";
 				}
 				timeleft -= 1;
 			}, 1000);
