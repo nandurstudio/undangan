@@ -11,9 +11,10 @@ $reservasi = mysqli_query($conn, $reservasi_query);
 // }
 
 $name_reservasi = isset($_POST['name-reservasi']) ? $_POST['name-reservasi'] : '';
-$contact_number = isset($_POST['contact-number']) ? $_POST['contact-number'] : '';
+$attending = isset($_POST['attending']) ? $_POST['attending'] : '';
 $guest_count = isset($_POST['guest-count']) ? $_POST['guest-count'] : '';
 $sesi_reservasi = isset($_POST['sesi-reservasi']) ? $_POST['sesi-reservasi'] : '';
+$alamat_reservasi = isset($_POST['alamat-reservasi']) ? $_POST['alamat-reservasi'] : '';
 
 
 // //nilai variable diambil dari tag name
@@ -23,6 +24,6 @@ $sesi_reservasi = isset($_POST['sesi-reservasi']) ? $_POST['sesi-reservasi'] : '
 // $ucapan = $_POST["ucapan"];
 
 mysqli_query($conn, "SELECT * FROM tr_reservasi");
-mysqli_query($conn, "INSERT INTO `tr_reservasi` (`reservasiId`, `name`, `contact`, `jumlah_tamu`, `sesi`, `date`) VALUES (NULL, '$name_reservasi', '$contact_number', '$guest_count', '$sesi_reservasi', current_timestamp());");
+mysqli_query($conn, "INSERT INTO `tr_reservasi` (`reservasiId`, `name`, `alamat`, `attending`, `jumlah_tamu`, `sesi`, `date`) VALUES (NULL, '$name_reservasi', '$alamat_reservasi', '$attending', '$guest_count', '$sesi_reservasi', current_timestamp());");
 //header("Location:/undangan/php/wish.php");
 ?>
