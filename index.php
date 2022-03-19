@@ -11,6 +11,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<?php
 	include "./php/connection.php";
+	$shout_query = "SELECT * FROM tr_ucapan ORDER BY ucapanId DESC";
+	$shouts = mysqli_query($conn, $shout_query);
 	$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
 	$result_pria = mysqli_query($conn, $sql_pria);
 	$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
@@ -175,7 +177,7 @@
 		</div>
 	</div>
 	<div id="page">
-		<nav class="fh5co-nav" role="navigation">
+		<!-- <nav class="fh5co-nav" role="navigation">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
@@ -209,7 +211,7 @@
 				</div>
 
 			</div>
-		</nav>
+		</nav> -->
 		<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/WAF06834.JPG);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
@@ -251,7 +253,7 @@
 								<h2>We Are Getting Married</h2>
 								<!-- <div id="demo"></div> -->
 								<div class="simply-countdown simply-countdown-one"></div>
-								<p><a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=M29jbGwyaGRtYnVxYzdqOXFoaGExbGlrYmggZmFtaWx5MDc3OTU1ODAxMDU0MzM0MjExOTVAZw&tmsrc=family07795580105433421195%40group.calendar.google.com" class="btn btn-default btn-sm">Save the date</a></p>
+								<p><a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=M29jbGwyaGRtYnVxYzdqOXFoaGExbGlrYmggZmFtaWx5MDc3OTU1ODAxMDU0MzM0MjExOTVAZw&tmsrc=family07795580105433421195%40group.calendar.google.com" class="btn btn-default btn-sm" target="blank">Save the date</a></p>
 							</div>
 						</div>
 					</div>
@@ -298,10 +300,6 @@
 						?>
 						</br>
 						</br>
-						<?php
-						include "./php/connection.php";
-						$sql_date = "SELECT "
-						?>
 						<h3>March 27<sup>th</sup>, 2022</br>Bandung, West Java</h3>
 						<p>We invited you to celebrate our wedding</p>
 					</div>
@@ -468,6 +466,11 @@
 													<span>12:30 PM</span>
 													<span>02:00 PM</span>
 													";
+												} elseif ($sesi == "3") {
+													echo "
+													<span>10:00 PM</span>
+													<span>12:30 PM</span>
+													";
 												} else {
 													echo "
 													<span>10:00 AM</span>
@@ -519,58 +522,140 @@
 			</div>
 		</div>
 
-		<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
+
+		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
-				<div class="row">
-					<div class="display-t">
-						<div class="display-tc">
-							<div class="col-md-3 col-sm-6 animate-box">
-								<div class="feature-center">
-									<span class="icon">
-										<i class="icon-users"></i>
-									</span>
-
-									<span class="counter js-counter" data-from="0" data-to="500" data-speed="5000" data-refresh-interval="50">1</span>
-									<span class="counter-label">Estimated Guest</span>
-
-								</div>
-							</div>
-							<!-- <div class="col-md-3 col-sm-6 animate-box">
-								<div class="feature-center">
-									<span class="icon">
-										<i class="icon-user"></i>
-									</span>
-
-									<span class="counter js-counter" data-from="0" data-to="1000" data-speed="5000" data-refresh-interval="50">1</span>
-									<span class="counter-label">We Catter</span>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 animate-box">
-								<div class="feature-center">
-									<span class="icon">
-										<i class="icon-calendar"></i>
-									</span>
-									<span class="counter js-counter" data-from="0" data-to="402" data-speed="5000" data-refresh-interval="50">1</span>
-									<span class="counter-label">Events Done</span>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 animate-box">
-								<div class="feature-center">
-									<span class="icon">
-										<i class="icon-clock"></i>
-									</span>
-
-									<span class="counter js-counter" data-from="0" data-to="2345" data-speed="5000" data-refresh-interval="50">1</span>
-									<span class="counter-label">Hours Spent</span>
-								</div>
-							</div> -->
-
-						</div>
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>Are You Attending?</h2>
+						<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
 					</div>
 				</div>
 			</div>
+			<div class="row animate-box">
+				<div class="col-md-12 col-md-offset-4">
+					<form class="form-inline">
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<div class="feature-center">
+									<span class="icon">
+										<i class="icon-users"></i>
+									</span><?php
+											include "./php/connection.php";
+											$guest_query = "SELECT sum(jumlah_tamu) as jumlah_tamu FROM `tr_reservasi`";
+											$guest_count = mysqli_query($conn, $guest_query);
+											$row = mysqli_fetch_assoc($guest_count);
+											$sum = $row['jumlah_tamu'];
+											echo "<span id=\"guest-count-icon\" class=\"counter js-counter\" data-from=\"0\" data-to=\"" . $sum . "\" data-speed=\"5000\" data-refresh-interval=\"50\">" . $sum;
+											?></span>
+									<span class="counter-label">Estimated Guests</span>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<iframe name="content-reservasi" style="display:none">
+			</iframe>
+			<form id="reservasiForm" class="form-inline" action="./php/reservasi.php" method="post" target="content-reservasi">
+				<div class="row animate-box">
+					<div class="col-md-12 col-md-offset-4">
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="name-reservasi" class="custom-label">Guest Name</label>
+								<input type="name" name="name" id="name-reservasi" class="form-control" placeholder="Guest Name">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-12 col-md-offset-4">
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="contact-number" class="custom-label">Phone Number/WhatsApp (optional)</label>
+								<input type="text" class="form-control" id="contact-number" placeholder="e.g. 081901234567"></input>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-12 col-md-offset-4">
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="guest-count" class="custom-label">Total Guest(s)</label>
+								<input type="number" class="form-control" id="guest-count" placeholder="0"></input>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-12 col-md-offset-4">
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="guest-count" class="custom-label">Sesi</label>
+								<input type="text" class="form-control" id="sesi-reservasi" placeholder="0" disabled></input>
+								<?php
+								if (isset($_GET['s'])) {
+									$sesi = htmlspecialchars($_GET['s']); // Getting parameter value inside PHP variable
+									echo "<script>document.querySelector(\"#sesi-reservasi\").value = \"" . $sesi . "\";</script>";
+								} else {
+									echo "<script>document.querySelector(\"#sesi-reservasi\").value = \"1\";</script>";
+								}
+								?>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-12 col-md-offset-4">
+						<div class="col-md-4 col-sm-4">
+							<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButtonReservasi();">Send Reservation</button>
+						</div>
+					</div>
+				</div>
+			</form>
+			<p id="msg-reservasi"></p>
+			<script type="text/javascript">
+				function clickButtonReservasi() {
+					//var $sesi_reservasi = htmlspecialchars($_GET['s']);
+					var sesi_reservasi = document.getElementById('sesi-reservasi').value;
+					var name_reservasi = document.getElementById('name-reservasi').value;
+					var contact_number = document.getElementById('contact-number').value;
+					var guest_count = document.getElementById('guest-count').value;
+					if ($('#name-reservasi').val() == '') {
+						alert('Please fill name field');
+						return false;
+					} else if ($('#guest-count').val() == '') {
+						alert('Please fill the guest');
+						return false;
+					} else if ($('#guest_count').val() == (0)) {
+						alert('Guest min 1');
+					} else {
+						$.ajax({
+							type: "post",
+							url: "./php/reservasi.php",
+							data: {
+								'name-reservasi': name_reservasi,
+								'contact-number': contact_number,
+								'guest-count': guest_count,
+								'sesi-reservasi': sesi_reservasi
+							},
+							cache: false,
+							success: function(html) {
+								alert('Reservation sent. Thank you!')
+								$('#msg-reservasi').html(html);
+								//$('#reservasiForm').trigger('reset');
+								$('#guest-count-icon').html(html);
+								$("#guest-count-icon").load(location.href + " #guest-count-icon");
+							}
+						});
+						return false;
+					}
+				}
+			</script>
 		</div>
+
 		<div id="fh5co-couple-story">
 			<div class="container">
 				<div class="row">
@@ -631,56 +716,98 @@
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 						<h2>Wishes & Do'a</h2>
-						<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
-					</div>
-				</div>
-				<div class="row animate-box">
-					<div class="col-md-10 col-md-offset-1">
-						<iframe name="content" style="display:none">
-						</iframe>
-						<form id="wishForm" class="form-inline" action="./php/wish.php" method="post" target="content">
-							<div class="col-md-4 col-sm-4">
-								<div class="form-group">
-									<label for="name" class="sr-only">Name</label>
-									<input type="name" name="name" id="name" class="form-control" placeholder="Name">
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-4">
-								<div class="form-group">
-									<label for="email" class="sr-only">Wishes</label>
-									<textarea name="wish" class="form-control" id="wish" placeholder="Best wishes"></textarea>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-4">
-								<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Submit</button>
-							</div>
-						</form>
-						<p id="msg"></p>
-						<script type="text/javascript">
-							function clickButton() {
-								var name = document.getElementById('name').value;
-								var wish = document.getElementById('wish').value;
-								$.ajax({
-									type: "post",
-									url: "./php/wish.php",
-									data: {
-										'name': name,
-										'wish': wish
-									},
-									cache: false,
-									success: function(html) {
-										alert('Data Send');
-										$('#msg').html(html);
-										$('#wishForm').trigger('reset');
-									}
-								});
-								return false;
-							}
-						</script>
+						<p>Please fill in your wishes for the bride and groom.</p>
 					</div>
 				</div>
 			</div>
+			<div class="row animate-box">
+				<div class="col-md-12 col-md-offset-4">
+					<form class="form-inline">
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<div style="height: 300px; overflow: auto;">
+									<div id="minichat">
+										<?php while ($row = mysqli_fetch_assoc($shouts)) : ?>
+											<div>
+												<strong><?php echo ucwords(strtolower($row["nama"])) ?></strong>
+												<p><?php echo $row['ucapan'] ?><small style="
+									text-align: right;
+									display: flex;
+    								flex-direction: column-reverse;
+									"><?php echo $row["date"] ?></small></p>
+											</div>
+										<?php endwhile; ?>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<iframe name="content" style="display:none">
+			</iframe>
+			<form id="wishForm" class="form-inline" action="./php/wish.php" method="post" target="content">
+				<div class="row animate-box">
+					<div class="col-md-12 col-md-offset-4">
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="name" class="custom-label">Name</label>
+								<input type="name" name="name" id="name" class="form-control" placeholder="Name">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-12 col-md-offset-4">
+						<div class="col-md-4 col-sm-4">
+							<div class="form-group">
+								<label for="email" class="custom-label">Wishes</label>
+								<textarea name="wish" class="form-control" id="wish" placeholder="Your wish for the bride"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-12 col-md-offset-4">
+						<div class="col-md-4 col-sm-4">
+							<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Submit</button>
+						</div>
+					</div>
+				</div>
+			</form>
+			<p id="msg"></p>
+			<script type="text/javascript">
+				function clickButton() {
+					var name = document.getElementById('name').value;
+					var wish = document.getElementById('wish').value;
+					if ($('#name').val() == '') {
+						alert('Please fill name field');
+						return false;
+					} else if ($('#wish').val() == '') {
+						alert('Please fill the wishes');
+						return false;
+					} else {
+						$.ajax({
+							type: "post",
+							url: "./php/wish.php",
+							data: {
+								'name': name,
+								'wish': wish
+							},
+							cache: false,
+							success: function(html) {
+								$('#msg').html(html);
+								$('#wishForm').trigger('reset');
+								$('#minichat').html(html);
+								$("#minichat").load(location.href + " #minichat");
+							}
+						});
+						return false;
+					}
+				}
+			</script>
 		</div>
+
 		<footer id="fh5co-footer" role="contentinfo">
 			<div class="container">
 
@@ -702,7 +829,6 @@
 						</p>
 					</div>
 				</div>
-
 			</div>
 		</footer>
 	</div>
@@ -713,8 +839,6 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-
-
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -797,7 +921,7 @@
 					$('.pause').css('display', 'inline-block');
 					audioElement.play();
 				} else {
-					document.getElementById("countdown").innerHTML = timeleft+" seconds.";
+					document.getElementById("countdown").innerHTML = timeleft + " seconds.";
 				}
 				timeleft -= 1;
 			}, 1000);
