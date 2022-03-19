@@ -273,6 +273,11 @@
 							} else {
 								$alamat = '';
 							}
+							if (isset($_GET['s'])) {
+								$sesi = htmlspecialchars($_GET['s']);
+							} else {
+								$sesi = '1';
+							}
 							$password = "password";
 							$encrypted_string = openssl_encrypt($string_to_encrypt, "AES-128-ECB", $password);
 							$decrypted_string = openssl_decrypt($encrypted_string, "AES-128-ECB", $password);
@@ -281,8 +286,8 @@
 							// echo $decrypted_string;
 							echo "<h2>Dear!</h2><h3>" . $decrypted_string . "</h3>
 							<p>\"Use this QR code as a sign to enter the event\"</p>
-							<a class=\"demo\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . " From " . $alamat . "\" data-lightbox=\"example-1\">
-							<img class=\"example-image\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . " From " . $alamat . "&amp;size=150x150\" alt=\"QR Code " . $decrypted_string . " From " . $alamat . "\">
+							<a class=\"demo\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\">
+							<img class=\"example-image\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $decrypted_string . " From " . $alamat . "&amp;size=150x150\" alt=\"QR Code " . $decrypted_string . " From " . $alamat . " Sesi " . $sesi . "\">
 							</a>
 							<p>Click to enlarge</p>";
 							// https://www.jqueryscript.net/lightbox/lightbox2.html

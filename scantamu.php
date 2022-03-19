@@ -13,7 +13,6 @@ include "./php/header.php";
 <body>
 	<script type="text/javascript" src="js/html5-qrcode.min.js"></script>
 	<div class="fh5co-loader"></div>
-
 	<div id="page">
 		<nav class="fh5co-nav" role="navigation">
 			<div class="container">
@@ -63,18 +62,24 @@ include "./php/header.php";
 							function onScanSuccess(decodedText, decodedResult) {
 								// handle the scanned code as you like, for example:
 								console.log('Code matched = ${decodedText}', decodedResult);
-								var the_string = decodedResult;
-								var parts = the_string.split('-', 2);
 
-								// After calling split(), 'parts' is an array with two elements:
-								// parts[0] is 'sometext'
-								// parts[1] is '20202'
+								var string_ori = decodedText;
+								var string1 = decodedText;
 
-								var the_name = parts[0];
-								var the_address = parts[1];
-								console.log(the_name);
-								console.log(the_address);
-								//	document.forms[0].submit();
+								string1 = string1.split('From ')[1];
+								string2 = string1.split('Sesi ')[1];
+								string3 = string1.split('Sesi ')[1];
+								string_ori = string_ori.split(' From')[0];
+
+								var remove_after_sesi = string1.indexOf(' Sesi');
+								var remove_after_from = string1.indexOf(' From');
+								var result_nama = string1.substring(0, remove_after_from);
+								var result_alamat = string1.substring(0, remove_after_sesi);
+
+								$("#nama-tamu").val(string_ori);
+								$("#alamat").val(result_alamat);
+								$("#sesi").val(string3);
+								document.forms[0].submit();
 								html5QrCode.stop().then((ignore) => {
 									// QR Code scanning is stopped.
 									console.log('scan stop')
@@ -102,13 +107,13 @@ include "./php/header.php";
 							html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 						</script>
 						</br>
-						<form action="./php/scan_success.php" method="post">
+						<form action="./php/scan_success.php" method="post" id="qr-result">
 							<div class="row animate-box">
 								<div class="col-md-12 col-md-offset-2">
 									<div class="col-md-8 col-sm-4">
 										<div class="form-group">
 											<label for="name" class="custom-label">Name</label>
-											<input type="text" class="form-control" id="name" placeholder="Nama">
+											<input type="text" class="form-control" id="nama-tamu" name="nama-tamu" placeholder="Nama" value="">
 										</div>
 									</div>
 								</div>
@@ -117,8 +122,18 @@ include "./php/header.php";
 								<div class="col-md-12 col-md-offset-2">
 									<div class="col-md-8 col-sm-4">
 										<div class="form-group">
-											<label for="from" class="custom-label">From</label>
-											<input type="text" class="form-control" id="from" placeholder="From">
+											<label for="alamat" class="custom-label">From</label>
+											<input type="text" class="form-control" id="alamat" name="alamat" placeholder="From">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row animate-box">
+								<div class="col-md-12 col-md-offset-2">
+									<div class="col-md-8 col-sm-4">
+										<div class="form-group">
+											<label for="sesi" class="custom-label">Sesi</label>
+											<input type="text" class="form-control" id="sesi" name="sesi" placeholder="Sesi">
 										</div>
 									</div>
 								</div>
@@ -128,7 +143,15 @@ include "./php/header.php";
 				</div>
 			</div>
 		</div>
+		<?php
 
+		include './php/connection.php';
+		$selectquery = "SELECT * FROM tr_tamu ORDER BY tamuId DESC LIMIT 1";
+		$reservasi = mysqli_query($conn, $selectquery);
+		$row = $reservasi->fetch_assoc();
+		$name_guest = $row['name'];
+		echo "<script type='text/javascript'>alert('" . $name_guest . "');</script>";
+		?>
 		<!-- Footer start -->
 		<?php
 		include "./php/footer.php";
