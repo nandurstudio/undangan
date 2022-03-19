@@ -1,9 +1,11 @@
 <?php
-include "./php/connection.php";
-$name = $_POST["name"];
+include "./connection.php";
 
-mysqli_query($conn, "SELECT * FROM tbl_auditor");
-mysqli_query($conn, "INSERT INTO `tbl_auditor` (`date`, `adtr_name`, `adtr_sname`, `adtr_dept`, `adtr_sign`, `ID`) VALUES ('$date','$name','$sname','$dept','$sign', NULL);");
+$nama_tamu = isset($_POST['nama-tamu']) ? $_POST['nama-tamu'] : '';
+$alamat = isset($_POST['alamat']) ? $_POST['alamat'] : '';
+$sesi = isset($_POST['sesi']) ? $_POST['sesi'] : '';
 
-header("Location:/shpplantonline/php/auditor_data.php");
-?>
+mysqli_query($conn, "SELECT * FROM tr_tamu");
+mysqli_query($conn, "INSERT INTO `tr_tamu` (`tamuId`, `name`, `alamat`, `sesi`, `date`) VALUES (NULL, '$nama_tamu', '$alamat', '$sesi', current_timestamp());");
+
+header("Location:/undangan/scantamu.php");
