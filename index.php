@@ -261,7 +261,7 @@
 			</div>
 		</header>
 
-		<div id="fh5co-couple">
+		<div id="fh5co-couple" style="background-image: url(images/img_bg_5.jpg); background-size: cover;">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -508,7 +508,7 @@
 			</div>
 		</div>
 
-		<div id="fh5co-couple-story">
+		<div id="fh5co-couple-story" style="background-image: url(images/img_bg_5.jpg); background-size: cover;">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -533,8 +533,8 @@
 			<div class="container">
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Are You Attending?</h2>
-						<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
+						<h2>Attendance</h2>
+						<p>Please select the button whether you will attend or not. Thanks!</p>
 					</div>
 				</div>
 			</div>
@@ -569,7 +569,15 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
 								<label for="name-reservasi" class="custom-label">Guest Name</label>
-								<input type="name" name="name" id="name-reservasi" class="form-control" placeholder="Guest Name">
+								<input type="name" name="name" id="name-reservasi" class="form-control" placeholder="Guest Name" disabled></input>
+								<?php
+								if (isset($_GET['to'])) {
+									$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+									echo "<script>document.querySelector(\"#name-reservasi\").value = \"" . $guest_name . "\";</script>";
+								} else {
+									echo "<script>document.querySelector(\"#name-reservasi\").value = \"Anonymous\";</script>";
+								}
+								?>
 							</div>
 						</div>
 					</div>
@@ -578,8 +586,16 @@
 					<div class="col-md-12 col-md-offset-4">
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
-								<label for="contact-number" class="custom-label">Phone Number/WhatsApp (optional)</label>
-								<input type="text" class="form-control" id="contact-number" placeholder="e.g. 081901234567"></input>
+								<label for="alamat-reservasi" class="custom-label">Address</label>
+								<input type="text" class="form-control" id="alamat-reservasi" placeholder="0" disabled></input>
+								<?php
+								if (isset($_GET['adr'])) {
+									$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
+									echo "<script>document.querySelector(\"#alamat-reservasi\").value = \"" . $alamat . "\";</script>";
+								} else {
+									echo "<script>document.querySelector(\"#alamat-reservasi\").value = \"None\";</script>";
+								}
+								?>
 							</div>
 						</div>
 					</div>
@@ -588,17 +604,7 @@
 					<div class="col-md-12 col-md-offset-4">
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
-								<label for="guest-count" class="custom-label">Total Guest(s)</label>
-								<input type="number" class="form-control" id="guest-count" placeholder="0"></input>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row animate-box">
-					<div class="col-md-12 col-md-offset-4">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="guest-count" class="custom-label">Sesi</label>
+								<label for="sesi-reservasi" class="custom-label">Sesi</label>
 								<input type="text" class="form-control" id="sesi-reservasi" placeholder="0" disabled></input>
 								<?php
 								if (isset($_GET['s'])) {
@@ -612,10 +618,19 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>Are You Attending?</h2>
+					</div>
+				</div>
 				<div class="row animate-box">
 					<div class="col-md-12 col-md-offset-4">
 						<div class="col-md-4 col-sm-4">
-							<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButtonReservasi();">Send Reservation</button>
+							<button type="submit" name="submit" value="submit" id="submit-yes" class="btn btn-default btn-block" onclick="return clickButtonReservasi();">Yes</button>
+						</div>
+						<div class="col-md-4 col-sm-4">
+							<button type="submit" name="submit-no" value="submit" id="submit-no" class="btn btn-default btn-block" onclick="return clickButtonReservasiNo();">No</button>
 						</div>
 					</div>
 				</div>
@@ -624,45 +639,73 @@
 			<script type="text/javascript">
 				function clickButtonReservasi() {
 					//var $sesi_reservasi = htmlspecialchars($_GET['s']);
-					var sesi_reservasi = document.getElementById('sesi-reservasi').value;
 					var name_reservasi = document.getElementById('name-reservasi').value;
-					var contact_number = document.getElementById('contact-number').value;
-					var guest_count = document.getElementById('guest-count').value;
-					if ($('#name-reservasi').val() == '') {
-						alert('Please fill name field');
-						return false;
-					} else if ($('#guest-count').val() == '') {
-						alert('Please fill the guest');
-						return false;
-					} else if ($('#guest_count').val() == (0)) {
-						alert('Guest min 1');
-					} else {
-						$.ajax({
-							type: "post",
-							url: "./php/reservasi.php",
-							data: {
-								'name-reservasi': name_reservasi,
-								'contact-number': contact_number,
-								'guest-count': guest_count,
-								'sesi-reservasi': sesi_reservasi
-							},
-							cache: false,
-							success: function(html) {
-								alert('Reservation sent. Thank you!')
-								$('#msg-reservasi').html(html);
-								//$('#reservasiForm').trigger('reset');
-								$('#guest-count-icon').html(html);
-								$("#guest-count-icon").load(location.href + " #guest-count-icon");
-							}
-						});
-						return false;
-					}
+					var sesi_reservasi = document.getElementById('sesi-reservasi').value;
+					var alamat_reservasi = document.getElementById('alamat-reservasi').value;
+					var guest_count = '2';
+					$.ajax({
+						type: "post",
+						url: "./php/reservasi.php",
+						data: {
+							'name-reservasi': name_reservasi,
+							'guest-count': guest_count,
+							'sesi-reservasi': sesi_reservasi,
+							'alamat-reservasi': alamat_reservasi,
+							'attending': '1'
+						},
+						cache: false,
+						success: function(html) {
+							alert('Reservation sent. Thank you!')
+							$('#submit-yes').prop('disabled', true);
+							$('#submit-no').prop('disabled', true);
+							$('#msg-reservasi').html(html);
+							//$('#reservasiForm').trigger('reset');
+							$('#guest-count-icon').html(html);
+							$("#guest-count-icon").load(location.href + " #guest-count-icon");
+						}
+					});
+					return false;
+				}
+
+				function clickButtonReservasiNo() {
+					//var $sesi_reservasi = htmlspecialchars($_GET['s']);
+					var name_reservasi = document.getElementById('name-reservasi').value;
+					var sesi_reservasi = document.getElementById('sesi-reservasi').value;
+					var alamat_reservasi = document.getElementById('alamat-reservasi').value;
+					var guest_count = '0';
+					$.ajax({
+						type: "post",
+						url: "./php/reservasi.php",
+						data: {
+							'name-reservasi': name_reservasi,
+							'guest-count': guest_count,
+							'sesi-reservasi': sesi_reservasi,
+							'alamat-reservasi': alamat_reservasi,
+							'attending': '0'
+						},
+						cache: false,
+						success: function(html) {
+							$('submit-no').prop('disabled', true);
+							$('#submit-yes').prop('disabled', true);
+							alert('Confirmation sent. Thank you!')
+							$('#msg-reservasi').html(html);
+							//$('#reservasiForm').trigger('reset');
+							$('#guest-count-icon').html(html);
+							$("#guest-count-icon").load(location.href + " #guest-count-icon");
+						}
+					});
+					return false;
 				}
 			</script>
 		</div>
 
-		<div id="fh5co-couple-story">
+		<div id="fh5co-couple-story" style="background-image: url(images/img_bg_5.jpg); background-size: cover;">
 			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+						<h2>Verse Quote</h2>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 
@@ -775,7 +818,7 @@
 				<div class="row animate-box">
 					<div class="col-md-12 col-md-offset-4">
 						<div class="col-md-4 col-sm-4">
-							<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Submit</button>
+							<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Send Wishes</button>
 						</div>
 					</div>
 				</div>
@@ -813,7 +856,7 @@
 			</script>
 		</div>
 
-		<footer id="fh5co-footer" role="contentinfo">
+		<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_5.jpg); background-size: cover;">
 			<div class="container">
 
 				<div class="row copyright">
