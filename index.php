@@ -78,6 +78,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Style+Script&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -212,7 +213,7 @@
 
 			</div>
 		</nav> -->
-		<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/WAF06834.JPG);" data-stellar-background-ratio="0.5">
+		<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/cover_ian.jpg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -420,6 +421,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="text-center">
+				<sup>"This image is a property of non-fungible tokens (NFTs). Established on OpenSea as The world's first and largest digital marketplace for crypto collectibles and NFTs."</br><a href="https://opensea.io/collection/yourweddingnft" target"blank">Let's check it out!</a></sup>
 			</div>
 		</div>
 
@@ -629,6 +633,10 @@
 						<div class="col-md-4 col-sm-4">
 							<button type="submit" name="submit" value="submit" id="submit-yes" class="btn btn-default btn-block" onclick="return clickButtonReservasi();">Yes</button>
 						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-12 col-md-offset-4">
 						<div class="col-md-4 col-sm-4">
 							<button type="submit" name="submit-no" value="submit" id="submit-no" class="btn btn-default btn-block" onclick="return clickButtonReservasiNo();">No</button>
 						</div>
@@ -773,7 +781,7 @@
 					<form class="form-inline">
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
-								<div style="height: 300px; overflow: auto;">
+								<div class="fh5co-started form-control" style="height: 300px; overflow: auto;">
 									<div id="minichat">
 										<?php while ($row = mysqli_fetch_assoc($shouts)) : ?>
 											<div>
@@ -854,6 +862,170 @@
 					}
 				}
 			</script>
+		</div>
+
+		<div id="fh5co-services" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2>This event is supported by</h2>
+						<!-- <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p> -->
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>CPP</h3>
+								<p><a href="https://www.instagram.com/noor.diansyah/" target="blank">@noor.diansyah</a></p>
+								<a href="https://www.instagram.com/noor.diansyah/" target="blank">
+									<img src="./images/pengantin_pria_nft.png" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>CPW</h3>
+								<p><a href="https://www.instagram.com/hilyadina_/" target="blank">@hilyadina_</a></p>
+								<a href="https://www.instagram.com/hilyadina_/" target="blank">
+									<img src="./images/pengantin_wanita_nft.png" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Photography</h3>
+								<p><a href="https://www.instagram.com/mwaafi/" target="blank">@mwaafi</a></p>
+								<a href="https://www.instagram.com/mwaafi/" target="blank">
+									<img src="./images/mwaafi.jpeg" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Wedding MC</h3>
+								<p><a href="https://www.instagram.com/edoalfarez/" target="blank">@edoalfarez</a></p>
+								<a href="https://www.instagram.com/edoalfarez/" target="blank">
+									<img src="./images/edoalfrez.jpeg" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Decoration and Attire</h3>
+								<p><a href="https://www.instagram.com/baskara_wedding_planner/" target="blank">@baskara_wedding_planner</a></p>
+								<a href="https://www.instagram.com/baskara_wedding_planner/" target="blank">
+									<img src="./images/baskara.jpeg" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>MUA</h3>
+								<p><a href="https://www.instagram.com/armeitarivaldi/" target="blank">@armeitarivaldi</a></p>
+								<a href="https://www.instagram.com/armeitarivaldi/" target="blank">
+									<img src="./images/armeita.jpeg" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6 animate-box">
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Catering</h3>
+								<p><a href="https://www.instagram.com/teman.catering/" target="blank">@teman.catering</a></p>
+								<a href="https://www.instagram.com/teman.catering/" target="blank">
+									<img src="./images/teman_catering.jpeg" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Wedding Organizer</h3>
+								<p><a href="https://www.instagram.com/teman.event/" target="blank">@teman.event</a></p>
+								<a href="https://www.instagram.com/teman.event/" target="blank">
+									<img src="./images/teman_wo.jpeg" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Drinks</h3>
+								<p><a href="https://www.instagram.com/ruangketiga_/" target="blank">@ruangketiga_</a></p>
+								<a href="https://www.instagram.com/ruangketiga_/" target="blank">
+									<img src="./images/ruang_ketiga.jpeg" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Music & Entertaiment</h3>
+								<p><a href="https://www.instagram.com/dmtmusicentertaiment/" target="blank">@dmtmusicentertaiment</a></p>
+								<a href="https://www.instagram.com/dmtmusicentertaiment/" target="blank">
+									<img src="./images/dmt.jpeg" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Printed Invitation Card</h3>
+								<p><a href="https://www.instagram.com/sakinapercetakan/" target="blank">@sakinapercetakan</a></p>
+								<a href="https://www.instagram.com/sakinapercetakan/" target="blank">
+									<img src="./images/sakina.jpeg" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
+							<span class="icon">
+								<i class="icon-instagram"></i>
+							</span>
+							<div class="feature-copy">
+								<h3>Support & Digital Invitation</h3>
+								<p><a href="https://www.instagram.com/nandur.studio/" target="blank">@nandur.studio</a></p>
+								<a href="https://www.instagram.com/nandur.studio/" target="blank">
+									<img src="./images/nandur_studio.jpg" width="200px" height="100%">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_5.jpg); background-size: cover;">
