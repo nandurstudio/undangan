@@ -136,7 +136,7 @@ include "./php/header.php";
 						<h2>Hello!</h2>
 						<h3>Please scan your QR Invitation here</h3>
 						<div class="row animate-box">
-							<div id="reader" width="600px"></div>
+							<div id="reader" width="400px"></div>
 						</div>
 						<script type="text/javascript">
 							window.addEventListener('load', function() {
