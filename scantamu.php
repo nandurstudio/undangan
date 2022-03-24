@@ -134,13 +134,35 @@ include "./php/header.php";
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 						<h2>Hello!</h2>
-						<h3>Please scan your QR Invitation here</h3>
+						<h3 id="scan-inst"></h3>
 						<div class="row animate-box">
 							<div id="reader" width="400px"></div>
 						</div>
 						<script type="text/javascript">
 							window.addEventListener('load', function() {
 								$('#exampleModalCenter').modal('show');
+								var timeleft = 10;
+								var downloadTimer = setInterval(function() {
+									if (timeleft <= 0) {
+										clearInterval(downloadTimer);
+										// put your default event here
+										$("#scan-inst").text('Please scan your QR Invitation here');
+										let html5QrcodeScanner = new Html5QrcodeScanner(
+											"reader", {
+												fps: 10,
+												qrbox: {
+													width: 250,
+													height: 250
+												}
+											},
+											/* verbose= */
+											false);
+										html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+									} else {
+										$("#scan-inst").text('Preparing scanner in ' + timeleft + " seconds.");
+									}
+									timeleft -= 1;
+								}, 1000);
 							})
 
 							function onScanSuccess(decodedText, decodedResult) {
@@ -185,18 +207,6 @@ include "./php/header.php";
 								});
 							}
 
-							let html5QrcodeScanner = new Html5QrcodeScanner(
-								"reader", {
-									fps: 10,
-									qrbox: {
-										width: 250,
-										height: 250
-									}
-								},
-								/* verbose= */
-								false);
-							html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-
 							function clickButton1() {
 								$('#jumlah-tamu-final').text('1');
 								$.ajax({
@@ -211,7 +221,7 @@ include "./php/header.php";
 									});
 								$("#exampleModalCenter").modal("hide");
 								$("#modal-ty").modal("show");
-								var timeleft = 10;
+								var timeleft = 5;
 								var downloadTimer = setInterval(function() {
 									if (timeleft <= 0) {
 										clearInterval(downloadTimer);
@@ -239,7 +249,7 @@ include "./php/header.php";
 									});
 								$("#exampleModalCenter").modal("hide");
 								$("#modal-ty").modal("show");
-								var timeleft = 10;
+								var timeleft = 5;
 								var downloadTimer = setInterval(function() {
 									if (timeleft <= 0) {
 										clearInterval(downloadTimer);
@@ -267,7 +277,7 @@ include "./php/header.php";
 									});
 								$("#exampleModalCenter").modal("hide");
 								$("#modal-ty").modal("show");
-								var timeleft = 10;
+								var timeleft = 5;
 								var downloadTimer = setInterval(function() {
 									if (timeleft <= 0) {
 										clearInterval(downloadTimer);
@@ -295,7 +305,7 @@ include "./php/header.php";
 									});
 								$("#exampleModalCenter").modal("hide");
 								$("#modal-ty").modal("show");
-								var timeleft = 10;
+								var timeleft = 5;
 								var downloadTimer = setInterval(function() {
 									if (timeleft <= 0) {
 										clearInterval(downloadTimer);
@@ -323,7 +333,7 @@ include "./php/header.php";
 									});
 								$("#exampleModalCenter").modal("hide");
 								$("#modal-ty").modal("show");
-								var timeleft = 10;
+								var timeleft = 5;
 								var downloadTimer = setInterval(function() {
 									if (timeleft <= 0) {
 										clearInterval(downloadTimer);
@@ -351,7 +361,7 @@ include "./php/header.php";
 									});
 								$("#exampleModalCenter").modal("hide");
 								$("#modal-ty").modal("show");
-								var timeleft = 10;
+								var timeleft = 5;
 								var downloadTimer = setInterval(function() {
 									if (timeleft <= 0) {
 										clearInterval(downloadTimer);
