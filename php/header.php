@@ -26,7 +26,7 @@
 	}
 	$the_wedding = "Wedding of " . $pengantin_pria . " &amp; " . $pengantin_wanita;
 	echo "<title>" . $the_wedding . "</title>";
-	echo "<meta name=\"description\" content=\"" . $the_wedding . "\" />";
+	//echo "<meta name=\"description\" content=\"" . $the_wedding . "\" />";
 
 	mysqli_close($conn);
 	//https://stackoverflow.com/a/15864222/7772358
@@ -34,6 +34,25 @@
 	//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
 
 	?>
+	<meta name="description" content="Assalamu'alaikum Wr. Wb.
+Bismillahirrahmanirrahim
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami,
+
+Noordiansyah
+&
+Hilya Dina Rosyida
+
+Pada :
+Minggu, 27 Maret 2022
+
+Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
+Berkaitan dengan pembatasan sosial pada masa pandemi Covid-19, untuknya agar tetap menggunakan masker dan hadir sesuai waktu yang telah ditentukan.
+
+Terima kasih,
+Wassalamuallaikum Wr. Wb.
+
+Kami yang berbahagia,
+Ian & Hilya">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="wedding, Noordiansyah, hilya dina rosyida" />
 	<meta name="author" content="Nandur Digital Invitation" />
@@ -62,6 +81,7 @@
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
+	<meta name="theme-color" content="#9a3d1b">
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">

@@ -174,12 +174,16 @@ include "./php/header.php";
 									$("#alamat").val(result_alamat);
 									$("#sesi").val(string3);
 									document.forms[0].submit();
+									html5QrcodeScanner.clear();
+									// ^ this will stop the scanner (video feed) and clear the scan area.
 								} else {
 									console.log('Terpotong');
 									$("#nama-tamu").val(decodedText.trim());
 									$("#alamat").val('');
 									$("#sesi").val('');
 									document.forms[0].submit();
+									html5QrcodeScanner.clear();
+									// ^ this will stop the scanner (video feed) and clear the scan area.
 								}
 
 								html5QrCode.stop().then((ignore) => {
