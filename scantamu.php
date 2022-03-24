@@ -13,7 +13,7 @@ include "./php/header.php";
 <body>
 	<script type="text/javascript" src="js/html5-qrcode.min.js"></script>
 	<!-- Modal -->
-	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -82,7 +82,7 @@ include "./php/header.php";
 					<div class="row">
 						<div class="animate-box just-center">
 							<h1 id="total-guest-came"><u>Total guest</u></h1>
-							<p>Press the close button to close this information/this information will be closed automatically after <span id="countdown">10</span></p>
+							<p>Press the close button to close this information/this information will be closed automatically after <span id="countdown">5</span> seconds.</p>
 						</div>
 					</div>
 				</div>
@@ -98,31 +98,14 @@ include "./php/header.php";
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="./">Wedding<strong>.</strong></a></div>
+						<div id="fh5co-logo"><a href="#">Wedding<strong>.</strong></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li><a href="./">Home</a></li>
-							<li><a href="about.html">Guest List</a></li>
-							<li class="has-dropdown">
-								<a href="services.html">Services</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
+							<li><a href="./listtamu.php">Guest List</a></li>
+							<li class="active">
+								<a href="./scantamu.php">Scan QR Code</a>
 							</li>
-							<li class="has-dropdown active">
-								<a href="gallery.html">Gallery</a>
-								<ul class="dropdown">
-									<li><a href="#">HTML5</a></li>
-									<li><a href="#">CSS3</a></li>
-									<li><a href="#">Sass</a></li>
-									<li><a href="#">jQuery</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -141,7 +124,7 @@ include "./php/header.php";
 						<script type="text/javascript">
 							window.addEventListener('load', function() {
 								$('#exampleModalCenter').modal('show');
-								var timeleft = 10;
+								var timeleft = 5;
 								var downloadTimer = setInterval(function() {
 									if (timeleft <= 0) {
 										clearInterval(downloadTimer);
@@ -228,7 +211,7 @@ include "./php/header.php";
 										// put your default event here
 										$("#modal-ty").modal('hide');
 									} else {
-										document.getElementById("countdown").innerHTML = timeleft + " seconds.";
+										document.getElementById("countdown").innerHTML = timeleft;
 									}
 									timeleft -= 1;
 								}, 1000);
@@ -256,7 +239,7 @@ include "./php/header.php";
 										// put your default event here
 										$("#modal-ty").modal('hide');
 									} else {
-										document.getElementById("countdown").innerHTML = timeleft + " seconds.";
+										document.getElementById("countdown").innerHTML = timeleft;
 									}
 									timeleft -= 1;
 								}, 1000);
@@ -284,7 +267,7 @@ include "./php/header.php";
 										// put your default event here
 										$("#modal-ty").modal('hide');
 									} else {
-										document.getElementById("countdown").innerHTML = timeleft + " seconds.";
+										document.getElementById("countdown").innerHTML = timeleft;
 									}
 									timeleft -= 1;
 								}, 1000);
@@ -312,7 +295,7 @@ include "./php/header.php";
 										// put your default event here
 										$("#modal-ty").modal('hide');
 									} else {
-										document.getElementById("countdown").innerHTML = timeleft + " seconds.";
+										document.getElementById("countdown").innerHTML = timeleft;
 									}
 									timeleft -= 1;
 								}, 1000);
@@ -340,7 +323,7 @@ include "./php/header.php";
 										// put your default event here
 										$("#modal-ty").modal('hide');
 									} else {
-										document.getElementById("countdown").innerHTML = timeleft + " seconds.";
+										document.getElementById("countdown").innerHTML = timeleft;
 									}
 									timeleft -= 1;
 								}, 1000);
@@ -368,7 +351,7 @@ include "./php/header.php";
 										// put your default event here
 										$("#modal-ty").modal('hide');
 									} else {
-										document.getElementById("countdown").innerHTML = timeleft + " seconds.";
+										document.getElementById("countdown").innerHTML = timeleft;
 									}
 									timeleft -= 1;
 								}, 1000);
