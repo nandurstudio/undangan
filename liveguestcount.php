@@ -19,23 +19,21 @@ include "./php/header.php";
 			<div class="container" style="width:100% !important">
 
 				<div class="row animate-box fadeInUp animated-fast">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-
+					<div class="col-md-8 col-md-offset-2 fh5co-heading" style="margin-bottom: 3em !important;">
 						<div class="col-md-3 col-sm-6 animate-box fadeInUp animated-fast">
 							<div class="feature-center">
 								<span class="icon">
 									<i class="icon-users"></i>
 								</span>
-
 							</div>
 						</div>
-						<h2 id="guest-count-icon">0 invited guests in attendance</h2>
+						<h2 style="font-family: Style Script, Arial, sans-serif !important;" id="guest-count-icon">0 invited guests in attendance</h2>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-md-6" style="width: 35% !important;">
-						<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+						<link rel="stylesheet" href="./css/w3.css">
 						<style>
 							.mySlides {
 								display: none;
@@ -52,10 +50,10 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>CPP</h3>
+									<h1>cPP</h1>
 									<p><a href="https://www.instagram.com/noor.diansyah/" target="blank">@noor.diansyah</a></p>
 									<a href="https://www.instagram.com/noor.diansyah/" target="blank">
-										<img src="./images/pengantin_pria_nft.png" width="50%" height="50%">
+										<img src="./images/pengantin_pria_nft.png" width="75%" height="75%">
 									</a>
 								</div>
 							</div>
@@ -65,10 +63,10 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>CPW</h3>
+									<h1>cPW</h1>
 									<p><a href="https://www.instagram.com/hilyadina_/" target="blank">@hilyadina_</a></p>
 									<a href="https://www.instagram.com/hilyadina_/" target="blank">
-										<img src="./images/pengantin_wanita_nft.png" width="50%" height="50%">
+										<img src="./images/pengantin_wanita_nft.png" width="75%" height="75%">
 									</a>
 								</div>
 							</div>
@@ -77,7 +75,7 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>Photography</h3>
+									<h1>Photography</h1>
 									<p><a href="https://www.instagram.com/mwaafi/" target="blank">@mwaafi</a></p>
 									<a href="https://www.instagram.com/mwaafi/" target="blank">
 										<img src="./images/mwaafi.png" width="75%" height="75%">
@@ -89,7 +87,7 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>Wedding MC</h3>
+									<h1>Wedding Mc</h1>
 									<p><a href="https://www.instagram.com/edoalfarez/" target="blank">@edoalfarez</a></p>
 									<a href="https://www.instagram.com/edoalfarez/" target="blank">
 										<img src="./images/edoalfrez.png" width="75%" height="75%">
@@ -101,7 +99,7 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>Decoration and Attire</h3>
+									<h1>Decoration and Attire</h1>
 									<p><a href="https://www.instagram.com/baskara_wedding_planner/" target="blank">@baskara_wedding_planner</a></p>
 									<a href="https://www.instagram.com/baskara_wedding_planner/" target="blank">
 										<img src="./images/baskara.jpeg" width="100%" height="100%">
@@ -113,7 +111,7 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>MUA</h3>
+									<h1>MUA</h1>
 									<p><a href="https://www.instagram.com/armeitarivaldi/" target="blank">@armeitarivaldi</a></p>
 									<a href="https://www.instagram.com/armeitarivaldi/" target="blank">
 										<img src="./images/armeita.jpeg" width="100%" height="100%">
@@ -125,7 +123,7 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>Catering</h3>
+									<h1>Catering</h1>
 									<p><a href="https://www.instagram.com/teman.catering/" target="blank">@teman.catering</a></p>
 									<a href="https://www.instagram.com/teman.catering/" target="blank">
 										<img src="./images/teman_catering.png" width="100%" height="100%">
@@ -137,7 +135,7 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>Wedding Organizer</h3>
+									<h1>Wedding Organizer</h1>
 									<p><a href="https://www.instagram.com/teman.event/" target="blank">@teman.event</a></p>
 									<a href="https://www.instagram.com/teman.event/" target="blank">
 										<img src="./images/teman_wo.png" width="100%" height="100%">
@@ -149,7 +147,7 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>Drinks</h3>
+									<h1>Drinks</h1>
 									<p><a href="https://www.instagram.com/ruangketiga_/" target="blank">@ruangketiga_</a></p>
 									<a href="https://www.instagram.com/ruangketiga_/" target="blank">
 										<img src="./images/ruang_ketiga.png" width="75%" height="75%">
@@ -161,7 +159,7 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>Music & Entertaiment</h3>
+									<h1>Music & Entertaiment</h1>
 									<p><a href="https://www.instagram.com/dmtmusicentertaiment/" target="blank">@dmtmusicentertaiment</a></p>
 									<a href="https://www.instagram.com/dmtmusicentertaiment/" target="blank">
 										<img src="./images/dmt.png" width="75%" height="75%">
@@ -173,7 +171,7 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>Printed Invitation Card</h3>
+									<h1>Printed Invitation Card</h1>
 									<p><a href="https://www.instagram.com/sakinapercetakan/" target="blank">@sakinapercetakan</a></p>
 									<a href="https://www.instagram.com/sakinapercetakan/" target="blank">
 										<img src="./images/sakina.png" width="75%" height="75%">
@@ -185,7 +183,7 @@ include "./php/header.php";
 									<i class="icon-instagram"></i>
 								</span>
 								<div class="feature-copy">
-									<h3>Support & Digital Invitation</h3>
+									<h1>Support & Digital Invitation</h1>
 									<p><a href="https://www.instagram.com/nandur.studio/" target="blank">@nandur.studio</a></p>
 									<a href="https://www.instagram.com/nandur.studio/" target="blank">
 										<img src="./images/nandur_studio.png" width="75%" height="75%">
