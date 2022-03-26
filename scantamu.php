@@ -124,7 +124,7 @@ include "./php/header.php";
 						<script type="text/javascript">
 							window.addEventListener('load', function() {
 								$('#exampleModalCenter').modal('show');
-								var timeleft = 5;
+								var timeleft = 3;
 								var downloadTimer = setInterval(function() {
 									if (timeleft <= 0) {
 										clearInterval(downloadTimer);

@@ -15,8 +15,8 @@ include "./php/header.php";
 	<div id="page">
 
 
-		<div id="fh5co-couple" style="background-image: url(images/gallery-8.jpg); background-size: cover;">
-			<div class="container">
+		<div id="fh5co-couple" style="background-image: url(images/gallery-8.jpg); background-size: cover; padding: 2em !important;">
+			<div class="container" style="width:100% !important">
 
 				<div class="row animate-box fadeInUp animated-fast">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -34,7 +34,7 @@ include "./php/header.php";
 				</div>
 
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6" style="width: 35% !important;">
 						<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 						<style>
 							.mySlides {
@@ -195,10 +195,8 @@ include "./php/header.php";
 						</div>
 					</div>
 
-					<div class="col-md-6 animate-box fadeInUp animated-fast">
-						<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); ">
-
-
+					<div class="col-md-6 animate-box fadeInUp animated-fast" style="width: 65% !important; height:720px">
+						<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); height:720px">
 							<div id="yt-wrap">
 								<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 								<div id="ytplayer"></div>
@@ -240,7 +238,7 @@ include "./php/header.php";
 			function onYouTubePlayerAPIReady() {
 				player = new YT.Player('ytplayer', {
 					width: '100%',
-					height: '450px',
+					height: '720px',
 					videoId: 'iKxRWdiWUYI',
 					events: {
 						'onReady': onPlayerReady,
@@ -289,9 +287,7 @@ include "./php/header.php";
 		</script>
 
 		<!-- Footer start -->
-		<?php
-		include "./php/footer.php";
-		?>
+
 		<!-- Footer end -->
 	</div>
 
