@@ -1,0 +1,3 @@
+RewriteEngine On # Turn on the rewriting engine
+RewriteRule ^jumlahtamu/?$ apijumlahtamu.php [NC,L]
+RewriteRule ^jumlahtamu/([0-9]+)/?$ apijumlahtamu.php?tamuId=$1 [NC,L]
