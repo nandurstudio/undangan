@@ -11,7 +11,11 @@ $shouts = mysqli_query($conn, $shout_query);
 // }
 
 $name = isset($_POST['name']) ? $_POST['name'] : '';
+$alamat = isset($_POST['alamat']) ? $_POST['alamat'] : '';
 $wish = isset($_POST['wish']) ? $_POST['wish'] : '';
+$attending = isset($_POST['attending']) ? $_POST['attending'] : '';
+$jumlahtamu = isset($_POST['jumlahtamu']) ? $_POST['jumlahtamu'] : '';
+$sesi = isset($_POST['sesi']) ? $_POST['sesi'] : '';
 
 
 // //nilai variable diambil dari tag name
@@ -21,6 +25,6 @@ $wish = isset($_POST['wish']) ? $_POST['wish'] : '';
 // $ucapan = $_POST["ucapan"];
 
 mysqli_query($conn, "SELECT * FROM tr_ucapan");
-mysqli_query($conn, "INSERT INTO `tr_ucapan` (`ucapanId`, `date`, `nama`, `ucapan`) VALUES (NULL, current_timestamp(), '$name', '$wish');");
+mysqli_query($conn, "INSERT INTO `tr_ucapan` (`ucapanId`, `nama`, `alamat`, `ucapan`, `attending`, `jumlahtamu`, `sesi`, `date`) VALUES (NULL, '$name', '$alamat', '$wish', '$attending', '$jumlahtamu', '$sesi', current_timestamp());");
 //header("Location:/undangan/php/wish.php");
 ?>
