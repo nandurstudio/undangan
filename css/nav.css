@@ -1,0 +1,85 @@
+.navee {
+    position: fixed;
+    z-index: 10000;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    height: 75px;
+    width: 100%;
+    margin: auto;
+    background-color: #fff;
+    padding: 25px 20px;
+    /* border-bottom-left-radius: 30px; */
+    /* border-bottom-right-radius: 30px; */
+    box-shadow: 0px 5px 40px rgb(0 0 0 / 80%);
+}
+
+.navee-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.navee-text {
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.material-icons {
+    display: inline;
+    font-size: 32px;
+    transition: color .3s;
+}
+
+/* */
+
+.navee-item.active {
+    flex-grow: 3;
+    border-radius: 30px;
+    background: #eee;
+    justify-content: flex-start;
+}
+
+.navee-item.active > .navee-text {
+    display: inline-block;
+}
+
+.navee-item.active > .material-icons.home-icon {
+    color: #5a35b5;
+}
+
+.material-icons.home-icon ~ .navee-text {
+    color: #5a35b5;
+}
+
+.navee-item.active > .material-icons.favorite-icon {
+    color: #c9329a;
+}
+
+.material-icons.favorite-icon ~ .navee-text {
+    color: #c9329a;
+}
+
+.navee-item.active > .material-icons.search-icon {
+    color: #e5a023;
+}
+
+.material-icons.search-icon ~ .nav-text {
+    color: #e5a023;
+}
+
+.nav-item.active > .material-icons.person-icon {
+    color: #0091a9;
+}
+
+.material-icons.person-icon ~ .nav-text {
+    color: #0091a9;
+}

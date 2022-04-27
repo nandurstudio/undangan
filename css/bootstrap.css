@@ -373,7 +373,7 @@ img {
 }
 
 .img-responsive {
-  display: block;
+  display: inline;
   max-width: 100%;
   height: auto;
 }
@@ -3448,7 +3448,7 @@ fieldset[disabled] .btn-link:focus {
 
 .btn-block {
   display: block;
-  width: 100%;
+  width: 25%;
 }
 
 .btn-block+.btn-block {
@@ -7370,7 +7370,7 @@ button.close {
 
 .cover {
   /* The image used */
-  background-image: url("../images/cover_ian.jpg");
+  background-image: url("../images/denaya/cover_denaya.jpg");
 
   /* Full height */
   height: 100%;
@@ -7386,7 +7386,7 @@ button.close {
   top: 0px;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: center;
+  justify-content: start;
   left: 0px;
   z-index: 10001;
   padding: 10px;
@@ -7394,13 +7394,17 @@ button.close {
 
 .name-cover {
   z-index: 10002;
-  background-color: #00000094;
+  /* background-color: #00000094; */
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  width: 100%;
+  padding: 50px 10px 10px 10px;
+  width: 350px;
+}
+
+.kepada {
+  color: #70866b;
+  font-family: "Karla", Arial, sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .the-wedding-of {
@@ -7411,19 +7415,124 @@ button.close {
 }
 
 .nama-pengantin {
-  font-family: 'Style Script', cursive;
+  font-family: 'fraunces_144pt_softitalic', serif;
+  font-weight: 300;
+  font-style: italic;
   text-align: center;
   font-size: xx-large;
+  font-size: -webkit-xxx-large;
   color: #fff;
+}
+
+.nama-tamu {
+  font-family: 'fraunces_9pt_softitalic', serif;
+  text-align: center;
+  font-size: xx-large;
+  color: #70866b;
+}
+
+.nama-pengantin-foto {
+  font-family: 'fraunces_9ptsemibold_italic', serif;
+  text-align: center;
+  font-size: xx-large;
+  color: #3d4742;
+}
+
+.hari-pernikahan {
+  color: #fff;
+  font-size: smaller;
+  font-family: "Karla", Arial, sans-serif;
+  font-weight: lighter;
+}
+
+.akad-nikah {
+  color: #2a332f;
+  font-size: x-large;
+  font-family: 'fraunces_9ptsemibold_italic', serif;
+  text-align: center;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.waktu-akad-nikah {
+  color: #566d66;
+  font-size: large;
+  font-family: 'fraunces_9ptregular', serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+.big-date {
+  color: #fff;
+  font-size: 45px;
+  text-shadow: 4px 4px 4px #917c52;
+  font-family: 'fraunces_9ptregular', serif;
+  text-align: center;
+  background-image: url(../images/denaya/flower_top2.png);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0px 0px 70px 0px;
+}
+
+.nama-tanggal {
+  color: #c3e3d4;
+  font-family: "fraunces_9pt_softlight", Arial, sans-serif;
+  font-weight: 100;
+  font-size: medium;
+}
+
+.pria {
+  font-weight: 500 !important;
+  text-align: left !important;
+  color: #8a6d5a !important;
+}
+
+.wanita {
+  font-weight: 500 !important;
+  text-align: right !important;
+  color: #8a6d5a !important;
+}
+
+.logo-pengantin {
+  position: relative;
+  display: block;
+  margin: -15px auto -15px auto;
+  z-index: -1;
+}
+
+.logo-qrcode {
+  height: 100px;
+  text-align: center;
+  display: inline;
+}
+
+.foto-pengantin{
+  width: 400px;
+}
+
+.logo-jaga-jarak {
+  height: 100px !important;
+}
+
+.sec-2 {
+  margin: 20px !important;
+  margin: auto auto 50px auto !important;
+  display: flex !important;
+  align-content: center;
+  justify-content: center;
 }
 
 .open-invitation {
   border-radius: 4px;
   /* opacity: 0.5; */
-  font-family: monospace;
+  font-family: 'Karla', sans-serif !important;
+  text-transform: uppercase;
   color: #fff;
+  font-size: small !important;
+  font-style: normal !important;
   /* font-weight: bold; */
-  background-color: #9a3d1b;
+  background-color: #bfa594;
 }
 
 blockquote {
@@ -7449,11 +7558,12 @@ blockquote p::after {
 
 .color-theme {
   color: #9a3d1b !important;
+  font-size: x-large;
 }
 
 .protokol-image {
   width: 80%;
-  
+
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -7479,7 +7589,7 @@ blockquote p::after {
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .styled-table tbody tr {
@@ -7498,4 +7608,5 @@ blockquote p::after {
   font-weight: bold;
   color: #009879;
 }
+
 /*# sourceMappingURL=bootstrap.css.map */
