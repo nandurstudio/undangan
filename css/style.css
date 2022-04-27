@@ -904,9 +904,9 @@ figure{
 }
 
 @media screen and (max-width: 768px) {
-  #map {
-    /* height: 200px; */
-  }
+  /* #map {
+    height: 200px;
+  } */
 }
 
 .fh5co-social-icons {
@@ -956,7 +956,6 @@ figure{
   left: 0;
   top: .05em;
   font-family: 'icomoon';
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -1770,7 +1769,6 @@ form label {
   position: absolute;
   right: 0px;
   font-family: 'icomoon';
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -2273,7 +2271,6 @@ form label {
 
 .text-papper {
   padding-top: 10%;
-  padding-bottom: 10%;
 }
 
 .kolom {
