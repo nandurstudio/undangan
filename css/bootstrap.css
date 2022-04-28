@@ -2765,7 +2765,7 @@ select[multiple].input-lg,
 @media (min-width: 768px) {
   .form-inline .form-group {
     display: inline-block;
-    margin-bottom: 0;
+    margin-bottom: 15px;
     vertical-align: middle;
   }
 

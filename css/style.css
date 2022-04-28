@@ -111,6 +111,12 @@ p {
   padding: 10px;
 }
 
+.counter-span {
+  font-family: "Karla", Arial, sans-serif;
+  color: #2a332f;
+  font-size: medium;
+}
+
 .p-protokol {
   font-family: "Karla", Arial, sans-serif;
   color: #2a332f;

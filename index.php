@@ -104,6 +104,7 @@
 
 	<!-- Nav style  -->
 	<link rel="stylesheet" href="css/splide.min.css">
+	<link rel="stylesheet" href="css/tooltips.scss">
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -327,7 +328,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div id="fh5co-couple" class="bg-carton">
 			<div class="container">
 				<div class="row">
@@ -441,28 +441,27 @@
 
 						<div class="col-md-8 col-md-offset-2 text-center animate-box">
 							<div class="akad-nikah">Akad Nikah</div>
-							<div class="waktu-akad-nikah">08.00 WIB - 10.00 WIB</div>
+							<div class="waktu-akad-nikah">15.30 WIB - 16.30 WIB</div>
 							<br />
 							<div class="akad-nikah">Resepsi</div>
 							<?php
 							if (isset($_GET['s'])) {
 								$sesi = htmlspecialchars($_GET['s']); // Getting parameter value inside PHP variable
 								if ($sesi == "1") {
-									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 20.30 WIB</div>";
+									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 19.30 WIB</div>";
 								} elseif ($sesi == "2") {
-									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 20.30 WIB</div>";
+									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 19.30 WIB</div>";
 								} elseif ($sesi == "3") {
-									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 20.30 WIB</div>";
+									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 19.30 WIB</div>";
 								} else {
-									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 20.30 WIB</div>";
+									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 19.30 WIB</div>";
 								}
 							} else {
 								// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
 								// echo $actual_link;
-								echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 20.30 WIB</div>";
+								echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 19.30 WIB</div>";
 							}
 							?>
-							<div class="waktu-akad-nikah">18.30 WIB - 20.30 WIB</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center animate-box">
 							<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator">
@@ -479,7 +478,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center animate-box">
 						<div class="nama-pengantin-foto">Galeri Foto</div>
-						<div class="splide" role="group" aria-label="Splide Basic HTML Example">
+						<div class="splide" id="slider2" role="group" aria-label="Splide Basic HTML Example">
 							<div class="splide__track">
 								<ul class="splide__list">
 									<li class="splide__slide">
@@ -569,15 +568,16 @@
 											<div class="feature-center">
 												<span class="icon">
 													<i class="icon-users"></i>
-												</span><?php
-														include "./php/connection.php";
-														$guest_query = "SELECT sum(jumlahtamu) as jumlahtamu FROM `tr_ucapan`";
-														$guest_count = mysqli_query($conn, $guest_query);
-														$row = mysqli_fetch_assoc($guest_count);
-														$sum = $row['jumlahtamu'];
-														echo "<span id=\"guest-count-icon\" class=\"counter js-counter\" data-from=\"0\" data-to=\"" . $sum . "\" data-speed=\"5000\" data-refresh-interval=\"50\">" . $sum;
-														?></span>
-												<span class="counter-label">Estimated Guests</span>
+												</span>
+												<span class="counter-label counter-span">Estimasi jumlah tamu hadir: </span>
+												<?php
+												include "./php/connection.php";
+												$guest_query = "SELECT sum(jumlahtamu) as jumlahtamu FROM `tr_ucapan`";
+												$guest_count = mysqli_query($conn, $guest_query);
+												$row = mysqli_fetch_assoc($guest_count);
+												$sum = $row['jumlahtamu'];
+												echo "<span id=\"guest-count-icon\" class=\"counter js-counter counter-span\" data-from=\"0\" data-to=\"" . $sum . "\" data-speed=\"5000\" data-refresh-interval=\"50\">" . $sum;
+												?></span>
 											</div>
 										</div>
 									</div>
@@ -588,79 +588,106 @@
 						</iframe>
 						<form id="wishForm" class="form-inline" action="./php/wish.php" method="post" target="content-reservasi">
 							<div class="row animate-box">
-								<div class="col-md-12 col-md-offset-4">
-									<div class="col-md-4 col-sm-4">
-										<div class="form-group">
-											<label for="name" class="custom-label">Nama Tamu</label>
-											<input type="name" name="name" id="name" class="form-control" placeholder="Nama tamu" disabled></input>
-											<?php
-											if (isset($_GET['to'])) {
-												$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
-												$rep_guest_name = str_replace('&amp;', '&', $guest_name);
-												echo "<script>document.querySelector(\"#name\").value = \"" . $rep_guest_name . "\";</script>";
-											} else {
-												echo "<script>document.querySelector(\"#name\").value = \"Anonymous\";</script>";
-											}
-											?>
-										</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="name" class="custom-label">Nama Tamu</label>
+										<input type="name" name="name" id="name" class="form-control" placeholder="Nama tamu" disabled></input>
+										<?php
+										if (isset($_GET['to'])) {
+											$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+											echo "<script>document.querySelector(\"#name\").value = \"" . $rep_guest_name . "\";</script>";
+										} else {
+											echo "<script>document.querySelector(\"#name\").value = \"Anonymous\";</script>";
+										}
+										?>
 									</div>
 								</div>
 							</div>
 							<div class="row animate-box">
-								<div class="col-md-12 col-md-offset-4">
-									<div class="col-md-4 col-sm-4">
-										<div class="form-group">
-											<label for="alamat" class="custom-label">Alamat</label>
-											<input type="text" class="form-control" id="alamat" placeholder="0" disabled></input>
-											<?php
-											if (isset($_GET['adr'])) {
-												$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
-												echo "<script>document.querySelector(\"#alamat\").value = \"" . $alamat . "\";</script>";
-											} else {
-												echo "<script>document.querySelector(\"#alamat\").value = \"None\";</script>";
-											}
-											?>
-										</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="alamat" class="custom-label">Alamat</label>
+										<input type="text" class="form-control" id="alamat" placeholder="0" disabled></input>
+										<?php
+										if (isset($_GET['adr'])) {
+											$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
+											echo "<script>document.querySelector(\"#alamat\").value = \"" . $alamat . "\";</script>";
+										} else {
+											echo "<script>document.querySelector(\"#alamat\").value = \"None\";</script>";
+										}
+										?>
 									</div>
 								</div>
 							</div>
 							<div class="row animate-box">
-								<div class="col-md-12 col-md-offset-4">
-									<div class="col-md-4 col-sm-4">
-										<div class="form-group">
-											<label for="sesi-reservasi" class="custom-label">Sesi</label>
-											<input type="text" class="form-control" id="sesi-reservasi" placeholder="0" disabled></input>
-											<?php
-											if (isset($_GET['s'])) {
-												$sesi = htmlspecialchars($_GET['s']); // Getting parameter value inside PHP variable
-												echo "<script>document.querySelector(\"#sesi-reservasi\").value = \"" . $sesi . "\";</script>";
-											} else {
-												echo "<script>document.querySelector(\"#sesi-reservasi\").value = \"1\";</script>";
-											}
-											?>
-										</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="sesi-reservasi" class="custom-label">Sesi</label>
+										<input type="text" class="form-control" id="sesi-reservasi" placeholder="0" disabled></input>
+										<?php
+										if (isset($_GET['s'])) {
+											$sesi = htmlspecialchars($_GET['s']); // Getting parameter value inside PHP variable
+											echo "<script>document.querySelector(\"#sesi-reservasi\").value = \"" . $sesi . "\";</script>";
+										} else {
+											echo "<script>document.querySelector(\"#sesi-reservasi\").value = \"1\";</script>";
+										}
+										?>
 									</div>
 								</div>
 							</div>
 							<div class="row animate-box">
-								<div class="col-md-12 col-md-offset-4">
-									<div class="col-md-4 col-sm-4">
-										<div class="form-group">
-											<label for="wish" class="custom-label">Ucapan & Do'a Restu</label>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="wish" class="custom-label">Ucapan & Do'a Restu</label>
+										<?php
+										include "./php/connection.php";
+										if (isset($_GET['to'])) {
+											$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+										} else {
+											$rep_guest_name = 'Anonymous';
+										}
+										if (isset($_GET['adr'])) {
+											$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
+										} else {
+											$alamat = '';
+										}
+										$query = "SELECT nama, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE nama ='$rep_guest_name' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+										$result_query = mysqli_query($conn, $query);
+
+										if (mysqli_num_rows($result_query) > 0) {
+											// output data of each row
+											while ($row = mysqli_fetch_assoc($result_query)) {
+												echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Ungkapkan ucapan dan do'a restumu untuk calon pengantin\">" . $row["ucapan"] . "</textarea>";
+											}
+										} else {
+											echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Ungkapkan ucapan dan do'a restumu untuk calon pengantin\"></textarea>";
+										}
+										mysqli_close($conn);
+										//https://stackoverflow.com/a/15864222/7772358
+										//echo $_GET['to'];
+										//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+										?>
+									</div>
+								</div>
+							</div>
+							<div class="row animate-box">
+								<div class="col-md-12">
+									<div class="form-group">
+										<select name="konfirmasi-kehadiran" class="form-control" id="konfirmasi-kehadiran">
 											<?php
 											include "./php/connection.php";
 											if (isset($_GET['to'])) {
 												$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
 												$rep_guest_name = str_replace('&amp;', '&', $guest_name);
-												echo "<script>document.querySelector(\"#name\").value = \"" . $rep_guest_name . "\";</script>";
 											} else {
-												echo "<script>document.querySelector(\"#name\").value = \"Anonymous\";</script>";
+												$rep_guest_name = 'Anonymous';
 											}
 											if (isset($_GET['adr'])) {
 												$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
-												echo "<script>document.querySelector(\"#alamat\").value = \"" . $alamat . "\";</script>";
 											} else {
-												echo "<script>document.querySelector(\"#alamat\").value = \"None\";</script>";
+												$alamat = '';
 											}
 											$query = "SELECT nama, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE nama ='$rep_guest_name' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
 											$result_query = mysqli_query($conn, $query);
@@ -668,116 +695,74 @@
 											if (mysqli_num_rows($result_query) > 0) {
 												// output data of each row
 												while ($row = mysqli_fetch_assoc($result_query)) {
-													echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Ungkapkan ucapan dan do'a restumu untuk calon pengantin\">" . $row["ucapan"] . "</textarea>";
-												}
-											} else {
-												echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Ungkapkan ucapan dan do'a restumu untuk calon pengantin\"></textarea>";
-											}
-											mysqli_close($conn);
-											//https://stackoverflow.com/a/15864222/7772358
-											//echo $_GET['to'];
-											//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
-											?>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row animate-box">
-								<div class="col-md-12 col-md-offset-4">
-									<div class="col-md-4 col-sm-4">
-										<div class="form-group">
-											<select name="konfirmasi-kehadiran" class="form-control" id="konfirmasi-kehadiran">
-												<option disabled="" hidden="" value="">Konfirmasi Kehadiran</option>";
-												<option style="color: black;" value="1">Hadir</option>";
-												<option selected="" style="color: black;" value="0">Tidak Hadir</option>";
-												<?php
-												include "./php/connection.php";
-												if (isset($_GET['to'])) {
-													$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
-													$rep_guest_name = str_replace('&amp;', '&', $guest_name);
-													echo "<script>document.querySelector(\"#name\").value = \"" . $rep_guest_name . "\";</script>";
-												} else {
-													echo "<script>document.querySelector(\"#name\").value = \"Anonymous\";</script>";
-												}
-												if (isset($_GET['adr'])) {
-													$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
-													echo "<script>document.querySelector(\"#alamat\").value = \"" . $alamat . "\";</script>";
-												} else {
-													echo "<script>document.querySelector(\"#alamat\").value = \"None\";</script>";
-												}
-												$query = "SELECT nama, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE nama ='$rep_guest_name' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
-												$result_query = mysqli_query($conn, $query);
-
-												if (mysqli_num_rows($result_query) > 0) {
-													// output data of each row
-													while ($row = mysqli_fetch_assoc($result_query)) {
-														if ($row["attending"] = "0") {
-															echo "<script>$('#konfirmasi-kehadiran').prop('selectedIndex', 1);</script>";
-														} elseif ($row["attending"] = "1") {
-															echo "<script>$('#konfirmasi-kehadiran').prop('selectedIndex', 2);</script>";
-														} else {
-															echo "<script>$('#konfirmasi-kehadiran').prop('selectedIndex', 0);</script>";
-														}
+													if ($row["attending"] = "0") {
+														echo "<option selected=\"\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
+														echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Hadir</option>";
+														echo "<option selected=\"selected\" style=\"color: black;\" value=\"0\">Tidak Hadir</option>";
+													} elseif ($row["attending"] = "1") {
+														echo "<option selected=\"\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
+														echo "<option selected=\"selected\" style=\"color: black;\" value=\"1\">Hadir</option>";
+														echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Hadir</option>";
+													} else {
+														echo "<option selected=\"selected\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
+														echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Hadir</option>";
+														echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Hadir</option>";
 													}
-												} else {
-													echo "<script>$('#konfirmasi-kehadiran').prop('selectedIndex', 0);</script>";
-												}
-												mysqli_close($conn);
-												//https://stackoverflow.com/a/15864222/7772358
-												//echo $_GET['to'];
-												//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
-												?>
-											</select>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row animate-box">
-								<div class="col-md-12 col-md-offset-4">
-									<div class="col-md-4 col-sm-4">
-										<div class="form-group">
-											<label for="jumlahtamu" class="custom-label">Jumlah Tamu</label>
-											<input type="number" class="form-control" id="jumlahtamu" placeholder="0"></input>
-											<?php
-											include "./php/connection.php";
-											if (isset($_GET['to'])) {
-												$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
-												$rep_guest_name = str_replace('&amp;', '&', $guest_name);
-												echo "<script>document.querySelector(\"#name\").value = \"" . $rep_guest_name . "\";</script>";
-											} else {
-												echo "<script>document.querySelector(\"#name\").value = \"Anonymous\";</script>";
-											}
-											if (isset($_GET['adr'])) {
-												$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
-												echo "<script>document.querySelector(\"#alamat\").value = \"" . $alamat . "\";</script>";
-											} else {
-												echo "<script>document.querySelector(\"#alamat\").value = \"None\";</script>";
-											}
-											$query = "SELECT nama, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE nama ='$rep_guest_name' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
-											$result_query = mysqli_query($conn, $query);
-
-											if (mysqli_num_rows($result_query) > 0) {
-												// output data of each row
-												while ($row = mysqli_fetch_assoc($result_query)) {
-													echo "<script>document.querySelector(\"#jumlahtamu\").value = \"" . intval(trim($row['jumlahtamu'])) . "\";</script>";
 												}
 											} else {
-												echo "<script>document.querySelector(\"#jumlahtamu\").value = \"\";</script>";
+												echo "<option selected=\"selected\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
+												echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Hadir</option>";
+												echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Hadir</option>";
 											}
 											mysqli_close($conn);
 											//https://stackoverflow.com/a/15864222/7772358
 											//echo $_GET['to'];
 											//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
 											?>
-										</div>
+										</select>
 									</div>
 								</div>
 							</div>
 							<div class="row animate-box">
-								<div class="col-md-12 col-md-offset-4">
-									<div class="col-md-4 col-sm-4">
-										<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Kirim</button>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="jumlahtamu" class="custom-label">Jumlah Tamu</label>
+										<input type="number" class="form-control" id="jumlahtamu" placeholder="0"></input>
+										<?php
+										include "./php/connection.php";
+										if (isset($_GET['to'])) {
+											$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+										} else {
+											$rep_guest_name = 'Anonymous';
+										}
+										if (isset($_GET['adr'])) {
+											$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
+										} else {
+											$alamat = '';
+										}
+										$query = "SELECT nama, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE nama ='$rep_guest_name' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+										$result_query = mysqli_query($conn, $query);
+
+										if (mysqli_num_rows($result_query) > 0) {
+											// output data of each row
+											while ($row = mysqli_fetch_assoc($result_query)) {
+												echo "<script>document.querySelector(\"#jumlahtamu\").value = \"" . intval(trim($row['jumlahtamu'])) . "\";</script>";
+											}
+										} else {
+											echo "<script>document.querySelector(\"#jumlahtamu\").value = \"\";</script>";
+										}
+										mysqli_close($conn);
+										//https://stackoverflow.com/a/15864222/7772358
+										//echo $_GET['to'];
+										//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+										?>
 									</div>
+								</div>
+							</div>
+							<div class="row animate-box">
+								<div class="col-md-12">
+									<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Kirim</button>
 								</div>
 							</div>
 						</form>
@@ -835,29 +820,27 @@
 							}
 						</script>
 						<div class="row animate-box">
-							<div class="col-md-12 col-md-offset-4">
+							<div class="col-md-12">
 								<form class="form-inline">
-									<div class="col-md-4 col-sm-4">
-										<div class="form-group">
-											<div class="fh5co-started form-control" style="height: 300px; overflow: auto;">
-												<div id="minichat">
-													<?php
-													while ($row = mysqli_fetch_assoc($shouts)) :
-														echo "<div style=\"text-align: left;\">";
-														echo "<strong>" . ucwords(strtolower($row["nama"])) . "</strong>";
-														$att = $row["attending"];
-														if ($att == 1) {
-															echo "<span class=\"hadir\">Hadir</span>";
-														} elseif ($att == 0) {
-															echo "<span class=\"hadir tidak-hadir\">Tidak Hadir</span>";
-														} else {
-															echo "<span class=\"hadir tidak-konfirmasi\">Tidak Konfirmasi</span>";
-														}
-														echo "<p>" . $row['ucapan'];
-														echo "<time class=\"timeago\" style=\"text-align: right;display: flex;flex-direction: column-reverse;\" datetime=\"" . $row["date"] . "\">";
-														echo "</time></p></div>";
-													endwhile; ?>
-												</div>
+									<div class="form-group">
+										<div class="fh5co-started form-control" style="height: 300px; overflow: auto;">
+											<div id="minichat">
+												<?php
+												while ($row = mysqli_fetch_assoc($shouts)) :
+													echo "<div style=\"text-align: left;\">";
+													echo "<strong>" . ucwords(strtolower($row["nama"])) . " </strong>";
+													$att = $row["attending"];
+													if ($att == 1) {
+														echo "<span class=\"hadir\">Hadir</span>";
+													} elseif ($att == 0) {
+														echo "<span class=\"hadir tidak-hadir\">Tidak Hadir</span>";
+													} else {
+														echo "<span class=\"hadir tidak-konfirmasi\">Tidak Konfirmasi</span>";
+													}
+													echo "<p>" . $row['ucapan'];
+													echo "<time class=\"timeago\" style=\"text-align: right;display: flex;flex-direction: column-reverse;\" datetime=\"" . $row["date"] . "\">";
+													echo "</time></p></div>";
+												endwhile; ?>
 											</div>
 										</div>
 									</div>
@@ -900,7 +883,11 @@
 						<div class="nama-pengantin-foto">Amplop Digital</div>
 						<p>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.</p>
 						<div class="nama-pengantin-foto">Alamat Kirim Kado</div>
-						<p>Jalan. jembatan I No.14 Rt.002 Rw.005 Condet Kel. Balekambang Kec. Kramatjati Jakarta Timur</p>
+						<!-- 1. Define some markup -->
+						<p id="alamat-kirim-kado">Jalan. jembatan I No.14 Rt.002 Rw.005 Condet Kel. Balekambang Kec. Kramatjati Jakarta Timur</p>
+						<button id="copy-data" type="button" class="tooltipped tooltipped-w m-2 p-2 border btn" aria-label="Copied" data-clipboard-action="copy" data-clipboard-target="#alamat-kirim-kado">
+							Copy
+						</button>
 					</div>
 				</div>
 			</div>
@@ -1010,8 +997,16 @@
 	<script src="js/splide.min.js"></script>
 	<script src="js/splide-renderer.min.js"></script>
 	<script src="js/jquery.timeago.js"></script>
+	<script src="node_modules/clipboard/dist/clipboard.min.js"></script>
 
 	<script>
+		var clipboard = new ClipboardJS('.btn');
+
+		clipboard.on('success', function(e) {
+			e.clearSelection();
+			$('#copy-data').text('Copied!');
+		});
+
 		$(function() {
 			$("time.timeago").timeago();
 		});
