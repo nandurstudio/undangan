@@ -44,7 +44,7 @@
 	" . $pengantin_wanita . "
 	
 	Pada :
-	Minggu, 27 Maret 2022
+	Minggu, 22 Mei 2022
 	
 	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
 	Berkaitan dengan pembatasan sosial pada masa pandemi Covid-19, untuknya agar tetap menggunakan masker dan hadir sesuai waktu yang telah ditentukan.
@@ -64,7 +64,7 @@
 
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="wedding, Noordiansyah, hilya dina rosyida" />
+	<meta name="keywords" content="wedding, Naufal, Denaya" />
 	<meta name="author" content="Nandur Digital Invitation" />
 
 	<!-- 
@@ -82,14 +82,14 @@
 	 -->
 
 	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:description" content="" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
+	<meta property="og:title" content="Pernikahan Naufal & Denaya" />
+	<meta property="og:image" content="images/denaya/og_image.png" />
+	<meta property="og:url" content="https://naufal-denaya.lembarundangan.com" />
+	<meta property="og:site_name" content="Lembar Undangan Digital" />
+	<meta property="og:description" content="Minggu, 22 Mei 2022" />
+	<meta name="twitter:title" content="Pernikahan Naufal & Denaya" />
+	<meta name="twitter:image" content="images/denaya/og_image.png" />
+	<meta name="twitter:url" content="https://naufal-denaya.lembarundangan.com" />
 	<meta name="twitter:card" content="" />
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
