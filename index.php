@@ -34,9 +34,28 @@
 	} else {
 		echo "0 results";
 	}
-	$the_wedding = "Wedding of " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_wedding = "Lembar Undangan " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_desc = "Assalamu'alaikum Wr. Wb.
+	Bismillahirrahmanirrahim
+	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami,
+	
+	" . $pengantin_pria . "
+	&
+	" . $pengantin_wanita . "
+	
+	Pada :
+	Minggu, 27 Maret 2022
+	
+	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
+	Berkaitan dengan pembatasan sosial pada masa pandemi Covid-19, untuknya agar tetap menggunakan masker dan hadir sesuai waktu yang telah ditentukan.
+	
+	Terima kasih,
+	Wassalamuallaikum Wr. Wb.
+	
+	Kami yang berbahagia,
+	" . $pengantin_pria . " &amp; " . $pengantin_wanita."";
 	echo "<title>" . $the_wedding . "</title>";
-	echo "<meta name=\"description\" content=\"" . $the_wedding . "\" />";
+	echo "<meta name=\"description\" content=\"" . $the_desc . "\" />";
 
 	mysqli_close($conn);
 	//https://stackoverflow.com/a/15864222/7772358
@@ -82,7 +101,7 @@
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="./images/denaya/LOGONDA_brown_120x101.ico">
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -450,16 +469,14 @@
 								if ($sesi == "1") {
 									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 19.30 WIB</div>";
 								} elseif ($sesi == "2") {
-									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 19.30 WIB</div>";
-								} elseif ($sesi == "3") {
-									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 19.30 WIB</div>";
+									echo "<div class=\"waktu-akad-nikah\">19.30 WIB - 20.20 WIB</div>";
 								} else {
-									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 19.30 WIB</div>";
+									echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 20.20 WIB</div>";
 								}
 							} else {
 								// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
 								// echo $actual_link;
-								echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 19.30 WIB</div>";
+								echo "<div class=\"waktu-akad-nikah\">18.30 WIB - 20.20 WIB</div>";
 							}
 							?>
 						</div>
