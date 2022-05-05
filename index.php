@@ -65,8 +65,13 @@
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="wedding, Naufal, Denaya" />
-	<meta name="author" content="Nandur Digital Invitation" />
-
+	<meta name="author" content="Nandur Digital Invitation" /><!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#bfa594">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#bfa594">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#bfa594">
+	<link rel="icon" sizes="192x192" href="images/denaya/LOGONDA_brown_192.png">
 	<!-- 
 	//////////////////////////////////////////////////////
 
@@ -376,6 +381,15 @@
 						//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
 						?>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<!-- Mempelai Wanita -->
+		<div id="fh5co-couple" class="bg-carton one-page">
+			<div class="container">
+				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="nama-pengantin-foto mempelai js animate__animated">Mempelai Wanita</div>
 						<a class="demo js animate__animated" href="images/denaya/denaya_flower.png" data-lightbox="example-1">
@@ -440,7 +454,7 @@
 						<div class="big-date js animate__animated">22.05.22</div>
 						<div id="demo"></div>
 						<div class="simply-countdown simply-countdown-one js animate__animated"></div>
-						<p><a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NGViOGRza28zYXR0M2piZDhqa3BuamhyYWogbmFuZGFuZy5kaGVAbQ&tmsrc=nandang.dhe%40gmail.com" class="btn btn-default btn-sm js animate__animated" target="blank">Tambah ke Kalender</a></p>
+						<p><a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Naufal+%26+Denaya&details=Dengan+senang+hati%2C+kami+mengundang+Anda+untuk+hadir+di+acara+pernikahan+kami.%0A%0A22.05.22%0A%0AAkad+Nikah%0A15.30+WIB+-+16.30+WIB%0A%0AResepsi%0A18.30+WIB+-+19.30+WIB%0A%0AKampung+Batu+Malakasari%0AJl.+Raya+Banjaran+Rencong%2C+Malakasari%2C+Kec.+Baleendah%2C+Kabupaten+Bandung%2C+Jawa+Barat+40375%0A%0AGoogle+Maps%0Ahttps%3A%2F%2Fgoo.gl%2Fmaps%2FJ2niHYyzsmvpLYx46&location=Kampung+Batu+Malakasari+Ecopark%2C+Jl.+Raya+Banjaran+Rencong%2C+Malakasari%2C+Kec.+Baleendah%2C+Kabupaten+Bandung%2C+Jawa+Barat+40375%2C+Indonesia&dates=20220522T083000Z%2F20220522T123000Z&&ctz=Asia/Jakarta" class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Kalender</a></p>
 						<br />
 						<br />
 						<div class="col-md-8 col-md-offset-2 text-center">
@@ -667,7 +681,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section-ucapan">
+	<section>
 		<!-- Reservasi -->
 		<div id="fh5co-couple" class="bg-carton vh150">
 			<div class="container">
