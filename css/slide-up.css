@@ -1,0 +1,53 @@
+.arrow {
+    opacity: 0;
+    position: absolute;
+        left: 50%;
+        top: 50%;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.arrow-first {
+    animation: arrow-movement 3s ease-in-out infinite;
+}
+.arrow-second {
+    animation: arrow-movement 3s 2s ease-in-out infinite;
+}
+.arrow-thrid {
+    animation: arrow-movement 3s 1s ease-in-out infinite;
+}
+
+.arrow:before,
+.arrow:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 3px;
+    /* position: initial; */
+    top: 0;
+    left: 0;
+    width: 25px;
+}
+
+.arrow:before {
+    transform: rotate(-45deg) translateX(-39%);
+    transform-origin: top left;
+}
+
+.arrow:after {
+    transform: rotate(45deg) translateX(25%);
+    transform-origin: top right;
+}
+
+@keyframes arrow-movement {
+    0% { 
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+        top: 45%;
+    }
+}

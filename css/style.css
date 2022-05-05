@@ -111,6 +111,10 @@ p {
   padding: 10px;
 }
 
+.ortu {
+  font-size: large;
+}
+
 .counter-span {
   font-family: "Karla", Arial, sans-serif;
   color: #2a332f;
@@ -135,7 +139,7 @@ h6 {
   font-weight: 400;
 }
 
-figure{
+figure {
   color: #2d3431;
   font-family: "fraunces_9pt_softlight", Arial, sans-serif;
   font-weight: 400;
@@ -398,7 +402,7 @@ figure{
 }
 
 .fh5co-cover {
-  height: 900px;
+  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -426,7 +430,7 @@ figure{
 
 @media screen and (max-width: 768px) {
   .fh5co-cover {
-    height: 768px;
+    height: 100vh;
   }
 }
 
@@ -441,17 +445,17 @@ figure{
 
   .fh5co-cover .display-t,
   .fh5co-cover .display-tc {
-    height: 600px;
+    height: 100vh;
   }
 }
 
 .fh5co-cover.fh5co-cover-sm {
-  height: 600px;
+  height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
   .fh5co-cover.fh5co-cover-sm {
-    height: 400px;
+    height: 100vh;
   }
 }
 
@@ -1132,8 +1136,8 @@ form label {
 .simply-countdown>.simply-section {
   /* coutndown blocks */
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: rgba(139, 155, 121, 0.8);
   margin: 0 4px;
   -webkit-border-radius: 50%;
@@ -1175,7 +1179,7 @@ form label {
 }
 
 .simply-countdown>.simply-section .simply-amount {
-  font-size: 30px;
+  font-size: xx-large;
   /* amounts */
 }
 
@@ -1186,7 +1190,7 @@ form label {
   /* words */
 }
 
-.simply-word{
+.simply-word {
   font-family: "Karla", Arial, serif !important;
   color: #2a332f !important;
   font-size: smaller !important;
@@ -1400,7 +1404,7 @@ form label {
   height: 90px;
   font-size: 40px;
   line-height: 40px;
-  color: #9a3d1b;
+  color: #8b9b79;
 }
 
 .feature-center p,
@@ -2228,8 +2232,8 @@ form label {
 /*# sourceMappingURL=style.css.map */
 
 .custom-label {
-  color: #ffffff;
-  background: #9a3d1b;
+  color: #000;
+  background: #8b9b79;
   text-align: left;
   display: block;
   border-top-left-radius: 4px;
@@ -2256,6 +2260,7 @@ form label {
   background-size: contain;
   background-repeat: no-repeat;
   background-origin: border-box;
+  height: 100vh;
 }
 
 .bg-carton {
@@ -2276,7 +2281,8 @@ form label {
 }
 
 .text-papper {
-  padding-top: 10%;
+  padding-top: 70px;
+  /* margin-top: 15%; */
 }
 
 .kolom {
@@ -2286,7 +2292,7 @@ form label {
   justify-content: center;
 }
 
-.hadir{
+.hadir {
   font-size: small;
   background-color: #8b9b79;
   color: #fff;
@@ -2296,10 +2302,21 @@ form label {
   text-align: center;
 }
 
-.tidak-hadir{
+.tidak-hadir {
   background-color: #ce413c;
 }
 
-.tidak-konfirmasi{
+.tidak-konfirmasi {
   background-color: #eea236;
+}
+
+.fit-screen {
+  height: 100vh;
+  padding: 50px 10px 20px 10px !important;
+}
+.one-page {
+  padding: 10px 10px 20px 10px !important;
+}
+.vh150 {
+  padding: 50px 10px 20px 10px !important;
 }

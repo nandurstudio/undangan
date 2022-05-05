@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: mandatory !important;
+    scroll-snap-points-y: repeat(100vh) !important;
+    scroll-snap-type: y mandatory !important;
+}
+
+section {
+    height: 100vh !important;
+    scroll-snap-align: start !important;
+    text-align: center;
+    position: relative !important;
+}
+
+.section-ucapan {
+    height: 100vh !important;
+    scroll-snap-align: start !important;
+    overflow: auto;
+    text-align: center;
+    position: relative !important;
+}
