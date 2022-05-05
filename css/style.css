@@ -2281,7 +2281,7 @@ form label {
 }
 
 .text-papper {
-  padding-top: 70px;
+  padding-top: 60px;
   /* margin-top: 15%; */
 }
 
@@ -2311,7 +2311,7 @@ form label {
 }
 
 .fit-screen {
-  height: 100vh;
+  /* height: 100vh; */
   padding: 50px 10px 20px 10px !important;
 }
 .one-page {

@@ -7385,9 +7385,7 @@ button.close {
   width: 100%;
   height: 100%;
   top: 0px;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: start;
+  display: block;
   left: 0px;
   z-index: 10001;
   padding: 10px;
@@ -7518,7 +7516,7 @@ button.close {
 }
 
 .foto-pengantin {
-  height: 250px;
+  max-width: 100%;
 }
 
 .logo-jaga-jarak {

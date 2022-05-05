@@ -303,7 +303,7 @@
 							<p class=\"js animate__animated\">Dengan senang hati,<br/>kami mengundang Anda untuk hadir<br/>di acara pernikahan kami.</p>
 							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\">
-							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . "&amp;size=250x250\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
+							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . "&amp;size=200x200\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
 							</a><br \><div class=\"p-protokol js animate__animated\">Klik untuk memperbesar</div>";
 							// https://www.jqueryscript.net/lightbox/lightbox2.html
 						} else {
@@ -314,7 +314,7 @@
 							<p class=\"js animate__animated\">\"Dengan senang hati,<br/>kami mengundang Anda untuk hadir<br/>di acara pernikahan kami.\"</p>
 							<p class=\"js animate__animated\">\"Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:\"</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
-							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=250x250\" alt=\"QR Code " . $actual_link . "\">
+							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=200x200\" alt=\"QR Code " . $actual_link . "\">
 							</a><br \><div class=\"p-protokol js animate__animated\">Klik untuk memperbesar</div>";
 						}
 						?>
@@ -325,7 +325,7 @@
 	</section>
 	<section>
 		<!-- Mempelai Pria -->
-		<div id="fh5co-couple" class="bg-carton fit-screen one-page">
+		<div id="fh5co-couple" class="bg-carton one-page">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
@@ -1082,7 +1082,7 @@
 
 	<script>
 		$('body').css({
-			overflow: 'hidden',
+			overflow: 'hidden !important',
 			height: '100%'
 		});
 		var $win = $(window);
