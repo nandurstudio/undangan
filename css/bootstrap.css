@@ -240,13 +240,13 @@ th {
     text-decoration: underline;
   }
 
-  a[href]:after {
+  /* a[href]:after {
     content: " ("attr(href) ")";
   }
 
   abbr[title]:after {
     content: " ("attr(title) ")";
-  }
+  } */
 
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
@@ -935,6 +935,10 @@ pre code {
   padding-right: 15px;
 }
 
+.concover {
+  height: 80%;
+}
+
 .container:before,
 .container:after {
   content: " ";
@@ -950,17 +954,30 @@ pre code {
     /* width: 750px; */
     height: 100vh;
   }
+
+  .concover {
+    height: 80%;
+  }
 }
 
 @media (min-width: 992px) {
   .container {
     width: 970px;
   }
+  .concover {
+    height: 80%;
+  }
+  .geser-atas{
+    display: none;
+  }
 }
 
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+  .concover {
+    height: 80%;
   }
 }
 
@@ -7367,6 +7384,7 @@ button.close {
 
 .cover-height {
   height: 100%;
+  overflow: hidden;
 }
 
 .cover {
@@ -7517,6 +7535,44 @@ button.close {
 
 .foto-pengantin {
   max-width: 100%;
+}
+
+@media screen and (min-width: 481px) {
+  figure {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  figure {
+    width: 45%;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  figure {
+    width: 55%;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .foto-pengantin {
+    max-width: 100%;
+  }
+
+  figure {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .foto-pengantin {
+    max-width: 65%;
+  }
 }
 
 .logo-jaga-jarak {
