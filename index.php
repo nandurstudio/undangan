@@ -522,24 +522,24 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<p class="js animate__animated">Tanpa mengurangi rasa hormat,<br />untuk mencegah terjadi penyebaran virus,<br />para tamu, diharapkan selalu menerapkan<br />protokol kesehatan selama<br />acara berlangsung sebagai berikut:</p>
+						<p class="js animate__animated">Tanpa mengurangi rasa hormat, untuk mencegah terjadi penyebaran virus, para tamu, diharapkan selalu menerapkan protokol kesehatan selama acara berlangsung sebagai berikut:</p>
 						<div class="col-md-8 col-md-offset-2 text-center">
 							<img src="images/denaya/protokol_QRCode.png" alt="denaya_qr_code" class="img-responsive logo-qrcode js animate__animated">
-							<div class="p-protokol js animate__animated">Tunjukan QR Code<br />saat memasuki tempat acara</div>
+							<div class="p-protokol js animate__animated">Tunjukan QR Code saat memasuki tempat acara</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
 							<div class="text-center">
 								<img src="images/denaya/protokol_hand_sanitizer.png" alt="denaya_hand_sanitizer" class="img-responsive logo-qrcode js animate__animated">
-								<div class="p-protokol js animate__animated">Bersihkan Tangan dengan<br />sabun atau hand sanitizer<br />yang disediakan</div>
+								<div class="p-protokol js animate__animated">Bersihkan Tangan dengan sabun atau hand sanitizer yang disediakan</div>
 							</div>
 							<div class="text-center">
 								<img src="images/denaya/protokol_masker.png" alt="denaya_masker" class="img-responsive logo-qrcode js animate__animated">
-								<div class="p-protokol js animate__animated">Selalu gunakan<br />masker kecuali<br />saat makan</div>
+								<div class="p-protokol js animate__animated">Selalu gunakan masker kecuali saat makan</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center">
 							<img src="images/denaya/protokol_jaga_jarak.png" alt="denaya_jaga_jarak" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
-							<div class="p-protokol js animate__animated">Menjaga jarak dengan tamu lain,<br />hindari kontak fisik<br />dan jauhi keurumunan</div>
+							<div class="p-protokol js animate__animated">Menjaga jarak dengan tamu lain, hindari kontak fisik dan jauhi keurumunan</div>
 						</div>
 					</div>
 				</div>
