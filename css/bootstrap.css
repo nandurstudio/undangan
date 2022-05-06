@@ -7537,6 +7537,10 @@ button.close {
   max-width: 100%;
 }
 
+.slide-landscape{
+  padding-top: 15px;
+}
+
 @media screen and (min-width: 481px) {
   figure {
     width: 100%;
