@@ -226,7 +226,7 @@
 		<!-- Cover -->
 		<header id="fh5co-header" class="fh5co-cover mid" role="banner" style="background-image:url(images/denaya/cover_denaya2.jpg);" data-stellar-background-ratio="0.5">
 			<!-- <div class="overlay"></div> -->
-			<div class="container">
+			<div class="container concover">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t">
@@ -265,16 +265,23 @@
 
 								?>
 								<div class="nama-tanggal js animate__animated">Minggu, 22 Mei 2022</div>
-								<div class="hari-pernikahan" style="padding-bottom: 50%;padding-top: 50vh;">GESER KE ATAS</div>
-								<div style="padding-top: 60vh;">
-									<div class="arrow arrow-first"></div>
-									<div class="arrow arrow-second"></div>
-									<div class="arrow arrow-thrid"></div>
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+			<div>
+				<div>
+					<svg class="arrows">
+						<path class="a3" d="M12.1,31.8L12.1,31.8c-0.3-0.3-0.3-0.7,0-1l17.8-17.8c0.3-0.3,0.7-0.3,1,0l17.1,17.1c0.3,0.3,0.3,0.7,0,1l0,0
+	c-0.3,0.3-0.7,0.3-1,0L30.8,15c-0.3-0.3-0.7-0.3-1,0L13,31.8C12.8,32.1,12.3,32.1,12.1,31.8z"></path>
+						<path class="a1" d="M12.1,59.7L12.1,59.7c-0.3-0.3-0.3-0.7,0-1L29.8,41c0.3-0.3,0.7-0.3,1,0l17.1,17.1c0.3,0.3,0.3,0.7,0,1l0,0
+	c-0.3,0.3-0.7,0.3-1,0L30.8,42.9c-0.3-0.3-0.7-0.3-1,0L13,59.7C12.8,59.9,12.3,59.9,12.1,59.7z"></path>
+						<path class="a2" d="M12.1,45.7L12.1,45.7c-0.3-0.3-0.3-0.7,0-1L29.8,27c0.3-0.3,0.7-0.3,1,0l17.1,17.1c0.3,0.3,0.3,0.7,0,1l0,0
+	c-0.3,0.3-0.7,0.3-1,0L30.8,29c-0.3-0.3-0.7-0.3-1,0L13,45.7C12.8,46,12.3,46,12.1,45.7z"></path>
+					</svg>
+				</div><br />
+				<div class="hari-pernikahan geser-atas">GESER KE ATAS</div>
 			</div>
 		</header>
 	</section>
@@ -551,72 +558,72 @@
 								<ul class="splide__list">
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_1.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_1.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_1.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 										<br />
 										<a class="demo js animate__animated" href="images/denaya/slide_6.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_6.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_6.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_2.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_2.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_2.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_3.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_3.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_3.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 										<br />
 										<a class="demo js animate__animated" href="images/denaya/slide_7.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_7.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_7.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_4.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_4.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_4.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_5.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_5.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_5.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_8.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_8.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_8.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 										<br />
 										<a class="demo js animate__animated" href="images/denaya/slide_9.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_9.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_9.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_14.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_14.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_14.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_15.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_15.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_15.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_10.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_10.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_10.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 										<br />
 										<a class="demo js animate__animated" href="images/denaya/slide_11.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_11.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_11.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_12.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_12.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_12.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 										<br />
 										<a class="demo js animate__animated" href="images/denaya/slide_13.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_13.png" alt="denaya_prewed" class="img-responsive">
+											<img src="images/denaya/slide_13.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 								</ul>
@@ -1095,10 +1102,6 @@
 	<script src="node_modules/clipboard/dist/clipboard.min.js"></script>
 
 	<script>
-		$('body').css({
-			overflow: 'hidden !important',
-			height: '100%'
-		});
 		var $win = $(window);
 		var $stat = $('.js.animate__animated'); // Change this to affect your desired element.
 
@@ -1172,24 +1175,35 @@
 		});
 
 		// https://stackoverflow.com/a/41108381/7772358
-		var audioElement = new Audio('./sounds/AURORA_Exist_For_Love.mp3');
+		//var audioElement = new Audio('./sounds/AURORA_Exist_For_Love.mp3');
+		const soundEffect = new Audio();
+		soundEffect.autoplay = true;
+
+		// onClick of first interaction on page before I need the sounds
+		// (This is a tiny MP3 file that is silent and extremely short - retrieved from https://bigsoundbank.com and then modified)
+		soundEffect.src = "data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV";
+
 
 		$('.pause').on('click', function() {
 			$(this).hide();
 			$('.play').css('display', 'inline-block');
-			audioElement.pause();
+			//audioElement.pause();
+			soundEffect.pause();
 		});
 
 		$('.play').on('click', function() {
 			$(this).hide();
 			$('.pause').css('display', 'inline-block');
-			audioElement.play();
+			soundEffect.play();
+			//audioElement.play();
 		});
 
 		$("#tombol-buka").on('click', function() {
 			$("#name-cover").fadeOut(300, function() {
-				audioElement.pause();
-				audioElement.play();
+				// later on when you actually want to play a sound at any point without user interaction
+				soundEffect.src = './sounds/AURORA_Exist_For_Love.mp3';
+				soundEffect.play();
+				//audioElement.play();
 				$(this).remove();
 				// put your default event here
 				$("html").removeClass("cover-height");
