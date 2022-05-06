@@ -96,6 +96,8 @@
 	<meta name="twitter:image" content="images/denaya/og_image.png" />
 	<meta name="twitter:url" content="https://naufal-denaya.lembarundangan.com" />
 	<meta name="twitter:card" content="" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="mobile-web-app-capable" content="yes" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -558,11 +560,11 @@
 								<ul class="splide__list">
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_1.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_1.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+											<img src="images/denaya/slide_1.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
 										<a class="demo js animate__animated" href="images/denaya/slide_6.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_6.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+											<img src="images/denaya/slide_6.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 									</li>
 									<li class="splide__slide">
@@ -572,11 +574,11 @@
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_3.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_3.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+											<img src="images/denaya/slide_3.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
 										<a class="demo js animate__animated" href="images/denaya/slide_7.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_7.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+											<img src="images/denaya/slide_7.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 									</li>
 									<li class="splide__slide">
@@ -591,11 +593,11 @@
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_8.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_8.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+											<img src="images/denaya/slide_8.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
 										<a class="demo js animate__animated" href="images/denaya/slide_9.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_9.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+											<img src="images/denaya/slide_9.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 									</li>
 									<li class="splide__slide">
@@ -610,20 +612,20 @@
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_10.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_10.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+											<img src="images/denaya/slide_10.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
 										<a class="demo js animate__animated" href="images/denaya/slide_11.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_11.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+											<img src="images/denaya/slide_11.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/denaya/slide_12.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_12.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+											<img src="images/denaya/slide_12.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
 										<a class="demo js animate__animated" href="images/denaya/slide_13.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_13.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+											<img src="images/denaya/slide_13.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 									</li>
 								</ul>
@@ -835,22 +837,22 @@
 												while ($row = mysqli_fetch_assoc($result_query)) {
 													if ($row["attending"] = "0") {
 														echo "<option selected=\"\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
-														echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Hadir</option>";
-														echo "<option selected=\"selected\" style=\"color: black;\" value=\"0\">Tidak Hadir</option>";
+														echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Akan Hadir</option>";
+														echo "<option selected=\"selected\" style=\"color: black;\" value=\"0\">Tidak Bisa Hadir</option>";
 													} elseif ($row["attending"] = "1") {
 														echo "<option selected=\"\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
-														echo "<option selected=\"selected\" style=\"color: black;\" value=\"1\">Hadir</option>";
-														echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Hadir</option>";
+														echo "<option selected=\"selected\" style=\"color: black;\" value=\"1\">Akan Hadir</option>";
+														echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Bisa Hadir</option>";
 													} else {
 														echo "<option selected=\"selected\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
-														echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Hadir</option>";
-														echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Hadir</option>";
+														echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Akan Hadir</option>";
+														echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Bisa Hadir</option>";
 													}
 												}
 											} else {
 												echo "<option selected=\"selected\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
-												echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Hadir</option>";
-												echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Hadir</option>";
+												echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Akan Hadir</option>";
+												echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Bisa Hadir</option>";
 											}
 											mysqli_close($conn);
 											//https://stackoverflow.com/a/15864222/7772358
@@ -918,12 +920,11 @@
 								} else if ($('#wish').val() == '') {
 									alert('Silakan untuk mengisi ucapan kepada calon mempelai');
 									return false;
-								} else if ($('#konfirmasi-kehadiran :selected').text() == 'Konfirmasi Kehadiran') {
-									alert('Pilih konfirmasi kehadiran');
-									return false;
-								} else if ($('#jumlahtamu').val() == '') {
-									alert('Mohon isi jumlah tamu yang akan hadir');
-									return false;
+								} else if ($('#konfirmasi-kehadiran :selected').text() == 'Akan Hadir') {
+									if ($('#jumlahtamu').val() == '') {
+										alert('Mohon isi jumlah tamu yang akan hadir');
+										return false;
+									}
 								} else {
 									$.ajax({
 										type: "post",
@@ -957,111 +958,65 @@
 								}
 							}
 						</script>
-						<br />
-						<br />
-						<div class="row">
-							<div class="col-md-12">
-								<form class="form-inline">
-									<div class="form-group">
-										<div class="fh5co-started form-control" style="height: 300px; overflow: auto;">
-											<div id="minichat">
-												<?php
-												while ($row = mysqli_fetch_assoc($shouts)) :
-													echo "<div style=\"text-align: left;\">";
-													echo "<strong>" . ucwords(strtolower($row["nama"])) . " </strong>";
-													$att = $row["attending"];
-													if ($att == 1) {
-														echo "<span class=\"hadir\">Hadir</span>";
-													} elseif ($att == 0) {
-														echo "<span class=\"hadir tidak-hadir\">Tidak Hadir</span>";
-													} else {
-														echo "<span class=\"hadir tidak-konfirmasi\">Tidak Konfirmasi</span>";
-													}
-													echo "<p>" . $row['ucapan'];
-													echo "<time class=\"timeago\" style=\"text-align: right;display: flex;flex-direction: column-reverse;\" datetime=\"" . $row["date"] . "\">";
-													echo "</time></p></div>";
-												endwhile; ?>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-						<iframe name="content" style="display:none">
-						</iframe>
-						<p id="msg"></p>
 					</div>
-				</div>
-			</div>
-			<footer id="fh5co-footer" role="contentinfo" class="bg-carton">
-				<div class="container">
-					<div class="row copyright">
-						<div class="col-md-12 text-center">
-							<p>
-								<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> -->
-								<small class="block">&copy; 2022 Nandur Studio. All Rights Reserved.</small>
-								<!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
-								<small class="block">Web Invitation by <a href="https://www.nandur93.com/search/label/Undangan" target="_blank">Nandur Studio Event</a>
-									</br>Design by <a href="https://instagram.com/treswaluya" target="_blank">TresWaluya</a>
-									</br>Master Template: <a href="http://freehtml5.co/" target="_blank">&copy; 2016 Free HTML5. All Rights Reserved.</a></small>
-							</p>
-							<p>
-							<ul class="fh5co-social-icons">
-								<li><a href="https://twitter.com/NandurStudio"><i class="icon-twitter"></i></a></li>
-								<li><a href="https://web.facebook.com/n93animasi"><i class="icon-facebook"></i></a></li>
-								<li><a href="https://www.linkedin.com/in/nandangduryat/"><i class="icon-linkedin"></i></a></li>
-								<li><a href="https://dribbble.com/nandur93"><i class="icon-dribbble"></i></a></li>
-							</ul>
-							</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>
-
-		<!-- <div id="fh5co-couple" class="bg-carton">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="nama-pengantin-foto">Quotes</div>
-							<p>Ungkapkan sesuatu bagi calon pengantin</p>
-						</div>
-				</div>
-			</div>
-		</div> -->
-
-		<!-- <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Are You Attending?</h2>
-						<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
+					<br />
+					<br />
+					<div class="col-md-12">
 						<form class="form-inline">
-							<div class="col-md-4 col-sm-4">
-								<div class="form-group">
-									<label for="name" class="sr-only">Name</label>
-									<input type="name" class="form-control" id="name" placeholder="Name">
+							<div class="form-group">
+								<div class="fh5co-started form-control" style="height: 300px; overflow: auto;">
+									<div id="minichat">
+										<?php
+										while ($row = mysqli_fetch_assoc($shouts)) :
+											echo "<div style=\"text-align: left;\">";
+											echo "<strong>" . ucwords(strtolower($row["nama"])) . " </strong>";
+											$att = $row["attending"];
+											if ($att == 1) {
+												echo "<span class=\"hadir\">Akan Hadir</span>";
+											} elseif ($att == 0) {
+												echo "<span class=\"hadir tidak-hadir\">Tidak Bisa Hadir</span>";
+											} else {
+												echo "<span class=\"hadir tidak-konfirmasi\">Tidak Konfirmasi</span>";
+											}
+											echo "<p>" . $row['ucapan'];
+											echo "<time class=\"timeago\" style=\"text-align: right;display: flex;flex-direction: column-reverse;\" datetime=\"" . $row["date"] . "\">";
+											echo "</time></p></div>";
+										endwhile; ?>
+									</div>
 								</div>
-							</div>
-							<div class="col-md-4 col-sm-4">
-								<div class="form-group">
-									<label for="email" class="sr-only">Email</label>
-									<input type="email" class="form-control" id="email" placeholder="Email">
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-4">
-								<button type="submit" class="btn btn-default btn-block">I am Attending</button>
 							</div>
 						</form>
 					</div>
 				</div>
+				<iframe name="content" style="display:none">
+				</iframe>
+				<p id="msg"></p>
 			</div>
-		</div> -->
+		</div>
+		<footer id="fh5co-footer" role="contentinfo" class="bg-carton">
+			<div class="container">
+				<div class="row copyright">
+					<div class="col-md-12 text-center">
+						<p>
+							<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> -->
+							<small class="block">&copy; 2022 Nandur Studio. All Rights Reserved.</small>
+							<!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
+							<small class="block">Web Invitation by <a href="https://www.nandur93.com/search/label/Undangan" target="_blank">Nandur Studio Event</a>
+								</br>Design by <a href="https://instagram.com/treswaluya" target="_blank">TresWaluya</a>
+								</br>Master Template: <a href="http://freehtml5.co/" target="_blank">&copy; 2016 Free HTML5. All Rights Reserved.</a></small>
+						</p>
+						<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="https://twitter.com/NandurStudio"><i class="icon-twitter"></i></a></li>
+							<li><a href="https://web.facebook.com/n93animasi"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/nandangduryat/"><i class="icon-linkedin"></i></a></li>
+							<li><a href="https://dribbble.com/nandur93"><i class="icon-dribbble"></i></a></li>
+						</ul>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</section>
 	<div class="music-control">
 		<span class='pause'></span>
@@ -1102,6 +1057,7 @@
 	<script src="node_modules/clipboard/dist/clipboard.min.js"></script>
 
 	<script>
+		document.body.requestFullscreen();
 		var $win = $(window);
 		var $stat = $('.js.animate__animated'); // Change this to affect your desired element.
 
