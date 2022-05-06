@@ -1057,7 +1057,6 @@
 	<script src="node_modules/clipboard/dist/clipboard.min.js"></script>
 
 	<script>
-		document.body.requestFullscreen();
 		var $win = $(window);
 		var $stat = $('.js.animate__animated'); // Change this to affect your desired element.
 
