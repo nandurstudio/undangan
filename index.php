@@ -646,8 +646,8 @@
 						<!-- 1. Define some markup -->
 						<div class="nama-pengantin-foto mempelai js animate__animated">Amplop Digital</div>
 
-						<a class="demo js animate__animated" href="images/denaya/qris_dummy.png" data-lightbox="example-1">
-							<img src="images/denaya/qris_dummy.png" alt="denaya" class="img-responsive js animate__animated">
+						<a class="demo js animate__animated" href="images/denaya/qris_bca.png" data-lightbox="example-1">
+							<img src="images/denaya/qris_bca.png" alt="denaya" class="img-responsive js animate__animated">
 						</a>
 						<!-- <p class="js animate__animated" id="nomor-rekening">QRIS Denaya Candra Safira</p>
 						<button id="copy-data-rekening" type="button" class="tooltipped tooltipped-w m-2 p-2 border btn js animate__animated" aria-label="Nomor Rekening disalin" data-clipboard-action="copy" data-clipboard-target="#nomor-rekening">
@@ -1157,7 +1157,7 @@
 		$("#tombol-buka").on('click', function() {
 			$("#name-cover").fadeOut(300, function() {
 				// later on when you actually want to play a sound at any point without user interaction
-				soundEffect.src = './sounds/AURORA_Exist_For_Love.mp3';
+				soundEffect.src = './sounds/aurora_existforlove.mp3';
 				soundEffect.play();
 				//audioElement.play();
 				$(this).remove();
