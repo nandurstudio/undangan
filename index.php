@@ -65,7 +65,8 @@
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="wedding, Naufal, Denaya" />
-	<meta name="author" content="Nandur Digital Invitation" /><!-- Chrome, Firefox OS and Opera -->
+	<meta name="author" content="Nandur Digital Invitation" />
+	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="#bfa594">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#bfa594">
@@ -88,12 +89,12 @@
 
 	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content="Pernikahan Naufal & Denaya" />
-	<meta property="og:image" content="images/denaya/og_image.png" />
+	<meta property="og:image" content="images/denaya/og_image2.png" />
 	<meta property="og:url" content="https://naufal-denaya.lembarundangan.com" />
 	<meta property="og:site_name" content="Lembar Undangan Digital" />
-	<meta property="og:description" content="Minggu, 22 Mei 2022" />
+	<meta property="og:description" content="Minggu, 22 Mei 2022 | Kampung Batu Malakasari" />
 	<meta name="twitter:title" content="Pernikahan Naufal & Denaya" />
-	<meta name="twitter:image" content="images/denaya/og_image.png" />
+	<meta name="twitter:image" content="images/denaya/og_image2.png" />
 	<meta name="twitter:url" content="https://naufal-denaya.lembarundangan.com" />
 	<meta name="twitter:card" content="" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -233,7 +234,7 @@
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t">
 							<div class="display-tc">
-								<img id="logo-pengantin" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src=".\images\denaya\LOGONDA_brown_120x101.png" alt="Logo Naufal And Denaya" width="20%">
+								<img id="logo-pengantin" style="opacity:0;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src=".\images\denaya\LOGONDA_brown_120x101.png" alt="Logo Naufal And Denaya" width="20%">
 								<div class="hari-pernikahan">Hari Pernikahan</div>
 								<?php
 								include "./php/connection.php";
@@ -541,7 +542,7 @@
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center">
 							<img src="images/denaya/protokol_jaga_jarak.png" alt="denaya_jaga_jarak" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
-							<div class="p-protokol js animate__animated">Menjaga jarak dengan tamu lain, hindari kontak fisik dan jauhi keurumunan</div>
+							<div class="p-protokol js animate__animated">Menjaga jarak dengan tamu lain, hindari kontak fisik dan jauhi kerumunan</div>
 						</div>
 					</div>
 				</div>
@@ -647,12 +648,12 @@
 						<div class="nama-pengantin-foto mempelai js animate__animated">Amplop Digital</div>
 
 						<a class="demo js animate__animated" href="images/denaya/qris_bca_qr.png" data-lightbox="example-1">
-							<img src="images/denaya/qris_bca_qr.png" alt="denaya" class="img-responsive js animate__animated">
+							<img src="images/denaya/qris_bca_qr.png" alt="denaya" class="img-responsive js animate__animated" style="width: 250px;">
 						</a>
-						<!-- <p class="js animate__animated" id="nomor-rekening">QRIS Denaya Candra Safira</p>
+						<p class="js animate__animated">Rekening BCA <span id="nomor-rekening">3370301866</span> a/n Denaya Candra Safira</p>
 						<button id="copy-data-rekening" type="button" class="tooltipped tooltipped-w m-2 p-2 border btn js animate__animated" aria-label="Nomor Rekening disalin" data-clipboard-action="copy" data-clipboard-target="#nomor-rekening">
 							Salin Nomor Rekening
-						</button> -->
+						</button>
 						<br />
 						<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
 						<br />
@@ -1025,6 +1026,9 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
+	<audio id="myAudio">
+		<source src="./sounds/aurora_existforlove.mp3" type="audio/mp3">
+	</audio>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -1088,7 +1092,7 @@
 
 			clipboard.on('success', function(e) {
 				let oldtext = e.trigger.textContent
-				e.trigger.textContent = 'Copied!'
+				e.trigger.textContent = 'Berhasil disalin!'
 				setTimeout(() => e.trigger.textContent = oldtext, 2000)
 			});
 
@@ -1131,33 +1135,49 @@
 
 		// https://stackoverflow.com/a/41108381/7772358
 		//var audioElement = new Audio('./sounds/AURORA_Exist_For_Love.mp3');
-		const soundEffect = new Audio();
-		soundEffect.autoplay = true;
+
+		//const soundEffect = new Audio();
+		//soundEffect.autoplay = true;
 
 		// onClick of first interaction on page before I need the sounds
 		// (This is a tiny MP3 file that is silent and extremely short - retrieved from https://bigsoundbank.com and then modified)
-		soundEffect.src = "data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV";
+		//soundEffect.src = "data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV";
 
 
+		var x = document.getElementById("myAudio");
 		$('.pause').on('click', function() {
 			$(this).hide();
 			$('.play').css('display', 'inline-block');
 			//audioElement.pause();
-			soundEffect.pause();
+			//soundEffect.pause();
+			pauseAudio();
 		});
 
 		$('.play').on('click', function() {
 			$(this).hide();
 			$('.pause').css('display', 'inline-block');
-			soundEffect.play();
+			//soundEffect.play();
 			//audioElement.play();
+			playAudio();
 		});
 
+		function playAudio() {
+			x.play();
+		}
+
+		function pauseAudio() {
+			x.pause();
+		}
+
 		$("#tombol-buka").on('click', function() {
+			playAudio();
+			$("#logo-pengantin").css({
+				opacity: '1'
+			});
 			$("#name-cover").fadeOut(300, function() {
 				// later on when you actually want to play a sound at any point without user interaction
-				soundEffect.src = './sounds/aurora_existforlove.mp3';
-				soundEffect.play();
+				//soundEffect.src = './sounds/aurora_existforlove.mp3';
+				//soundEffect.play();
 				//audioElement.play();
 				$(this).remove();
 				// put your default event here
