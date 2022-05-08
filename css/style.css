@@ -2194,17 +2194,20 @@ form label {
 .form-control {
   box-shadow: none;
   background: transparent;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid rgb(139 155 121);
   height: 54px;
   font-size: 18px;
   font-weight: 300;
+  font-family: 'fraunces_9pt_softitalic';
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .form-control:active,
 .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #9a3d1b;
+  border-color: #8a6d5a;
 }
 
 .row-pb-md {
@@ -2232,7 +2235,7 @@ form label {
 /*# sourceMappingURL=style.css.map */
 
 .custom-label {
-  color: #000;
+  color: #3d4742;
   background: #8b9b79;
   text-align: left;
   display: block;
@@ -2240,6 +2243,7 @@ form label {
   border-top-right-radius: 4px;
   margin: initial;
   padding-left: 10px;
+  font-family: 'Karla';
 }
 
 .just-center {
@@ -2293,13 +2297,16 @@ form label {
 }
 
 .hadir {
-  font-size: small;
+  font-size: x-small;
   background-color: #8b9b79;
   color: #fff;
   font-style: normal;
-  border-radius: 2px;
+  border-radius: 1px;
   font-weight: lighter;
-  text-align: center;
+  text-align: left;
+  vertical-align: super;
+  font-family: 'Karla';
+  padding: 2px;
 }
 
 .tidak-hadir {
@@ -2310,13 +2317,36 @@ form label {
   background-color: #eea236;
 }
 
+.optionbox{
+  color: #000;
+  background-color: #8b9b79;
+}
+
+.timestamp {
+  text-align: right;
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: small;
+  color: #3d4742;
+  font-family: 'Karla';
+}
+
+.wishtext {
+  border-bottom: #8b9b79;
+  border-bottom-style: dashed;
+  font-family: 'fraunces_9ptregular';
+  font-size: large;
+}
+
 .fit-screen {
   /* height: 100vh; */
   padding: 50px 10px 20px 10px !important;
 }
+
 .one-page {
   padding: 10px 10px 20px 10px !important;
 }
+
 .vh150 {
   padding: 50px 10px 20px 10px !important;
 }

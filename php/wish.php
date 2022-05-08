@@ -11,6 +11,7 @@ $shouts = mysqli_query($conn, $shout_query);
 // }
 
 $name = isset($_POST['name']) ? $_POST['name'] : '';
+$namareservasi = isset($_POST['namareservasi']) ? $_POST['namareservasi'] : '';
 $alamat = isset($_POST['alamat']) ? $_POST['alamat'] : '';
 $wish = isset($_POST['wish']) ? $_POST['wish'] : '';
 $attending = isset($_POST['attending']) ? $_POST['attending'] : '';
@@ -23,13 +24,13 @@ $sesi = isset($_POST['sesi']) ? $_POST['sesi'] : '';
 // //date auto
 // $name = $_POST["name"];
 // $ucapan = $_POST["ucapan"];
-$select = mysqli_query($conn, "SELECT * FROM tr_ucapan WHERE nama ='$name' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1");
+$select = mysqli_query($conn, "SELECT * FROM tr_ucapan WHERE nama ='$namareservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1");
 if(mysqli_num_rows($select)) {
-    mysqli_query($conn, "UPDATE `tr_ucapan` SET `nama` = '$name', `alamat` = '$alamat', `ucapan` = '$wish', `attending` = '$attending', `jumlahtamu` = '$jumlahtamu', `sesi` = '$sesi' WHERE nama ='$name' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1;");
+    mysqli_query($conn, "UPDATE `tr_ucapan` SET `nama` = '$name', `namareservasi` = '$namareservasi', `alamat` = '$alamat', `ucapan` = '$wish', `attending` = '$attending', `jumlahtamu` = '$jumlahtamu', `sesi` = '$sesi', `date` = current_timestamp() WHERE namareservasi ='$namareservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1;");
     exit('Data telah di update! Untuk mengubah ucapan, kehadiran, dan jumlah tamu, silakan untuk mengisi kembali dan kirim ulang.');
 } else {
 mysqli_query($conn, "SELECT * FROM tr_ucapan");
-mysqli_query($conn, "INSERT INTO `tr_ucapan` (`ucapanId`, `nama`, `alamat`, `ucapan`, `attending`, `jumlahtamu`, `sesi`, `date`) VALUES (NULL, '$name', '$alamat', '$wish', '$attending', '$jumlahtamu', '$sesi', current_timestamp());");
+mysqli_query($conn, "INSERT INTO `tr_ucapan` (`ucapanId`, `nama`, `namareservasi`, `alamat`, `ucapan`, `attending`, `jumlahtamu`, `sesi`, `date`) VALUES (NULL, '$name', '$namareservasi', '$alamat', '$wish', '$attending', '$jumlahtamu', '$sesi', current_timestamp());");
 exit('Terima kasih :) Untuk mengubah ucapan, kehadiran, dan jumlah tamu, silakan untuk mengisi kembali dan kirim ulang.');
 }
 //header("Location:/undangan/php/wish.php");
