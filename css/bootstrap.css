@@ -7559,6 +7559,7 @@ button.close {
   padding: 3px;
   color: #2a332f;
   font: small-caption;
+  float: left !important;
 }
 
 @media screen and (min-width: 481px) {

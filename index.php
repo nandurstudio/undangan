@@ -867,7 +867,7 @@
 							<div class="row js animate__animated" id="divjumlahtamu">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="jumlahtamu" class="custom-label"><i class="icon-users"></i> Jumlah Tamu</label>
+										<label for="jumlahtamu" class="custom-label"><i class="icon-users"></i> Jumlah Tamu Termasuk Anda</label>
 										<input type="number" class="form-control" id="jumlahtamu" placeholder="0"></input>
 										<?php
 										include "./php/connection.php";
