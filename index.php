@@ -11,7 +11,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<?php
 	include "./php/connection.php";
-	$shout_query = "SELECT * FROM tr_ucapan ORDER BY ucapanId DESC";
+	$shout_query = "SELECT *, date FROM tr_ucapan WHERE date in (SELECT MAX(date) from tr_ucapan GROUP BY namareservasi) ORDER BY `tr_ucapan`.`date` DESC";
 	$shouts = mysqli_query($conn, $shout_query);
 	$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
 	$result_pria = mysqli_query($conn, $sql_pria);
@@ -699,39 +699,14 @@
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="row">
 							<div class="nama-pengantin-foto js animate__animated">Ucapan, Do'a Restu & Reservasi Kehadiran</div>
-							<p class="js animate__animated">Ungkapkan sesuatu bagi calon pengantin</p>
-						</div>
-						<div class="row">
-							<div class="col-md-12 col-md-offset-4">
-								<form class="form-inline">
-									<div class="col-md-4 col-sm-4">
-										<div class="form-group">
-											<div class="feature-center">
-												<span class="icon">
-													<i class="icon-users"></i>
-												</span>
-												<span class="counter-label counter-span">Estimasi jumlah tamu hadir: </span>
-												<?php
-												include "./php/connection.php";
-												$guest_query = "SELECT sum(jumlahtamu) as jumlahtamu FROM `tr_ucapan`";
-												$guest_count = mysqli_query($conn, $guest_query);
-												$row = mysqli_fetch_assoc($guest_count);
-												$sum = $row['jumlahtamu'];
-												echo "<span id=\"guest-count-icon\" class=\"counter js-counter counter-span\" data-from=\"0\" data-to=\"" . $sum . "\" data-speed=\"5000\" data-refresh-interval=\"50\">" . $sum;
-												?></span>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
 						</div>
 						<iframe name="content-reservasi" style="display:none">
 						</iframe>
 						<form id="wishForm" class="form-inline" action="./php/wish.php" method="post" target="content-reservasi">
-							<div class="row">
+							<div class="row js animate__animated">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="name" class="custom-label">Nama Tamu</label>
+										<label for="name" class="custom-label"><i class="icon-user"></i> Nama Pada Undangan</label>
 										<input type="name" name="name" id="name" class="form-control" placeholder="Nama tamu" disabled></input>
 										<?php
 										if (isset($_GET['to'])) {
@@ -745,10 +720,10 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row js animate__animated" style="display:none;">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="alamat" class="custom-label">Alamat</label>
+										<label for="alamat" class="custom-label"><i class="icon-address"></i> Alamat</label>
 										<input type="text" class="form-control" id="alamat" placeholder="0" disabled></input>
 										<?php
 										if (isset($_GET['adr'])) {
@@ -761,10 +736,10 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row js animate__animated" style="display:none;">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="sesi-reservasi" class="custom-label">Sesi</label>
+										<label for="sesi-reservasi" class="custom-label"><i class="icon-clock2"></i> Sesi</label>
 										<input type="text" class="form-control" id="sesi-reservasi" placeholder="0" disabled></input>
 										<?php
 										if (isset($_GET['s'])) {
@@ -777,15 +752,32 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row js animate__animated">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="wish" class="custom-label">Ucapan & Do'a Restu</label>
+										<label for="name-anda" class="custom-label"><i class="icon-pencil"></i> Nama Anda</label>
+										<input type="name" name="namareservasi" id="namareservasi" class="form-control" placeholder="Masukan nama untuk ucapan realtime"></input>
+										<div class="form-check checkleft">
+											<input class="form-check-input" type="checkbox" id="namachat" name="namachat" value="namachatsama">
+											<label class="form-check-label checkcap">Nama saya sama dengan nama pada undangan</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row js animate__animated">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="wish" class="custom-label"><i class="icon-chat"></i> Ucapan & Do'a Restu</label>
 										<?php
 										include "./php/connection.php";
 										if (isset($_GET['to'])) {
 											$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
 											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+											if (isset($_GET['namareservasi'])) {
+												$nama_reservasi = $_GET['namareservasi'];
+											} else {
+												$nama_reservasi = '';
+											}
 										} else {
 											$rep_guest_name = 'Anonymous';
 										}
@@ -794,16 +786,16 @@
 										} else {
 											$alamat = '';
 										}
-										$query = "SELECT nama, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE nama ='$rep_guest_name' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+										$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
 										$result_query = mysqli_query($conn, $query);
 
 										if (mysqli_num_rows($result_query) > 0) {
 											// output data of each row
 											while ($row = mysqli_fetch_assoc($result_query)) {
-												echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Ungkapkan ucapan dan do'a restumu untuk calon pengantin\">" . $row["ucapan"] . "</textarea>";
+												echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan ucapan &amp; do'a restumu untuk kedua calon mempelai\">" . $row["ucapan"] . "</textarea>";
 											}
 										} else {
-											echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Ungkapkan ucapan dan do'a restumu untuk calon pengantin\"></textarea>";
+											echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan ucapan &amp; do'a restumu untuk kedua calon mempelai\"></textarea>";
 										}
 										mysqli_close($conn);
 										//https://stackoverflow.com/a/15864222/7772358
@@ -813,7 +805,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row js animate__animated">
 								<div class="col-md-12">
 									<div class="form-group">
 										<select name="konfirmasi-kehadiran" class="form-control" id="konfirmasi-kehadiran">
@@ -822,6 +814,11 @@
 											if (isset($_GET['to'])) {
 												$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
 												$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+												if (isset($_GET['namareservasi'])) {
+													$nama_reservasi = $_GET['namareservasi'];
+												} else {
+													$nama_reservasi = '';
+												}
 											} else {
 												$rep_guest_name = 'Anonymous';
 											}
@@ -830,50 +827,58 @@
 											} else {
 												$alamat = '';
 											}
-											$query = "SELECT nama, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE nama ='$rep_guest_name' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+											$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
 											$result_query = mysqli_query($conn, $query);
 
 											if (mysqli_num_rows($result_query) > 0) {
 												// output data of each row
 												while ($row = mysqli_fetch_assoc($result_query)) {
 													if ($row["attending"] = "0") {
-														echo "<option selected=\"\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
-														echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Akan Hadir</option>";
-														echo "<option selected=\"selected\" style=\"color: black;\" value=\"0\">Tidak Bisa Hadir</option>";
+														echo "<option selected=\"\" class=\"optionbox\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
+														echo "<option selected=\"\" class=\"optionbox\" value=\"1\">Akan Hadir</option>";
+														echo "<option selected=\"selected\" class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
 													} elseif ($row["attending"] = "1") {
-														echo "<option selected=\"\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
-														echo "<option selected=\"selected\" style=\"color: black;\" value=\"1\">Akan Hadir</option>";
-														echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Bisa Hadir</option>";
+														echo "<option selected=\"\" class=\"optionbox\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
+														echo "<option selected=\"selected\" class=\"optionbox\" value=\"1\">Akan Hadir</option>";
+														echo "<option selected=\"\" class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
 													} else {
-														echo "<option selected=\"selected\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
-														echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Akan Hadir</option>";
-														echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Bisa Hadir</option>";
+														echo "<option selected=\"selected\" class=\"optionbox\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
+														echo "<option selected=\"\" class=\"optionbox\" value=\"1\">Akan Hadir</option>";
+														echo "<option selected=\"\" class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
 													}
 												}
 											} else {
-												echo "<option selected=\"selected\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
-												echo "<option selected=\"\" style=\"color: black;\" value=\"1\">Akan Hadir</option>";
-												echo "<option selected=\"\" style=\"color: black;\" value=\"0\">Tidak Bisa Hadir</option>";
+												echo "<option selected=\"selected\" class=\"optionbox\" disabled=\"\" hidden=\"\" value=\"\">Konfirmasi Kehadiran</option>";
+												echo "<option selected=\"\" class=\"optionbox\" value=\"1\">Akan Hadir</option>";
+												echo "<option selected=\"\" class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
 											}
 											mysqli_close($conn);
 											//https://stackoverflow.com/a/15864222/7772358
 											//echo $_GET['to'];
 											//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
 											?>
+											<!-- <option selected="selected" disabled="" hidden="" value="">Konfirmasi Kehadiran</option>
+											<option selected="" style="color: black;" value="1">Akan Hadir</option>
+											<option selected="" style="color: black;" value="0">Tidak Bisa Hadir</option> -->
 										</select>
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row js animate__animated" id="divjumlahtamu">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="jumlahtamu" class="custom-label">Jumlah Tamu</label>
+										<label for="jumlahtamu" class="custom-label"><i class="icon-users"></i> Jumlah Tamu</label>
 										<input type="number" class="form-control" id="jumlahtamu" placeholder="0"></input>
 										<?php
 										include "./php/connection.php";
 										if (isset($_GET['to'])) {
 											$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
 											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+											if (isset($_GET['namareservasi'])) {
+												$nama_reservasi = $_GET['namareservasi'];
+											} else {
+												$nama_reservasi = '';
+											}
 										} else {
 											$rep_guest_name = 'Anonymous';
 										}
@@ -882,7 +887,7 @@
 										} else {
 											$alamat = '';
 										}
-										$query = "SELECT nama, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE nama ='$rep_guest_name' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+										$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
 										$result_query = mysqli_query($conn, $query);
 
 										if (mysqli_num_rows($result_query) > 0) {
@@ -901,86 +906,47 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row js animate__animated">
 								<div class="col-md-12">
 									<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Kirim</button>
 								</div>
 							</div>
 						</form>
-						<script type="text/javascript">
-							function clickButton() {
-								var name = document.getElementById('name').value;
-								var alamat = document.getElementById('alamat').value;
-								var wish = document.getElementById('wish').value;
-								var attending = document.getElementById('konfirmasi-kehadiran').value;
-								var jumlahtamu = document.getElementById('jumlahtamu').value;
-								var sesi = document.getElementById('sesi-reservasi').value;
-								if ($('#name').val() == '') {
-									alert('Mohon isi nama terlebih dahulu');
-									return false;
-								} else if ($('#wish').val() == '') {
-									alert('Silakan untuk mengisi ucapan kepada calon mempelai');
-									return false;
-								} else if ($('#konfirmasi-kehadiran :selected').text() == 'Akan Hadir') {
-									if ($('#jumlahtamu').val() == '') {
-										alert('Mohon isi jumlah tamu yang akan hadir');
-										return false;
-									}
-								} else {
-									$.ajax({
-										type: "post",
-										url: "./php/wish.php",
-										data: {
-											'name': name,
-											'alamat': alamat,
-											'wish': wish,
-											'attending': attending,
-											'jumlahtamu': jumlahtamu,
-											'sesi': sesi
-										},
-										cache: false,
-										success: function(html) {
-											$('#msg').html(html);
-											$('#minichat').html(html);
-											$('#minichat').load(location.href + " #minichat");
-											// alert('Confirmation sent. Thank you!')
-											$('#wish').val('');
-											$('#jumlahtamu').val('');
-											$('#konfirmasi-kehadiran').prop('selectedIndex', 0);
-											//$('#reservasiForm').trigger('reset');
-											$('#guest-count-icon').html(html);
-											$('#guest-count-icon').load(location.href + " #guest-count-icon");
-											$(function() {
-												$("time.timeago").timeago();
-											});
-										}
-									});
-									return false;
-								}
-							}
-						</script>
 					</div>
 					<br />
 					<br />
 					<div class="col-md-12">
 						<form class="form-inline">
 							<div class="form-group">
+								<?php
+								include "./php/connection.php";
+								$guest_query = "SELECT COUNT(namareservasi) AS namareservasi, date FROM tr_ucapan WHERE date in (SELECT MAX(date) from tr_ucapan GROUP BY namareservasi) ORDER BY `tr_ucapan`.`date` DESC;";
+								$guest_count = mysqli_query($conn, $guest_query);
+								$row = mysqli_fetch_assoc($guest_count);
+								$ucapan = $row['namareservasi'];
+								echo "<label for=\"minichat\" class=\"custom-label\"><i class=\"icon-twitter\"></i> " . $ucapan . " Ucapan</label>";
+								?>
 								<div class="fh5co-started form-control" style="height: 300px; overflow: auto;">
 									<div id="minichat">
 										<?php
 										while ($row = mysqli_fetch_assoc($shouts)) :
 											echo "<div style=\"text-align: left;\">";
-											echo "<strong>" . ucwords(strtolower($row["nama"])) . " </strong>";
+											echo "<strong>" . ucwords(strtolower($row["namareservasi"])) . " </strong>";
 											$att = $row["attending"];
+											$tamu = $row["jumlahtamu"];
 											if ($att == 1) {
-												echo "<span class=\"hadir\">Akan Hadir</span>";
+												if ($tamu == 1) {
+													echo "<span class=\"hadir\">Akan Hadir Sendiri</span>";
+												} else {
+													echo "<span class=\"hadir\">Akan Hadir Ber-" . $tamu . "</span>";
+												}
 											} elseif ($att == 0) {
 												echo "<span class=\"hadir tidak-hadir\">Tidak Bisa Hadir</span>";
 											} else {
 												echo "<span class=\"hadir tidak-konfirmasi\">Tidak Konfirmasi</span>";
 											}
-											echo "<p>" . $row['ucapan'];
-											echo "<time class=\"timeago\" style=\"text-align: right;display: flex;flex-direction: column-reverse;\" datetime=\"" . $row["date"] . "\">";
+											echo "<p class=\"wishtext\">" . $row['ucapan'];
+											echo "<time class=\"timeago timestamp\" datetime=\"" . $row["date"] . "\">";
 											echo "</time></p></div>";
 										endwhile; ?>
 									</div>
@@ -992,6 +958,30 @@
 				<iframe name="content" style="display:none">
 				</iframe>
 				<p id="msg"></p>
+				<div class="row">
+					<div class="col-md-12 col-md-offset-4">
+						<form class="form-inline">
+							<div class="col-md-4 col-sm-4">
+								<div class="form-group">
+									<div class="feature-center">
+										<span class="icon">
+											<i class="icon-users"></i>
+										</span>
+										<span class="counter-label counter-span">Estimasi jumlah tamu hadir: </span>
+										<?php
+										include "./php/connection.php";
+										$guest_query = "SELECT SUM(jumlahtamu) AS jumlahtamu, date FROM tr_ucapan WHERE date in (SELECT MAX(date) from tr_ucapan GROUP BY namareservasi) ORDER BY `tr_ucapan`.`date` DESC;";
+										$guest_count = mysqli_query($conn, $guest_query);
+										$row = mysqli_fetch_assoc($guest_count);
+										$sum = $row['jumlahtamu'];
+										echo "<span id=\"guest-count-icon\" class=\"counter js-counter counter-span\" data-from=\"0\" data-to=\"" . $sum . "\" data-speed=\"5000\" data-refresh-interval=\"50\">" . $sum;
+										?></span>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 		<footer id="fh5co-footer" role="contentinfo" class="bg-carton">
@@ -1060,7 +1050,87 @@
 	<script src="js/jquery.timeago.js"></script>
 	<script src="node_modules/clipboard/dist/clipboard.min.js"></script>
 
-	<script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//your code here
+			if ($('#konfirmasi-kehadiran :selected').text() == 'Tidak Bisa Hadir') {
+				$('#jumlahtamu').val('').attr('disabled', 'disabled');
+				$('#divjumlahtamu').hide('3');
+			}
+			$('#konfirmasi-kehadiran').on('change', function(e) {
+				var optionSelected = $("option:selected", this);
+				var valueSelected = this.value;
+				if (valueSelected == '0') {
+					$('#jumlahtamu').val('').attr('disabled', 'disabled');
+					$('#divjumlahtamu').hide('3');
+				} else {
+					$('#jumlahtamu').val(1).removeAttr('disabled');
+					$('#divjumlahtamu').show('3');
+				}
+			});
+			//set initial state.
+			$('#namachat').click(function() {
+				if ($(this).prop('checked')) {
+					// do what you need here
+					$('#namareservasi').val($('#name').val());
+				} else {
+					// do what you need here         
+					$('#namareservasi').val('');
+				}
+			});
+		});
+
+		function clickButton() {
+			var name = document.getElementById('name').value;
+			var namareservasi = document.getElementById('namareservasi').value;
+			var alamat = document.getElementById('alamat').value;
+			var wish = document.getElementById('wish').value;
+			var attending = document.getElementById('konfirmasi-kehadiran').value;
+			var jumlahtamu = document.getElementById('jumlahtamu').value;
+			var sesi = document.getElementById('sesi-reservasi').value;
+			if ($('#namareservasi').val() == '') {
+				alert('Mohon isi nama terlebih dahulu');
+				return false;
+			} else if ($('#wish').val() == '') {
+				alert('Silakan untuk mengisi ucapan kepada calon mempelai');
+				return false;
+			} else if ($('#konfirmasi-kehadiran :selected').text() == 'Akan Hadir' && $('#jumlahtamu').val() == '') {
+				alert('Mohon isi jumlah tamu yang akan hadir');
+				return false;
+			} else if ($('#konfirmasi-kehadiran :selected').text() == 'Akan Hadir' && $('#jumlahtamu').val() <= 0) {
+				alert('Jumlah tamu termasuk Anda minimal 1');
+				return false;
+			} else {
+				$.ajax({
+					type: "post",
+					url: "./php/wish.php",
+					data: {
+						'name': name,
+						'namareservasi': namareservasi,
+						'alamat': alamat,
+						'wish': wish,
+						'attending': attending,
+						'jumlahtamu': jumlahtamu,
+						'sesi': sesi
+					},
+					cache: false,
+					success: function(html) {
+						$('#msg').html(html);
+						$('#minichat').html(html);
+						$('#minichat').load(location.href + " #minichat");
+						alert('Confirmation sent. Thank you!')
+						$('#wish').val('');
+						// $('#jumlahtamu').val('');
+						//$('#konfirmasi-kehadiran').prop('selectedIndex', 0);
+						//$('#reservasiForm').trigger('reset');
+						$('#guest-count-icon').html(html);
+						$('#guest-count-icon').load(location.href + " #guest-count-icon");
+					}
+				});
+				return false;
+			}
+		}
+
 		var $win = $(window);
 		var $stat = $('.js.animate__animated'); // Change this to affect your desired element.
 
