@@ -647,13 +647,13 @@
 						<!-- 1. Define some markup -->
 						<div class="nama-pengantin-foto mempelai js animate__animated">Amplop Digital</div>
 
-						<a class="demo js animate__animated" href="images/denaya/qris_bca_qr.png" data-lightbox="example-1">
-							<img src="images/denaya/qris_bca_qr.png" alt="denaya" class="img-responsive js animate__animated" style="width: 250px;">
+						<a class="demo js animate__animated" href="images/denaya/qris_qr.png" data-lightbox="example-1">
+							<img src="images/denaya/qris_qr.png" alt="denaya" class="img-responsive js animate__animated" style="width: 250px;">
 						</a>
-						<p class="js animate__animated">Rekening BCA <span id="nomor-rekening">3370301866</span> a/n Denaya Candra Safira</p>
+						<!-- <p class="js animate__animated">Rekening BCA <span id="nomor-rekening">3370301866</span> a/n Denaya Candra Safira</p>
 						<button id="copy-data-rekening" type="button" class="tooltipped tooltipped-w m-2 p-2 border btn js animate__animated" aria-label="Nomor Rekening disalin" data-clipboard-action="copy" data-clipboard-target="#nomor-rekening">
 							Salin Nomor Rekening
-						</button>
+						</button> -->
 						<br />
 						<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
 						<br />
@@ -757,10 +757,10 @@
 									<div class="form-group">
 										<label for="name-anda" class="custom-label"><i class="icon-pencil"></i> Nama Anda</label>
 										<input type="name" name="namareservasi" id="namareservasi" class="form-control" placeholder="Masukan nama untuk ucapan realtime"></input>
-										<div class="form-check checkleft">
-											<input class="form-check-input" type="checkbox" id="namachat" name="namachat" value="namachatsama">
-											<label class="form-check-label checkcap">Nama saya sama dengan nama pada undangan</label>
-										</div>
+									</div>
+									<div class="form-check checkleft">
+										<input class="form-check-input" type="checkbox" id="namachat" name="namachat" value="namachatsama">
+										<label class="form-check-label checkcap">Nama saya sama dengan nama pada undangan</label>
 									</div>
 								</div>
 							</div>
