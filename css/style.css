@@ -2267,6 +2267,27 @@ form label {
   height: 100vh;
 }
 
+.bg-video {
+  background-image: url(../images/denaya/bg_video_nosealtip.png);
+  background-position: center 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  height: 785px;
+  padding-top: 30px;
+  width: 65%;
+}
+
+.sealtip{
+  width: 10%;
+  position: absolute;
+  display: inline;
+  margin-left: 30%;
+  margin-top: 1.2%;
+  z-index: 9;
+  text-align: center;
+
+}
 .bg-carton {
   background-image: url(../images/denaya/bg_denaya.jpg);
   background-repeat: repeat;

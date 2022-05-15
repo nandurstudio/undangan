@@ -14,197 +14,117 @@ include "./php/header.php";
 	<div class="fh5co-loader"></div>
 	<div id="page">
 
-
-		<div id="fh5co-couple" style="background-image: url(images/gallery-8.jpg); background-size: cover; padding: 2em !important;">
+		<img src="./images/denaya/sealtip.png" class="sealtip">
+		<div id="fh5co-couple" class="bg-carton" style="padding: 1.5em !important;">
 			<div class="container" style="width:100% !important">
-
-				<div class="row animate-box fadeInUp animated-fast">
-					<div class="col-md-8 col-md-offset-2 fh5co-heading" style="margin-bottom: 3em !important;">
-						<div class="col-md-3 col-sm-6 animate-box fadeInUp animated-fast">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-users"></i>
-								</span>
-							</div>
-						</div>
-						<h2 style="font-family: Style Script, Arial, sans-serif !important;" id="guest-count-icon">0 invited guests in attendance</h2>
-					</div>
-				</div>
-
 				<div class="row">
-					<div class="col-md-6" style="width: 35% !important;">
-						<link rel="stylesheet" href="./css/w3.css">
-						<style>
-							.mySlides {
-								display: none;
-							}
-						</style>
-						<div class="col-md-8 col-md-offset-2 text-center">
-							<p>This event is supported by:</p>
-							<!-- <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p> -->
-						</div>
-
-						<div class="w3-content w3-section" style="max-width:500px">
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>cPP</h1>
-									<p><a href="https://www.instagram.com/noor.diansyah/" target="blank">@noor.diansyah</a></p>
-									<a href="https://www.instagram.com/noor.diansyah/" target="blank">
-										<img src="./images/pengantin_pria_nft.png" width="75%" height="75%">
-									</a>
-								</div>
-							</div>
-
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>cPW</h1>
-									<p><a href="https://www.instagram.com/hilyadina_/" target="blank">@hilyadina_</a></p>
-									<a href="https://www.instagram.com/hilyadina_/" target="blank">
-										<img src="./images/pengantin_wanita_nft.png" width="75%" height="75%">
-									</a>
-								</div>
-							</div>
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>Photography</h1>
-									<p><a href="https://www.instagram.com/mwaafi/" target="blank">@mwaafi</a></p>
-									<a href="https://www.instagram.com/mwaafi/" target="blank">
-										<img src="./images/mwaafi.png" width="75%" height="75%">
-									</a>
-								</div>
-							</div>
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>Wedding Mc</h1>
-									<p><a href="https://www.instagram.com/edoalfarez/" target="blank">@edoalfarez</a></p>
-									<a href="https://www.instagram.com/edoalfarez/" target="blank">
-										<img src="./images/edoalfrez.png" width="75%" height="75%">
-									</a>
-								</div>
-							</div>
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>Decoration and Attire</h1>
-									<p><a href="https://www.instagram.com/baskara_wedding_planner/" target="blank">@baskara_wedding_planner</a></p>
-									<a href="https://www.instagram.com/baskara_wedding_planner/" target="blank">
-										<img src="./images/baskara.jpeg" width="100%" height="100%">
-									</a>
-								</div>
-							</div>
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>MUA</h1>
-									<p><a href="https://www.instagram.com/armeitarivaldi/" target="blank">@armeitarivaldi</a></p>
-									<a href="https://www.instagram.com/armeitarivaldi/" target="blank">
-										<img src="./images/armeita.jpeg" width="100%" height="100%">
-									</a>
-								</div>
-							</div>
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>Catering</h1>
-									<p><a href="https://www.instagram.com/teman.catering/" target="blank">@teman.catering</a></p>
-									<a href="https://www.instagram.com/teman.catering/" target="blank">
-										<img src="./images/teman_catering.png" width="100%" height="100%">
-									</a>
-								</div>
-							</div>
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>Wedding Organizer</h1>
-									<p><a href="https://www.instagram.com/teman.event/" target="blank">@teman.event</a></p>
-									<a href="https://www.instagram.com/teman.event/" target="blank">
-										<img src="./images/teman_wo.png" width="100%" height="100%">
-									</a>
-								</div>
-							</div>
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>Drinks</h1>
-									<p><a href="https://www.instagram.com/ruangketiga_/" target="blank">@ruangketiga_</a></p>
-									<a href="https://www.instagram.com/ruangketiga_/" target="blank">
-										<img src="./images/ruang_ketiga.png" width="75%" height="75%">
-									</a>
-								</div>
-							</div>
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>Music & Entertaiment</h1>
-									<p><a href="https://www.instagram.com/dmtmusicentertaiment/" target="blank">@dmtmusicentertaiment</a></p>
-									<a href="https://www.instagram.com/dmtmusicentertaiment/" target="blank">
-										<img src="./images/dmt.png" width="75%" height="75%">
-									</a>
-								</div>
-							</div>
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>Printed Invitation Card</h1>
-									<p><a href="https://www.instagram.com/sakinapercetakan/" target="blank">@sakinapercetakan</a></p>
-									<a href="https://www.instagram.com/sakinapercetakan/" target="blank">
-										<img src="./images/sakina.png" width="75%" height="75%">
-									</a>
-								</div>
-							</div>
-							<div class="feature-left mySlides w3-animate-left">
-								<span class="icon">
-									<i class="icon-instagram"></i>
-								</span>
-								<div class="feature-copy">
-									<h1>Support & Digital Invitation</h1>
-									<p><a href="https://www.instagram.com/nandur.studio/" target="blank">@nandur.studio</a></p>
-									<a href="https://www.instagram.com/nandur.studio/" target="blank">
-										<img src="./images/nandur_studio.png" width="75%" height="75%">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6 animate-box fadeInUp animated-fast" style="width: 65% !important; height:720px">
-						<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); height:720px">
+					<div class="col-md-6 animate-box fadeInUp animated-fast bg-video">
+						<div class="fh5co-video" style="height:720px">
 							<div id="yt-wrap">
 								<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 								<div id="ytplayer"></div>
 							</div>
 						</div>
+						<style>
+							ul {
+								text-align: justify;
+							}
+
+							ul:after {
+								content: '';
+								display: inline-block;
+								width: 100%;
+							}
+
+							ul:before {
+								content: '';
+								display: block;
+								margin-top: -1.25em;
+							}
+
+							li {
+								display: inline-block;
+								font: 1em/1.5 sans-serif;
+								margin-right: -.25em;
+								padding: .75em 1.5em;
+								position: relative;
+								top: 1.25em;
+							}
+						</style>
+						<div style="padding-top:30px">
+							<ul>
+								<li>
+									<div class="text-center">
+										<img src="images/denaya/protokol_QRCode.png" alt="denaya_qr_code" class="img-responsive logo-qrcode js animate__animated">
+										<div class="p-protokol js animate__animated">Tunjukan QR Code<br/>saat memasuki tempat acara</div>
+									</div>
+								</li>
+								<li>
+									<div class="text-center">
+										<img src="images/denaya/protokol_hand_sanitizer.png" alt="denaya_hand_sanitizer" class="img-responsive logo-qrcode js animate__animated">
+										<div class="p-protokol js animate__animated">Bersihkan Tangan dengan sabun<br/>atau hand sanitizer yang disediakan</div>
+									</div>
+								</li>
+								<li>
+									<div class="text-center">
+										<img src="images/denaya/protokol_masker.png" alt="denaya_masker" class="img-responsive logo-qrcode js animate__animated">
+										<div class="p-protokol js animate__animated">Selalu gunakan masker<br/>kecuali saat makan</div>
+									</div>
+								</li>
+								<li>
+									<div class="text-center">
+										<img src="images/denaya/protokol_jaga_jarak.png" alt="denaya_jaga_jarak" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+										<div class="p-protokol js animate__animated">Menjaga jarak dengan tamu lain,<br/>hindari kontak fisik dan jauhi kerumunan</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6" style="width: 35% !important;">
+						<div class="row" style="padding-top: 50px;">
+							<div class="col-md-8 col-md-offset-2 text-center">
+								<div class="display-t">
+									<div class="display-tc">
+										<img id="logo-pengantin" style="opacity: 1;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src=".\images\denaya\LOGONDA_green_120x101.png" alt="Logo Naufal And Denaya" width="20%">
+										<div class="hari-pernikahan" style="color: #3d4742;font-size:1.5em;line-height:0.5">Hari Pernikahan</div>
+										<div class="nama-pengantin js animate__animated animate__fadeInUp" style="color: #3d4742;">Naufal &amp; Denaya</div>
+									</div>
+								</div>
+								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated animate__fadeInUp" style="padding-top:50px ;">
+							</div>
+						</div>
+						<div class="nama-tamu" style="font-size: 2em;color: #70866b;padding-top:50px">Selamat Datang</div>
+						<div class="animate-box just-center">
+							<?php
+							include './php/connection.php';
+							$selectquery = "SELECT * FROM tr_tamu ORDER BY tamuId DESC LIMIT 1";
+							$reservasi = mysqli_query($conn, $selectquery);
+							$row = $reservasi->fetch_assoc();
+							$id_guest = $row['tamuId'];
+							$name_guest = $row['name'];
+							$adr_guest = $row['alamat'];
+							$sesi_guest = $row['sesi'];
+							$total_guest = $row['jumlah_tamu'];
+							if ($adr_guest == "") {
+								echo "<div class=\"nama-pengantin-foto\" style=\"font-size:4em\">" . $name_guest . "</div>";
+							} else {
+								echo "<div class=\"nama-pengantin-foto\" style=\"font-size:4em\">" . $name_guest . "</div>";
+							}
+							?>
+							<!-- <img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated animate__fadeInUp"> -->
+						</div>
+						<div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 50px;padding-bottom: 20px;">
+							<div class="feature-center">
+								<span class="icon">
+									<i class="icon-users"></i>
+								</span>
+								<div class="nama-tamu" style="font-size: 2em;">Estimasi Jumlah Hadir</div>
+								<div class="nama-pengantin-foto" id="guest-count-icon" style="font-size: 4em;">0</div>
+							</div>
+						</div>
+
 					</div>
 				</div>
-
-				<p>This event is carried out by implementing the health protocols.</br>
-				<p>Without reducing respect, in order to reduce the spread of the pandemic, please always follow the health protocols and arrive on time according to the hours listed on the invitation.</p>
 			</div>
 		</div>
 
@@ -216,7 +136,7 @@ include "./php/header.php";
 						url: "./php/jumlahtamurealtime.php",
 						dataType: "html", //expect html to be returned                
 						success: function(response) {
-							$("#guest-count-icon").text(response + " invited guests in attendance");
+							$("#guest-count-icon").text(response + "");
 						}
 					});
 				}, 2000);
@@ -237,7 +157,7 @@ include "./php/header.php";
 				player = new YT.Player('ytplayer', {
 					width: '100%',
 					height: '720px',
-					videoId: 'iKxRWdiWUYI',
+					videoId: 'Lo0bmhFO0CU',
 					events: {
 						'onReady': onPlayerReady,
 						'onStateChange': onPlayerStateChange
@@ -263,24 +183,6 @@ include "./php/header.php";
 
 			function stopVideo() {
 				player.stopVideo();
-			}
-
-
-			var myIndex = 0;
-			carousel();
-
-			function carousel() {
-				var i;
-				var x = document.getElementsByClassName("mySlides");
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";
-				}
-				myIndex++;
-				if (myIndex > x.length) {
-					myIndex = 1
-				}
-				x[myIndex - 1].style.display = "block";
-				setTimeout(carousel, 5000);
 			}
 		</script>
 
@@ -314,6 +216,9 @@ include "./php/header.php";
 
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script src="js/splide-extension-auto-scroll.min.js"></script>
+	<script src="js/splide.min.js"></script>
+	<script src="js/splide-renderer.min.js"></script>
 </body>
 
 </html>
