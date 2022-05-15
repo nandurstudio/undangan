@@ -104,7 +104,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,300;1,400;1,500;1,600&family=Karla&display=swap" rel="stylesheet">
 
-	<link rel="icon" type="image/x-icon" href="./images/denaya/LOGONDA_brown_120x101.ico">
+	<link rel="icon" type="image/x-icon" href="./images/denaya/favicon.ico">
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.min.css">
