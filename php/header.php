@@ -115,6 +115,7 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/splide.min.css">
+	<link rel="stylesheet" href="css/jquery.dataTables.min.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
