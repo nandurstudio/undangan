@@ -56,25 +56,25 @@ include "./php/header.php";
 								<li>
 									<div class="text-center">
 										<img src="images/denaya/protokol_QRCode.png" alt="denaya_qr_code" class="img-responsive logo-qrcode js animate__animated">
-										<div class="p-protokol js animate__animated">Tunjukan QR Code<br/>saat memasuki tempat acara</div>
+										<div class="p-protokol js animate__animated">Tunjukan QR Code<br />saat memasuki tempat acara</div>
 									</div>
 								</li>
 								<li>
 									<div class="text-center">
 										<img src="images/denaya/protokol_hand_sanitizer.png" alt="denaya_hand_sanitizer" class="img-responsive logo-qrcode js animate__animated">
-										<div class="p-protokol js animate__animated">Bersihkan Tangan dengan sabun<br/>atau hand sanitizer yang disediakan</div>
+										<div class="p-protokol js animate__animated">Bersihkan Tangan dengan sabun<br />atau hand sanitizer yang disediakan</div>
 									</div>
 								</li>
 								<li>
 									<div class="text-center">
 										<img src="images/denaya/protokol_masker.png" alt="denaya_masker" class="img-responsive logo-qrcode js animate__animated">
-										<div class="p-protokol js animate__animated">Selalu gunakan masker<br/>kecuali saat makan</div>
+										<div class="p-protokol js animate__animated">Selalu gunakan masker<br />kecuali saat makan</div>
 									</div>
 								</li>
 								<li>
 									<div class="text-center">
 										<img src="images/denaya/protokol_jaga_jarak.png" alt="denaya_jaga_jarak" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
-										<div class="p-protokol js animate__animated">Menjaga jarak dengan tamu lain,<br/>hindari kontak fisik dan jauhi kerumunan</div>
+										<div class="p-protokol js animate__animated">Menjaga jarak dengan tamu lain,<br />hindari kontak fisik dan jauhi kerumunan</div>
 									</div>
 								</li>
 							</ul>
@@ -95,22 +95,7 @@ include "./php/header.php";
 						</div>
 						<div class="nama-tamu" style="font-size: 2em;color: #70866b;padding-top:50px">Selamat Datang</div>
 						<div class="animate-box just-center">
-							<?php
-							include './php/connection.php';
-							$selectquery = "SELECT * FROM tr_tamu ORDER BY tamuId DESC LIMIT 1";
-							$reservasi = mysqli_query($conn, $selectquery);
-							$row = $reservasi->fetch_assoc();
-							$id_guest = $row['tamuId'];
-							$name_guest = $row['name'];
-							$adr_guest = $row['alamat'];
-							$sesi_guest = $row['sesi'];
-							$total_guest = $row['jumlah_tamu'];
-							if ($adr_guest == "") {
-								echo "<div class=\"nama-pengantin-foto\" style=\"font-size:4em\">" . $name_guest . "</div>";
-							} else {
-								echo "<div class=\"nama-pengantin-foto\" style=\"font-size:4em\">" . $name_guest . "</div>";
-							}
-							?>
+							<div id="nama-tamu-undangan" class="nama-pengantin-foto" style="font-size:4em">Tamu Undangan</div>
 							<!-- <img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated animate__fadeInUp"> -->
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 50px;padding-bottom: 20px;">
@@ -139,6 +124,15 @@ include "./php/header.php";
 							$("#guest-count-icon").text(response + "");
 						}
 					});
+
+					$.ajax({
+						method: "GET",
+						url: "./php/namatamu.php",
+						dataType: "html",
+						success: function(response) {
+							$("#nama-tamu-undangan").text(response);
+						}
+					});
 				}, 2000);
 
 			});
@@ -157,7 +151,7 @@ include "./php/header.php";
 				player = new YT.Player('ytplayer', {
 					width: '100%',
 					height: '720px',
-					videoId: 'Lo0bmhFO0CU',
+					videoId: 'wa8AdRfo2wc',
 					events: {
 						'onReady': onPlayerReady,
 						'onStateChange': onPlayerStateChange
