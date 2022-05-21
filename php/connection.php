@@ -12,4 +12,5 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 } else {
     $db = mysqli_select_db($conn, $dbname);
+    $db1 = new mysqli($servername, $username, $password, $dbname);
 }
