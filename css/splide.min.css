@@ -156,7 +156,7 @@
 .splide__arrow {
     -ms-flex-align: center;
     align-items: center;
-    background: #3d4742be;
+    background: #ff9800;
     border: 0;
     border-radius: 50%;
     cursor: pointer;
@@ -220,7 +220,7 @@
 }
 
 .splide__pagination__page {
-    background: #3d4742;
+    background: #ff9800;
     border: 0;
     border-radius: 50%;
     display: inline-block;
@@ -234,7 +234,7 @@
 }
 
 .splide__pagination__page.is-active {
-    background: #4a5a52;
+    background: #ffba52;
     transform: scale(1.4);
     z-index: 1
 }
