@@ -101,8 +101,8 @@ include "./php/header.php";
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="row">
-							<div class="nama-pengantin-foto js animate__animated">Scan Tamu Undangan Naufal &amp; Denaya</div>
-							<h3 style="color:#566d66;" id="scan-inst"></h3>
+							<div class="nama-pengantin-foto js animate__animated">Scan Tamu Undangan Pandawa Awards 2023</div>
+							<h3 style="color:#c69a2f;" id="scan-inst"></h3>
 							<div class="row animate-box">
 								<div id="reader" width="400px"></div>
 							</div>

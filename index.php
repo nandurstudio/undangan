@@ -34,25 +34,24 @@
 	} else {
 		echo "0 results";
 	}
-	$the_wedding = "Lembar Undangan " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_wedding = "Lembar Undangan Pandawa Awards 2023. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
 	$the_desc = "Assalamu'alaikum Wr. Wb.
 	Bismillahirrahmanirrahim
-	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami,
+	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Pandawa Awards 2023, yang mana akan di pandu oleh 
 	
 	" . $pengantin_pria . "
 	&
 	" . $pengantin_wanita . "
 	
 	Pada :
-	Minggu, 22 Mei 2022
+	Rabu, 04 Oct 2023
 	
-	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
-	Berkaitan dengan pembatasan sosial pada masa pandemi Covid-19, untuknya agar tetap menggunakan masker dan hadir sesuai waktu yang telah ditentukan.
+	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memeriahkan acaranya.
 	
 	Terima kasih,
 	Wassalamuallaikum Wr. Wb.
 	
-	Kami yang berbahagia,
+	Ketua, tim panitia, MC,
 	" . $pengantin_pria . " &amp; " . $pengantin_wanita . "";
 	echo "<title>" . $the_wedding . "</title>";
 	echo "<meta name=\"description\" content=\"" . $the_desc . "\" />";
@@ -64,15 +63,15 @@
 
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="wedding, Naufal, Denaya" />
+	<meta name="keywords" content="invitation, pandawa, awards" />
 	<meta name="author" content="Nandur Digital Invitation" />
 	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#bfa594">
+	<meta name="theme-color" content="#D1B374">
 	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#bfa594">
+	<meta name="msapplication-navbutton-color" content="#D1B374">
 	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#bfa594">
-	<link rel="icon" sizes="192x192" href="images/denaya/LOGONDA_brown_192.png">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#D1B374">
+	<link rel="icon" sizes="192x192" href="images/pandawa/logo_pandawa_192.png">
 	<!-- 
 	//////////////////////////////////////////////////////
 
@@ -88,15 +87,15 @@
 	 -->
 
 	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="Pernikahan Naufal & Denaya" />
-	<meta property="og:image" content="images/denaya/og_image2.png" />
-	<meta property="og:url" content="https://naufal-denaya.lembarundangan.com" />
-	<meta property="og:site_name" content="Lembar Undangan Digital" />
-	<meta property="og:description" content="Minggu, 22 Mei 2022 | Kampung Batu Malakasari" />
-	<meta name="twitter:title" content="Pernikahan Naufal & Denaya" />
-	<meta name="twitter:image" content="images/denaya/og_image2.png" />
-	<meta name="twitter:url" content="https://naufal-denaya.lembarundangan.com" />
-	<meta name="twitter:card" content="" />
+	<meta property="og:title" content="Undangan Pandawa Awards" />
+	<meta property="og:image" content="images/pandawa/og_image.png" />
+	<meta property="og:url" content="https://kn-sf.com/undangan" />
+	<meta property="og:site_name" content="Undangan Digital Pandawa" />
+	<meta property="og:description" content="Rabu, 04 Oct 2023 - 09:00 | Diamond Room" />
+	<meta name="twitter:title" content="Undangan Pandawa Awards" />
+	<meta name="twitter:image" content="images/pandawa/og_image.png" />
+	<meta name="twitter:url" content="https://kn-sf.com/undangan" />
+	<meta name="twitter:card" content="Rabu, 04 Oct 2023 - 09:00 | Diamond Room" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 
@@ -104,7 +103,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,300;1,400;1,500;1,600&family=Karla&display=swap" rel="stylesheet">
 
-	<link rel="icon" type="image/x-icon" href="./images/denaya/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="./images/pandawa/favicon.ico">
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.min.css">
@@ -167,38 +166,8 @@
 		</div>
 
 		<div class="container name-cover" id="name-cover">
-			<div class="col-md-8 col-md-offset-2 text-center">
-				<?php
-				include "./php/connection.php";
-				$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
-				$result_pria = mysqli_query($conn, $sql_pria);
-				$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
-				$result_wanita = mysqli_query($conn, $sql_wanita);
-
-				if (mysqli_num_rows($result_pria) > 0) {
-					// output data of each row
-					while ($row = mysqli_fetch_assoc($result_pria)) {
-						echo "<div id=\"namaPengantinPria\" class=\"nama-pengantin pria animate__animated animate__fadeInLeft\">" . $row["txtNamaDepan"] . "</div>";
-					}
-				} else {
-					echo "0 results";
-				}
-				echo "<img class=\"logo-pengantin animate__animated animate__pulse animate__infinite infinite\" src=\".\images\denaya\LOGONDA_brown_120x101.png\" alt=\"Logo Naufal And Denaya\" width=\"100\" height=\"81\">";
-				if (mysqli_num_rows($result_wanita) > 0) {
-					// output data of each row
-					while ($row = mysqli_fetch_assoc($result_wanita)) {
-						echo "<div class=\"nama-pengantin wanita animate__animated animate__fadeInRight\">" . $row["txtNamaDepan"] . "</div>";
-					}
-				} else {
-					echo "0 results";
-				}
-
-				mysqli_close($conn);
-				//https://stackoverflow.com/a/15864222/7772358
-
-				//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
-
-				?>
+			<div class="text-center">
+				<img class="logo-pengantin animate__animated animate__pulse animate__infinite infinite" src="./images/pandawa/tiket.png" alt="Logo Naufal And Denaya" width="95%">
 			</div>
 			<div class="animate__animated animate__headShake animate__infinite infinite col-md-8 col-md-offset-2 text-center">
 				<button id="tombol-buka" type="submit" class="animate__animated animate__zoomInDown btn btn-buka">Buka Undangan</button>
@@ -227,47 +196,14 @@
 		</nav> -->
 	<section>
 		<!-- Cover -->
-		<header id="fh5co-header" class="fh5co-cover mid" role="banner" style="background-image:url(images/denaya/cover_denaya2.jpg);" data-stellar-background-ratio="0.5">
+		<header id="fh5co-header" class="fh5co-cover mid" role="banner" style="background-image:url(images/pandawa/cover_pandawa2.jpg);" data-stellar-background-ratio="0.5">
 			<!-- <div class="overlay"></div> -->
 			<div class="container concover">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t">
 							<div class="display-tc">
-								<img id="logo-pengantin" style="opacity:0;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src=".\images\denaya\LOGONDA_brown_120x101.png" alt="Logo Naufal And Denaya" width="20%">
-								<div class="hari-pernikahan">Hari Pernikahan</div>
-								<?php
-								include "./php/connection.php";
-								$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
-								$result_pria = mysqli_query($conn, $sql_pria);
-								$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
-								$result_wanita = mysqli_query($conn, $sql_wanita);
-
-								if (mysqli_num_rows($result_pria) > 0) {
-									// output data of each row
-									while ($row = mysqli_fetch_assoc($result_pria)) {
-										echo "<div class=\"nama-pengantin js animate__animated\">" . $row["txtNamaDepan"];
-									}
-								} else {
-									echo "0 results";
-								}
-								echo " &amp; ";
-								if (mysqli_num_rows($result_wanita) > 0) {
-									// output data of each row
-									while ($row = mysqli_fetch_assoc($result_wanita)) {
-										echo $row["txtNamaDepan"] . "</div>";
-									}
-								} else {
-									echo "0 results";
-								}
-
-								mysqli_close($conn);
-								//https://stackoverflow.com/a/15864222/7772358
-
-								//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
-
-								?>
-								<div class="nama-tanggal js animate__animated">Minggu, 22 Mei 2022</div>
+								<img id="logo-pengantin" style="opacity:0;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/pandawa/logo_pandawa_time.png" alt="Logo Pandawa" width="80%">
 							</div>
 						</div>
 					</div>
@@ -315,10 +251,10 @@
 							// echo $encrypted_string;
 							// echo $decrypted_string;
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $decrypted_string . "</div>
-							<p class=\"js animate__animated\">Dengan senang hati,<br/>kami mengundang Anda untuk hadir<br/>di acara pernikahan kami.</p>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Pandawa Awards 2023.</p>
 							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\">
-							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . "&amp;size=200x200\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
+							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "&amp;size=200x200\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
 							</a><br \><div class=\"p-protokol js animate__animated\">Klik untuk memperbesar</div>";
 							// https://www.jqueryscript.net/lightbox/lightbox2.html
 						} else {
@@ -326,8 +262,8 @@
 							// echo $actual_link;
 							$actual_link = "Anonymous";
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $actual_link . "</div>
-							<p class=\"js animate__animated\">\"Dengan senang hati,<br/>kami mengundang Anda untuk hadir<br/>di acara pernikahan kami.\"</p>
-							<p class=\"js animate__animated\">\"Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:\"</p>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Pandawa Awards 2023.</p>
+							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
 							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=200x200\" alt=\"QR Code " . $actual_link . "\">
 							</a><br \><div class=\"p-protokol js animate__animated\">Klik untuk memperbesar</div>";
@@ -344,9 +280,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="nama-pengantin-foto mempelai js animate__animated">Mempelai Pria</div>
-						<a class="demo js animate__animated" href="images/denaya/naufal_flower.png" data-lightbox="example-1">
-							<img src="images/denaya/naufal_flower.png" alt="naufal" class="img-responsive foto-pengantin js animate__animated">
+						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony 1</div>
+						<a class="demo js animate__animated" href="images/pandawa/bagus.png" data-lightbox="example-1">
+							<img src="images/pandawa/bagus.png" alt="Bagus" class="img-responsive foto-pengantin js animate__animated">
 						</a>
 						<?php
 						include "./php/connection.php";
@@ -383,7 +319,8 @@
 						}
 						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_pria . "</div>
 							</a>";
-						echo "<p class=\"js animate__animated\">Putra ketiga dari<br /><span class=\"ortu\">Bapak " . $ayah_pria . " &amp; Ibu " . $ibu_pria . "</span></p>";
+						echo "<p class=\"js animate__animated\">Intern<br /><span class=\"ortu\">Department PAM</span></p>";
+						// echo "<p class=\"js animate__animated\">Putra ketiga dari<br /><span class=\"ortu\">Bapak " . $ayah_pria . " &amp; Ibu " . $ibu_pria . "</span></p>";
 
 						mysqli_close($conn);
 						//https://stackoverflow.com/a/15864222/7772358
@@ -401,9 +338,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="nama-pengantin-foto mempelai js animate__animated">Mempelai Wanita</div>
-						<a class="demo js animate__animated" href="images/denaya/denaya_flower.png" data-lightbox="example-1">
-							<img src="images/denaya/denaya_flower.png" alt="denaya" class="img-responsive foto-pengantin js animate__animated">
+						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony 2</div>
+						<a class="demo js animate__animated" href="images/pandawa/mawar.png" data-lightbox="example-1">
+							<img src="images/pandawa/mawar.png" alt="Mawar" class="img-responsive foto-pengantin js animate__animated">
 						</a>
 						<?php
 						include "./php/connection.php";
@@ -443,7 +380,8 @@
 
 						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_wanita . "</div>
 							</a>";
-						echo "<p class=\"js animate__animated\">Putri kedua dari<br /><span class=\"ortu\">Bapak " . $ayah_wanita . " &amp; Ibu " . $ibu_wanita . "</span></p>";
+						echo "<p class=\"js animate__animated\">Admin<br /><span class=\"ortu\">Department PAM</span></p>";
+						// echo "<p class=\"js animate__animated\">Putri kedua dari<br /><span class=\"ortu\">Bapak " . $ayah_wanita . " &amp; Ibu " . $ibu_wanita . "</span></p>";
 						mysqli_close($conn);
 						//https://stackoverflow.com/a/15864222/7772358
 						//echo $_GET['to'];
@@ -461,36 +399,15 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="big-date js animate__animated">22.05.22</div>
+						<div class="big-date js animate__animated">04.OCT.23</div>
 						<div id="demo"></div>
 						<div class="simply-countdown simply-countdown-one js animate__animated"></div>
-						<p><a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Wedding+of+Naufal+%26+Denaya&details=Dengan+senang+hati%2C+kami+mengundang+Anda+untuk+hadir+di+acara+pernikahan+kami.%0A%0A22.05.22%0A%0AAkad+Nikah%0A15.30+WIB+-+16.30+WIB%0A%0AResepsi%0A18.30+WIB+-+19.30+WIB%0A%0AKampung+Batu+Malakasari%0AJl.+Raya+Banjaran+Rencong%2C+Malakasari%2C+Kec.+Baleendah%2C+Kabupaten+Bandung%2C+Jawa+Barat+40375%0A%0AGoogle+Maps%0Ahttps%3A%2F%2Fgoo.gl%2Fmaps%2FJ2niHYyzsmvpLYx46&location=Kampung+Batu+Malakasari+Ecopark%2C+Jl.+Raya+Banjaran+Rencong%2C+Malakasari%2C+Kec.+Baleendah%2C+Kabupaten+Bandung%2C+Jawa+Barat+40375%2C+Indonesia&dates=20220522T083000Z%2F20220522T123000Z&&ctz=Asia/Jakarta" class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Kalender</a></p>
-						<br />
+						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20231004T020000Z/20231004T040000Z&crm=AVAILABLE&sprop=website:www.kn-sf.com/undangan&sprop=name:KN-SF&ctz=Asia/Jakarta&text=Pandawa+Awards+2023&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2030%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk." class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Kalender</a></p>
 						<br />
 						<div class="col-md-8 col-md-offset-2 text-center">
-							<div class="nama-pengantin-foto js animate__animated">Detail Acara</div>
-							<div class="akad-nikah js animate__animated">Akad Nikah</div>
-							<div class="waktu-akad-nikah js animate__animated">Minggu, 22 Mei 2022</div>
-							<div class="waktu-akad-nikah js animate__animated">15.30 WIB - 16.30 WIB</div>
-							<br />
-							<div class="akad-nikah js animate__animated">Resepsi</div>
-							<div class="waktu-akad-nikah js animate__animated">Minggu, 22 Mei 2022</div>
-							<?php
-							if (isset($_GET['s'])) {
-								$sesi = htmlspecialchars($_GET['s']); // Getting parameter value inside PHP variable
-								if ($sesi == "1") {
-									echo "<div class=\"waktu-akad-nikah js animate__animated\">18.30 WIB - 19.30 WIB</div>";
-								} elseif ($sesi == "2") {
-									echo "<div class=\"waktu-akad-nikah js animate__animated\">19.30 WIB - 20.20 WIB</div>";
-								} else {
-									echo "<div class=\"waktu-akad-nikah js animate__animated\">18.30 WIB - 20.20 WIB</div>";
-								}
-							} else {
-								// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
-								// echo $actual_link;
-								echo "<div class=\"waktu-akad-nikah js animate__animated\">18.30 WIB - 20.20 WIB</div>";
-							}
-							?>
+						<a class="demo js animate__animated" href="images/pandawa/events.png" data-lightbox="example-1">
+							<img src="images/pandawa/events.png" alt="Event" class="img-responsive foto-pengantin js animate__animated">
+						</a>
 						</div>
 					</div>
 				</div>
@@ -506,11 +423,11 @@
 						<div class="nama-pengantin-foto js animate__animated">Lokasi</div>
 						<div id="map" class="fh5co-map event-wrap">
 							<div class="col-md-8 col-md-offset-2 text-center">
-								<p class="js animate__animated"><span style="font-weight:bold;">KAMPUNG BATU MALAKASARI</span><br />Jl. Raya Banjaran Rencong, Malakasari,<br />Kec. Baleendah, Kabupaten Bandung,<br />Jawa Barat 40375</p>
-								<p><a href="https://goo.gl/maps/J2niHYyzsmvpLYx46" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
+								<p class="js animate__animated"><span style="font-weight:bold;">DIAMOND ROOM LT. 3</span><br />PT. Sanghiang Perkasa - Kalbe Nutritionals,<br />Kawasan Industri Indotaisei, Kalihurip, Kec. Cikampek,<br />Karawang, Jawa Barat 41373</p>
+								<p><a href="https://maps.app.goo.gl/3wuVHxG1jPgWjUjt9" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
 								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
 							</div>
-							<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1979.9996528745824!2d107.6069444!3d-7.0093633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9629a85b063%3A0xd9692b1ae0a46add!2sKampung%20Batu%20Malakasari%20Ecopark!5e0!3m2!1sen!2sid!4v1651043392876!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+							<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15859.357860273401!2d107.4120537!3d-6.4146679!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e697313a5df4371%3A0x7b098758ed16c78f!2sPT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals!5e0!3m2!1sen!2sid!4v1696298434771!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 							</iframe>
 						</div>
 					</div>
@@ -525,24 +442,30 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<p class="js animate__animated">Tanpa mengurangi rasa hormat, untuk mencegah terjadi penyebaran virus, para tamu, diharapkan selalu menerapkan protokol kesehatan selama acara berlangsung sebagai berikut:</p>
-						<div class="col-md-8 col-md-offset-2 text-center">
-							<img src="images/denaya/protokol_QRCode.png" alt="denaya_qr_code" class="img-responsive logo-qrcode js animate__animated">
-							<div class="p-protokol js animate__animated">Tunjukan QR Code saat memasuki tempat acara</div>
+						<p class="js animate__animated">Tanpa mengurangi rasa hormat, harap mengkuti peraturan yang sudah ditetapkan oleh panitia agar acara berjalan lancar dengan mengikuti protokol berikut:</p>
+						<div class="col-md-8 col-md-offset-2 text-center kolom">
+							<div class="text-center">
+								<img src="images/pandawa/time.png" alt="Datang tepat waktu" class="img-responsive logo-qrcode js animate__animated">
+								<div class="p-protokol js animate__animated">Datang 30 menit sebelum acara dimulai</div>
+							</div>
+							<div class="text-center">
+								<img src="images/pandawa/jas.png" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
+								<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan berupa smart casual</div>
+							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
 							<div class="text-center">
-								<img src="images/denaya/protokol_hand_sanitizer.png" alt="denaya_hand_sanitizer" class="img-responsive logo-qrcode js animate__animated">
-								<div class="p-protokol js animate__animated">Bersihkan Tangan dengan sabun atau hand sanitizer yang disediakan</div>
+								<img src="images/pandawa/tiket_icon.png" alt="Tiket" class="img-responsive logo-qrcode js animate__animated">
+								<div class="p-protokol js animate__animated">Siapkan tiket virtual ini sebagai akses masuk</div>
 							</div>
 							<div class="text-center">
-								<img src="images/denaya/protokol_masker.png" alt="denaya_masker" class="img-responsive logo-qrcode js animate__animated">
-								<div class="p-protokol js animate__animated">Selalu gunakan masker kecuali saat makan</div>
+								<img src="images/pandawa/scan.png" alt="Scan QR Code" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+								<div class="p-protokol js animate__animated">Tunjukan QR Code saat memasuki tempat acara</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center">
-							<img src="images/denaya/protokol_jaga_jarak.png" alt="denaya_jaga_jarak" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
-							<div class="p-protokol js animate__animated">Menjaga jarak dengan tamu lain, hindari kontak fisik dan jauhi kerumunan</div>
+							<img src="images/pandawa/nolaptop.png" alt="No Laptop" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+							<div class="p-protokol js animate__animated">Dilarang membawa laptop ke dalam ruangan</div>
 						</div>
 					</div>
 				</div>
@@ -555,78 +478,78 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="nama-pengantin-foto js animate__animated">Galeri Foto</div>
+						<div class="nama-pengantin-foto js animate__animated">Galeri Foto Pandawa Awards 2023 Mid Year</div>
 						<div class="splide" id="slider2" role="group" aria-label="Splide Basic HTML Example">
 							<div class="splide__track">
 								<ul class="splide__list">
 									<li class="splide__slide">
-										<a class="demo js animate__animated" href="images/denaya/slide_1.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_1.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_5.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_5.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
-										<a class="demo js animate__animated" href="images/denaya/slide_6.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_6.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_2.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/nandur.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 									</li>
 									<li class="splide__slide">
-										<a class="demo js animate__animated" href="images/denaya/slide_2.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_2.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+										<a class="demo js animate__animated" href="images/pandawa/ffa.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/ffa.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
-										<a class="demo js animate__animated" href="images/denaya/slide_3.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_3.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/nandur.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_2.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
-										<a class="demo js animate__animated" href="images/denaya/slide_7.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_7.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_3.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_3.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 									</li>
 									<li class="splide__slide">
-										<a class="demo js animate__animated" href="images/denaya/slide_4.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_4.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+										<a class="demo js animate__animated" href="images/pandawa/gilang_andrian.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/gilang_andrian.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
-										<a class="demo js animate__animated" href="images/denaya/slide_5.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_5.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+										<a class="demo js animate__animated" href="images/pandawa/eka.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/eka.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
-										<a class="demo js animate__animated" href="images/denaya/slide_8.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_8.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_1.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_1.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
-										<a class="demo js animate__animated" href="images/denaya/slide_9.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_9.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_4.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_4.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 									</li>
 									<li class="splide__slide">
-										<a class="demo js animate__animated" href="images/denaya/slide_14.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_14.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+										<a class="demo js animate__animated" href="images/pandawa/mahajiwa.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/mahajiwa.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
-										<a class="demo js animate__animated" href="images/denaya/slide_15.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_15.png" alt="denaya_prewed" class="img-responsive foto-pengantin">
+										<a class="demo js animate__animated" href="images/pandawa/majimun.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/majimun.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
-										<a class="demo js animate__animated" href="images/denaya/slide_10.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_10.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/rekiyudi.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/rekiyudi.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
-										<a class="demo js animate__animated" href="images/denaya/slide_11.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_11.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_7.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_7.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 									</li>
 									<li class="splide__slide">
-										<a class="demo js animate__animated" href="images/denaya/slide_12.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_12.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_8.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_8.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
-										<a class="demo js animate__animated" href="images/denaya/slide_13.png" data-lightbox="example-1">
-											<img src="images/denaya/slide_13.png" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_9.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_9.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 									</li>
 								</ul>
@@ -638,53 +561,20 @@
 		</div>
 	</section>
 	<section>
-		<!-- Hadiah -->
-		<div id="fh5co-couple" class="bg-carton fit-screen">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="nama-pengantin-foto js animate__animated">Pojok Hadiah</div>
-						<!-- 1. Define some markup -->
-						<div class="nama-pengantin-foto mempelai js animate__animated">Amplop Digital</div>
-
-						<a class="demo js animate__animated" href="images/denaya/qris_qr.png" data-lightbox="example-1">
-							<img src="images/denaya/qris_qr.png" alt="denaya" class="img-responsive js animate__animated" style="width: 250px;">
-						</a>
-						<!-- <p class="js animate__animated">Rekening BCA <span id="nomor-rekening">3370301866</span> a/n Denaya Candra Safira</p>
-						<button id="copy-data-rekening" type="button" class="tooltipped tooltipped-w m-2 p-2 border btn js animate__animated" aria-label="Nomor Rekening disalin" data-clipboard-action="copy" data-clipboard-target="#nomor-rekening">
-							Salin Nomor Rekening
-						</button> -->
-						<br />
-						<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
-						<br />
-						<div class="nama-pengantin-foto mempelai js animate__animated">Kirim Hadiah</div>
-						<!-- 1. Define some markup -->
-						<p class="js animate__animated" id="alamat-kirim-kado">Jalan. jembatan I No.14 Rt.002 Rw.005 Condet Kel. Balekambang Kec. Kramatjati Jakarta Timur</p>
-						<button id="copy-data-kado" type="button" class="tooltipped tooltipped-w m-2 p-2 border btn js animate__animated" aria-label="Alamat disalin" data-clipboard-action="copy" data-clipboard-target="#alamat-kirim-kado">
-							Salin Alamat
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section>
 		<!-- Quote -->
 		<div id="fh5co-couple" class="bg-carton fit-screen">
 			<div class="container">
 				<div class="row">
-					<div class="nama-pengantin-foto js animate__animated">Quotes</div>
+					<div class="nama-pengantin-foto js animate__animated">Quotes Head Of Plant</div>
 					<div class="col-md-8 col-md-offset-2 text-center text-papper bg-papper-div">
 						<figure>
 							<p class="color-theme js animate__animated">
-								وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ
-								لَءَايَٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
-							<p class="js animate__animated">Wa min āyātihī an khalaqa lakum min anfusikum azwājal litaskunū ilaihā wa ja'ala bainakum mawaddataw wa raḥmah, inna fī żālika la`āyātil liqaumiy yatafakkarụn</p>
-							<!-- <blockquote cite="https://nandurstudio.com"> -->
-							<p class="js animate__animated">Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.
+								Masa depan itu kaya sekumpulan tempe
 							</p>
+							<p class="js animate__animated">Tidak ada yang TAHU</p>
+							<!-- <blockquote cite="https://nandurstudio.com"> -->
 							<!-- </blockquote> -->
-							<figcaption class="js animate__animated">—QS. Ar - Rum : <cite>21</cite></figcaption>
+							<figcaption class="js animate__animated">—Fajar Fauzan : <cite>Head of Plant</cite></figcaption>
 						</figure>
 					</div>
 				</div>
@@ -698,7 +588,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="row">
-							<div class="nama-pengantin-foto js animate__animated">Ucapan, Do'a Restu & Reservasi Kehadiran</div>
+							<div class="nama-pengantin-foto js animate__animated">Reservasi Kehadiran</div>
 						</div>
 						<iframe name="content-reservasi" style="display:none">
 						</iframe>
@@ -754,20 +644,20 @@
 							</div>
 							<div class="row js animate__animated">
 								<div class="col-md-12">
-									<div class="form-group">
-										<label for="name-anda" class="custom-label"><i class="icon-pencil"></i> Nama Anda</label>
-										<input type="name" name="namareservasi" id="namareservasi" class="form-control" placeholder="Masukan nama untuk ucapan realtime"></input>
-									</div>
 									<div class="form-check checkleft">
 										<input class="form-check-input" type="checkbox" id="namachat" name="namachat" value="namachatsama">
 										<label class="form-check-label checkcap">Nama saya sama dengan nama pada undangan</label>
+									</div>
+									<div class="form-group">
+										<label for="name-anda" class="custom-label"><i class="icon-pencil"></i> Nama Anda</label>
+										<input type="name" name="namareservasi" id="namareservasi" class="form-control" placeholder="Masukan nama/centang opsi di atas untuk ucapan realtime"></input>
 									</div>
 								</div>
 							</div>
 							<div class="row js animate__animated">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="wish" class="custom-label"><i class="icon-chat"></i> Ucapan & Do'a Restu</label>
+										<label for="wish" class="custom-label"><i class="icon-chat"></i> Komentar</label>
 										<?php
 										include "./php/connection.php";
 										if (isset($_GET['to'])) {
@@ -780,6 +670,7 @@
 											}
 										} else {
 											$rep_guest_name = 'Anonymous';
+											$nama_reservasi = 'Anonymous';
 										}
 										if (isset($_GET['adr'])) {
 											$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
@@ -792,10 +683,10 @@
 										if (mysqli_num_rows($result_query) > 0) {
 											// output data of each row
 											while ($row = mysqli_fetch_assoc($result_query)) {
-												echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan ucapan &amp; do'a restumu untuk kedua calon mempelai\">" . $row["ucapan"] . "</textarea>";
+												echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan komentar atau alasan jika tidak bisa hadir\">" . $row["ucapan"] . "</textarea>";
 											}
 										} else {
-											echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan ucapan &amp; do'a restumu untuk kedua calon mempelai\"></textarea>";
+											echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan komentar atau alasan jika tidak bisa hadir\"></textarea>";
 										}
 										mysqli_close($conn);
 										//https://stackoverflow.com/a/15864222/7772358
@@ -907,14 +798,12 @@
 								</div>
 							</div>
 							<div class="row js animate__animated">
-								<div class="col-md-12">
+								<div class="col-md-8 col-md-offset-6 text-center">
 									<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Kirim</button>
 								</div>
 							</div>
 						</form>
 					</div>
-					<br />
-					<br />
 					<div class="col-md-12">
 						<form class="form-inline">
 							<div class="form-group">
@@ -955,8 +844,6 @@
 						</form>
 					</div>
 				</div>
-				<iframe name="content" style="display:none">
-				</iframe>
 				<p id="msg"></p>
 				<div class="row">
 					<div class="col-md-12 col-md-offset-4">
@@ -992,8 +879,8 @@
 							<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> -->
 							<small class="block">&copy; 2022 Nandur Studio. All Rights Reserved.</small>
 							<!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
-							<small class="block">Web Invitation by <a href="https://www.nandur93.com/search/label/Undangan" target="_blank">Nandur Studio Event</a>
-								</br>Design by <a href="https://instagram.com/treswaluya" target="_blank">TresWaluya</a>
+							<small class="block">Web Invitation by <a href="https://www.nandurstudio.com" target="_blank">Nandur Studio Event</a>
+								</br>Design by <a href="https://instagram.com/nandur.studio" target="_blank">Nandur Studio</a>
 								</br>Master Template: <a href="http://freehtml5.co/" target="_blank">&copy; 2016 Free HTML5. All Rights Reserved.</a></small>
 						</p>
 						<p>
@@ -1092,7 +979,7 @@
 				alert('Mohon isi nama terlebih dahulu');
 				return false;
 			} else if ($('#wish').val() == '') {
-				alert('Silakan untuk mengisi ucapan kepada calon mempelai');
+				alert('Silakan untuk mengisi ucapan atau kata-kata penyemangat acara');
 				return false;
 			} else if ($('#konfirmasi-kehadiran :selected').text() == 'Akan Hadir' && $('#jumlahtamu').val() == '') {
 				alert('Mohon isi jumlah tamu yang akan hadir');
@@ -1184,7 +1071,7 @@
 			});
 			splide.mount();
 		});
-		var d = new Date(new Date("May 22, 2022 08:00:00").getTime());
+		var d = new Date(new Date("Oct 04, 2023 09:00:00").getTime());
 		//var countDownDate = new Date("Mar 27, 2022 08:00:00").getTime();
 
 
