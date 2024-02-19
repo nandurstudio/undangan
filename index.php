@@ -35,8 +35,10 @@
 		echo "0 results";
 	}
 	$the_wedding = "Lembar Undangan Pandawa Awards 2023. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_wedding = "Lembar Undangan Pandawa Awards 2023. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
 	$the_desc = "Assalamu'alaikum Wr. Wb.
 	Bismillahirrahmanirrahim
+	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Pandawa Awards 2023, yang mana akan di pandu oleh 
 	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Pandawa Awards 2023, yang mana akan di pandu oleh 
 	
 	" . $pengantin_pria . "
@@ -45,12 +47,15 @@
 	
 	Pada :
 	Rabu, 04 Oct 2023
+	Rabu, 04 Oct 2023
 	
+	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memeriahkan acaranya.
 	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memeriahkan acaranya.
 	
 	Terima kasih,
 	Wassalamuallaikum Wr. Wb.
 	
+	Ketua, tim panitia, MC,
 	Ketua, tim panitia, MC,
 	" . $pengantin_pria . " &amp; " . $pengantin_wanita . "";
 	echo "<title>" . $the_wedding . "</title>";
@@ -64,12 +69,17 @@
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="invitation, pandawa, awards" />
+	<meta name="keywords" content="invitation, pandawa, awards" />
 	<meta name="author" content="Nandur Digital Invitation" />
 	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="#D1B374">
+	<meta name="theme-color" content="#D1B374">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#D1B374">
+	<meta name="msapplication-navbutton-color" content="#D1B374">
 	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#D1B374">
+	<link rel="icon" sizes="192x192" href="images/pandawa/logo_pandawa_192.png">
 	<meta name="apple-mobile-web-app-status-bar-style" content="#D1B374">
 	<link rel="icon" sizes="192x192" href="images/pandawa/logo_pandawa_192.png">
 	<!-- 
@@ -103,6 +113,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,300;1,400;1,500;1,600&family=Karla&display=swap" rel="stylesheet">
 
+	<link rel="icon" type="image/x-icon" href="./images/pandawa/favicon.ico">
 	<link rel="icon" type="image/x-icon" href="./images/pandawa/favicon.ico">
 
 	<!-- Animate.css -->
@@ -168,6 +179,8 @@
 		<div class="container name-cover" id="name-cover">
 			<div class="text-center">
 				<img class="logo-pengantin animate__animated animate__pulse animate__infinite infinite" src="./images/pandawa/tiket.png" alt="Logo Naufal And Denaya" width="95%">
+			<div class="text-center">
+				<img class="logo-pengantin animate__animated animate__pulse animate__infinite infinite" src="./images/pandawa/tiket.png" alt="Logo Naufal And Denaya" width="95%">
 			</div>
 			<div class="animate__animated animate__headShake animate__infinite infinite col-md-8 col-md-offset-2 text-center">
 				<button id="tombol-buka" type="submit" class="animate__animated animate__zoomInDown btn btn-buka">Buka Undangan</button>
@@ -197,12 +210,14 @@
 	<section>
 		<!-- Cover -->
 		<header id="fh5co-header" class="fh5co-cover mid" role="banner" style="background-image:url(images/pandawa/cover_pandawa2.jpg);" data-stellar-background-ratio="0.5">
+		<header id="fh5co-header" class="fh5co-cover mid" role="banner" style="background-image:url(images/pandawa/cover_pandawa2.jpg);" data-stellar-background-ratio="0.5">
 			<!-- <div class="overlay"></div> -->
 			<div class="container concover">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t">
 							<div class="display-tc">
+								<img id="logo-pengantin" style="opacity:0;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/pandawa/logo_pandawa_time.png" alt="Logo Pandawa" width="80%">
 								<img id="logo-pengantin" style="opacity:0;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/pandawa/logo_pandawa_time.png" alt="Logo Pandawa" width="80%">
 							</div>
 						</div>
@@ -252,8 +267,10 @@
 							// echo $decrypted_string;
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $decrypted_string . "</div>
 							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Pandawa Awards 2023.</p>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Pandawa Awards 2023.</p>
 							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\">
+							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "&amp;size=200x200\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
 							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "&amp;size=200x200\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
 							</a><br \><div class=\"p-protokol js animate__animated\">Klik untuk memperbesar</div>";
 							// https://www.jqueryscript.net/lightbox/lightbox2.html
@@ -262,6 +279,8 @@
 							// echo $actual_link;
 							$actual_link = "Anonymous";
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $actual_link . "</div>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Pandawa Awards 2023.</p>
+							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Pandawa Awards 2023.</p>
 							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
@@ -280,6 +299,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony 1</div>
+						<a class="demo js animate__animated" href="images/pandawa/bagus.png" data-lightbox="example-1">
+							<img src="images/pandawa/bagus.png" alt="Bagus" class="img-responsive foto-pengantin js animate__animated">
 						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony 1</div>
 						<a class="demo js animate__animated" href="images/pandawa/bagus.png" data-lightbox="example-1">
 							<img src="images/pandawa/bagus.png" alt="Bagus" class="img-responsive foto-pengantin js animate__animated">
@@ -321,6 +343,8 @@
 							</a>";
 						echo "<p class=\"js animate__animated\">Intern<br /><span class=\"ortu\">Department PAM</span></p>";
 						// echo "<p class=\"js animate__animated\">Putra ketiga dari<br /><span class=\"ortu\">Bapak " . $ayah_pria . " &amp; Ibu " . $ibu_pria . "</span></p>";
+						echo "<p class=\"js animate__animated\">Intern<br /><span class=\"ortu\">Department PAM</span></p>";
+						// echo "<p class=\"js animate__animated\">Putra ketiga dari<br /><span class=\"ortu\">Bapak " . $ayah_pria . " &amp; Ibu " . $ibu_pria . "</span></p>";
 
 						mysqli_close($conn);
 						//https://stackoverflow.com/a/15864222/7772358
@@ -338,6 +362,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony 2</div>
+						<a class="demo js animate__animated" href="images/pandawa/mawar.png" data-lightbox="example-1">
+							<img src="images/pandawa/mawar.png" alt="Mawar" class="img-responsive foto-pengantin js animate__animated">
 						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony 2</div>
 						<a class="demo js animate__animated" href="images/pandawa/mawar.png" data-lightbox="example-1">
 							<img src="images/pandawa/mawar.png" alt="Mawar" class="img-responsive foto-pengantin js animate__animated">
@@ -382,6 +409,8 @@
 							</a>";
 						echo "<p class=\"js animate__animated\">Admin<br /><span class=\"ortu\">Department PAM</span></p>";
 						// echo "<p class=\"js animate__animated\">Putri kedua dari<br /><span class=\"ortu\">Bapak " . $ayah_wanita . " &amp; Ibu " . $ibu_wanita . "</span></p>";
+						echo "<p class=\"js animate__animated\">Admin<br /><span class=\"ortu\">Department PAM</span></p>";
+						// echo "<p class=\"js animate__animated\">Putri kedua dari<br /><span class=\"ortu\">Bapak " . $ayah_wanita . " &amp; Ibu " . $ibu_wanita . "</span></p>";
 						mysqli_close($conn);
 						//https://stackoverflow.com/a/15864222/7772358
 						//echo $_GET['to'];
@@ -400,11 +429,16 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="big-date js animate__animated">04.OCT.23</div>
+						<div class="big-date js animate__animated">04.OCT.23</div>
 						<div id="demo"></div>
 						<div class="simply-countdown simply-countdown-one js animate__animated"></div>
 						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20231004T020000Z/20231004T040000Z&crm=AVAILABLE&sprop=website:www.kn-sf.com/undangan&sprop=name:KN-SF&ctz=Asia/Jakarta&text=Pandawa+Awards+2023&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2030%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk." class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Kalender</a></p>
+						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20231004T020000Z/20231004T040000Z&crm=AVAILABLE&sprop=website:www.kn-sf.com/undangan&sprop=name:KN-SF&ctz=Asia/Jakarta&text=Pandawa+Awards+2023&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2030%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk." class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Kalender</a></p>
 						<br />
 						<div class="col-md-8 col-md-offset-2 text-center">
+						<a class="demo js animate__animated" href="images/pandawa/events.png" data-lightbox="example-1">
+							<img src="images/pandawa/events.png" alt="Event" class="img-responsive foto-pengantin js animate__animated">
+						</a>
 						<a class="demo js animate__animated" href="images/pandawa/events.png" data-lightbox="example-1">
 							<img src="images/pandawa/events.png" alt="Event" class="img-responsive foto-pengantin js animate__animated">
 						</a>
@@ -425,8 +459,11 @@
 							<div class="col-md-8 col-md-offset-2 text-center">
 								<p class="js animate__animated"><span style="font-weight:bold;">DIAMOND ROOM LT. 3</span><br />PT. Sanghiang Perkasa - Kalbe Nutritionals,<br />Kawasan Industri Indotaisei, Kalihurip, Kec. Cikampek,<br />Karawang, Jawa Barat 41373</p>
 								<p><a href="https://maps.app.goo.gl/3wuVHxG1jPgWjUjt9" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
+								<p class="js animate__animated"><span style="font-weight:bold;">DIAMOND ROOM LT. 3</span><br />PT. Sanghiang Perkasa - Kalbe Nutritionals,<br />Kawasan Industri Indotaisei, Kalihurip, Kec. Cikampek,<br />Karawang, Jawa Barat 41373</p>
+								<p><a href="https://maps.app.goo.gl/3wuVHxG1jPgWjUjt9" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
 								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
 							</div>
+							<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15859.357860273401!2d107.4120537!3d-6.4146679!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e697313a5df4371%3A0x7b098758ed16c78f!2sPT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals!5e0!3m2!1sen!2sid!4v1696298434771!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 							<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15859.357860273401!2d107.4120537!3d-6.4146679!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e697313a5df4371%3A0x7b098758ed16c78f!2sPT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals!5e0!3m2!1sen!2sid!4v1696298434771!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 							</iframe>
 						</div>
@@ -457,13 +494,19 @@
 							<div class="text-center">
 								<img src="images/pandawa/tiket_icon.png" alt="Tiket" class="img-responsive logo-qrcode js animate__animated">
 								<div class="p-protokol js animate__animated">Siapkan tiket virtual ini sebagai akses masuk</div>
+								<img src="images/pandawa/tiket_icon.png" alt="Tiket" class="img-responsive logo-qrcode js animate__animated">
+								<div class="p-protokol js animate__animated">Siapkan tiket virtual ini sebagai akses masuk</div>
 							</div>
 							<div class="text-center">
+								<img src="images/pandawa/scan.png" alt="Scan QR Code" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+								<div class="p-protokol js animate__animated">Tunjukan QR Code saat memasuki tempat acara</div>
 								<img src="images/pandawa/scan.png" alt="Scan QR Code" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
 								<div class="p-protokol js animate__animated">Tunjukan QR Code saat memasuki tempat acara</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center">
+							<img src="images/pandawa/nolaptop.png" alt="No Laptop" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+							<div class="p-protokol js animate__animated">Dilarang membawa laptop ke dalam ruangan</div>
 							<img src="images/pandawa/nolaptop.png" alt="No Laptop" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
 							<div class="p-protokol js animate__animated">Dilarang membawa laptop ke dalam ruangan</div>
 						</div>
@@ -479,14 +522,19 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="nama-pengantin-foto js animate__animated">Galeri Foto Pandawa Awards 2023 Mid Year</div>
+						<div class="nama-pengantin-foto js animate__animated">Galeri Foto Pandawa Awards 2023 Mid Year</div>
 						<div class="splide" id="slider2" role="group" aria-label="Splide Basic HTML Example">
 							<div class="splide__track">
 								<ul class="splide__list">
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/pandawa/slide_5.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/slide_5.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_5.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_5.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
+										<a class="demo js animate__animated" href="images/pandawa/slide_2.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/nandur.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										<a class="demo js animate__animated" href="images/pandawa/slide_2.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/nandur.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
@@ -494,13 +542,19 @@
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/pandawa/ffa.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/ffa.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
+										<a class="demo js animate__animated" href="images/pandawa/ffa.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/ffa.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/pandawa/nandur.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/slide_2.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/nandur.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_2.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
+										<a class="demo js animate__animated" href="images/pandawa/slide_3.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_3.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										<a class="demo js animate__animated" href="images/pandawa/slide_3.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/slide_3.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
@@ -508,9 +562,13 @@
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/pandawa/gilang_andrian.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/gilang_andrian.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
+										<a class="demo js animate__animated" href="images/pandawa/gilang_andrian.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/gilang_andrian.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
+										<a class="demo js animate__animated" href="images/pandawa/eka.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/eka.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										<a class="demo js animate__animated" href="images/pandawa/eka.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/eka.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
@@ -518,8 +576,12 @@
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/pandawa/slide_1.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/slide_1.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_1.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_1.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
+										<a class="demo js animate__animated" href="images/pandawa/slide_4.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_4.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										<a class="demo js animate__animated" href="images/pandawa/slide_4.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/slide_4.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
@@ -527,9 +589,13 @@
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/pandawa/mahajiwa.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/mahajiwa.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
+										<a class="demo js animate__animated" href="images/pandawa/mahajiwa.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/mahajiwa.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
 									</li>
 									<li class="splide__slide">
+										<a class="demo js animate__animated" href="images/pandawa/majimun.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/majimun.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										<a class="demo js animate__animated" href="images/pandawa/majimun.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/majimun.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin">
 										</a>
@@ -537,8 +603,12 @@
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/pandawa/rekiyudi.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/rekiyudi.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/rekiyudi.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/rekiyudi.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
+										<a class="demo js animate__animated" href="images/pandawa/slide_7.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_7.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										<a class="demo js animate__animated" href="images/pandawa/slide_7.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/slide_7.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
@@ -546,8 +616,12 @@
 									<li class="splide__slide">
 										<a class="demo js animate__animated" href="images/pandawa/slide_8.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/slide_8.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
+										<a class="demo js animate__animated" href="images/pandawa/slide_8.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_8.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
 										<br />
+										<a class="demo js animate__animated" href="images/pandawa/slide_9.jpg" data-lightbox="example-1">
+											<img src="images/pandawa/slide_9.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										<a class="demo js animate__animated" href="images/pandawa/slide_9.jpg" data-lightbox="example-1">
 											<img src="images/pandawa/slide_9.jpg" alt="denaya_prewed" class="img-responsive foto-pengantin slide-landscape">
 										</a>
@@ -566,14 +640,19 @@
 			<div class="container">
 				<div class="row">
 					<div class="nama-pengantin-foto js animate__animated">Quotes Head Of Plant</div>
+					<div class="nama-pengantin-foto js animate__animated">Quotes Head Of Plant</div>
 					<div class="col-md-8 col-md-offset-2 text-center text-papper bg-papper-div">
 						<figure>
 							<p class="color-theme js animate__animated">
 								Masa depan itu kaya sekumpulan tempe
 							</p>
 							<p class="js animate__animated">Tidak ada yang TAHU</p>
+								Masa depan itu kaya sekumpulan tempe
+							</p>
+							<p class="js animate__animated">Tidak ada yang TAHU</p>
 							<!-- <blockquote cite="https://nandurstudio.com"> -->
 							<!-- </blockquote> -->
+							<figcaption class="js animate__animated">—Fajar Fauzan : <cite>Head of Plant</cite></figcaption>
 							<figcaption class="js animate__animated">—Fajar Fauzan : <cite>Head of Plant</cite></figcaption>
 						</figure>
 					</div>
@@ -588,6 +667,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="row">
+							<div class="nama-pengantin-foto js animate__animated">Reservasi Kehadiran</div>
 							<div class="nama-pengantin-foto js animate__animated">Reservasi Kehadiran</div>
 						</div>
 						<iframe name="content-reservasi" style="display:none">
@@ -652,11 +732,16 @@
 										<label for="name-anda" class="custom-label"><i class="icon-pencil"></i> Nama Anda</label>
 										<input type="name" name="namareservasi" id="namareservasi" class="form-control" placeholder="Masukan nama/centang opsi di atas untuk ucapan realtime"></input>
 									</div>
+									<div class="form-group">
+										<label for="name-anda" class="custom-label"><i class="icon-pencil"></i> Nama Anda</label>
+										<input type="name" name="namareservasi" id="namareservasi" class="form-control" placeholder="Masukan nama/centang opsi di atas untuk ucapan realtime"></input>
+									</div>
 								</div>
 							</div>
 							<div class="row js animate__animated">
 								<div class="col-md-12">
 									<div class="form-group">
+										<label for="wish" class="custom-label"><i class="icon-chat"></i> Komentar</label>
 										<label for="wish" class="custom-label"><i class="icon-chat"></i> Komentar</label>
 										<?php
 										include "./php/connection.php";
@@ -671,6 +756,7 @@
 										} else {
 											$rep_guest_name = 'Anonymous';
 											$nama_reservasi = 'Anonymous';
+											$nama_reservasi = 'Anonymous';
 										}
 										if (isset($_GET['adr'])) {
 											$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
@@ -684,8 +770,10 @@
 											// output data of each row
 											while ($row = mysqli_fetch_assoc($result_query)) {
 												echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan komentar atau alasan jika tidak bisa hadir\">" . $row["ucapan"] . "</textarea>";
+												echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan komentar atau alasan jika tidak bisa hadir\">" . $row["ucapan"] . "</textarea>";
 											}
 										} else {
+											echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan komentar atau alasan jika tidak bisa hadir\"></textarea>";
 											echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan komentar atau alasan jika tidak bisa hadir\"></textarea>";
 										}
 										mysqli_close($conn);
@@ -799,6 +887,7 @@
 							</div>
 							<div class="row js animate__animated">
 								<div class="col-md-8 col-md-offset-6 text-center">
+								<div class="col-md-8 col-md-offset-6 text-center">
 									<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Kirim</button>
 								</div>
 							</div>
@@ -879,6 +968,8 @@
 							<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> -->
 							<small class="block">&copy; 2022 Nandur Studio. All Rights Reserved.</small>
 							<!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
+							<small class="block">Web Invitation by <a href="https://www.nandurstudio.com" target="_blank">Nandur Studio Event</a>
+								</br>Design by <a href="https://instagram.com/nandur.studio" target="_blank">Nandur Studio</a>
 							<small class="block">Web Invitation by <a href="https://www.nandurstudio.com" target="_blank">Nandur Studio Event</a>
 								</br>Design by <a href="https://instagram.com/nandur.studio" target="_blank">Nandur Studio</a>
 								</br>Master Template: <a href="http://freehtml5.co/" target="_blank">&copy; 2016 Free HTML5. All Rights Reserved.</a></small>
@@ -980,6 +1071,7 @@
 				return false;
 			} else if ($('#wish').val() == '') {
 				alert('Silakan untuk mengisi ucapan atau kata-kata penyemangat acara');
+				alert('Silakan untuk mengisi ucapan atau kata-kata penyemangat acara');
 				return false;
 			} else if ($('#konfirmasi-kehadiran :selected').text() == 'Akan Hadir' && $('#jumlahtamu').val() == '') {
 				alert('Mohon isi jumlah tamu yang akan hadir');
@@ -1071,6 +1163,7 @@
 			});
 			splide.mount();
 		});
+		var d = new Date(new Date("Oct 04, 2023 09:00:00").getTime());
 		var d = new Date(new Date("Oct 04, 2023 09:00:00").getTime());
 		//var countDownDate = new Date("Mar 27, 2022 08:00:00").getTime();
 
