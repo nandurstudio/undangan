@@ -5,8 +5,8 @@
                 <!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> -->
                 <small class="block">&copy; 2022 Nandur Studio. All Rights Reserved.</small>
                 <!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
-                <small class="block">Web Invitation by <a href="https://nandurstudio.com" target="_blank">Nandur Studio Event</a>
-                    </br>Design by <a href="https://instagram.com/treswaluya" target="_blank">TresWaluya</a>
+							<small class="block">Web Invitation by <a href="https://www.nandurstudio.com" target="_blank">Nandur Studio Event</a>
+								</br>Design by <a href="https://instagram.com/nandur.studio" target="_blank">Nandur Studio</a>
                     </br>Master Template: <a href="http://freehtml5.co/" target="_blank">&copy; 2016 Free HTML5. All Rights Reserved.</a></small>
             </p>
             <p>

@@ -970,7 +970,9 @@ pre code {
   }
 
   .geser-atas {
-    display: none;
+    left: 50%;
+    position: absolute;
+    margin-left: -40px;
   }
 }
 
@@ -2306,7 +2308,7 @@ output {
   padding: 10px 20px;
   font-size: 14px;
   line-height: 1.42857;
-  color: #555555;
+  color: #ff9800;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -7367,7 +7369,7 @@ button.close {
 }
 
 .play {
-  background: transparent url('..//images/music_off_black_24dp.svg') no-repeat;
+  background: transparent url('../images/music_off_black_24dp.svg') no-repeat;
   background-size: cover;
 }
 
@@ -7396,7 +7398,7 @@ button.close {
 
 .cover {
   /* The image used */
-  background-image: url("../images/denaya/cover_denaya.jpg");
+  background-image: url("../images/pandawa/cover_pandawa.jpg");
 
   /* Full height */
   height: 100%;
@@ -7421,7 +7423,7 @@ button.close {
   /* background-color: #00000094; */
   border-radius: 4px;
   padding: 50px 10px 10px 10px;
-  width: 350px;
+  width: 95%;
 }
 
 .kepada {
@@ -7459,7 +7461,7 @@ button.close {
   font-family: 'fraunces_9ptsemibold_italic', serif;
   text-align: center;
   font-size: xx-large;
-  color: #3d4742;
+  color: #e8d884;
 }
 
 .onepage {
@@ -7467,8 +7469,8 @@ button.close {
 }
 
 .mempelai {
-  font-size: large;
-  color: #8b9b79;
+  /* font-size: large;
+  color: #8b9b79; */
 }
 
 .hari-pernikahan {
@@ -7551,13 +7553,15 @@ button.close {
 .checkleft {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-content: flex-start;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .checkcap {
   padding: 3px;
-  color: #2a332f;
+  color: #ff9800;
   font: small-caption;
   float: left !important;
 }

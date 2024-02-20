@@ -106,7 +106,7 @@ a:focus {
 
 p {
   font-family: "Karla", Arial, sans-serif;
-  color: #2a332f;
+  color: #cc890b;
   font-size: medium;
   padding: 10px;
 }
@@ -117,13 +117,13 @@ p {
 
 .counter-span {
   font-family: "Karla", Arial, sans-serif;
-  color: #2a332f;
+  color: #cc890b;
   font-size: medium;
 }
 
 .p-protokol {
   font-family: "Karla", Arial, sans-serif;
-  color: #2a332f;
+  color: #cc890b;
   font-size: smaller;
   padding: 10px;
 }
@@ -134,7 +134,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #c3e3d4;
+  color: #c69a2f;
   font-family: "fraunces_9pt_softlight", Arial, sans-serif;
   font-weight: 400;
 }
@@ -1138,7 +1138,7 @@ form label {
   display: inline-block;
   width: 60px;
   height: 60px;
-  background: rgba(139, 155, 121, 0.8);
+  background: #ff9800;
   margin: 0 4px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1192,7 +1192,7 @@ form label {
 
 .simply-word {
   font-family: "Karla", Arial, serif !important;
-  color: #2a332f !important;
+  color: #cc890b !important;
   font-size: smaller !important;
   font-style: normal !important;
 }
@@ -1658,7 +1658,7 @@ form label {
 #fh5co-started .btn {
   height: 54px;
   border: none !important;
-  background: #8b9b79;
+  background: #181818;
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
@@ -1832,7 +1832,7 @@ form label {
   width: 50px;
   height: 50px;
   display: table;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(255 152 0 / 50%);
   color: #fff;
   text-align: center;
   -webkit-border-radius: 4px;
@@ -1983,22 +1983,25 @@ form label {
   -o-transition: 0.5s;
   transition: 0.5s;
   color: #fff;
-  background-color: #8b9b79;
-  border-color: #8b9b79;
+  background-color: #181818;
+  border-color: #ff9800;
   padding: 8px 20px;
   -webkit-font-smoothing: antialiased;
 }
 
 .btn-buka {
-  background-color: #bfa594 !important;
-  border-color: #bfa594 !important;
+  margin-top: 75px;
+  background-color: #181818 !important;
+  border-color: #ff9800 !important;
   display: inline;
-  width: 185px;
+  width: 250px;
+  height: 50px;
+  border-width: thin;
 }
 
 .btn-peta {
-  background-color: #535d57 !important;
-  border-color: #535d57 !important;
+  background-color: #181818 !important;
+  border-color: #ff9800 !important;
 }
 
 .btn.btn-md {
@@ -2017,16 +2020,16 @@ form label {
 }
 
 .btn-primary {
-  background: #8b9b79;
+  background: #c69a2f;
   color: #fff;
-  border: 2px solid #8b9b79;
+  border: 2px solid #c69a2f;
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  background: #f366a3 !important;
-  border-color: #f366a3 !important;
+  background: #f8b304 !important;
+  border-color: #f8b304 !important;
 }
 
 .btn-primary.btn-outline {
@@ -2264,7 +2267,7 @@ form label {
   background-size: contain;
   background-repeat: no-repeat;
   background-origin: border-box;
-  height: 100vh;
+  height: 80vh;
 }
 
 .bg-video {
@@ -2289,7 +2292,7 @@ form label {
 
 }
 .bg-carton {
-  background-image: url(../images/denaya/bg_denaya.jpg);
+  background-image: url(../images/pandawa/bg_pandawa.png);
   background-repeat: repeat;
   background-position: center;
   text-align: center;
@@ -2307,6 +2310,8 @@ form label {
 
 .text-papper {
   padding-top: 60px;
+  padding-left: 15%;
+  padding-right: 15%;
   /* margin-top: 15%; */
 }
 
@@ -2348,7 +2353,7 @@ form label {
   display: flex;
   flex-direction: column-reverse;
   font-size: small;
-  color: #3d4742;
+  color: #fff;
   font-family: 'Karla';
 }
 

@@ -26,25 +26,24 @@
 	} else {
 		echo "0 results";
 	}
-	$the_wedding = "Lembar Undangan " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_wedding = "Lembar Undangan Pandawa Awards 2023. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
 	$the_desc = "Assalamu'alaikum Wr. Wb.
 	Bismillahirrahmanirrahim
-	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami,
+	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Pandawa Awards 2023, yang mana akan di pandu oleh 
 	
 	" . $pengantin_pria . "
 	&
 	" . $pengantin_wanita . "
 	
 	Pada :
-	Minggu, 22 Mei 2022
+	Rabu, 04 Oct 2023
 	
-	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.
-	Berkaitan dengan pembatasan sosial pada masa pandemi Covid-19, untuknya agar tetap menggunakan masker dan hadir sesuai waktu yang telah ditentukan.
+	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memeriahkan acaranya.
 	
 	Terima kasih,
 	Wassalamuallaikum Wr. Wb.
 	
-	Kami yang berbahagia,
+	Ketua, tim panitia, MC,
 	" . $pengantin_pria . " &amp; " . $pengantin_wanita . "";
 	echo "<title>" . $the_wedding . "</title>";
 	echo "<meta name=\"description\" content=\"" . $the_desc . "\" />";
@@ -56,15 +55,15 @@
 
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="wedding, Naufal, Denaya" />
+	<meta name="keywords" content="invitation, pandawa, awards" />
 	<meta name="author" content="Nandur Digital Invitation" />
 	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#bfa594">
+	<meta name="theme-color" content="#D1B374">
 	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#bfa594">
+	<meta name="msapplication-navbutton-color" content="#D1B374">
 	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#bfa594">
-	<link rel="icon" sizes="192x192" href="images/denaya/LOGONDA_brown_192.png">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#D1B374">
+	<link rel="icon" sizes="192x192" href="images/pandawa/logo_pandawa_192.png">
 	<!-- 
 	//////////////////////////////////////////////////////
 
@@ -80,23 +79,23 @@
 	 -->
 
 	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="Pernikahan Naufal & Denaya" />
-	<meta property="og:image" content="images/denaya/og_image2.png" />
-	<meta property="og:url" content="https://naufal-denaya.lembarundangan.com" />
-	<meta property="og:site_name" content="Lembar Undangan Digital" />
-	<meta property="og:description" content="Minggu, 22 Mei 2022 | Kampung Batu Malakasari" />
-	<meta name="twitter:title" content="Pernikahan Naufal & Denaya" />
-	<meta name="twitter:image" content="images/denaya/og_image2.png" />
-	<meta name="twitter:url" content="https://naufal-denaya.lembarundangan.com" />
-	<meta name="twitter:card" content="" />
+	<meta property="og:title" content="Undangan Pandawa Awards" />
+	<meta property="og:image" content="images/pandawa/og_image.png" />
+	<meta property="og:url" content="https://kn-sf.com/undangan" />
+	<meta property="og:site_name" content="Undangan Digital Pandawa" />
+	<meta property="og:description" content="Rabu, 04 Oct 2023 - 09:00 | Diamond Room" />
+	<meta name="twitter:title" content="Undangan Pandawa Awards" />
+	<meta name="twitter:image" content="images/pandawa/og_image.png" />
+	<meta name="twitter:url" content="https://kn-sf.com/undangan" />
+	<meta name="twitter:card" content="Rabu, 04 Oct 2023 - 09:00 | Diamond Room" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,300;1,400;1,500;1,600&family=Karla&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,300;1,400;1,500;1,600&family=Karla&display=swap" rel="stylesheet">
 
-<link rel="icon" type="image/x-icon" href="images/denaya/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="./images/pandawa/favicon.ico">
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">

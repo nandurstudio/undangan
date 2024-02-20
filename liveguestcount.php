@@ -16,7 +16,7 @@ include "./php/header.php";
 
 		<img src="./images/denaya/sealtip.png" class="sealtip">
 		<div id="fh5co-couple" class="bg-carton" style="padding: 1.5em !important;">
-			<div class="container" style="width:100% !important">
+			<div class="container" style="width:100% !important;">
 				<div class="row">
 					<div class="col-md-6 animate-box fadeInUp animated-fast bg-video">
 						<div class="fh5co-video" style="height:720px">
@@ -55,50 +55,50 @@ include "./php/header.php";
 							<ul>
 								<li>
 									<div class="text-center">
-										<img src="images/denaya/protokol_QRCode.png" alt="denaya_qr_code" class="img-responsive logo-qrcode js animate__animated">
-										<div class="p-protokol js animate__animated">Tunjukan QR Code<br />saat memasuki tempat acara</div>
+										<img src="images/pandawa/jas.png" alt="denaya_qr_code" class="img-responsive logo-qrcode js animate__animated">
+										<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan</br>berupa smart casual</div>
 									</div>
 								</li>
 								<li>
 									<div class="text-center">
-										<img src="images/denaya/protokol_hand_sanitizer.png" alt="denaya_hand_sanitizer" class="img-responsive logo-qrcode js animate__animated">
-										<div class="p-protokol js animate__animated">Bersihkan Tangan dengan sabun<br />atau hand sanitizer yang disediakan</div>
+										<img src="images/pandawa/tiket_icon.png" alt="denaya_hand_sanitizer" class="img-responsive logo-qrcode js animate__animated">
+										<div class="p-protokol js animate__animated">Siapkan tiket virtual</br>sebagai akses masuk</div>
 									</div>
 								</li>
 								<li>
 									<div class="text-center">
-										<img src="images/denaya/protokol_masker.png" alt="denaya_masker" class="img-responsive logo-qrcode js animate__animated">
-										<div class="p-protokol js animate__animated">Selalu gunakan masker<br />kecuali saat makan</div>
+										<img src="images/pandawa/scan.png" alt="denaya_masker" class="img-responsive logo-qrcode js animate__animated">
+										<div class="p-protokol js animate__animated">Tunjukan QR Code</br>saat memasuki tempat acara</div>
 									</div>
 								</li>
 								<li>
 									<div class="text-center">
-										<img src="images/denaya/protokol_jaga_jarak.png" alt="denaya_jaga_jarak" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
-										<div class="p-protokol js animate__animated">Menjaga jarak dengan tamu lain,<br />hindari kontak fisik dan jauhi kerumunan</div>
+										<img src="images/pandawa/nolaptop.png" alt="denaya_jaga_jarak" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+										<div class="p-protokol js animate__animated">Dilarang membawa laptop</br>ke dalam ruangan</div>
 									</div>
 								</li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-6" style="width: 35% !important;">
-						<div class="row" style="padding-top: 50px;">
+					<div class="col-md-6" style="width: 35% !important;background-image:url(images/denaya/bg_papper.png);padding-top: 3%;background-repeat: no-repeat;background-size: 80%;background-position: top;">
+						<div class="row" style="padding-top: 5px;">
 							<div class="col-md-8 col-md-offset-2 text-center">
 								<div class="display-t">
 									<div class="display-tc">
-										<img id="logo-pengantin" style="opacity: 1;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src=".\images\denaya\LOGONDA_green_120x101.png" alt="Logo Naufal And Denaya" width="20%">
-										<div class="hari-pernikahan" style="color: #3d4742;font-size:1.5em;line-height:0.5">Hari Pernikahan</div>
-										<div class="nama-pengantin js animate__animated animate__fadeInUp" style="color: #3d4742;">Naufal &amp; Denaya</div>
+										<img id="logo-pengantin" style="opacity: 1;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/pandawa/logo-pandawa-512x512.png" alt="Logo Naufal And Denaya" width="20%">
+										<div class="hari-pernikahan" style="color: #c69a2f;font-size:1.5em;line-height:0.5">Pandawa Awards</div>
+										<div class="nama-pengantin js animate__animated animate__fadeInUp" style="color: #f8b304;">2023</div>
 									</div>
 								</div>
 								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated animate__fadeInUp" style="padding-top:50px ;">
 							</div>
 						</div>
-						<div class="nama-tamu" style="font-size: 2em;color: #70866b;padding-top:50px">Selamat Datang</div>
+						<div class="nama-tamu" style="font-size: 2em;color: #f8b304;padding-top:5px">Selamat Datang</div>
 						<div class="animate-box just-center">
 							<div id="nama-tamu-undangan" class="nama-pengantin-foto" style="font-size:4em">Tamu Undangan</div>
 							<!-- <img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated animate__fadeInUp"> -->
 						</div>
-						<div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 50px;padding-bottom: 20px;">
+						<div class="col-md-8 col-md-offset-2 text-center" style="padding-top: 5px;padding-bottom: 20px;">
 							<div class="feature-center">
 								<span class="icon">
 									<i class="icon-users"></i>
@@ -151,7 +151,7 @@ include "./php/header.php";
 				player = new YT.Player('ytplayer', {
 					width: '100%',
 					height: '720px',
-					videoId: 'wa8AdRfo2wc',
+					videoId: 'pvuvKcpOu8o',
 					events: {
 						'onReady': onPlayerReady,
 						'onStateChange': onPlayerStateChange
