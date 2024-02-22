@@ -29,39 +29,27 @@ include "./php/header.php";
 							include './php/connection.php';
 							$selectquery = "SELECT * FROM tr_tamu ORDER BY tamuId DESC LIMIT 1";
 							$reservasi = mysqli_query($conn, $selectquery);
-							$row = $reservasi->fetch_assoc();
-							$id_guest = $row['tamuId'];
-							$name_guest = $row['name'];
-							$adr_guest = $row['alamat'];
-							$sesi_guest = $row['sesi'];
-							$total_guest = $row['jumlah_tamu'];
-							if ($adr_guest == "") {
-								echo "<div class=\"nama-pengantin\" style=\"color:#8a6d5a;\">Selamat datang</div><h2 style=\"color:#8a6d5a;\">" . $name_guest . "</h2>";
+
+							// Periksa apakah ada baris yang dikembalikan
+							if ($row = $reservasi->fetch_assoc()) {
+								$name_guest = $row['name'];
+								$adr_guest = $row['alamat'];
+
+								// Pengecekan if null
+								if (is_null($adr_guest)) {
+									echo "<div class=\"nama-pengantin\" style=\"color:#8a6d5a;\">Selamat datang</div><h2 style=\"color:#8a6d5a;\">" . $name_guest . "</h2>";
+								} else {
+									echo "<div class=\"nama-pengantin\" style=\"color:#8a6d5a;\">Selamat datang</div><h2 style=\"color:#8a6d5a;\">" . $name_guest . "</h2><p style=\"color:#8a6d5a;\">Dari</p><h2 style=\"color:#8a6d5a;\">" . $adr_guest . "</h2>";
+								}
+								echo "<h1>Silakan Masuk</h1>";
 							} else {
-								echo "<div class=\"nama-pengantin\" style=\"color:#8a6d5a;\">Selamat datang</div><h2 style=\"color:#8a6d5a;\">" . $name_guest . "</h2><h2 style=\"color:#8a6d5a;\">Dari</h2><h2 style=\"color:#8a6d5a;\">" . $adr_guest . "</h2>";
+								// Handle ketika tidak ada baris yang dikembalikan
+								echo "<div class=\"nama-pengantin\" style=\"color:#8a6d5a;\">Data tamu tidak ditemukan.</div>";
 							}
-							echo "<p>Jumlah tamu datang?</p>"
+							echo "<h1 id=\"jumlah-tamu-final\" hidden>1</h1>";
 							?>
-							<div class="row animate-box">
-								<div class="col-md-12 col-md-offset-3">
-									<div class="col-md-6 col-sm-4">
-										<button type="button" name="submit1" value="submit1" id="submit-1" class="btn btn-primary" onclick="return clickButton1();">1</button>
-										<button type="button" name="submit2" value="submit2" id="submit-2" class="btn btn-primary" onclick="return clickButton2();">2</button>
-										<button type="button" name="submit3" value="submit3" id="submit-3" class="btn btn-primary" onclick="return clickButton3();">3</button>
-									</div>
-								</div>
-							</div>
-							<div class="row animate-box">
-								<div class="col-md-12 col-md-offset-3">
-									<div class="col-md-6 col-sm-4">
-										<button type="button" name="submit4" value="submit4" id="submit-4" class="btn btn-primary" onclick="return clickButton4();">4</button>
-										<button type="button" name="submit5" value="submit5" id="submit-5" class="btn btn-primary" onclick="return clickButton5();">5</button>
-										<button type="button" name="submit6" value="submit6" id="submit-6" class="btn btn-primary" onclick="return clickButton6();">6</button>
-									</div>
-								</div>
-							</div>
-							<h1 id="jumlah-tamu-final">0</h1>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -101,7 +89,7 @@ include "./php/header.php";
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="row">
-							<div class="nama-pengantin-foto js animate__animated">Scan Tamu Undangan Pandawa Awards 2023</div>
+							<div class="nama-pengantin-foto js animate__animated">Scan Tamu Undangan RAT Periode 2023</div>
 							<h3 style="color:#c69a2f;" id="scan-inst"></h3>
 							<div class="row animate-box">
 								<div id="reader" width="400px"></div>
@@ -125,6 +113,7 @@ include "./php/header.php";
 												},
 												/* verbose= */
 												false);
+											$('#exampleModalCenter').modal('hide');
 											html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 										} else {
 											$("#scan-inst").text('Menyiapkan scanner dalam ' + timeleft + " detik.");
@@ -158,6 +147,7 @@ include "./php/header.php";
 										$("#nama-tamu").val(string_ori);
 										$("#alamat").val(result_alamat);
 										$("#sesi").val(string3);
+										$("#jumlahtamu").val(1);
 										document.forms[0].submit();
 										html5QrcodeScanner.clear();
 										// ^ this will stop the scanner (video feed) and clear the scan area.
@@ -166,6 +156,7 @@ include "./php/header.php";
 										$("#nama-tamu").val(decodedText.trim());
 										$("#alamat").val('');
 										$("#sesi").val('');
+										$("#jumlahtamu").val('');
 										document.forms[0].submit();
 										html5QrcodeScanner.clear();
 										// ^ this will stop the scanner (video feed) and clear the scan area.
@@ -359,8 +350,8 @@ include "./php/header.php";
 									<div class="col-md-12 col-md-offset-2">
 										<div class="col-md-8 col-sm-4">
 											<div class="form-group">
-												<label for="name" class="custom-label">Nama Pada Undangan</label>
-												<input type="text" class="form-control" id="nama-tamu" name="nama-tamu" placeholder="Nama Pada Undangan" value="">
+												<label for="nama-tamu" class="custom-label">Nama Pada Undangan</label>
+												<input type="text" class="form-control" id="nama-tamu" name="nama-tamu" placeholder="Nama Pada Undangan" readonly>
 											</div>
 										</div>
 									</div>
@@ -370,17 +361,27 @@ include "./php/header.php";
 										<div class="col-md-8 col-sm-4">
 											<div class="form-group">
 												<label for="alamat" class="custom-label">Alamat</label>
-												<input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat">
+												<input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" readonly>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="row animate-box">
+								<div class="row animate-box" hidden>
 									<div class="col-md-12 col-md-offset-2">
 										<div class="col-md-8 col-sm-4">
 											<div class="form-group">
 												<label for="sesi" class="custom-label">Sesi</label>
-												<input type="text" class="form-control" id="sesi" name="sesi" placeholder="Sesi">
+												<input type="text" class="form-control" id="sesi" name="sesi" placeholder="Sesi" readonly>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row animate-box" hidden>
+									<div class="col-md-12 col-md-offset-2">
+										<div class="col-md-8 col-sm-4">
+											<div class="form-group">
+												<label for="sesi" class="custom-label">Jumlah Tamu</label>
+												<input type="text" class="form-control" id="jumlahtamu" name="jumlahtamu" placeholder="0" readonly>
 											</div>
 										</div>
 									</div>
