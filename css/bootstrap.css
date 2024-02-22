@@ -151,10 +151,11 @@ select {
 }
 
 button,
-html input[type="button"],
+input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
+  appearance: button;
+  -webkit-appearance: button; /* Untuk browser berbasis WebKit */
   cursor: pointer;
 }
 
@@ -185,7 +186,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="search"] {
-  -webkit-appearance: textfield;
+  appearance: textfield; /* Untuk browser yang mendukung */
+  -webkit-appearance: textfield; /* Untuk browser berbasis WebKit */
   box-sizing: content-box;
 }
 
@@ -2308,7 +2310,7 @@ output {
   padding: 10px 20px;
   font-size: 14px;
   line-height: 1.42857;
-  color: #ff9800;
+  color: #00a2e1;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -2362,6 +2364,7 @@ textarea.form-control {
 
 input[type="search"] {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -6338,7 +6341,8 @@ button.close {
   padding: 0;
   cursor: pointer;
   background: transparent;
-  border: 0;
+  border: none; /* Mengganti "border: 0;" */
+  appearance: none; /* Menambahkan "appearance: none;" */
   -webkit-appearance: none;
 }
 
@@ -7398,7 +7402,7 @@ button.close {
 
 .cover {
   /* The image used */
-  background-image: url("../images/pandawa/cover_pandawa.jpg");
+  background-image: url("../images/rat/cover_rat.jpg");
 
   /* Full height */
   height: 100%;
@@ -7427,7 +7431,7 @@ button.close {
 }
 
 .kepada {
-  color: #70866b;
+  color: #00a2e1;
   font-family: "Karla", Arial, sans-serif;
   font-weight: 400;
   font-style: italic;
@@ -7454,23 +7458,18 @@ button.close {
   font-family: 'fraunces_9pt_softitalic', serif;
   text-align: center;
   font-size: xx-large;
-  color: #70866b;
+  color: #00a2e1;
 }
 
 .nama-pengantin-foto {
   font-family: 'fraunces_9ptsemibold_italic', serif;
   text-align: center;
   font-size: xx-large;
-  color: #e8d884;
+  color: #00a2e1;
 }
 
 .onepage {
   font-size: x-large;
-}
-
-.mempelai {
-  /* font-size: large;
-  color: #8b9b79; */
 }
 
 .hari-pernikahan {
@@ -7503,7 +7502,7 @@ button.close {
   text-shadow: 4px 4px 4px #917c52;
   font-family: 'fraunces_9ptregular', serif;
   text-align: center;
-  background-image: url(../images/denaya/flower_top2.png);
+  background-image: url(../images/rat/separator.webp);
   background-position: top;
   background-size: contain;
   background-repeat: no-repeat;
@@ -7561,7 +7560,7 @@ button.close {
 
 .checkcap {
   padding: 3px;
-  color: #ff9800;
+  color: #7ac043;
   font: small-caption;
   float: left !important;
 }
