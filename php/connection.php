@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "db_undangan";
+$dbname = "db_undangan_rat";
 
 //Fungsi untuk melakukan koneksi berdasarkan konigurasi diatas
 $conn = mysqli_connect($servername, $username, $password);
