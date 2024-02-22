@@ -624,12 +624,12 @@
 						<p class="js animate__animated">Tanpa mengurangi rasa hormat, harap mengkuti peraturan yang sudah ditetapkan oleh panitia agar acara berjalan lancar dengan mengikuti protokol berikut:</p>
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
 							<div class="text-center">
-								<img src="images/rat/stopwatch.png" alt="Datang tepat waktu" class="img-responsive logo-qrcode js animate__animated">
-								<div class="p-protokol js animate__animated">Datang minimal 10 menit sebelum acara dimulai</div>
+								<img src="images/rat/tumbler.png" alt="Botol tumbler" class="img-responsive logo-qrcode js animate__animated">
+								<div class="p-protokol js animate__animated">Wajib membawa Tumbler</div>
 							</div>
 							<div class="text-center">
-								<img src="images/rat/team-polo.png" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
-								<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan berupa smart casual</div>
+								<img src="images/rat/team.png" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
+								<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan berupa Nuansa HITAM</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
@@ -639,7 +639,7 @@
 							</div>
 							<div class="text-center">
 								<img src="images/rat/qr-scan.png" alt="Scan QR Code" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
-								<div class="p-protokol js animate__animated">Tunjukan QR Code saat memasuki tempat acara</div>
+								<div class="p-protokol js animate__animated">Tunjukan QR Code saat melakukan registrasi</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center">
@@ -681,7 +681,7 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	<audio id="myAudio">
-		<source src="./sounds/aurora_existforlove.mp3" type="audio/mp3">
+		<source src="./sounds/Sheila_On_7_Melompat_Lebih_Tinggi.mp3" type="audio/mp3">
 	</audio>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -919,7 +919,7 @@
 		}
 
 		$("#tombol-buka").on('click', function() {
-			pauseAudio();
+			playAudio();
 			$("#logo-pengantin").css({
 				opacity: '1'
 			});
@@ -938,8 +938,8 @@
 				$("#cover").fadeOut(300, function() {
 					$(this).remove();
 				});
-				$('.pause').hide();
-				$('.play').css('display', 'inline-block');
+				$('.play').hide();
+				$('.pause').css('display', 'inline-block');
 			});
 		});
 	</script>
