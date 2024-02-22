@@ -26,10 +26,10 @@
 	} else {
 		echo "0 results";
 	}
-	$the_wedding = "Lembar Undangan Pandawa Awards 2023. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_wedding = "Lembar Undangan Rapat Anggota Tahunan Periode 2023. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
 	$the_desc = "Assalamu'alaikum Wr. Wb.
 	Bismillahirrahmanirrahim
-	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Pandawa Awards 2023, yang mana akan di pandu oleh 
+	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Rapat Anggota Tahunan Periode 2023, yang mana akan di pandu oleh 
 	
 	" . $pengantin_pria . "
 	&
@@ -55,15 +55,15 @@
 
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="invitation, pandawa, awards" />
+	<meta name="keywords" content="invitation, kkmrat, rat" />
 	<meta name="author" content="Nandur Digital Invitation" />
 	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#D1B374">
+	<meta name="theme-color" content="#00a2e1">
 	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#D1B374">
+	<meta name="msapplication-navbutton-color" content="#00a2e1">
 	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#D1B374">
-	<link rel="icon" sizes="192x192" href="images/pandawa/logo_pandawa_192.png">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#00a2e1">
+	<link rel="icon" sizes="192x192" href="../images/rat/favicon_io/favicon.ico">
 	<!-- 
 	//////////////////////////////////////////////////////
 
@@ -79,15 +79,15 @@
 	 -->
 
 	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="Undangan Pandawa Awards" />
-	<meta property="og:image" content="images/pandawa/og_image.png" />
-	<meta property="og:url" content="https://kn-sf.com/undangan" />
-	<meta property="og:site_name" content="Undangan Digital Pandawa" />
-	<meta property="og:description" content="Rabu, 04 Oct 2023 - 09:00 | Diamond Room" />
-	<meta name="twitter:title" content="Undangan Pandawa Awards" />
-	<meta name="twitter:image" content="images/pandawa/og_image.png" />
-	<meta name="twitter:url" content="https://kn-sf.com/undangan" />
-	<meta name="twitter:card" content="Rabu, 04 Oct 2023 - 09:00 | Diamond Room" />
+	<meta property="og:title" content="Undangan KKM RAT" />
+	<meta property="og:image" content="images/rat/og_image.png" />
+	<meta property="og:url" content="https://kkmrat.com/" />
+	<meta property="og:site_name" content="Undangan Digital KKM RAT" />
+	<meta property="og:description" content="Rabu, 28 Feb 2024 - 13:00 | Diamond Room" />
+	<meta name="twitter:title" content="Undangan KKM RAT" />
+	<meta name="twitter:image" content="images/rat/og_image.png" />
+	<meta name="twitter:url" content="https://kkmrat.com/" />
+	<meta name="twitter:card" content="Rabu, 28 Feb 2024 - 13:00 | Diamond Room" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 
@@ -95,7 +95,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,300;1,400;1,500;1,600&family=Karla&display=swap" rel="stylesheet">
 
-	<link rel="icon" type="image/x-icon" href="./images/pandawa/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="./images/rat/favicon_io/favicon.ico">
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">

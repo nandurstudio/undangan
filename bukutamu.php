@@ -19,7 +19,7 @@ include "./php/header.php";
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="row">
-							<div class="nama-pengantin-foto js animate__animated">Buku Tamu Undangan Pandawa Awards 2023</div>
+							<div class="nama-pengantin-foto js animate__animated">Buku Tamu Undangan RAT Periode 2023</div>
 							<table id="data" class="display" style="width:100%; background-color:white;">
 							</table>
 						</div>
