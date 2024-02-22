@@ -295,15 +295,14 @@
 							<div class="row js animate__animated" hidden>
 								<div class="col-md-12">
 									<div class="form-check checkleft">
+										<label for="namachat" class="form-check-label checkcap">Nama saya sama dengan nama pada undangan</label>
 										<input class="form-check-input" type="checkbox" id="namachat" name="namachat" value="namachatsama" checked>
-										<label for="nama" class="form-check-label checkcap">Nama saya sama dengan nama pada undangan</label>
-										<input type="name" id="nama" name="name" class="form-control" placeholder="Nama tamu" autocomplete="name" readonly>
 									</div>
 									<div class="form-group">
-										<label for="name-anda" class="custom-label">
+										<label for="namareservasi" class="custom-label">
 											<i class="icon-pencil"></i> Nama Anda
 										</label>
-										<input type="text" id="name-anda" name="name" class="form-control" placeholder="Nama Anda" autocomplete="name">
+										<input type="text" id="namareservasi" name="name" class="form-control" placeholder="Nama Anda" autocomplete="name">
 									</div>
 								</div>
 							</div>
@@ -467,7 +466,7 @@
 							$guest_count = mysqli_query($conn, $guest_query);
 							$row = mysqli_fetch_assoc($guest_count);
 							$ucapan = $row['namareservasi'];
-							echo "<span class=\"custom-label\"><i class=\"icon-twitter\"></i> " . $ucapan . " Ucapan</span>";
+							echo "<span class=\"custom-label\" id=\"custom-label\"><i class=\"icon-twitter\"></i> " . $ucapan . " Komentar</span>";
 							?>
 							<div class="fh5co-started form-control" style="height: 300px; overflow: auto;">
 								<div id="minichat">
@@ -826,6 +825,7 @@
 						timer: 1500
 					});
 					$('#wish').val('');
+					$('#custom-label').load(location.href + " #custom-label");
 					$('#guest-count-icon').html(html);
 					$('#guest-count-icon').load(location.href + " #guest-count-icon");
 				}

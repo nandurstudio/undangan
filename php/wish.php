@@ -27,11 +27,11 @@ $sesi = isset($_POST['sesi']) ? $_POST['sesi'] : '';
 $select = mysqli_query($conn, "SELECT * FROM tr_ucapan WHERE nama ='$namareservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1");
 if(mysqli_num_rows($select)) {
     mysqli_query($conn, "UPDATE `tr_ucapan` SET `nama` = '$name', `namareservasi` = '$namareservasi', `alamat` = '$alamat', `ucapan` = '$wish', `attending` = '$attending', `jumlahtamu` = '$jumlahtamu', `sesi` = '$sesi', `date` = current_timestamp() WHERE namareservasi ='$namareservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1;");
-    exit('Data telah di update! Untuk mengubah ucapan, kehadiran, dan jumlah tamu, silakan untuk mengisi kembali dan kirim ulang.');
+    exit('Data telah di update! Untuk mengubah ucapan dan kehadiran, silakan untuk mengisi kembali dan kirim ulang.');
 } else {
 mysqli_query($conn, "SELECT * FROM tr_ucapan");
 mysqli_query($conn, "INSERT INTO `tr_ucapan` (`ucapanId`, `nama`, `namareservasi`, `alamat`, `ucapan`, `attending`, `jumlahtamu`, `sesi`, `date`) VALUES (NULL, '$name', '$namareservasi', '$alamat', '$wish', '$attending', '$jumlahtamu', '$sesi', current_timestamp());");
-exit('Terima kasih :) Untuk mengubah ucapan, kehadiran, dan jumlah tamu, silakan untuk mengisi kembali dan kirim ulang.');
+exit('Terima kasih :) Untuk mengubah ucapan dan kehadiran, silakan untuk mengisi kembali dan kirim ulang.');
 }
 //header("Location:/undangan/php/wish.php");
 ?>
