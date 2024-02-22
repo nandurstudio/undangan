@@ -1,47 +1,52 @@
 @font-face {
-  font-family: 'icomoon';
+  font-family: "icomoon";
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
-  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix")
+      format("embedded-opentype"),
+    url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"),
+    url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"),
+    url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'fraunces_9pt_softitalic';
-  src: url('../fonts/fraunces/fraunces-9pt-soft-italic.woff2') format('woff2'),
-    url('../fonts/fraunces/fraunces-9pt-soft-italic.woff') format('woff');
+  font-family: "fraunces_9pt_softitalic";
+  src: url("../fonts/fraunces/fraunces-9pt-soft-italic.woff2") format("woff2"),
+    url("../fonts/fraunces/fraunces-9pt-soft-italic.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'fraunces_9pt_softlight';
-  src: url('../fonts/fraunces/fraunces-9pt-soft-light.woff2') format('woff2'),
-    url('../fonts/fraunces/fraunces-9pt-soft-light.woff') format('woff');
+  font-family: "fraunces_9pt_softlight";
+  src: url("../fonts/fraunces/fraunces-9pt-soft-light.woff2") format("woff2"),
+    url("../fonts/fraunces/fraunces-9pt-soft-light.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'fraunces_144pt_softitalic';
-  src: url('../fonts/fraunces/fraunces-144pt-soft-italic.woff2') format('woff2'),
-    url('../fonts/fraunces/fraunces-144pt-soft-italic.woff') format('woff');
+  font-family: "fraunces_144pt_softitalic";
+  src: url("../fonts/fraunces/fraunces-144pt-soft-italic.woff2") format("woff2"),
+    url("../fonts/fraunces/fraunces-144pt-soft-italic.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'fraunces_9ptregular';
-  src: url('../fonts/fraunces/fraunces-9pt-regular.woff2') format('woff2'),
-    url('../fonts/fraunces/fraunces-9pt-regular.woff') format('woff');
+  font-family: "fraunces_9ptregular";
+  src: url("../fonts/fraunces/fraunces-9pt-regular.woff2") format("woff2"),
+    url("../fonts/fraunces/fraunces-9pt-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'fraunces_9ptsemibold_italic';
-  src: url('../fonts/fraunces/fraunces-9pt-semi-bold-italic.woff2') format('woff2'),
-    url('../fonts/fraunces/fraunces-9pt-semi-bold-italic.woff') format('woff');
+  font-family: "fraunces_9ptsemibold_italic";
+  src: url("../fonts/fraunces/fraunces-9pt-semi-bold-italic.woff2")
+      format("woff2"),
+    url("../fonts/fraunces/fraunces-9pt-semi-bold-italic.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -190,7 +195,6 @@ figure {
 }
 
 @media screen and (max-width: 768px) {
-
   .fh5co-nav .menu-1,
   .fh5co-nav .menu-2 {
     display: none;
@@ -311,7 +315,7 @@ figure {
   box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75);
 }
 
-.fh5co-nav ul li.active>a {
+.fh5co-nav ul li.active > a {
   color: #fff !important;
 }
 
@@ -415,7 +419,7 @@ figure {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.fh5co-cover>.fh5co-container {
+.fh5co-cover > .fh5co-container {
   position: relative;
   z-index: 10;
 }
@@ -434,7 +438,6 @@ figure {
 }
 
 @media screen and (max-width: 768px) {
-
   .fh5co-cover .display-t,
   .fh5co-cover .display-tc {
     height: 100vh;
@@ -459,7 +462,6 @@ figure {
 }
 
 @media screen and (max-width: 768px) {
-
   .fh5co-cover.fh5co-cover-sm .display-t,
   .fh5co-cover.fh5co-cover-sm .display-tc {
     height: 400px;
@@ -506,7 +508,6 @@ figure {
 }
 
 @media screen and (max-width: 768px) {
-
   #fh5co-counter,
   #fh5co-event {
     height: inherit;
@@ -535,7 +536,6 @@ figure {
 }
 
 @media screen and (max-width: 768px) {
-
   #fh5co-counter .event-wrap,
   #fh5co-event .event-wrap {
     margin-bottom: 10px;
@@ -607,22 +607,22 @@ figure {
   }
 }
 
-.timeline>li {
+.timeline > li {
   margin-bottom: 20px;
   position: relative;
 }
 
-.timeline>li:before,
-.timeline>li:after {
+.timeline > li:before,
+.timeline > li:after {
   content: " ";
   display: table;
 }
 
-.timeline>li:after {
+.timeline > li:after {
   clear: both;
 }
 
-.timeline>li>.timeline-panel {
+.timeline > li > .timeline-panel {
   width: 40%;
   float: left;
   border: 1px solid #d4d4d4;
@@ -634,7 +634,7 @@ figure {
   border-radius: 4px;
 }
 
-.timeline>li>.timeline-panel:before {
+.timeline > li > .timeline-panel:before {
   position: absolute;
   top: 80px;
   right: -15px;
@@ -646,7 +646,7 @@ figure {
   content: " ";
 }
 
-.timeline>li>.timeline-panel:after {
+.timeline > li > .timeline-panel:after {
   position: absolute;
   top: 81px;
   right: -14px;
@@ -659,20 +659,20 @@ figure {
 }
 
 @media screen and (max-width: 480px) {
-  .timeline>li>.timeline-panel {
+  .timeline > li > .timeline-panel {
     width: 75% !important;
   }
 
-  .timeline>li>.timeline-panel:before {
+  .timeline > li > .timeline-panel:before {
     top: 30px;
   }
 
-  .timeline>li>.timeline-panel:after {
+  .timeline > li > .timeline-panel:after {
     top: 31px;
   }
 }
 
-.timeline>li>.timeline-badge {
+.timeline > li > .timeline-badge {
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -696,25 +696,25 @@ figure {
 }
 
 @media screen and (max-width: 480px) {
-  .timeline>li>.timeline-badge {
+  .timeline > li > .timeline-badge {
     width: 60px;
     height: 60px;
     margin-left: -20px !important;
   }
 }
 
-.timeline>li.timeline-inverted>.timeline-panel {
+.timeline > li.timeline-inverted > .timeline-panel {
   float: right;
 }
 
-.timeline>li.timeline-inverted>.timeline-panel:before {
+.timeline > li.timeline-inverted > .timeline-panel:before {
   border-left-width: 0;
   border-right-width: 15px;
   left: -15px;
   right: auto;
 }
 
-.timeline>li.timeline-inverted>.timeline-panel:after {
+.timeline > li.timeline-inverted > .timeline-panel:after {
   border-left-width: 0;
   border-right-width: 14px;
   left: -14px;
@@ -733,12 +733,12 @@ figure {
   letter-spacing: 2px;
 }
 
-.timeline-body>p,
-.timeline-body>ul {
+.timeline-body > p,
+.timeline-body > ul {
   margin-bottom: 0;
 }
 
-.timeline-body>p+p {
+.timeline-body > p + p {
   margin-top: 5px;
 }
 
@@ -747,30 +747,30 @@ figure {
     left: 90px;
   }
 
-  ul.timeline>li>.timeline-panel {
+  ul.timeline > li > .timeline-panel {
     width: calc(100% - 200px);
     width: -moz-calc(100% - 200px);
     width: -webkit-calc(100% - 200px);
   }
 
-  ul.timeline>li>.timeline-badge {
+  ul.timeline > li > .timeline-badge {
     left: 15px;
     margin-left: 0;
     top: 16px;
   }
 
-  ul.timeline>li>.timeline-panel {
+  ul.timeline > li > .timeline-panel {
     float: right;
   }
 
-  ul.timeline>li>.timeline-panel:before {
+  ul.timeline > li > .timeline-panel:before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
     right: auto;
   }
 
-  ul.timeline>li>.timeline-panel:after {
+  ul.timeline > li > .timeline-panel:after {
     border-left-width: 0;
     border-right-width: 14px;
     left: -14px;
@@ -950,8 +950,8 @@ figure {
   color: #ff4a6a;
   position: absolute;
   left: 0;
-  top: .05em;
-  font-family: 'icomoon';
+  top: 0.05em;
+  font-family: "icomoon";
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -1015,7 +1015,6 @@ form label {
 }
 
 @media screen and (max-width: 768px) {
-
   #fh5co-header .display-tc h1,
   #fh5co-counter .display-tc h1,
   .fh5co-cover .display-tc h1 {
@@ -1024,7 +1023,6 @@ form label {
 }
 
 @media screen and (max-width: 480px) {
-
   #fh5co-header .display-tc h1,
   #fh5co-counter .display-tc h1,
   .fh5co-cover .display-tc h1 {
@@ -1041,7 +1039,6 @@ form label {
 }
 
 @media screen and (max-width: 480px) {
-
   #fh5co-header .display-tc h2,
   #fh5co-counter .display-tc h2,
   .fh5co-cover .display-tc h2 {
@@ -1085,7 +1082,7 @@ form label {
   margin-bottom: 0;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 
 @media screen and (max-width: 768px) {
@@ -1119,7 +1116,7 @@ form label {
   margin-bottom: 2em;
 }
 
-.simply-countdown>.simply-section {
+.simply-countdown > .simply-section {
   /* coutndown blocks */
   display: inline-block;
   width: 60px;
@@ -1148,7 +1145,7 @@ form label {
   }
 }
 
-.simply-countdown>.simply-section>div {
+.simply-countdown > .simply-section > div {
   /* countdown block inner div */
   display: table-cell;
   /* vertical-align: middle; */
@@ -1156,20 +1153,20 @@ form label {
   width: 100px;
 }
 
-.simply-countdown>.simply-section .simply-amount,
-.simply-countdown>.simply-section .simply-word {
+.simply-countdown > .simply-section .simply-amount,
+.simply-countdown > .simply-section .simply-word {
   display: block;
   color: white;
-  font-family: 'fraunces_9pt_softlight', serif;
+  font-family: "fraunces_9pt_softlight", serif;
   /* amounts and words */
 }
 
-.simply-countdown>.simply-section .simply-amount {
+.simply-countdown > .simply-section .simply-amount {
   font-size: xx-large;
   /* amounts */
 }
 
-.simply-countdown>.simply-section .simply-word {
+.simply-countdown > .simply-section .simply-word {
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   font-size: 12px;
@@ -1197,7 +1194,6 @@ form label {
 }
 
 @media screen and (max-width: 768px) {
-
   #fh5co-testimonial,
   #fh5co-services,
   #fh5co-started,
@@ -1300,7 +1296,6 @@ form label {
 }
 
 @media screen and (max-width: 480px) {
-
   .couple-half .groom,
   .couple-half .bride {
     width: 100%;
@@ -1338,7 +1333,6 @@ form label {
 }
 
 @media screen and (max-width: 480px) {
-
   .couple-half .groom,
   .couple-half .bride {
     margin-left: 0;
@@ -1669,7 +1663,6 @@ form label {
 }
 
 @media screen and (max-width: 768px) {
-
   #fh5co-footer .copyright .pull-left,
   #fh5co-footer .copyright .pull-right {
     float: none !important;
@@ -1748,20 +1741,20 @@ form label {
   list-style: none;
 }
 
-#fh5co-offcanvas ul li>ul {
+#fh5co-offcanvas ul li > ul {
   padding-left: 20px;
   display: none;
 }
 
-#fh5co-offcanvas ul li.offcanvas-has-dropdown>a {
+#fh5co-offcanvas ul li.offcanvas-has-dropdown > a {
   display: block;
   position: relative;
 }
 
-#fh5co-offcanvas ul li.offcanvas-has-dropdown>a:after {
+#fh5co-offcanvas ul li.offcanvas-has-dropdown > a:after {
   position: absolute;
   right: 0px;
-  font-family: 'icomoon';
+  font-family: "icomoon";
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -1862,31 +1855,31 @@ form label {
   width: 25px;
   height: 2px;
   color: #252525;
-  font: bold 14px/.4 Helvetica;
+  font: bold 14px/0.4 Helvetica;
   text-transform: uppercase;
   text-indent: -55px;
   background: #252525;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .fh5co-nav-toggle i::before,
 .fh5co-nav-toggle i::after {
-  content: '';
+  content: "";
   width: 25px;
   height: 2px;
   background: #252525;
   position: absolute;
   left: 0;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
-.fh5co-nav-toggle.fh5co-nav-white>i {
+.fh5co-nav-toggle.fh5co-nav-white > i {
   color: #fff;
   background: #fff;
 }
 
-.fh5co-nav-toggle.fh5co-nav-white>i::before,
-.fh5co-nav-toggle.fh5co-nav-white>i::after {
+.fh5co-nav-toggle.fh5co-nav-white > i::before,
+.fh5co-nav-toggle.fh5co-nav-white > i::after {
   background: #fff;
 }
 
@@ -1942,7 +1935,13 @@ form label {
   z-index: 2001;
   border-bottom: none !important;
 }
-
+/* Tambahkan CSS untuk latar belakang putih */
+.table-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 @media screen and (max-width: 768px) {
   .fh5co-nav-toggle {
     /* display: block; */
@@ -2183,7 +2182,7 @@ form label {
   height: 54px;
   font-size: 18px;
   font-weight: 300;
-  font-family: 'fraunces_9pt_softitalic';
+  font-family: "fraunces_9pt_softitalic";
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
@@ -2228,7 +2227,7 @@ form label {
   border-top-right-radius: 4px;
   margin: initial;
   padding-left: 10px;
-  font-family: 'Karla';
+  font-family: "Karla";
 }
 
 .just-center {
@@ -2263,7 +2262,7 @@ form label {
   width: 65%;
 }
 
-.sealtip{
+.sealtip {
   width: 10%;
   position: absolute;
   display: inline;
@@ -2271,7 +2270,6 @@ form label {
   margin-top: 1.2%;
   z-index: 9;
   text-align: center;
-
 }
 .bg-carton {
   background-image: url(../images/rat/bg_rat.png);
@@ -2314,7 +2312,7 @@ form label {
   font-weight: lighter;
   text-align: left;
   vertical-align: super;
-  font-family: 'Karla';
+  font-family: "Karla";
   padding: 2px;
 }
 
@@ -2326,7 +2324,7 @@ form label {
   background-color: #eea236;
 }
 
-.optionbox{
+.optionbox {
   color: #000;
   background-color: #8b9b79;
 }
@@ -2337,13 +2335,13 @@ form label {
   flex-direction: column-reverse;
   font-size: small;
   color: #fff;
-  font-family: 'Karla';
+  font-family: "Karla";
 }
 
 .wishtext {
   border-bottom: #8b9b79;
   border-bottom-style: dashed;
-  font-family: 'fraunces_9ptregular';
+  font-family: "fraunces_9ptregular";
   font-size: large;
 }
 
