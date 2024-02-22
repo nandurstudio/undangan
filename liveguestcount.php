@@ -55,26 +55,26 @@ include "./php/header.php";
 							<ul>
 								<li>
 									<div class="text-center">
-										<img src="images/pandawa/jas.png" alt="denaya_qr_code" class="img-responsive logo-qrcode js animate__animated">
-										<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan</br>berupa smart casual</div>
+										<img src="images/rat/team.png" alt="Dresscode" class="img-responsive logo-qrcode js animate__animated">
+										<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan</br>berupa Nuansa HITAM</div>
 									</div>
 								</li>
 								<li>
 									<div class="text-center">
-										<img src="images/pandawa/tiket_icon.png" alt="denaya_hand_sanitizer" class="img-responsive logo-qrcode js animate__animated">
-										<div class="p-protokol js animate__animated">Siapkan tiket virtual</br>sebagai akses masuk</div>
+										<img src="images/rat/tumbler.png" alt="Tumbler" class="img-responsive logo-qrcode js animate__animated">
+										<div class="p-protokol js animate__animated">Wajib membawa Tumbler</br>atau botol minum pribadi</div>
 									</div>
 								</li>
 								<li>
 									<div class="text-center">
-										<img src="images/pandawa/scan.png" alt="denaya_masker" class="img-responsive logo-qrcode js animate__animated">
-										<div class="p-protokol js animate__animated">Tunjukan QR Code</br>saat memasuki tempat acara</div>
+										<img src="images/rat/qr-scan.png" alt="QR Code" class="img-responsive logo-qrcode js animate__animated">
+										<div class="p-protokol js animate__animated">Tunjukan QR Code</br>saat melakukan registrasi</div>
 									</div>
 								</li>
 								<li>
 									<div class="text-center">
-										<img src="images/pandawa/nolaptop.png" alt="denaya_jaga_jarak" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
-										<div class="p-protokol js animate__animated">Dilarang membawa laptop</br>ke dalam ruangan</div>
+										<img src="images/rat/gadget.png" alt="No Handphone" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+										<div class="p-protokol js animate__animated">Fokus selama</br>acara berlangsung</div>
 									</div>
 								</li>
 							</ul>
@@ -85,15 +85,15 @@ include "./php/header.php";
 							<div class="col-md-8 col-md-offset-2 text-center">
 								<div class="display-t">
 									<div class="display-tc">
-										<img id="logo-pengantin" style="opacity: 1;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/pandawa/logo-pandawa-512x512.png" alt="Logo Naufal And Denaya" width="20%">
-										<div class="hari-pernikahan" style="color: #c69a2f;font-size:1.5em;line-height:0.5">Pandawa Awards</div>
-										<div class="nama-pengantin js animate__animated animate__fadeInUp" style="color: #f8b304;">2023</div>
+										<img id="logo-pengantin" style="opacity: 1;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/rat/SVG/logo_rat.svg" alt="Logo Naufal And Denaya" width="20%">
+										<div class="hari-pernikahan" style="color: #7ac043;font-size:1.5em;line-height:0.5">Rapat Anggota Tahunan</div>
+										<div class="nama-pengantin js animate__animated animate__fadeInUp" style="color: #7ac043;">Periode 2023</div>
 									</div>
 								</div>
 								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated animate__fadeInUp" style="padding-top:50px ;">
 							</div>
 						</div>
-						<div class="nama-tamu" style="font-size: 2em;color: #f8b304;padding-top:5px">Selamat Datang</div>
+						<div class="nama-tamu" style="font-size: 2em;color: #7ac043;padding-top:5px">Selamat Datang</div>
 						<div class="animate-box just-center">
 							<div id="nama-tamu-undangan" class="nama-pengantin-foto" style="font-size:4em">Tamu Undangan</div>
 							<!-- <img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated animate__fadeInUp"> -->
@@ -151,7 +151,7 @@ include "./php/header.php";
 				player = new YT.Player('ytplayer', {
 					width: '100%',
 					height: '720px',
-					videoId: 'pvuvKcpOu8o',
+					videoId: 'nXph_hKjF_U',
 					events: {
 						'onReady': onPlayerReady,
 						'onStateChange': onPlayerStateChange
