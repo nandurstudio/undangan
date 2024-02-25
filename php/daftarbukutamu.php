@@ -1,22 +1,34 @@
 <?php
-    include 'connection.php';
-    $i = 1;
-    $query = "SELECT * FROM `tr_tamu` ORDER BY `tamuId` DESC";
-    $dewan1 = $db1->prepare($query);
-    $dewan1->execute();
-    $res1 = $dewan1->get_result();
-    while ($row = $res1->fetch_assoc()) {
-        $data[$i]['tamuId'] = $row['tamuId'];
-        $data[$i]['name'] = $row['name'];
-        $data[$i]['alamat'] = $row['alamat'];
-        $data[$i]['sesi'] = $row['sesi'];
-        $data[$i]['jumlah_tamu'] = $row['jumlah_tamu'];
-        $data[$i]['date'] = $row['date'];
+include 'connection.php';
 
-        $i++;
-	} 
+// Persiapkan statement
+$query = "SELECT * FROM `tr_tamu` ORDER BY `tamuId` DESC";
+$dewan1 = $db1->prepare($query);
+$dewan1->execute();
 
-    $out = array_values($data);
-    echo json_encode($out);
-    // Close connection
-    mysqli_close($conn);
+// Ikatan kolom ke variabel
+$dewan1->bind_result($tamuId, $name, $alamat, $sesi, $jumlah_tamu, $date);
+
+// Inisialisasi array untuk menyimpan data
+$data = array();
+
+// Loop untuk mengambil hasil
+while ($dewan1->fetch()) {
+    $data[] = array(
+        'tamuId' => $tamuId,
+        'name' => $name,
+        'alamat' => $alamat,
+        'sesi' => $sesi,
+        'jumlah_tamu' => $jumlah_tamu,
+        'date' => $date
+    );
+}
+
+// Konversi array ke dalam format JSON dan kirimkan sebagai respons
+echo json_encode($data);
+
+// Tutup statement
+$dewan1->close();
+
+// Tutup koneksi
+$db1->close();
