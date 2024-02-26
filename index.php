@@ -34,17 +34,17 @@
 	} else {
 		echo "0 results";
 	}
-	$the_wedding = "Lembar Undangan Rapat Anggota Tahunan Periode 2023. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_wedding = "Lembar Undangan Edumeet TPM 2024. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
 	$the_desc = "Assalamu'alaikum Wr. Wb.
 	Bismillahirrahmanirrahim
-	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Rapat Anggota Tahunan Periode 2023, yang mana akan di pandu oleh 
+	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Edumeet TPM 2024, yang mana akan di pandu oleh 
 	
 	" . $pengantin_pria . "
 	&
 	" . $pengantin_wanita . "
 	
 	Pada :
-	Rabu, 04 Oct 2023
+	Kamis, 29 Feb 2024
 	
 	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memeriahkan acaranya.
 	
@@ -63,15 +63,15 @@
 
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="invitation, kkmrat, rat" />
+	<meta name="keywords" content="invitation, edumeet, shp" />
 	<meta name="author" content="Nandur Digital Invitation" />
 	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#00a2e1">
+	<meta name="theme-color" content="#eb1c27">
 	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#00a2e1">
+	<meta name="msapplication-navbutton-color" content="#eb1c27">
 	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#00a2e1">
-	<link rel="icon" sizes="192x192" href="images/rat/favicon_io/android-chrome-192x192.png">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#eb1c27">
+	<link rel="icon" sizes="192x192" href="images/edumeet/favicon_io/android-chrome-192x192.png">
 	<!-- 
 	//////////////////////////////////////////////////////
 
@@ -87,15 +87,15 @@
 	 -->
 
 	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="Undangan KKM RAT" />
-	<meta property="og:image" content="https://www.undangan.kkmrat.com/images/rat/og_image.png" />
-	<meta property="og:url" content="https://www.kkmrat.com/" />
-	<meta property="og:site_name" content="Undangan Digital KKM RAT" />
-	<meta property="og:description" content="Rabu, 28 Feb 2024 - 13:00 | Diamond Room" />
-	<meta name="twitter:title" content="Undangan KKM RAT" />
-	<meta name="twitter:image" content="https://www.undangan.kkmrat.com/images/rat/og_image.png" />
-	<meta name="twitter:url" content="https://www.kkmrat.com/" />
-	<meta name="twitter:card" content="Rabu, 28 Feb 2024 - 13:00 | Diamond Room" />
+	<meta property="og:title" content="Undangan Edumeet TPM 2024" />
+	<meta property="og:image" content="https://www.undangan.edumeetshp.com/images/edumeet/og_image.png" />
+	<meta property="og:url" content="https://www.edumeetshp.com/" />
+	<meta property="og:site_name" content="Undangan Digital Edumeet TPM 2024" />
+	<meta property="og:description" content="Kamis, 29 Feb 2024 | Bungursari Lake Park" />
+	<meta name="twitter:title" content="Undangan Edumeet TPM 2024" />
+	<meta name="twitter:image" content="https://www.undangan.edumeetshp.com/images/edumeet/og_image.png" />
+	<meta name="twitter:url" content="https://www.edumeetshp.com/" />
+	<meta name="twitter:card" content="Kamis, 29 Feb 2024 | Bungursari Lake Park" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 
@@ -103,7 +103,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,300;1,400;1,500;1,600&family=Karla&display=swap" rel="stylesheet">
 
-	<link rel="icon" type="image/x-icon" href="./images/rat/favicon_io/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="./images/edumeet/favicon_io/favicon.ico">
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.min.css">
@@ -144,7 +144,7 @@
 	<div class="cover" id="cover">
 		<div class="container name-cover" id="name-cover">
 			<div class="text-center">
-				<img class="logo-pengantin animate__animated animate__pulse animate__infinite infinite" src="./images/rat/tiket.png" alt="Tiket" width="95%">
+				<img class="logo-pengantin animate__animated animate__pulse animate__infinite infinite" src="./images/edumeet/tiket.png" alt="Tiket" width="95%">
 			</div>
 			<div class="animate__animated animate__headShake animate__infinite infinite col-md-8 col-md-offset-2 text-center">
 				<button id="tombol-buka" type="submit" class="animate__animated animate__zoomInDown btn btn-buka">Buka Undangan</button>
@@ -153,14 +153,14 @@
 	</div>
 	<section>
 		<!-- Cover -->
-		<header id="fh5co-header" class="fh5co-cover mid" role="banner" style="background-image:url(images/rat/cover_rat2.jpg);" data-stellar-background-ratio="0.5">
+		<header id="fh5co-header" class="fh5co-cover mid" role="banner" style="background-image:url(images/edumeet/cover_edumeet2.jpg);" data-stellar-background-ratio="0.5">
 			<!-- <div class="overlay"></div> -->
 			<div class="container concover">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t">
 							<div class="display-tc">
-								<img id="logo-pengantin" style="opacity:0;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/rat/logo_rat_time.png" alt="Logo RAT" width="80%">
+								<img id="logo-pengantin" style="opacity:0;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/edumeet/logo_edumeet_time.png" alt="Logo Edumeet" width="80%">
 							</div>
 						</div>
 					</div>
@@ -208,22 +208,22 @@
 							// echo $encrypted_string;
 							// echo $decrypted_string;
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $decrypted_string . "</div>
-							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode 2023.</p>
-							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
-							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\">
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Edumeet TPM SHP Plant 2024.</p>
+							<p class=\"js animate__animated\" hidden>Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
+							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\" hidden>
 							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "&amp;size=200x200\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
-							</a><br \><div class=\"p-protokol js animate__animated\">Klik untuk memperbesar</div>";
+							</a><br \><div class=\"p-protokol js animate__animated\" hidden>Klik untuk memperbesar</div>";
 							// https://www.jqueryscript.net/lightbox/lightbox2.html
 						} else {
 							// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
 							// echo $actual_link;
 							$actual_link = "Anonymous";
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $actual_link . "</div>
-							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode 2023.</p>
-							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
-							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Edumeet TPM SHP Plant 2024.</p>
+							<p class=\"js animate__animated\" hidden>Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
+							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\" hidden>
 							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=200x200\" alt=\"QR Code " . $actual_link . "\">
-							</a><br \><div class=\"p-protokol js animate__animated\">Klik untuk memperbesar</div>";
+							</a><br \><div class=\"p-protokol js animate__animated\" hidden>Klik untuk memperbesar</div>";
 						}
 						?>
 					</div>
@@ -309,6 +309,7 @@
 							<div class="row js animate__animated">
 								<div class="col-md-12">
 									<div class="form-group">
+										<label for="konfirmasi-kehadiran" class="custom-label"><i class="icon-pencil"></i> Konfirmasi Kehadiran</label>
 										<select name="konfirmasi-kehadiran" class="form-control" id="konfirmasi-kehadiran">
 											<?php
 											include "./php/connection.php";
@@ -328,7 +329,7 @@
 											} else {
 												$alamat = '';
 											}
-											$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+											$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu, kendaraan FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
 											$result_query = mysqli_query($conn, $query);
 
 											if (mysqli_num_rows($result_query) > 0) {
@@ -365,6 +366,75 @@
 									</div>
 								</div>
 							</div>
+							<div class="row js animate__animated" id="divkendaraan">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="konfirmasi-kendaraan" class="custom-label"><i class="icon-book"></i> Transportasi Keberangkatan</label>
+										<select name="konfirmasi-kendaraan" class="form-control" id="konfirmasi-kendaraan">
+											<?php
+											include "./php/connection.php";
+											if (isset($_GET['to'])) {
+												$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+												$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+												if (isset($_GET['namareservasi'])) {
+													$nama_reservasi = $_GET['namareservasi'];
+												} else {
+													$nama_reservasi = '';
+												}
+											} else {
+												$rep_guest_name = 'Anonymous';
+											}
+											if (isset($_GET['adr'])) {
+												$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
+											} else {
+												$alamat = '';
+											}
+											$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu, kendaraan FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+											$result_query = mysqli_query($conn, $query);
+
+											if (mysqli_num_rows($result_query) > 0) {
+												// output data of each row
+												while ($row = mysqli_fetch_assoc($result_query)) {
+													if ($row["kendaraan"] == "0") {
+														echo "<option class=\"optionbox\" disabled hidden value=\"\">Transportasi Keberangkatan</option>";
+														echo "<option class=\"optionbox\" value=\"0\" selected>Kendaraan Pribadi (Motor)</option>";
+														echo "<option class=\"optionbox\" value=\"1\">Nebeng (Umum)</option>";
+														echo "<option class=\"optionbox\" value=\"2\">Kendaraan Pribadi (Mobil)</option>";
+													} elseif ($row["kendaraan"] == "1") {
+														echo "<option class=\"optionbox\" disabled hidden value=\"\">Transportasi Keberangkatan</option>";
+														echo "<option class=\"optionbox\" value=\"0\">Kendaraan Pribadi (Motor)</option>";
+														echo "<option class=\"optionbox\" value=\"1\" selected>Nebeng (Umum)</option>";
+														echo "<option class=\"optionbox\" value=\"2\">Kendaraan Pribadi (Mobil)</option>";
+													} elseif ($row["kendaraan"] == "2") {
+														echo "<option class=\"optionbox\" disabled hidden value=\"\">Transportasi Keberangkatan</option>";
+														echo "<option class=\"optionbox\" value=\"0\">Kendaraan Pribadi (Motor)</option>";
+														echo "<option class=\"optionbox\" value=\"1\">Nebeng (Umum)</option>";
+														echo "<option class=\"optionbox\" value=\"2\" selected>Kendaraan Pribadi (Mobil)</option>";
+													} else {
+														echo "<option class=\"optionbox\" selected value=\"\">Transportasi Keberangkatan</option>";
+														echo "<option class=\"optionbox\" value=\"0\">Kendaraan Pribadi (Motor)</option>";
+														echo "<option class=\"optionbox\" value=\"1\">Nebeng (Umum)</option>";
+														echo "<option class=\"optionbox\" value=\"2\">Kendaraan Pribadi (Mobil)</option>";
+													}
+												}
+											} else {
+												echo "<option class=\"optionbox\" disabled hidden selected value=\"\">Transportasi Keberangkatan</option>";
+												echo "<option class=\"optionbox\" value=\"0\">Kendaraan Pribadi (Motor)</option>";
+												echo "<option class=\"optionbox\" value=\"1\">Nebeng (Umum)</option>";
+												echo "<option class=\"optionbox\" value=\"2\">Kendaraan Pribadi (Mobil)</option>";
+											}
+											mysqli_close($conn);
+											//https://stackoverflow.com/a/15864222/7772358
+											//echo $_GET['to'];
+											//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+											?>
+											<!-- <option selected="selected" disabled="" hidden="" value="">Konfirmasi Kehadiran</option>
+											<option selected="" style="color: black;" value="1">Akan Hadir</option>
+											<option selected="" style="color: black;" value="0">Tidak Bisa Hadir</option> -->
+										</select>
+									</div>
+								</div>
+							</div>
 							<div class="row js animate__animated">
 								<div class="col-md-12">
 									<div class="form-group">
@@ -388,7 +458,7 @@
 										} else {
 											$alamat = '';
 										}
-										$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+										$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu, kendaraan FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
 										$result_query = mysqli_query($conn, $query);
 
 										if (mysqli_num_rows($result_query) > 0) {
@@ -430,7 +500,7 @@
 										} else {
 											$alamat = '';
 										}
-										$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+										$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu, kendaraan FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
 										$result_query = mysqli_query($conn, $query);
 
 										if (mysqli_num_rows($result_query) > 0) {
@@ -476,16 +546,29 @@
 										echo "<strong>" . ucwords(strtolower($row["namareservasi"])) . " </strong>";
 										$att = $row["attending"];
 										$tamu = $row["jumlahtamu"];
+										$kendaraan = $row["kendaraan"];
+										// Membuat variabel array
+										$pilihankendaraan = array("Kendaraan Pribadi (Motor)", "Nebeng (Umum)", "Kendaraan Pribadi (Mobil)");
+
+										// Memilih elemen array menggunakan PHP
+										// Contoh: memilih elemen pertama dari array
+										$pilihanPertama = $pilihankendaraan[0];
+										$pilihanKedua = $pilihankendaraan[1];
+										$pilihanKetiga = $pilihankendaraan[2];
 										if ($att == 1) {
-											if ($tamu == 1) {
-												echo "<span class=\"hadir\">Akan Hadir Sendiri</span>";
+											if ($kendaraan == 0) {
+												echo "<br /><span class=\"hadir\">Akan Hadir dengan " . $pilihanPertama . "</span>";
+											} else if ($kendaraan == 1) {
+												echo "<br /><span class=\"hadir\">Akan Hadir dengan " . $pilihanKedua . "</span>";
+											} else if ($kendaraan == 2) {
+												echo "<br /><span class=\"hadir\">Akan Hadir dengan " . $pilihanKetiga . "</span>";
 											} else {
-												echo "<span class=\"hadir\">Akan Hadir Ber-" . $tamu . "</span>";
+												echo "<br /><span class=\"hadir tidak-konfirmasi\">Tidak Konfirmasi Kendaraan</span>";
 											}
 										} elseif ($att == 0) {
-											echo "<span class=\"hadir tidak-hadir\">Tidak Bisa Hadir</span>";
+											echo "<br /><span class=\"hadir tidak-hadir\">Tidak Bisa Hadir</span>";
 										} else {
-											echo "<span class=\"hadir tidak-konfirmasi\">Tidak Konfirmasi</span>";
+											echo "<br /><span class=\"hadir tidak-konfirmasi\">Tidak Konfirmasi</span>";
 										}
 										echo "<p class=\"wishtext\">" . $row['ucapan'];
 										echo "<time class=\"timeago timestamp\" datetime=\"" . $row["date"] . "\">";
@@ -525,20 +608,23 @@
 		</div>
 	</section>
 	<section>
-		<!-- Mempelai Gabungan -->
+		<!-- Mempelai Pria -->
 		<div id="fh5co-couple" class="bg-carton one-page">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony</div>
-						</br>
-						</br>
+						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony 1</div>
+						<a class="demo js animate__animated" href="images/edumeet/andri.png" data-lightbox="example-1">
+							<img src="images/edumeet/andri.png" alt="Bagus" class="img-responsive foto-pengantin js animate__animated">
+						</a>
 						<?php
 						include "./php/connection.php";
 						$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='1'";
-						$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='2'";
+						$sql_ayah_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '3'";
+						$sql_ibu_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '4'";
 						$result_pria = mysqli_query($conn, $sql_pria);
-						$result_wanita = mysqli_query($conn, $sql_wanita);
+						$result_ayah_pria = mysqli_query($conn, $sql_ayah_pria);
+						$result_ibu_pria = mysqli_query($conn, $sql_ibu_pria);
 
 						if (mysqli_num_rows($result_pria) > 0) {
 							// output data of each row
@@ -548,15 +634,78 @@
 						} else {
 							echo "0 results";
 						}
+						if (mysqli_num_rows($result_ayah_pria) > 0) {
+							// output data of each row
+							while ($row = mysqli_fetch_assoc($result_ayah_pria)) {
+								$ayah_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
+							}
+						} else {
+							echo "0 results";
+						}
+						if (mysqli_num_rows($result_ibu_pria) > 0) {
+							// output data of each row
+							while ($row = mysqli_fetch_assoc($result_ibu_pria)) {
+								$ibu_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
+							}
+						} else {
+							echo "0 results";
+						}
 						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_pria . "</div>
 							</a>";
-						echo "<p class=\"js animate__animated\">SHP SCM, QSS & IDC<br /><span class=\"ortu\">Department HR Ops. & GA</span></p>";
-						echo "<div class=\"big-date js animate__animated animate__fadeInUp\">\n\n\n&amp\n\n\n</div>";
+						echo "<p class=\"js animate__animated\">Admin<br /><span class=\"ortu\">Department PREP & PPC</span></p>";
+						// echo "<p class=\"js animate__animated\">Putra ketiga dari<br /><span class=\"ortu\">Bapak " . $ayah_pria . " &amp; Ibu " . $ibu_pria . "</span></p>";
+
+						mysqli_close($conn);
+						//https://stackoverflow.com/a/15864222/7772358
+						//echo $_GET['to'];
+						//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<!-- Mempelai Wanita -->
+		<div id="fh5co-couple" class="bg-carton one-page">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony 2</div>
+						<a class="demo js animate__animated" href="images/edumeet/mawar.png" data-lightbox="example-1">
+							<img src="images/edumeet/mawar.png" alt="Mawar" class="img-responsive foto-pengantin js animate__animated">
+						</a>
+						<?php
+						include "./php/connection.php";
+						$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='2'";
+						$sql_ayah_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '5'";
+						$sql_ibu_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '6'";
+						$result_wanita = mysqli_query($conn, $sql_wanita);
+						$result_ayah_wanita = mysqli_query($conn, $sql_ayah_wanita);
+						$result_ibu_wanita = mysqli_query($conn, $sql_ibu_wanita);
 
 						if (mysqli_num_rows($result_wanita) > 0) {
 							// output data of each row
 							while ($row = mysqli_fetch_assoc($result_wanita)) {
-								$pengantin_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
+								$pengantin_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];;
+							}
+						} else {
+							// echo "0 results";
+						}
+
+						if (mysqli_num_rows($result_ayah_wanita) > 0) {
+							// output data of each row
+							while ($row = mysqli_fetch_assoc($result_ayah_wanita)) {
+								$ayah_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
+							}
+						} else {
+							// echo "0 results";
+						}
+
+						if (mysqli_num_rows($result_ibu_wanita) > 0) {
+							// output data of each row
+							while ($row = mysqli_fetch_assoc($result_ibu_wanita)) {
+								$ibu_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
 							}
 						} else {
 							// echo "0 results";
@@ -564,8 +713,13 @@
 
 						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_wanita . "</div>
 							</a>";
-						echo "<p class=\"js animate__animated\">SHP SCM<br /><span class=\"ortu\">Department P P I C</span></p>";
+						echo "<p class=\"js animate__animated\">Admin<br /><span class=\"ortu\">Department PAM</span></p>";
+						// echo "<p class=\"js animate__animated\">Putri kedua dari<br /><span class=\"ortu\">Bapak " . $ayah_wanita . " &amp; Ibu " . $ibu_wanita . "</span></p>";
 						mysqli_close($conn);
+						//https://stackoverflow.com/a/15864222/7772358
+						//echo $_GET['to'];
+						//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+
 						?>
 					</div>
 				</div>
@@ -578,14 +732,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="big-date js animate__animated">28.FEB.24</div>
+						<div class="big-date js animate__animated">29.FEB.24</div>
 						<div id="demo"></div>
 						<div class="simply-countdown simply-countdown-one js animate__animated"></div>
-						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20240228T060000Z/20240228T090000Z&crm=AVAILABLE&sprop=website:www.kkmrat.com/undangan&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+2023&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk." class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
+						<p><a href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20240229T040000Z/20240229T090000Z&crm=AVAILABLE&sprop=website:www.edumeetshp.com/undangan&sprop=name:Edumeetshp&ctz=Asia/Jakarta&text=Edumeet%202024&location=Bungursari%20Lake%20Park%2C%20Kampung%2C%20Jl.%20Awi%20Mekar%2C%20Bungursari%2C%20Kec.%20Bungursari%2C%20Kabupaten%20Purwakarta%2C%20Jawa%20Barat%2C%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan." class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
 						<br />
 						<div class="col-md-8 col-md-offset-2 text-center">
-							<a class="demo js animate__animated" href="images/rat/events.png" data-lightbox="example-1">
-								<img src="images/rat/events.png" alt="Event" class="img-responsive foto-pengantin js animate__animated">
+							<a class="demo js animate__animated" href="images/edumeet/events.png" data-lightbox="example-1">
+								<img src="images/edumeet/events.png" alt="Event" class="img-responsive foto-pengantin js animate__animated">
 							</a>
 						</div>
 					</div>
@@ -602,11 +756,11 @@
 						<div class="nama-pengantin-foto js animate__animated">Lokasi</div>
 						<div id="map" class="fh5co-map event-wrap">
 							<div class="col-md-8 col-md-offset-2 text-center">
-								<p class="js animate__animated"><span style="font-weight:bold;">KNLC (DIAMOND ROOM) LT. 3</span><br />PT. Sanghiang Perkasa - Kalbe Nutritionals,<br />Kawasan Industri Indotaisei, Kalihurip, Kec. Cikampek,<br />Karawang, Jawa Barat 41373</p>
-								<p><a href="https://maps.app.goo.gl/3wuVHxG1jPgWjUjt9" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
+								<p class="js animate__animated"><span style="font-weight:bold;">Bungursari Lake Park</span><br />Kampung, Jl. Awi Mekar, Kec. Bungursari,<br />Kabupaten Purwakarta, Jawa Barat</p>
+								<p><a href="https://maps.app.goo.gl/bSo8TMpuHJmwzLp66" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
 								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
 							</div>
-							<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15859.357860273401!2d107.4120537!3d-6.4146679!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e697313a5df4371%3A0x7b098758ed16c78f!2sPT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals!5e0!3m2!1sen!2sid!4v1696298434771!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+							<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d700.8000803157292!2d107.46939974532106!3d-6.480597726669977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e690db48a0a4c2d%3A0x5e708a31da0dd5b5!2sBungursari%20Lake%20Park!5e0!3m2!1sen!2sid!4v1708863275103!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 							</iframe>
 						</div>
 					</div>
@@ -616,7 +770,7 @@
 	</section>
 	<section>
 		<!-- Protokol -->
-		<div id="fh5co-couple" class="bg-carton fit-screen">
+		<div id="fh5co-couple" class="bg-carton fit-screen" hidden>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
@@ -624,26 +778,26 @@
 						<p class="js animate__animated">Tanpa mengurangi rasa hormat, harap mengkuti peraturan yang sudah ditetapkan oleh panitia agar acara berjalan lancar dengan mengikuti protokol berikut:</p>
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
 							<div class="text-center">
-								<img src="images/rat/tumbler.png" alt="Botol tumbler" class="img-responsive logo-qrcode js animate__animated">
+								<img src="images/edumeet/tumbler.png" alt="Botol tumbler" class="img-responsive logo-qrcode js animate__animated">
 								<div class="p-protokol js animate__animated">Wajib membawa Tumbler</div>
 							</div>
 							<div class="text-center">
-								<img src="images/rat/team.png" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
+								<img src="images/edumeet/team.png" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
 								<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan berupa Nuansa HITAM</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
 							<div class="text-center">
-								<img src="images/rat/voucher.png" alt="Tiket" class="img-responsive logo-qrcode js animate__animated">
+								<img src="images/edumeet/voucher.png" alt="Tiket" class="img-responsive logo-qrcode js animate__animated">
 								<div class="p-protokol js animate__animated">Siapkan tiket virtual ini sebagai akses masuk</div>
 							</div>
 							<div class="text-center">
-								<img src="images/rat/qr-scan.png" alt="Scan QR Code" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+								<img src="images/edumeet/qr-scan.png" alt="Scan QR Code" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
 								<div class="p-protokol js animate__animated">Tunjukan QR Code saat melakukan registrasi</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center">
-							<img src="images/rat/gadget.png" alt="No Laptop" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+							<img src="images/edumeet/gadget.png" alt="No Laptop" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
 							<div class="p-protokol js animate__animated">Fokus selama acara berlangsung</div>
 						</div>
 					</div>
@@ -681,7 +835,7 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	<audio id="myAudio">
-		<source src="./sounds/Sheila_On_7_Melompat_Lebih_Tinggi.mp3" type="audio/mp3">
+		<source src="./sounds/Love-Letter_Cavendish.mp3" type="audio/mp3">
 	</audio>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -717,8 +871,9 @@
 			// Set initial state
 			$('#namareservasi').val($('#name').val());
 
-			// Hide #jumlahtamu initially
+			// Hide #jumlahtamu and kendaraan initially
 			$('#jumlahtamu').hide('3');
+			$('#divkendaraan').hide();
 
 			// Handle konfirmasi kehadiran change event
 			$('#konfirmasi-kehadiran').on('change', function(e) {
@@ -727,10 +882,13 @@
 					$('#komentar').text("Alasan");
 					$('#wish').attr("placeholder", "Berikan alasan kenapa tidak bisa hadir");
 					$('#jumlahtamu').val('');
+					$('#divkendaraan').hide();
+					$('#konfirmasi-kendaraan').val("").change();
 				} else {
 					$('#komentar').text("Komentar");
 					$('#wish').attr("placeholder", "Berikan komentar positif untuk acara");
 					$('#jumlahtamu').val(1);
+					$('#divkendaraan').show();
 				}
 			}).trigger('change'); // Trigger change event initially
 
@@ -747,44 +905,16 @@
 			var alamat = $('#alamat').val();
 			var wish = $('#wish').val();
 			var attending = $('#konfirmasi-kehadiran').val();
+			var kendaraan = $('#konfirmasi-kendaraan').val();
 			var jumlahtamu = $('#jumlahtamu').val();
 			var sesi = $('#sesi-reservasi').val();
 			var konfirmasiText = $('#konfirmasi-kehadiran :selected').text();
+			var kendaraanText = $('#konfirmasi-kendaraan :selected').text();
 
 			if (namareservasi === '') {
 				Swal.fire({
 					icon: "error",
 					title: "Mohon isi nama terlebih dahulu",
-					showConfirmButton: false,
-					timer: 1500
-				});
-				return false;
-			}
-
-			if (wish === '') {
-				Swal.fire({
-					icon: "info",
-					title: "Silakan untuk mengisi ucapan atau kata-kata penyemangat acara pada kolom komentar!",
-					showConfirmButton: false,
-					timer: 3000
-				});
-				return false;
-			}
-
-			if (konfirmasiText === 'Akan Hadir' && jumlahtamu === '') {
-				Swal.fire({
-					icon: "error",
-					title: "Mohon isi jumlah tamu yang akan hadir",
-					showConfirmButton: false,
-					timer: 1500
-				});
-				return false;
-			}
-
-			if (konfirmasiText === 'Akan Hadir' && jumlahtamu <= 0) {
-				Swal.fire({
-					icon: "error",
-					title: "Jumlah tamu termasuk Anda minimal 1",
 					showConfirmButton: false,
 					timer: 1500
 				});
@@ -801,6 +931,50 @@
 				return false;
 			}
 
+			if (konfirmasiText === 'Tidak Bisa Hadir' && wish === '') {
+				Swal.fire({
+					icon: "error",
+					title: "Mohon isi alasan kenapa tidak bisa hadir",
+					showConfirmButton: false,
+					timer: 1500
+				});
+				return false;
+			}
+
+			if (konfirmasiText === 'Akan Hadir' && kendaraanText === 'Transportasi Keberangkatan') {
+				Swal.fire({
+					icon: "error",
+					title: "Mohon pilih Transportasi Kendaraan",
+					showConfirmButton: false,
+					timer: 1500
+				});
+				return false;
+			}
+
+			if (konfirmasiText === 'Akan Hadir' && jumlahtamu <= 0) {
+				Swal.fire({
+					icon: "error",
+					title: "Jumlah tamu termasuk Anda minimal 1",
+					showConfirmButton: false,
+					timer: 1500
+				});
+				return false;
+			}
+
+			if (wish === '') {
+				Swal.fire({
+					icon: "info",
+					title: "Silakan untuk mengisi ucapan atau kata-kata penyemangat acara pada kolom komentar!",
+					showConfirmButton: false,
+					timer: 3000
+				});
+				return false;
+			}
+
+			if (attending === 0) {
+				kendaraan = ''
+			}
+
 			$.ajax({
 				type: "post",
 				url: "./php/wish.php",
@@ -811,7 +985,8 @@
 					'wish': wish,
 					'attending': attending,
 					'jumlahtamu': jumlahtamu,
-					'sesi': sesi
+					'sesi': sesi,
+					'kendaraan': kendaraan,
 				},
 				cache: false,
 				success: function(html) {
@@ -874,7 +1049,7 @@
 		$(function() {
 			$("time.timeago").timeago();
 		});
-		var d = new Date(new Date("Feb 28, 2024 13:00:00").getTime());
+		var d = new Date(new Date("Feb 29, 2024 11:00:00").getTime());
 		//var countDownDate = new Date("Mar 27, 2022 08:00:00").getTime();
 
 

@@ -111,7 +111,7 @@ a:focus {
 
 p {
   font-family: "Karla", Arial, sans-serif;
-  color: #7ac043;
+  color: #00BCD4;
   font-size: medium;
   padding: 10px;
 }
@@ -2272,7 +2272,7 @@ form label {
   text-align: center;
 }
 .bg-carton {
-  background-image: url(../images/rat/bg_rat.png);
+  background-image: url(../images/edumeet/bg_edumeet.png);
   background-repeat: no-repeat;
   background-position: top;
   text-align: center;
