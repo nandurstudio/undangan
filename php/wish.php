@@ -27,7 +27,7 @@ $kendaraan = isset($_POST['kendaraan']) ? $_POST['kendaraan'] : '';
 // $ucapan = $_POST["ucapan"];
 $select = mysqli_query($conn, "SELECT * FROM tr_ucapan WHERE nama ='$namareservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1");
 if(mysqli_num_rows($select)) {
-    mysqli_query($conn, "UPDATE `tr_ucapan` SET `nama` = '$name', `namareservasi` = '$namareservasi', `alamat` = '$alamat', `ucapan` = '$wish', `attending` = '$attending', `jumlahtamu` = '$jumlahtamu', `sesi` = '$sesi', `date` = current_timestamp(), `kendaraan` = '$kendaraan'  WHERE namareservasi ='$namareservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1;");
+    mysqli_query($conn, "UPDATE `tr_ucapan` SET `nama` = '$name', `namareservasi` = '$namareservasi', `alamat` = '$alamat', `ucapan` = '$wish', `attending` = '$attending', `jumlahtamu` = '$jumlahtamu', `sesi` = '$sesi', `kendaraan` = '$kendaraan'  WHERE namareservasi ='$namareservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1;");
     exit('Data telah di update! Untuk mengubah ucapan dan kehadiran, silakan untuk mengisi kembali dan kirim ulang.');
 } else {
 mysqli_query($conn, "SELECT * FROM tr_ucapan");
