@@ -550,7 +550,7 @@
 						}
 						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_pria . "</div>
 							</a>";
-						echo "<p class=\"js animate__animated\">SHP SCM, QSS & IDC<br /><span class=\"ortu\">Department HR Ops. & GA</span></p>";
+						echo "<p class=\"js animate__animated\">Admin<span class=\"ortu\"> Department GA</span></p>";
 						echo "<div class=\"big-date js animate__animated animate__fadeInUp\">\n\n\n&amp\n\n\n</div>";
 
 						if (mysqli_num_rows($result_wanita) > 0) {
@@ -564,7 +564,7 @@
 
 						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_wanita . "</div>
 							</a>";
-						echo "<p class=\"js animate__animated\">SHP SCM<br /><span class=\"ortu\">Department P P I C</span></p>";
+						echo "<p class=\"js animate__animated\">STAFF<span class=\"ortu\"> Department P P I C</span></p>";
 						mysqli_close($conn);
 						?>
 					</div>
