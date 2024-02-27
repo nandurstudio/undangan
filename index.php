@@ -391,9 +391,7 @@
 											}
 											$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu, kendaraan FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
 											$result_query = mysqli_query($conn, $query);
-
 											if (mysqli_num_rows($result_query) > 0) {
-												// output data of each row
 												while ($row = mysqli_fetch_assoc($result_query)) {
 													if ($row["kendaraan"] == "0") {
 														echo "<option class=\"optionbox\" disabled hidden value=\"\">Transportasi Keberangkatan</option>";
@@ -444,11 +442,7 @@
 										if (isset($_GET['to'])) {
 											$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
 											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
-											if (isset($_GET['namareservasi'])) {
-												$nama_reservasi = $_GET['namareservasi'];
-											} else {
-												$nama_reservasi = '';
-											}
+											$nama_reservasi = $rep_guest_name;
 										} else {
 											$rep_guest_name = 'Anonymous';
 											$nama_reservasi = 'Anonymous';
@@ -460,7 +454,6 @@
 										}
 										$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu, kendaraan FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
 										$result_query = mysqli_query($conn, $query);
-
 										if (mysqli_num_rows($result_query) > 0) {
 											// output data of each row
 											while ($row = mysqli_fetch_assoc($result_query)) {
@@ -559,7 +552,7 @@
 											if ($kendaraan == 0) {
 												echo "<br /><span class=\"hadir\">Akan Hadir dengan " . $pilihanPertama . "</span>";
 											} else if ($kendaraan == 1) {
-												echo "<br /><span class=\"hadir\">Akan Hadir dengan " . $pilihanKedua . "</span>";
+												echo "<br /><span class=\"hadir tidak-konfirmasi\">Akan Hadir dengan " . $pilihanKedua . "</span>";
 											} else if ($kendaraan == 2) {
 												echo "<br /><span class=\"hadir\">Akan Hadir dengan " . $pilihanKetiga . "</span>";
 											} else {
