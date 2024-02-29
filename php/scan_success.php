@@ -17,6 +17,6 @@ if(mysqli_num_rows($result) > 0) {
 }
 
 // Redirect ke halaman yang sesuai
-header("Location: /undangan/scantamu.php");
-//server header("Location:/scantamu.php");
+header("Location: /undangan/scantamu.php"); //untuk di local
+//server header("Location:/scantamu.php"); //untuk di server
 ?>
