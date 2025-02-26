@@ -34,17 +34,17 @@
 	} else {
 		echo "0 results";
 	}
-	$the_wedding = "Lembar Undangan Rapat Anggota Tahunan Periode 2023. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_wedding = "Lembar Undangan Rapat Anggota Tahunan Periode 2024. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
 	$the_desc = "Assalamu'alaikum Wr. Wb.
 	Bismillahirrahmanirrahim
-	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Rapat Anggota Tahunan Periode 2023, yang mana akan di pandu oleh 
+	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Rapat Anggota Tahunan Periode 2024, yang mana akan di pandu oleh 
 	
 	" . $pengantin_pria . "
 	&
 	" . $pengantin_wanita . "
 	
 	Pada :
-	Rabu, 04 Oct 2023
+	Senin, 10 Mar 2025
 	
 	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memeriahkan acaranya.
 	
@@ -91,11 +91,11 @@
 	<meta property="og:image" content="https://www.undangan.kkmrat.com/images/rat/og_image.png" />
 	<meta property="og:url" content="https://www.kkmrat.com/" />
 	<meta property="og:site_name" content="Undangan Digital KKM RAT" />
-	<meta property="og:description" content="Rabu, 28 Feb 2024 - 13:00 | Diamond Room" />
+	<meta property="og:description" content="Senin, 10 Mar 2025 - 13:00 | Diamond Room" />
 	<meta name="twitter:title" content="Undangan KKM RAT" />
 	<meta name="twitter:image" content="https://www.undangan.kkmrat.com/images/rat/og_image.png" />
 	<meta name="twitter:url" content="https://www.kkmrat.com/" />
-	<meta name="twitter:card" content="Rabu, 28 Feb 2024 - 13:00 | Diamond Room" />
+	<meta name="twitter:card" content="Senin, 10 Mar 2025 - 13:00 | Diamond Room" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 
@@ -208,7 +208,7 @@
 							// echo $encrypted_string;
 							// echo $decrypted_string;
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $decrypted_string . "</div>
-							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode 2023.</p>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode 2024.</p>
 							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\">
 							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "&amp;size=200x200\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
@@ -219,7 +219,7 @@
 							// echo $actual_link;
 							$actual_link = "Anonymous";
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $actual_link . "</div>
-							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode 2023.</p>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode 2024.</p>
 							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
 							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=200x200\" alt=\"QR Code " . $actual_link . "\">
@@ -531,40 +531,42 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony</div>
-						</br>
-						</br>
 						<?php
 						include "./php/connection.php";
+
 						$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='1'";
 						$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='2'";
+
 						$result_pria = mysqli_query($conn, $sql_pria);
 						$result_wanita = mysqli_query($conn, $sql_wanita);
 
+						$pengantin_pria = "";
+						$pengantin_pria_title = "";
+						$pengantin_wanita = "";
+						$pengantin_wanita_title = "";
+
 						if (mysqli_num_rows($result_pria) > 0) {
-							// output data of each row
 							while ($row = mysqli_fetch_assoc($result_pria)) {
 								$pengantin_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
+								$pengantin_pria_title = $row["txtTitle"];
 							}
-						} else {
-							echo "0 results";
 						}
-						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_pria . "</div>
-							</a>";
-						echo "<p class=\"js animate__animated\">Admin<span class=\"ortu\"> Department GA</span></p>";
+						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">
+        					<img src='images/rat/host_duo.png' alt='Foto Pengantin' class='foto-pengantin'>
+      						</div>";
+						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_pria . "</div>";
+						echo "<p class=\"js animate__animated\">" . $pengantin_pria_title . "</p>";
 						echo "<div class=\"big-date js animate__animated animate__fadeInUp\">\n\n\n&amp\n\n\n</div>";
 
 						if (mysqli_num_rows($result_wanita) > 0) {
-							// output data of each row
 							while ($row = mysqli_fetch_assoc($result_wanita)) {
 								$pengantin_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
+								$pengantin_wanita_title = $row["txtTitle"];
 							}
-						} else {
-							// echo "0 results";
 						}
+						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_wanita . "</div>";
+						echo "<p class=\"js animate__animated\">" . $pengantin_wanita_title . "</p>";
 
-						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_wanita . "</div>
-							</a>";
-						echo "<p class=\"js animate__animated\">STAFF<span class=\"ortu\"> Department P P I C</span></p>";
 						mysqli_close($conn);
 						?>
 					</div>
@@ -578,10 +580,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="big-date js animate__animated">28.FEB.24</div>
+						<div class="big-date js animate__animated">10.MAR.25</div>
 						<div id="demo"></div>
 						<div class="simply-countdown simply-countdown-one js animate__animated"></div>
-						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20240228T060000Z/20240228T090000Z&crm=AVAILABLE&sprop=website:www.kkmrat.com/undangan&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+2023&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk." class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
+						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20240228T060000Z/20240228T090000Z&crm=AVAILABLE&sprop=website:www.kkmrat.com/undangan&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+2024&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk." class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
 						<br />
 						<div class="col-md-8 col-md-offset-2 text-center">
 							<a class="demo js animate__animated" href="images/rat/events.png" data-lightbox="example-1">
@@ -629,7 +631,7 @@
 							</div>
 							<div class="text-center">
 								<img src="images/rat/team.png" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
-								<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan berupa Nuansa HITAM</div>
+								<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan berupa Nuansa Earth Tone</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
@@ -655,7 +657,7 @@
 				<div class="col-md-12 text-center">
 					<p>
 						<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> -->
-						<small class="block">&copy; 2024 Nandur Studio. All Rights Reserved.</small>
+						<small class="block">&copy; 2025 Nandur Studio. All Rights Reserved.</small>
 						<!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
 						<small class="block">Web Invitation by <a href="https://www.nandurstudio.com" target="_blank">Nandur Studio Event</a>
 							</br>Design by <a href="https://instagram.com/nandur.studio" target="_blank">Nandur Studio</a>
@@ -874,7 +876,7 @@
 		$(function() {
 			$("time.timeago").timeago();
 		});
-		var d = new Date(new Date("Feb 28, 2024 13:00:00").getTime());
+		var d = new Date(new Date("Mar 10, 2025 13:00:00").getTime());
 		//var countDownDate = new Date("Mar 27, 2022 08:00:00").getTime();
 
 
