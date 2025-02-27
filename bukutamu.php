@@ -17,7 +17,7 @@ include "./php/header.php";
 			<div class="container">
 				<div class="col-md-12 js animate__animated">
 					<div class="row">
-						<div class="nama-pengantin-foto js animate__animated">Buku Tamu Undangan RAT Periode 2023</div>
+						<div class="nama-pengantin-foto js animate__animated">Buku Tamu Undangan RAT Periode 2024</div>
 					</div>
 					<div class="table-container"> <!-- Tambahkan container baru untuk memuat tabel -->
 						<table id="example" class="display" style="width: 100%;">

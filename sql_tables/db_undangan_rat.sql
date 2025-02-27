@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2024 at 02:28 AM
+-- Generation Time: Feb 27, 2025 at 06:33 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -79,7 +79,7 @@ CREATE TABLE `tb_user` (
   `txtNamaDepan` varchar(50) DEFAULT NULL,
   `txtNamaBelakang` varchar(50) DEFAULT NULL,
   `txtKelaminId` int(10) DEFAULT NULL,
-  `txtTitle` char(20) DEFAULT NULL,
+  `txtTitle` char(100) DEFAULT NULL,
   `txtAyahId` int(10) DEFAULT NULL,
   `txtIbuId` int(10) DEFAULT NULL,
   `intAnakKe` tinyint(10) DEFAULT NULL,
@@ -111,12 +111,14 @@ INSERT INTO `tb_user` (`intUserId`, `txtNamaDepan`, `txtNamaBelakang`, `txtKelam
 (14, 'Yanuar', 'Riswanti', 2, NULL, NULL, NULL, NULL, NULL, NULL, 4, 1, '2022-04-19 13:51:57'),
 (15, 'Iman', 'Suparman', 1, NULL, NULL, NULL, NULL, NULL, NULL, 5, 1, '2022-04-19 13:50:17'),
 (16, 'Kurniati', 'Watiningsih', 2, NULL, NULL, NULL, NULL, NULL, NULL, 6, 1, '2022-04-19 13:50:17'),
-(17, 'Naufal', 'A Prabowo', 1, NULL, 13, 14, 3, 3, NULL, 1, 0, '2023-10-02 19:52:44'),
-(18, 'Denaya', 'C Safira', 2, NULL, 15, 16, 2, 2, NULL, 2, 0, '2023-10-02 19:52:44'),
-(19, 'Bagus', 'Bimantoro', 1, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, '2023-10-02 19:52:17'),
+(17, 'Naufal', 'A Prabowo', 1, NULL, 13, 14, 3, 3, NULL, 9, 0, '2025-02-25 03:59:05'),
+(18, 'Denaya', 'C Safira', 2, NULL, 15, 16, 2, 2, NULL, 9, 0, '2025-02-25 03:59:05'),
+(19, 'Bagus', 'Bimantoro', 1, NULL, NULL, NULL, NULL, NULL, NULL, 9, 0, '2025-02-25 03:48:13'),
 (20, 'Mawar', 'Puspa Endah', 2, NULL, NULL, NULL, NULL, NULL, NULL, 9, 0, '2024-02-19 08:09:06'),
-(21, 'Dini', 'Sandra Novita Manalu', 2, 'SHP SCM - P P I C', NULL, NULL, 1, 1, NULL, 2, 1, '2024-02-21 09:30:10'),
-(22, 'Rizki', 'Andika', 1, 'SHP SCM, QSS & IDC -', NULL, NULL, NULL, NULL, NULL, 1, 1, '2024-02-21 09:32:50');
+(21, 'Dini', 'Sandra Novita Manalu', 2, 'SHP SCM - P P I C', NULL, NULL, 1, 1, NULL, 9, 0, '2025-02-25 03:58:42'),
+(22, 'Rizki', 'Andika', 1, 'SHP SCM, QSS & IDC -', NULL, NULL, NULL, NULL, NULL, 9, 0, '2025-02-25 03:58:42'),
+(23, 'Himawan', 'Prasetiyo', 1, 'SHP SCM - External Plant Third Party Production', NULL, NULL, NULL, NULL, NULL, 1, 1, '2025-02-25 04:09:58'),
+(24, 'Mona', 'Dwi Fenska', 2, 'SHP QSS - Quality & Food Safety', NULL, NULL, NULL, NULL, NULL, 2, 1, '2025-02-25 04:48:23');
 
 -- --------------------------------------------------------
 
@@ -154,10 +156,83 @@ CREATE TABLE `tr_tamu` (
 --
 
 INSERT INTO `tr_tamu` (`tamuId`, `name`, `alamat`, `sesi`, `jumlah_tamu`, `date`) VALUES
-(1, 'Nandang Duryat', 'DIG', '1', '1', '2024-02-22 17:40:16'),
+(1, 'Nandang Duryat', 'DIG', '1', '1', '2024-02-27 18:04:58'),
 (2, 'Reki Maulid', 'PRD', '1', '1', '2024-02-22 21:07:39'),
 (3, 'Ismail', 'PRD', '1', '1', '2024-02-22 22:28:53'),
 (4, 'Wildan', 'PRD', '1', '1', '2024-02-22 21:23:37');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tr_tamu_plant`
+--
+
+CREATE TABLE `tr_tamu_plant` (
+  `nik` varchar(20) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `dept` varchar(50) NOT NULL,
+  `kehadiran` tinyint(1) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tr_tamu_plant`
+--
+
+INSERT INTO `tr_tamu_plant` (`nik`, `nama`, `dept`, `kehadiran`, `date`) VALUES
+('000500006', 'Wachid Sadali', 'QA', 0, '2025-01-19'),
+('000700013', 'Agus Dwiyanto', 'QA', 0, '2025-01-19'),
+('000700014', 'Budy Sutrisno', 'QA', 0, '2025-01-19'),
+('000900017', 'Malawi Adi Winarta', 'Maintenance', 0, '2025-01-19'),
+('012345678', 'Muhammad Rifki', 'Maintenance', 0, '2025-01-19'),
+('030500006', 'Cuncun', 'PPC', 0, '2025-01-19'),
+('060500014', 'Yudha Agus Tri Basuki', 'KMI', 0, '2025-01-19'),
+('060700018', 'Dedi Setiadi', 'PPC', 0, '2025-01-19'),
+('060800019', 'Cahyo Agung Martanto', 'Maintenance', 0, '2025-01-19'),
+('060800021', 'Fajar Fauzan', 'General', 0, '2025-01-19'),
+('070700085', 'A Ropi', 'Production', 0, '2025-01-19'),
+('080100001', 'Fian Hariayana', 'Engineering', 0, '2025-01-19'),
+('080600015', 'Heriana Sanjaya', 'QA', 1, '2025-01-20'),
+('100300022', 'Mahajiwa Sabihisma', 'PPC', 0, '2025-01-19'),
+('101200061', 'Adi Sofyan', 'QA', 0, '2025-01-19'),
+('120100006', 'Nanang Yulianto', 'Maintenance', 0, '2025-01-19'),
+('120500034', 'Sukaryadi', 'Digitalization', 0, '2025-01-19'),
+('120900060', 'Abdul Halim', 'Production', 0, '2025-01-19'),
+('120900062', 'Ahmad Sanusi', 'PPC', 0, '2025-01-19'),
+('120900067', 'Ismail', 'Production', 0, '2025-01-19'),
+('130100009', 'Yudi Sulistyo', 'Production', 0, '2025-01-19'),
+('130400076', 'Novi Nurhayati', 'Digitalization', 0, '2025-01-19'),
+('130700106', 'Budi Santoso', 'Production', 0, '2025-01-19'),
+('140200012', 'Rehulinta Valerina', 'HR', 0, '2025-01-19'),
+('140600068', 'Yogo Priyanto', 'PPC', 0, '2025-01-19'),
+('140600070', 'Ade Wulandari', 'Production', 0, '2025-01-19'),
+('140700099', 'Dea Nur Anggraeni', 'Production', 0, '2025-01-19'),
+('140700106', 'Fahrul Rozi', 'QA', 0, '2025-01-19'),
+('150400101', 'Priyo Anarkie Yuseptyo', 'Production', 0, '2025-01-19'),
+('151100330', 'Verdiana Zahroh Narendra Bawanti', 'General', 0, '2025-01-19'),
+('160200086', 'Dicky Pebrian', 'GA', 0, '2025-01-19'),
+('161200728', 'Dyanza Aria Perdana', 'PPC', 0, '2025-01-19'),
+('180700137', 'Joko Suprianto', 'Maintenance', 0, '2025-01-19'),
+('190300104', 'Satria Nur Permadi', 'Engineering', 0, '2025-01-19'),
+('190500135', 'Nicky Galih Pangesti', 'QA', 0, '2025-01-19'),
+('191000241', 'Haris Baihaqi', 'Maintenance', 0, '2025-01-19'),
+('191100276', 'Udi Rusdiana', 'Maintenance', 0, '2025-01-19'),
+('191200293', 'Fendi Setiawan', 'GA', 0, '2025-01-19'),
+('200100026', 'Emanuelle Nathania Lianto', 'HR', 0, '2025-01-19'),
+('200100030', 'Nandang Duryat', 'Digitalization', 0, '2025-01-19'),
+('200100040', 'Yuswa Slamet', 'Management System', 0, '2025-01-19'),
+('200500103', 'Hoko Diantoro', 'Engineering', 0, '2025-01-19'),
+('220300162', 'Asep Sopiyan', 'Digitalization', 0, '2025-01-19'),
+('221000412', 'Kastolani', 'Engineering', 0, '2025-01-19'),
+('230100020', 'Brenda Mahegasari', 'Engineering', 0, '2025-01-19'),
+('230300066', 'Andika Saputra', 'Engineering', 0, '2025-01-19'),
+('230400068', 'Sri Rejeki', 'QA', 0, '2025-01-19'),
+('231100165', 'Agung Joko Suprihanto', 'Production', 0, '2025-01-19'),
+('240700072', 'Reki Maulid', 'Production', 0, '2025-01-19'),
+('241100123', 'Zahro Salma Rosyidah', 'General', 0, '2025-01-19'),
+('991100012', 'Syamsul Bahri', 'Production', 0, '2025-01-19'),
+('K230200028', 'Mawar Puspa Endah', 'General', 0, '2025-01-19'),
+('K240500072', 'Fathya Afiffah Octaviany', 'PPC', 0, '2025-01-19');
 
 -- --------------------------------------------------------
 
@@ -183,7 +258,7 @@ CREATE TABLE `tr_ucapan` (
 
 INSERT INTO `tr_ucapan` (`ucapanId`, `nama`, `namareservasi`, `alamat`, `ucapan`, `attending`, `jumlahtamu`, `sesi`, `date`) VALUES
 (1, 'Nandur', 'Nandur', 'DIG', 'Semoga acaranya sukses', '1', 1, '1', '2024-02-22 10:17:32'),
-(2, 'Nandang Duryat', 'Nandang Duryat', 'DIG', 'Tidak ada mobil', '0', 0, '1', '2024-02-22 11:05:54');
+(2, 'Nandang Duryat', 'Nandang Duryat', 'DIG', 'Test RAT', '1', 1, '1', '2024-02-27 10:33:10');
 
 -- --------------------------------------------------------
 
@@ -223,7 +298,7 @@ CREATE TABLE `tr_undangan` (
 --
 
 INSERT INTO `tr_undangan` (`intUndanganId`, `txtSubtitle`, `txtHeader`, `dtmWaktuAkad`, `dtmWaktuResepsi`, `txtAlamat`, `txtQuotePria`, `txtQuoteWanita`, `txtGoogleMaps`, `intNamaPengantinPria_intUserId`, `intNamaPengantinWanita_intUserId`, `intNamaAyahPengantinPria_intUserId`, `intNamaIbuPengantinPria_intUserId`, `intNamaAyahPengantinWanita_intUserId`, `intNamaIbuPengantinWanita_intUserId`, `dtmFirstMeet`, `dtmFirstDate`, `dtmInARelationship`, `dtmOther`, `txtQuotesPengantin`, `txtQuotesTokohTerkenal`, `decNoEWallet`, `decRekeningBank`, `intNamaPemegangRekening_intUserId`) VALUES
-(1, NULL, NULL, '2022-03-27 08:00:00', '2022-03-27 10:00:00', 'GRAHA PINDAD\r\nJalan Gatot Subroto No.517, Kebon Kangkung, Kiaracondong, Sukapura, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40284', NULL, NULL, 'https://goo.gl/maps/Q76muirvoCRAswicA', 9, 12, 7, 8, 10, 11, '2022-02-14 08:04:15', '2022-02-14 08:04:15', '2022-02-14 08:04:15', '2022-02-14 08:04:15', NULL, NULL, '62818435453', NULL, 9);
+(1, NULL, NULL, '2022-03-27 08:00:00', '2022-03-27 10:00:00', 'GRAHA PINDAD\r\nJalan Gatot Subroto No.517, Kebon Kangkung, Kiaracondong, Sukapura, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40284', NULL, NULL, 'https://goo.gl/maps/Q76muirvoCRAswicA', 9, 12, 7, 8, 10, 11, '2022-02-14 08:04:15', '2022-02-14 08:04:15', '2022-02-14 08:04:15', '2022-02-14 08:04:15', NULL, NULL, 62818435453, NULL, 9);
 
 --
 -- Indexes for dumped tables
@@ -264,6 +339,12 @@ ALTER TABLE `tr_tamu`
   ADD PRIMARY KEY (`tamuId`);
 
 --
+-- Indexes for table `tr_tamu_plant`
+--
+ALTER TABLE `tr_tamu_plant`
+  ADD PRIMARY KEY (`nik`,`date`);
+
+--
 -- Indexes for table `tr_ucapan`
 --
 ALTER TABLE `tr_ucapan`
@@ -302,7 +383,7 @@ ALTER TABLE `tb_undangan`
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `intUserId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `intUserId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tr_reservasi`
