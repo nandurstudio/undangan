@@ -551,9 +551,12 @@
 								$pengantin_pria_title = $row["txtTitle"];
 							}
 						}
-						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">
-        					<img src='images/rat/host_duo.png' alt='Foto Pengantin' class='foto-pengantin'>
-      						</div>";
+						echo '<div class="col-md-8 col-md-offset-2 text-center">
+								<a class="demo js animate__animated" href="images/rat/host_duo.png" data-lightbox="example-1">
+									<img src="images/rat/host_duo.png" alt="Foto Pengantin" class="img-responsive foto-pengantin js animate__animated">
+								</a>
+							</div>
+					        <div style="clear:both;"></div>'; // Menambah pemisah
 						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_pria . "</div>";
 						echo "<p class=\"js animate__animated\">" . $pengantin_pria_title . "</p>";
 						echo "<div class=\"big-date js animate__animated animate__fadeInUp\">\n\n\n&amp\n\n\n</div>";
