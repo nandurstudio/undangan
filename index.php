@@ -91,11 +91,11 @@
 	<meta property="og:image" content="https://www.undangan.kkmrat.web.id/images/rat/og_image.png" />
 	<meta property="og:url" content="https://www.kkmrat.web.id/" />
 	<meta property="og:site_name" content="Undangan Digital KKM RAT" />
-	<meta property="og:description" content="Senin, 10 Mar 2025 - 13:00 | Diamond Room" />
+	<meta property="og:description" content="Senin, 10 Mar 2025 - 13:30 | Auditorium" />
 	<meta name="twitter:title" content="Undangan KKM RAT" />
 	<meta name="twitter:image" content="https://www.undangan.kkmrat.web.id/images/rat/og_image.png" />
 	<meta name="twitter:url" content="https://www.kkmrat.web.id/" />
-	<meta name="twitter:card" content="Senin, 10 Mar 2025 - 13:00 | Diamond Room" />
+	<meta name="twitter:card" content="Senin, 10 Mar 2025 - 13:30 | Auditorium" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 
@@ -586,7 +586,7 @@
 						<div class="big-date js animate__animated">10.MAR.25</div>
 						<div id="demo"></div>
 						<div class="simply-countdown simply-countdown-one js animate__animated"></div>
-						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20240228T060000Z/20240228T090000Z&crm=AVAILABLE&sprop=website:www.kkmrat.web.id/undangan&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+2024&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk." class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
+						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20250310T063000Z/20250310T090000Z&crm=AVAILABLE&sprop=website:www.kkmrat.web.id/undangan&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+2024&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk" class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
 						<br />
 						<div class="col-md-8 col-md-offset-2 text-center">
 							<a class="demo js animate__animated" href="images/rat/events.png" data-lightbox="example-1">
@@ -607,7 +607,7 @@
 						<div class="nama-pengantin-foto js animate__animated">Lokasi</div>
 						<div id="map" class="fh5co-map event-wrap">
 							<div class="col-md-8 col-md-offset-2 text-center">
-								<p class="js animate__animated"><span style="font-weight:bold;">KNLC (DIAMOND ROOM) LT. 3</span><br />PT. Sanghiang Perkasa - Kalbe Nutritionals,<br />Kawasan Industri Indotaisei, Kalihurip, Kec. Cikampek,<br />Karawang, Jawa Barat 41373</p>
+								<p class="js animate__animated"><span style="font-weight:bold;">Auditorium LT. 1</span><br />PT. Sanghiang Perkasa - Kalbe Nutritionals,<br />Kawasan Industri Indotaisei, Kalihurip, Kec. Cikampek,<br />Karawang, Jawa Barat 41373</p>
 								<p><a href="https://maps.app.goo.gl/3wuVHxG1jPgWjUjt9" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
 								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
 							</div>
@@ -879,7 +879,7 @@
 		$(function() {
 			$("time.timeago").timeago();
 		});
-		var d = new Date(new Date("Mar 10, 2025 13:00:00").getTime());
+		var d = new Date(new Date("Mar 10, 2025 13:30:00").getTime());
 		//var countDownDate = new Date("Mar 27, 2022 08:00:00").getTime();
 
 
