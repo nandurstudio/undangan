@@ -83,11 +83,11 @@
 	<meta property="og:image" content="images/rat/og_image.png" />
 	<meta property="og:url" content="https://kkmrat.web.id/" />
 	<meta property="og:site_name" content="Undangan Digital KKM RAT" />
-	<meta property="og:description" content="Rabu, 28 Feb 2024 - 13:00 | Diamond Room" />
+	<meta property="og:description" content="Senin, 10 Mar 2025 - 13:30 | Auditorium" />
 	<meta name="twitter:title" content="Undangan KKM RAT" />
 	<meta name="twitter:image" content="images/rat/og_image.png" />
 	<meta name="twitter:url" content="https://kkmrat.web.id/" />
-	<meta name="twitter:card" content="Rabu, 28 Feb 2024 - 13:00 | Diamond Room" />
+	<meta name="twitter:card" content="Senin, 10 Mar 2025 - 13:30 | Auditorium" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 
