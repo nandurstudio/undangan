@@ -34,10 +34,10 @@
 	} else {
 		echo "0 results";
 	}
-	$the_wedding = "Lembar Undangan Rapat Anggota Tahunan Periode 2024. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_wedding = "Lembar Undangan Rapat Anggota Tahunan Periode Tahun Buku 2024. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
 	$the_desc = "Assalamu'alaikum Wr. Wb.
 	Bismillahirrahmanirrahim
-	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Rapat Anggota Tahunan Periode 2024, yang mana akan di pandu oleh 
+	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Rapat Anggota Tahunan Periode Tahun Buku 2024, yang mana akan di pandu oleh 
 	
 	" . $pengantin_pria . "
 	&
@@ -91,11 +91,11 @@
 	<meta property="og:image" content="https://www.undangan.kkmrat.web.id/images/rat/og_image.png" />
 	<meta property="og:url" content="https://www.kkmrat.web.id/" />
 	<meta property="og:site_name" content="Undangan Digital KKM RAT" />
-	<meta property="og:description" content="Senin, 10 Mar 2025 - 13:30 | Auditorium" />
+	<meta property="og:description" content="Senin, 10 Mar 2025 - 13:30 | MNF Cikampek & IDC Cakung" />
 	<meta name="twitter:title" content="Undangan KKM RAT" />
 	<meta name="twitter:image" content="https://www.undangan.kkmrat.web.id/images/rat/og_image.png" />
 	<meta name="twitter:url" content="https://www.kkmrat.web.id/" />
-	<meta name="twitter:card" content="Senin, 10 Mar 2025 - 13:30 | Auditorium" />
+	<meta name="twitter:card" content="Senin, 10 Mar 2025 - 13:30 | MNF Cikampek & IDC Cakung" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 
@@ -208,7 +208,7 @@
 							// echo $encrypted_string;
 							// echo $decrypted_string;
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $decrypted_string . "</div>
-							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode 2024.</p>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode Tahun Buku 2024.</p>
 							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\">
 							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "&amp;size=200x200\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
@@ -219,7 +219,7 @@
 							// echo $actual_link;
 							$actual_link = "Anonymous";
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $actual_link . "</div>
-							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode 2024.</p>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode Tahun Buku 2024.</p>
 							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
 							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=200x200\" alt=\"QR Code " . $actual_link . "\">
@@ -586,7 +586,7 @@
 						<div class="big-date js animate__animated">10.MAR.25</div>
 						<div id="demo"></div>
 						<div class="simply-countdown simply-countdown-one js animate__animated"></div>
-						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20250310T063000Z/20250310T090000Z&crm=AVAILABLE&sprop=website:www.kkmrat.web.id/undangan&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+2024&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk" class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
+						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20250310T063000Z/20250310T090000Z&crm=AVAILABLE&sprop=website:www.kkmrat.web.id/undangan&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+Tahun+Buku+2024&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk" class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
 						<br />
 						<div class="col-md-8 col-md-offset-2 text-center">
 							<a class="demo js animate__animated" href="images/rat/events.png" data-lightbox="example-1">
@@ -604,10 +604,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="nama-pengantin-foto js animate__animated">Lokasi</div>
+						<div class="nama-pengantin-foto js animate__animated">Lokasi 1</div>
 						<div id="map" class="fh5co-map event-wrap">
 							<div class="col-md-8 col-md-offset-2 text-center">
-								<p class="js animate__animated"><span style="font-weight:bold;">Auditorium LT. 1</span><br />PT. Sanghiang Perkasa - Kalbe Nutritionals,<br />Kawasan Industri Indotaisei, Kalihurip, Kec. Cikampek,<br />Karawang, Jawa Barat 41373</p>
+								<p class="js animate__animated"><span style="font-weight:bold;">MNF Cikampek - Auditorium LT. 1</span><br />PT. Sanghiang Perkasa - Kalbe Nutritionals,<br />Kawasan Industri Indotaisei, Kalihurip, Kec. Cikampek,<br />Karawang, Jawa Barat 41373</p>
 								<p><a href="https://maps.app.goo.gl/3wuVHxG1jPgWjUjt9" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
 								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
 							</div>
@@ -618,6 +618,26 @@
 				</div>
 			</div>
 		</div>
+	</section>
+	<!-- Lokasi -->
+	<div id="fh5co-couple" class="bg-carton fit-screen">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="nama-pengantin-foto js animate__animated">Lokasi 2</div>
+					<div id="map" class="fh5co-map event-wrap">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<p class="js animate__animated"><span style="font-weight:bold;">IDC Cakung</span><br />Innovation and Development Center PT. Sanghiang Perkasa,<br />Jl. Raya Bekasi Km 25, Cakung Tim.,<br />Kec. Cakung, Kota Jakarta Timur,<br />Daerah Khusus Ibukota Jakarta 13910</p>
+							<p><a href="https://maps.app.goo.gl/UAwWRzrS4Wr2CMhi7" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
+							<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
+						</div>
+						<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4880.761365044575!2d106.9509280758678!3d-6.185984660611432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b1067e1b7ab%3A0xcdda5d4c766c0af0!2sInnovation%20and%20Development%20Center%20PT.%20Sanghiang%20Perkasa!5e1!3m2!1sen!2sid!4v1741063595674!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+						</iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	</section>
 	<section>
 		<!-- Protokol -->
@@ -630,7 +650,7 @@
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
 							<div class="text-center">
 								<img src="images/rat/tumbler.png" alt="Botol tumbler" class="img-responsive logo-qrcode js animate__animated">
-								<div class="p-protokol js animate__animated">Wajib membawa Tumbler</div>
+								<div class="p-protokol js animate__animated">Wajib membawa Tumbler untuk yang sedang tidak berpuasa</div>
 							</div>
 							<div class="text-center">
 								<img src="images/rat/team.png" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
@@ -686,7 +706,7 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	<audio id="myAudio">
-		<source src="./sounds/Sheila_On_7_Melompat_Lebih_Tinggi.mp3" type="audio/mp3">
+		<source src="./sounds/music_undangan_rat.mp3" type="audio/mp3">
 	</audio>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>

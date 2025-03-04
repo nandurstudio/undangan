@@ -87,7 +87,7 @@ include "./php/header.php";
 									<div class="display-tc">
 										<img id="logo-pengantin" style="opacity: 1;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/rat/SVG/logo_rat.svg" alt="Logo Naufal And Denaya" width="20%">
 										<div class="hari-pernikahan" style="color: #7ac043;font-size:1.5em;line-height:0.5">Rapat Anggota Tahunan</div>
-										<div class="nama-pengantin js animate__animated animate__fadeInUp" style="color: #7ac043;">Periode 2024</div>
+										<div class="nama-pengantin js animate__animated animate__fadeInUp" style="color: #7ac043;">Periode Tahun Buku 2024</div>
 									</div>
 								</div>
 								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated animate__fadeInUp" style="padding-top:50px ;">
