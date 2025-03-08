@@ -2,7 +2,7 @@
 //Konfigurasi dasar untuk koneksi database
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "admin";
 $dbname = "db_undangan_rat";
 
 //Fungsi untuk melakukan koneksi berdasarkan konigurasi diatas
