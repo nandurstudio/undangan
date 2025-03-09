@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 27, 2025 at 06:33 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.2.12
+-- Host: localhost:3306
+-- Waktu pembuatan: 09 Mar 2025 pada 14.56
+-- Versi server: 10.6.14-MariaDB
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kelamin`
+-- Struktur dari tabel `m_parameter`
+--
+
+CREATE TABLE `m_parameter` (
+  `intParameterID` int(11) NOT NULL,
+  `txtParameterName` varchar(100) NOT NULL,
+  `txtParameterValue` varchar(100) NOT NULL,
+  `dtmInsertedDate` datetime NOT NULL,
+  `dtmUpdatedDate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data untuk tabel `m_parameter`
+--
+
+INSERT INTO `m_parameter` (`intParameterID`, `txtParameterName`, `txtParameterValue`, `dtmInsertedDate`, `dtmUpdatedDate`) VALUES
+(1, 'PUSH_KKM', 'false', '2025-03-07 06:38:24', '2025-03-07 06:38:24');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_kelamin`
 --
 
 CREATE TABLE `tb_kelamin` (
@@ -32,10 +53,10 @@ CREATE TABLE `tb_kelamin` (
   `txtKelamin` char(20) DEFAULT NULL,
   `txtPanggilan` varchar(30) DEFAULT NULL,
   `txtPanggilanLain` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_kelamin`
+-- Dumping data untuk tabel `tb_kelamin`
 --
 
 INSERT INTO `tb_kelamin` (`intKelaminId`, `txtKelamin`, `txtPanggilan`, `txtPanggilanLain`) VALUES
@@ -45,16 +66,16 @@ INSERT INTO `tb_kelamin` (`intKelaminId`, `txtKelamin`, `txtPanggilan`, `txtPang
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_undangan`
+-- Struktur dari tabel `tb_undangan`
 --
 
 CREATE TABLE `tb_undangan` (
   `intUndanganId` int(10) NOT NULL,
   `txtStatus` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_undangan`
+-- Dumping data untuk tabel `tb_undangan`
 --
 
 INSERT INTO `tb_undangan` (`intUndanganId`, `txtStatus`) VALUES
@@ -71,7 +92,7 @@ INSERT INTO `tb_undangan` (`intUndanganId`, `txtStatus`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_user`
+-- Struktur dari tabel `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -88,10 +109,10 @@ CREATE TABLE `tb_user` (
   `txtUndanganId` int(10) DEFAULT NULL,
   `bitActive` tinyint(1) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_user`
+-- Dumping data untuk tabel `tb_user`
 --
 
 INSERT INTO `tb_user` (`intUserId`, `txtNamaDepan`, `txtNamaBelakang`, `txtKelaminId`, `txtTitle`, `txtAyahId`, `txtIbuId`, `intAnakKe`, `intJumlahSaudara`, `txtPhoto`, `txtUndanganId`, `bitActive`, `timestamp`) VALUES
@@ -123,7 +144,7 @@ INSERT INTO `tb_user` (`intUserId`, `txtNamaDepan`, `txtNamaBelakang`, `txtKelam
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tr_reservasi`
+-- Struktur dari tabel `tr_reservasi`
 --
 
 CREATE TABLE `tr_reservasi` (
@@ -134,12 +155,12 @@ CREATE TABLE `tr_reservasi` (
   `jumlah_tamu` int(10) NOT NULL,
   `sesi` varchar(5) NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tr_tamu`
+-- Struktur dari tabel `tr_tamu`
 --
 
 CREATE TABLE `tr_tamu` (
@@ -149,10 +170,10 @@ CREATE TABLE `tr_tamu` (
   `sesi` varchar(5) NOT NULL,
   `jumlah_tamu` varchar(5) NOT NULL,
   `date` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tr_tamu`
+-- Dumping data untuk tabel `tr_tamu`
 --
 
 INSERT INTO `tr_tamu` (`tamuId`, `name`, `alamat`, `sesi`, `jumlah_tamu`, `date`) VALUES
@@ -164,7 +185,7 @@ INSERT INTO `tr_tamu` (`tamuId`, `name`, `alamat`, `sesi`, `jumlah_tamu`, `date`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tr_tamu_plant`
+-- Struktur dari tabel `tr_tamu_plant`
 --
 
 CREATE TABLE `tr_tamu_plant` (
@@ -173,10 +194,10 @@ CREATE TABLE `tr_tamu_plant` (
   `dept` varchar(50) NOT NULL,
   `kehadiran` tinyint(1) NOT NULL,
   `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tr_tamu_plant`
+-- Dumping data untuk tabel `tr_tamu_plant`
 --
 
 INSERT INTO `tr_tamu_plant` (`nik`, `nama`, `dept`, `kehadiran`, `date`) VALUES
@@ -237,7 +258,7 @@ INSERT INTO `tr_tamu_plant` (`nik`, `nama`, `dept`, `kehadiran`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tr_ucapan`
+-- Struktur dari tabel `tr_ucapan`
 --
 
 CREATE TABLE `tr_ucapan` (
@@ -250,10 +271,10 @@ CREATE TABLE `tr_ucapan` (
   `jumlahtamu` int(10) NOT NULL,
   `sesi` varchar(5) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tr_ucapan`
+-- Dumping data untuk tabel `tr_ucapan`
 --
 
 INSERT INTO `tr_ucapan` (`ucapanId`, `nama`, `namareservasi`, `alamat`, `ucapan`, `attending`, `jumlahtamu`, `sesi`, `date`) VALUES
@@ -263,7 +284,7 @@ INSERT INTO `tr_ucapan` (`ucapanId`, `nama`, `namareservasi`, `alamat`, `ucapan`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tr_undangan`
+-- Struktur dari tabel `tr_undangan`
 --
 
 CREATE TABLE `tr_undangan` (
@@ -291,33 +312,39 @@ CREATE TABLE `tr_undangan` (
   `decNoEWallet` decimal(20,0) DEFAULT NULL,
   `decRekeningBank` decimal(20,0) DEFAULT NULL,
   `intNamaPemegangRekening_intUserId` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tr_undangan`
+-- Dumping data untuk tabel `tr_undangan`
 --
 
 INSERT INTO `tr_undangan` (`intUndanganId`, `txtSubtitle`, `txtHeader`, `dtmWaktuAkad`, `dtmWaktuResepsi`, `txtAlamat`, `txtQuotePria`, `txtQuoteWanita`, `txtGoogleMaps`, `intNamaPengantinPria_intUserId`, `intNamaPengantinWanita_intUserId`, `intNamaAyahPengantinPria_intUserId`, `intNamaIbuPengantinPria_intUserId`, `intNamaAyahPengantinWanita_intUserId`, `intNamaIbuPengantinWanita_intUserId`, `dtmFirstMeet`, `dtmFirstDate`, `dtmInARelationship`, `dtmOther`, `txtQuotesPengantin`, `txtQuotesTokohTerkenal`, `decNoEWallet`, `decRekeningBank`, `intNamaPemegangRekening_intUserId`) VALUES
-(1, NULL, NULL, '2022-03-27 08:00:00', '2022-03-27 10:00:00', 'GRAHA PINDAD\r\nJalan Gatot Subroto No.517, Kebon Kangkung, Kiaracondong, Sukapura, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40284', NULL, NULL, 'https://goo.gl/maps/Q76muirvoCRAswicA', 9, 12, 7, 8, 10, 11, '2022-02-14 08:04:15', '2022-02-14 08:04:15', '2022-02-14 08:04:15', '2022-02-14 08:04:15', NULL, NULL, 62818435453, NULL, 9);
+(1, NULL, NULL, '2022-03-27 08:00:00', '2022-03-27 10:00:00', 'GRAHA PINDAD\r\nJalan Gatot Subroto No.517, Kebon Kangkung, Kiaracondong, Sukapura, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40284', NULL, NULL, 'https://goo.gl/maps/Q76muirvoCRAswicA', 9, 12, 7, 8, 10, 11, '2022-02-14 08:04:15', '2022-02-14 08:04:15', '2022-02-14 08:04:15', '2022-02-14 08:04:15', NULL, NULL, '62818435453', NULL, 9);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tb_kelamin`
+-- Indeks untuk tabel `m_parameter`
+--
+ALTER TABLE `m_parameter`
+  ADD PRIMARY KEY (`intParameterID`);
+
+--
+-- Indeks untuk tabel `tb_kelamin`
 --
 ALTER TABLE `tb_kelamin`
   ADD PRIMARY KEY (`intKelaminId`);
 
 --
--- Indexes for table `tb_undangan`
+-- Indeks untuk tabel `tb_undangan`
 --
 ALTER TABLE `tb_undangan`
   ADD PRIMARY KEY (`intUndanganId`);
 
 --
--- Indexes for table `tb_user`
+-- Indeks untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`intUserId`),
@@ -327,31 +354,31 @@ ALTER TABLE `tb_user`
   ADD KEY `txtUndanganId` (`txtUndanganId`);
 
 --
--- Indexes for table `tr_reservasi`
+-- Indeks untuk tabel `tr_reservasi`
 --
 ALTER TABLE `tr_reservasi`
   ADD PRIMARY KEY (`reservasiId`);
 
 --
--- Indexes for table `tr_tamu`
+-- Indeks untuk tabel `tr_tamu`
 --
 ALTER TABLE `tr_tamu`
   ADD PRIMARY KEY (`tamuId`);
 
 --
--- Indexes for table `tr_tamu_plant`
+-- Indeks untuk tabel `tr_tamu_plant`
 --
 ALTER TABLE `tr_tamu_plant`
   ADD PRIMARY KEY (`nik`,`date`);
 
 --
--- Indexes for table `tr_ucapan`
+-- Indeks untuk tabel `tr_ucapan`
 --
 ALTER TABLE `tr_ucapan`
   ADD PRIMARY KEY (`ucapanId`);
 
 --
--- Indexes for table `tr_undangan`
+-- Indeks untuk tabel `tr_undangan`
 --
 ALTER TABLE `tr_undangan`
   ADD PRIMARY KEY (`intUndanganId`),
@@ -364,57 +391,63 @@ ALTER TABLE `tr_undangan`
   ADD KEY `intNamaPemegangRekening_intUserId` (`intNamaPemegangRekening_intUserId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_kelamin`
+-- AUTO_INCREMENT untuk tabel `m_parameter`
+--
+ALTER TABLE `m_parameter`
+  MODIFY `intParameterID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_kelamin`
 --
 ALTER TABLE `tb_kelamin`
   MODIFY `intKelaminId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tb_undangan`
+-- AUTO_INCREMENT untuk tabel `tb_undangan`
 --
 ALTER TABLE `tb_undangan`
   MODIFY `intUndanganId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `tb_user`
+-- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   MODIFY `intUserId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `tr_reservasi`
+-- AUTO_INCREMENT untuk tabel `tr_reservasi`
 --
 ALTER TABLE `tr_reservasi`
   MODIFY `reservasiId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `tr_tamu`
+-- AUTO_INCREMENT untuk tabel `tr_tamu`
 --
 ALTER TABLE `tr_tamu`
   MODIFY `tamuId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tr_ucapan`
+-- AUTO_INCREMENT untuk tabel `tr_ucapan`
 --
 ALTER TABLE `tr_ucapan`
   MODIFY `ucapanId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tr_undangan`
+-- AUTO_INCREMENT untuk tabel `tr_undangan`
 --
 ALTER TABLE `tr_undangan`
   MODIFY `intUndanganId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `tb_user`
+-- Ketidakleluasaan untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD CONSTRAINT `tb_user_ibfk_1` FOREIGN KEY (`txtKelaminId`) REFERENCES `tb_kelamin` (`intKelaminId`),
