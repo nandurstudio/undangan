@@ -26,7 +26,7 @@ jQuery(document).ready(function ($) {
 		});
 		submitSignupFormNow = function (e) {
 			var t = e.serialize();
-			var n = "contact-form.php";
+			var n = "/api/messages"; // Changed to API endpoint
 			jQuery.ajax({
 				url : n,
 				type : "POST",
@@ -34,11 +34,15 @@ jQuery(document).ready(function ($) {
 				success : function (e) {
 					var t = jQuery.parseJSON(e);
 					jQuery('#submit').html(tempValue);
-					if (t.status = "Success") {
+					if (t.status == "Success") { // Fixed comparison
 						jQuery("#form_result").html('<span class="form-success">' + t.msg + "</span>")
 					} else {
 						jQuery("#form_result").html('<span class="form-error">' + t.msg + "</span>")
 					}
+					jQuery("#form_result").show();
+				},
+				error : function () {
+					jQuery("#form_result").html('<span class="form-error">An error occurred. Please try again.</span>');
 					jQuery("#form_result").show();
 				}
 			});
