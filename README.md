@@ -11,35 +11,34 @@ Personal portfolio website showcasing 3D art and development projects with dynam
 ## Development Workflow
 
 ### Branches
-- `dev` - Development branch
-- `prod` - Production branch
+- `prod` - Production branch (main development branch)
 
 ### Workflow Steps
-1. **Development**: Work on `dev` branch in VSCode
+1. **Development**: Work on `prod` branch in VSCode
 2. **Commit Changes**: `git add . && git commit -m "Your message"`
-3. **Push to Dev**: `git push origin dev`
-4. **Deploy to Dev Server**: Run `./deploy.sh dev`
-5. **Test on Dev Server**
-6. **Merge to Prod**: `git checkout prod && git merge dev`
-7. **Push to Prod**: `git push origin prod`
-8. **Deploy to Prod Server**: Run `./deploy.sh prod`
+3. **Push to GitHub**: `git push origin prod`
+4. **Deploy to Production**: Run `./deploy.sh`
 
 ## Deployment Setup
 
 ### Prerequisites
-- SSH access to dev and prod servers
-- Configure server IPs in `deploy.sh`
-- Install required software on servers (Apache/Nginx, PHP, etc.)
+- DigitalOcean droplet with Ubuntu 22.04
+- SSH access to production server
+- Configure droplet IP in `deploy.sh`
 
 ### Server Setup (Ubuntu/Debian)
 ```bash
-# Install Apache, PHP, SQLite
+# Run the automated setup script
+chmod +x server-setup.sh
+./server-setup.sh
+
+# Or manual setup:
 sudo apt update
 sudo apt install apache2 php php-sqlite3 php-mbstring php-xml php-curl
 
 # Configure virtual host
 sudo nano /etc/apache2/sites-available/portfolio.conf
-# Add virtual host config pointing to /var/www/portfolio-*
+# Add virtual host config pointing to /var/www/portfolio
 
 sudo a2ensite portfolio.conf
 sudo systemctl reload apache2
