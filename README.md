@@ -50,3 +50,13 @@ sudo systemctl reload apache2
 - **Purpose**: Personal portfolio website with dynamic contact form
 - **Environment**: Production (with dev environment)
 - **Description**: Professional portfolio for Nandang Duryat featuring 3D art projects, skills showcase, and contact functionality with Laravel backend for message storage.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Repository
+
+- **GitHub**: [https://github.com/nandurstudio/portfolio-project](https://github.com/nandurstudio/portfolio-project)
+- **Author**: Nandang Duryat (nandurstudio)
+- **Email**: nandang.dhe@gmail.com
