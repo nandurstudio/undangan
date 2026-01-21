@@ -31,7 +31,7 @@
 
 **Authentication:** Basic Auth  
 **Username:** `admin`  
-**Password:** `n8n_admin_pass`  
+**Password:** `your_n8n_password`  — **Change immediately after setup**
 
 > ⚠️ **IMPORTANT:** Change the default password after first login!
 
@@ -194,7 +194,7 @@ environment:
   - GENERIC_TIMEZONE=Asia/Jakarta
   - N8N_BASIC_AUTH_ACTIVE=true
   - N8N_BASIC_AUTH_USER=admin
-  - N8N_BASIC_AUTH_PASSWORD=n8n_admin_pass
+  - N8N_BASIC_AUTH_PASSWORD=your_n8n_password  # DO NOT COMMIT; set securely
   - DB_TYPE=postgresdb
   - DB_POSTGRESDB_HOST=postgres
   - N8N_PATH=/n8n

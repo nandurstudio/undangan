@@ -339,7 +339,7 @@ Currently using nginx-level Basic Auth via n8n environment variable:
 ```yaml
 N8N_BASIC_AUTH_ACTIVE=true
 N8N_BASIC_AUTH_USER=admin
-N8N_BASIC_AUTH_PASSWORD=n8n_admin_pass
+N8N_BASIC_AUTH_PASSWORD=your_n8n_password  # DO NOT COMMIT; change after deployment
 ```
 
 **Recommendation:** Change password immediately after deployment!

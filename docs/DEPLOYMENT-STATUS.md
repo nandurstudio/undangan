@@ -60,7 +60,7 @@
 - **Status:** ✅ FULLY OPERATIONAL
 - **URL:** https://nandurstudio.com/n8n/
 - **Technology:** n8n 2.4.4 (latest) with PostgreSQL 16-alpine
-- **Authentication:** Basic Auth enabled (admin/n8n_admin_pass)
+- **Authentication:** Basic Auth enabled (admin/your_n8n_password) — **Change after first login**
 - **Deployment Date:** January 21, 2026
 - **Access Method:** HTTPS subpath `/n8n/` (no port exposure)
 - **Health Check:** ✅ `curl https://nandurstudio.com/n8n/healthz`
@@ -183,7 +183,7 @@ curl -X POST https://nandurstudio.com/api/messages \
 **Action Required:**
 Change default n8n password immediately after first login:
 1. Access https://nandurstudio.com/n8n/
-2. Login with Basic Auth (admin / n8n_admin_pass)
+2. Login with Basic Auth (admin / your_n8n_password) — **Change after first login**
 3. Complete setup wizard
 4. Navigate to Settings → Update password
 
