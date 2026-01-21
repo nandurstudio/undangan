@@ -1,20 +1,75 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.docker.example
+
 # Windows
 Thumbs.db
 Desktop.ini
+*.lnk
 
-# Node modules (if any)
+# Node modules
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Logs
 *.log
+logs/
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
 
 # OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 
 # Build outputs
 dist/
 build/
+*.min.js
+*.min.css
+
+# Docker volumes & data
+data/
+volumes/
+
+# Laravel
+backend/vendor/
+backend/.env
+backend/storage/logs/*.log
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+!backend/storage/framework/.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+apps/flask/venv/
+apps/flask/*.pyc
+
+# Backup files
+*.backup
+*.bak
+*.old
+*~
+*.server-backup
+nginx-server-current.conf
+docker-compose.yml.server-backup
+
+# Temp files
+tmp/
+temp/
+*.tmp

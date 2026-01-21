@@ -1,0 +1,86 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. h1
+2. h2
+3. h4
+4. h6
+5. p
+6. contact btn
+7. generic
+
+-------------------------------------------------------------------*/
+:root {
+    --primary-color:#3f396d;
+    --secondary-color:#07003b;
+    --accent:#fca61f;
+    --text-color: #7d7789;
+    --off-white-color: #f0f4ff;
+    --light-purple-color:#6f34fe;
+    --white-color:#fff;
+    --light-grey-color:#f2f2ff;
+  }
+h1{
+    font-size: 85px;
+    line-height: 88px;
+}
+h2{
+    font-size: 52px;
+    line-height: 54px;
+}
+h4{
+    font-size: 26px;
+    line-height: 28px;
+}
+h6{
+    font-size: 22px;
+    line-height: 24px;
+    color: var(--light-purple-color);
+}
+p{
+    font-size: 22px;
+    line-height: 33px;
+}
+.contact a{
+    background: var(--accent);
+    color: var(--white-color);
+    padding: 16px 43px 15px;
+    font-size: 20px;
+    display: inline-block;
+    border-radius: 35px;
+    line-height: 20px;
+    text-decoration: none;
+    box-shadow: 0 0 85px 0 #e9eefc;
+    border: 1px solid transparent;
+    transition-duration: .3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+.contact a:hover,
+.generic-btn a:hover{
+    border-color: var(--light-purple-color);
+    background: var(--light-purple-color);
+    transform: translateY(-8px);
+}
+
+.generic-btn a{
+    background: var(--accent);
+    color: var(--white-color);
+    padding: 20px 58px 19px;
+    font-size: 20px;
+    display: inline-block;
+    border-radius: 35px;
+    line-height: 20px;
+    text-decoration: none;
+    box-shadow: 0 0 85px 0 #e9eefc;
+    border: 1px solid transparent;
+    transition-duration: .3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+.padding-top{
+    padding-top: 130px;
+}
+.padding-bottom{
+    padding-bottom: 130px;
+}

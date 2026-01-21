@@ -1,0 +1,65 @@
+{
+    "personal_info": {
+        "name": "Nandang Duryat",
+        "nickname": "Nandur",
+        "age": 31,
+        "location": "Karawang, Indonesia",
+        "current_role": "Programmer & Management System at PT. Kalbe Nutritionals",
+        "business_name": "Nandur Studio"
+    },
+    "contact": {
+        "email": "founder@nandurstudio.com",
+        "whatsapp": "https://wa.me/nandurstudio",
+        "phone": "+62 819 0683 3070",
+        "website_support": "https://www.pyidx.nandurstudio.com/support"
+    },
+    "technical_skills": {
+        "programming": [
+            "Python",
+            "C#",
+            "JavaScript",
+            "Visual Basic",
+            "Java"
+        ],
+        "creative": [
+            "3D Modeling (Blender)",
+            "Motion Graphics (After Effects)",
+            "Video Editing",
+            "Photography",
+            "Vector Art"
+        ]
+    },
+    "major_projects": [
+        {
+            "name": "Stock Analysis & Trading Recommendation Tool (ScalpBOT AI)",
+            "version": "v1.1.0",
+            "tagline": "Alat analisis saham dan rekomendasi trading komprehensif berbasis Python",
+            "description": "Aplikasi command-line berbasis Python untuk analisis teknikal, fundamental, dan manajemen risiko.",
+            "repository": "https://github.com/nandurstudio/stock-analysis",
+            "license": "MIT"
+        }
+    ],
+    "social_media": {
+        "github": "https://github.com/nandurstudio",
+        "linkedin": "https://linkedin.com/in/nandangduryat",
+        "instagram": "https://instagram.com/nandangduryat",
+        "youtube": "https://youtube.com/c/nandurstudio",
+        "discord": "https://discord.gg/nQazxZb5"
+    },
+    "support_funding": {
+        "bank_transfer": {
+            "bank": "BCA",
+            "account_number": "4600119988",
+            "holder": "Nandang Duryat"
+        },
+        "local_platforms": {
+            "saweria": "https://saweria.co/nandur",
+            "trakteer": "https://trakteer.id/nandur"
+        },
+        "global_platforms": {
+            "paypal": "paypal.me/nandur93",
+            "patreon": "https://patreon.com/nandurstudio",
+            "github_sponsors": "https://github.com/sponsors/nandurstudio"
+        }
+    }
+}
