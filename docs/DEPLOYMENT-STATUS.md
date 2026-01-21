@@ -229,7 +229,7 @@ DB_HOST=db
 DB_PORT=3306
 DB_DATABASE=portfolio
 DB_USERNAME=portfolio_user
-DB_PASSWORD=P0rtf0l10Secur3
+DB_PASSWORD=your_secure_password  # DO NOT COMMIT; set in server .env
 ```
 
 **Middleware:**
@@ -305,7 +305,7 @@ docker compose exec php php artisan route:list
 docker compose exec php php artisan config:cache
 
 # Database access
-docker compose exec db mysql -u portfolio_user -pP0rtf0l10Secur3 portfolio
+docker compose exec db mysql -u portfolio_user -p${DB_PASSWORD} portfolio  # Uses DB_PASSWORD from environment (do not hardcode)
 docker compose exec postgres psql -U n8n -d n8n
 ```
 
