@@ -31,18 +31,26 @@ jQuery(document).ready(function ($) {
 				url : n,
 				type : "POST",
 				data : t,
-				success : function (e) {
-					var t = jQuery.parseJSON(e);
+				dataType: 'json',
+				headers: { 'Accept': 'application/json' },
+				success : function (resp) {
+					// resp is already a parsed JSON object
 					jQuery('#submit').html(tempValue);
-					if (t.status == "Success") { // Fixed comparison
-						jQuery("#form_result").html('<span class="form-success">' + t.msg + "</span>")
+					if (resp && resp.status === "Success") {
+						jQuery("#form_result").html('<span class="form-success">' + resp.msg + "</span>")
 					} else {
-						jQuery("#form_result").html('<span class="form-error">' + t.msg + "</span>")
+						var msg = (resp && resp.msg) ? resp.msg : 'An error occurred. Please try again.';
+						jQuery("#form_result").html('<span class="form-error">' + msg + "</span>")
 					}
 					jQuery("#form_result").show();
 				},
-				error : function () {
-					jQuery("#form_result").html('<span class="form-error">An error occurred. Please try again.</span>');
+				error : function (xhr) {
+					var msg = 'An error occurred. Please try again.';
+					try {
+						var json = xhr.responseJSON || (xhr.responseText && JSON.parse(xhr.responseText));
+						if (json && json.message) msg = json.message;
+					} catch (e) {}
+					jQuery("#form_result").html('<span class="form-error">' + msg + '</span>');
 					jQuery("#form_result").show();
 				}
 			});
