@@ -108,7 +108,7 @@ include "./php/header.php";
 					}
 				],
 				order: [
-					[0, "asc"]
+					[3, "desc"]
 				],
 				columnDefs: [{
 						targets: [1, 3],
