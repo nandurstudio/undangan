@@ -763,14 +763,14 @@ curl -I https://nandurstudio.com/
 - **AI Chatbot**: Ollama + LangChain RAG system with n8n orchestration for PDF-based Q&A
 
 ## Documentation References
-- [docs/README.md](../docs/README.md) - Main project documentation
-- [docs/PROJECT-STRUCTURE.md](../docs/PROJECT-STRUCTURE.md) - Project organization
-- [docs/SourceOfTruth.md](../docs/SourceOfTruth.md) - Authoritative project state
-- [docs/DEPLOYMENT-STATUS.md](../docs/DEPLOYMENT-STATUS.md) - Current deployment status
-- [docs/N8N-SETUP-GUIDE.md](../docs/N8N-SETUP-GUIDE.md) - n8n configuration guide
-- [docs/NGINX-N8N-CONFIG.md](../docs/NGINX-N8N-CONFIG.md) - nginx configuration details
-- [docs/CONFIG-SYNC-STATUS.md](../docs/CONFIG-SYNC-STATUS.md) - Configuration sync tracking
-- [backend/README.md](../backend/README.md) - Laravel setup details
+- [README.md](../README.md) - Main project documentation
+- [PROJECT-STRUCTURE.md](../docs/PROJECT-STRUCTURE.md) - Project organization
+- [SourceOfTruth.md](../docs/SourceOfTruth.md) - Authoritative project state
+- [DEPLOYMENT-STATUS.md](../docs/DEPLOYMENT-STATUS.md) - Current deployment status
+- [N8N-SETUP-GUIDE.md](../docs/N8N-SETUP-GUIDE.md) - n8n configuration guide
+- [NGINX-N8N-CONFIG.md](../docs/NGINX-N8N-CONFIG.md) - nginx configuration details
+- [CONFIG-SYNC-STATUS.md](../docs/CONFIG-SYNC-STATUS.md) - Configuration sync tracking
+- [Laravel README](../backend/README.md) - Laravel setup details
 
 ---
 

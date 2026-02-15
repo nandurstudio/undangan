@@ -34,6 +34,7 @@ services:
     volumes:
       - ./apps/laravel:/var/www/laravel
       - php_vendor:/var/www/laravel/vendor
+      - ./web/kkmrat:/var/www/html/kkmrat
     environment:
       - DB_CONNECTION=mysql
       - DB_HOST=db
@@ -41,6 +42,10 @@ services:
       - DB_DATABASE=${DB_DATABASE:-portfolio}
       - DB_USERNAME=${DB_USERNAME:-root}
       - DB_PASSWORD=${DB_PASSWORD:-}
+      # Environment for kkmrat web app (used by web/kkmrat/php/connection.php)
+      - KKMRAT_DB_USER=${KKMRAT_DB_USER:-kkmrat_user}
+      - KKMRAT_DB_PASS=${KKMRAT_DB_PASS:-kkmrat_pass}
+      - KKMRAT_DB_NAME=${KKMRAT_DB_NAME:-db_undangan_rat}
     depends_on:
       db:
         condition: service_healthy
