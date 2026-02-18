@@ -1,0 +1,183 @@
+////////////////
+// Compact Nav
+////////////////
+
+@media (min-width:47.9375rem) {
+    [data-sidebar-style="compact"] {
+
+
+		--dz-sidebar-width : 10rem;
+		--dz-side-nav-padding : 1rem 0.5rem;
+		--dz-side-nav-size : 0.9375rem;
+		--dz-side-info : none;
+		--dz-side-copyright : none;
+		--dz-side-sub_nav-padding : .5rem 0.5rem;
+		--dz-side-sub_nav-size : 0.85rem;
+		
+		.nav-header {
+			.nav-control {
+				display: none;
+			}
+		}
+		.header{
+			.nav-control{
+				display: none;
+			}
+			.header-content{
+				padding-left: 2rem;
+			}
+		}
+        .dlabnav {
+            .header-profile2{
+				&>a.nav-link{
+					text-align: center;
+				}
+			}
+        
+            .metismenu {
+			
+                li {
+                    text-align: center;
+                    a {
+						svg{
+						
+							max-width: 1.3125rem;
+							max-height: 1.3125rem;
+							display: block;
+							margin-left: auto;
+							margin-right: auto;	
+						}
+						i{
+							@include transitionMedium;
+						}
+                    }
+					ul:after{
+						content:none;
+					}
+					
+					& > a{
+						background: transparent;
+					}
+                }
+            }
+			
+			.header-info2{
+				justify-content: center;
+				padding : .35rem;
+				display: inline-flex!important;
+				img{
+					margin-right: 0;
+				}
+			}
+			.sidebar-info{
+				display:none!important;	
+			}
+			.badge{
+				display: none;
+			}
+			.side-bar-profile{
+			
+				display:none;
+			}
+        }
+
+		
+        .nav-text {
+            display: inline-block;
+            margin-top: 0.3125rem;
+        }
+
+        .nav-label {
+            &.first{
+                display: none;
+            }
+        }
+
+        .nav-badge{
+            display: none;
+        }
+
+		&[data-layout="vertical"]{
+			.dlabnav {
+				.metismenu {
+					 & > li {
+						&:hover,
+						&.mm-active{
+							&>a i{
+								background:var(--rgba-primary-1);
+								color:var(--primary);
+							}
+						}	
+					 }
+				}	
+				.dropdown-menu .dropdown-item{
+					font-size: .85rem;
+					padding: 0.5rem 1.2rem;
+				}
+			}
+		}
+    }
+}
+
+[data-layout="vertical"][data-sidebar-style="compact"] {
+
+	--dz-side-ico-height : 3.2rem;
+	--dz-side-ico-width : 3.2rem;
+	--dz-side-nav-size : 0.875rem;
+
+    .dlabnav {
+        .metismenu {
+		
+            ul{
+				margin-left:0;
+				border:0;
+				background: rgba(0,0,0,0.02);
+				padding: 0.625rem 0;
+
+				a{
+					&:before{
+						content:none;
+					}
+				}
+				
+            }
+
+            &>li {
+				&>a{
+					
+					.badge-xs{
+						&.style-1{
+							margin-left:0px;
+						}
+					}
+					& > i{
+						margin-right: auto;
+						margin-left: auto;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						background: var(--body-bg);
+						border-radius: 0.5rem;
+					}
+				}
+                &>a.has-arrow::after {
+                    top: 0.0625rem;
+					display: inline-block;
+					right: auto;
+					margin-left: 0.3125rem;
+					position: relative;
+					width: 0.4375rem;
+					height: 0.4375rem;
+					border-width: 0.125rem 0rem 0rem 0.125rem;
+					
+                }
+            }
+        }
+
+    }
+}
+[data-sidebar-style="compact"] .dlabnav .side-bar-profile .profile-info1, [data-sidebar-style="compact"] .dlabnav .side-bar-profile .profile-button, [data-sidebar-style="compact"] .dlabnav .side-bar-profile .progress-info, [data-sidebar-style="compact"] .dlabnav .side-bar-profile .default-progress{
+	display:none!important;
+
+}
+
