@@ -1,0 +1,18 @@
+.footer {
+    padding-left: var(--dz-sidebar-width);
+    background-color: var(--card);
+    font-size: 0.875rem;
+    .copyright {
+        padding: 0.9375rem;
+        p {
+            text-align: center;
+            margin: 0;
+        }
+        a{
+            color: var(--primary);
+        }
+    }
+   
+}
+
+

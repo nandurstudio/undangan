@@ -1,0 +1,83 @@
+.contacts-search{
+	width: 19.75rem;
+	@include respond ('phone'){
+		width:100%;
+	}
+	.form-control{
+		border-right: 0;
+		border:0;
+		background:$white;
+		border-top-left-radius: 3.125rem;
+		border-bottom-left-radius: 3.125rem;
+		height: 48px;
+	}
+	.input-group-text{
+		background:$white;
+		border-left: 0;
+		border:0;
+		height: 48px;
+		border-radius: 3.125rem;
+		i{
+			font-size: 1.2rem;	
+		}
+	}
+}
+.contact-bx{
+	border-width: 2px;
+    text-align: center;
+	.card-header{
+		position: absolute;
+		right: 0;
+		top: 0;	
+	}
+	.image-bx{
+		display: inline-block;
+		position: relative;
+		margin-bottom: 10px;
+		img{
+			width:5rem;
+			height:5rem;
+		}
+		
+		span{
+			&.active{
+				height: 1.125rem;
+				width: 1.125rem;
+				position: absolute;
+				bottom: 3px;
+				right: 3px;
+				border-radius: 2rem;
+				background:$success;
+				border: 3px solid #fff;	
+			}	
+		}
+	}
+	&:hover{
+		box-shadow: rgba(136, 108, 192, 0.2) 0px 7px 29px 0px;	
+	}
+}
+.user-meta-info{
+	ul{
+		display: flex;
+		justify-content: center;
+		li{
+			a{
+				margin: 0 10px;
+				height: 2.5rem;
+				width: 2.5rem;
+				border-radius: 50%;
+				background: var(--rgba-primary-1);
+				color: var(--primary);
+				line-height: 2.5rem;
+				display: block;
+				font-size:15px;
+				transition: all 0.5s;
+				text-align:center;
+				&:hover{
+					background:var(--primary);
+					color:$white;
+				}
+			}	
+		}
+	}	
+}

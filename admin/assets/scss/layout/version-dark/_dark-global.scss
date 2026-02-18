@@ -1,0 +1,900 @@
+[data-theme-version="dark"]{
+	.card {
+        background-color: $dark-card;
+		box-shadow:none;
+    }
+	.dropdown-menu {
+        background-color: $dark-card;
+		box-shadow: 0rem 0rem 0rem 0.0625rem rgba(255, 255, 255,0.1);
+		.dropdown-item {
+			color:#777777;
+			&.selected,
+			&.selected.active,
+			&.active,
+			&:hover, 
+			&:focus {
+				background-color: $dark-card;
+				color: $white;
+			}
+		}
+    }
+	a{
+		color:$white;
+	}
+	.btn-link g [fill]{
+		fill: #fff;
+	}
+	.btn-light:active, 
+	.btn-light:focus, 
+	.btn-light:hover{
+		color:#000;
+	}
+	.form-control {
+        background-color:$d-bg;
+        border-color: $d-border;
+        color: $white;
+		
+    }
+	.modal-content{
+		background:$dark-card;
+	}
+	.modal-footer,
+	.modal-header{
+		border-color: $d-border;
+	}
+	.close{
+	    font-weight: 400;
+		color: $white;
+		text-shadow: none;
+		
+		&:hover{
+			color: $white;
+		}
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 352 512'%3E%3C!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --%3E%3Cpath d='M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z' fill='%23fff'/%3E%3C/svg%3E");
+	}
+	.star-rating .product-review,
+	.new-arrival-content .item{
+		color: $white;
+	}
+	.custom-dropdown .dropdown-menu{
+		border-color: $d-border;
+	}
+	.widget-stat .media > span{
+	    background: $d-border;
+	    border-color: $d-border;
+		color:$white;
+	}
+	.plus-minus-input .custom-btn{
+		background: $d-bg;
+	    border-color: $d-border;
+	}
+	.dropdown-divider,
+	.size-filter ul li{
+		border-color: $d-border;
+	}
+	.custom-select{
+	    border-color: $d-border;
+		color: $d-ctl;
+		background:$d-bg;
+	}
+	.nav-tabs{
+		border-color: $d-border!important;
+	}
+	.mail-list .list-group-item.active i {
+		color: $white;
+	}
+	hr{
+		border-color: $d-border;
+	}
+	.grid-col{
+		background:$d-bg;
+	}
+	.btn-close{
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 352 512'%3E%3C!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --%3E%3Cpath d='M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z' fill='%23fff'/%3E%3C/svg%3E");
+	}
+	.noUi-target{
+		border-color:$d-border;
+		border-radius: 0.5rem;
+		box-shadow: none;
+		
+		.noUi-connects{
+			background:$d-border;
+		}
+	}
+	.noUi-marker-large,
+	.noUi-marker{
+		background:$d-border;
+	}
+	.input-group-text{
+		background:$d-bg;
+		color:$white;
+		border-color:$d-border;
+	}
+	.note-editor.note-frame{
+		border-color:$d-border;
+		.btn{
+			color:$white;
+		}
+		.note-editing-area .note-editable{
+			color:$white;
+		}
+	}
+	.widget-media .timeline .timeline-panel{
+		border-color:$d-border; 
+	}
+	.notification_dropdown .dropdown-menu-right .all-notification{
+		border-color:$d-border; 
+	}
+	#user-activity .nav-tabs .nav-link{
+		border-color:$d-border; 
+        &.active{
+            background:$d-bg;
+            color:$white;
+        }
+	}
+	.list-group-item-action{
+		color:#828690;
+	}
+	.list-group-item-action:focus, 
+	.list-group-item-action:hover, 
+	.list-group-item-action:focus{
+		background-color:$d-bg; 
+		border-color:$d-bg; 
+	}
+	.list-group-item.active{
+		color:$white;
+		border-color:var(--primary);
+		&:focus, 
+		&:hover, 
+		&:focus{
+			background-color:var(--primary); 
+			border-color:var(--primary); 
+			color:$white;
+		}
+	}
+	.swal2-popup{
+		background:$dark-card;
+	}	
+	.form-head .btn-outline-primary{
+		border-color:$d-border;
+	}
+	.form-head .btn-outline-primary:hover{
+		border-color:var(--primary);
+	}
+	.review-tab.nav-pills li a.nav-link.active{
+		background:transparent;
+	}
+	.new-arrival-content {
+		 h4 {
+			a{
+				color:$white;
+			}
+		 }
+	}
+	.datepicker .datepicker-switch:hover, .datepicker .next:hover, .datepicker .prev:hover, .datepicker tfoot tr th:hover{
+		background-color: var(--priamry);
+		color:$white;
+	}
+	.facebook-icon{
+		background-color:$d-bg;
+	}
+	.text-black{
+		color:$white!important;
+	}
+	.abilities-chart .ct-chart .ct-label{
+		fill:$white;
+	}
+	.morris_chart_height text tspan{
+		fill:$white;
+	}
+	.btn-link{
+		color:$white;
+	}
+	.order-bg{
+		background:$d-bg;
+	}
+	.detault-daterange{
+			background:$d-bg;
+			color:$white;
+		.input-group-text{
+			background:$dark-card;
+			border:0;
+
+		}	
+	}
+	.dataTablesCard{
+		background-color:$dark-card;
+	}
+	.compose-content .dropzone{
+		background:$d-bg!important;
+		border-color:$d-border;
+		.dlab-message .dlab-button{
+			color:$white;
+		}
+	}
+	.daterangepicker{
+		background:$d-bg;
+		border-color:var(--primary);
+		.calendar-table{
+			border-color:var(--primary);
+			background:$d-bg;
+			.table-condensed{
+				td{
+					&:hover{
+						background-color:var(--primary);
+						color:$white;
+					}
+				}
+			}
+		}
+        &:after{
+            border-bottom: 0.375rem solid $d-bg;
+        }
+	}
+    
+    .daterangepicker select.hourselect
+    , .daterangepicker select.minuteselect
+    , .daterangepicker select.secondselect
+    , .daterangepicker select.ampmselect{
+            background: $d-bg;
+            border: 0.0625rem solid $d-border;
+            color:$white;
+    }
+    
+	.daterangepicker td.off, 
+	.daterangepicker td.off.in-range,
+	.daterangepicker td.off.start-date, 
+	.daterangepicker td.off.end-date{
+		background-color:$dark-card;
+		&:hover{
+			background-color:var(--primary);
+			color:$white;			
+		}
+	}
+	.app-fullcalendar{
+		.fc-button{
+			background-color:$d-bg;
+			border-color:var(--primary);
+			color:$white;
+			text-shadow:none;
+			&:hover,&.fc-stat-hover{
+				background-color:var(--primary);
+			}
+		}
+	}
+	.swal2-popup .swal2-styled:focus {
+		outline: 0;
+		box-shadow: 0 0 0 0.125rem $d-border, 0 0 0 0.25rem var(--rgba-primary-1);
+	}
+	.dd-handle{
+		border-color:$d-border;
+	}
+	
+	.header-right .notification_dropdown .nav-link{
+		border-color:$d-border;
+	}
+	.nav-tabs .nav-link{
+		&:hover,&.active{
+			border-color:var(--primary);
+			background: transparent;
+			color: white!important;
+		}
+	}
+	.clockpicker-popover .popover-content{
+		background-color:$dark-card;
+	}
+	.clockpicker-plate{
+		background-color:$d-bg;
+	}
+	.clockpicker-popover .popover-title{
+		background-color:$d-bg;
+		color:$white;
+	}
+	
+	.form-wizard .nav-wizard li .nav-link span{
+		background-color:$d-bg;
+	}
+	.form-wizard .nav-wizard li .nav-link:after{
+		background:$d-bg;
+	}
+	.form-wizard .nav-wizard li .nav-link.active:after,.form-wizard .nav-wizard li .nav-link.done:after{
+		background:var(--primary);
+	}
+	.form-wizard .nav-wizard li .nav-link.active span
+	,.form-wizard .nav-wizard li .nav-link.done span{
+		background:var(--primary);
+	}
+	.check-switch .custom-control-label:after
+    , .check-switch .custom-control-label:before{
+        border-color:var(--primary);
+    }
+    .fc-unthemed .fc-today{
+        background:$d-bg;
+    }
+    .fc-unthemed .fc-divider, .fc-unthemed .fc-list-heading td, .fc-unthemed .fc-popover .fc-header{
+        background: $d-border;
+    }
+    .picker__box{
+        background:$d-bg;
+        .picker__button--clear
+        , .picker__button--close
+        , .picker__button--today{
+            background:$dark-card;
+            color:$white;
+            &:hover{
+                &:before{
+                    color:$white;
+                }
+            }
+        }
+    }
+    .picker{
+        color:#999;
+    }
+    .dtp > .dtp-content{
+        background:$d-bg;
+    }
+    .dtp table.dtp-picker-days tr > td > a{
+       color: #68686a; 
+       &.selected{
+           color:$white;
+       }
+    }
+	.order-request tbody tr{
+		border-color:$d-border;
+	}
+	.card-list li{
+		color:$white;
+	}
+	.card-bx .change-btn:hover{
+		color:var(--primary);
+	}
+	.invoice-card{
+		&.bg-warning{
+			background-color:#5b3c1f!important;
+		}
+		&.bg-success{
+			background-color:#2a6729!important;
+		}
+		&.bg-info{
+			background-color:#4c276a!important;
+		}
+		&.bg-secondary{
+			background-color:#1c3e52!important;
+		}
+	}
+	.user-list li{
+		border-color:$dark-card;
+	}
+	.toggle-switch{
+		color:$white;
+	}
+	.bar-chart{
+		.apexcharts-text tspan{
+			fill:#969ba0;
+		}
+		line{
+			stroke:$d-border;
+		}
+	}
+	.coin-card{
+		background: #0f6a62; 
+		background: -moz-linear-gradient(left,  #0f6a62 0%, #084355 100%); 
+		background: -webkit-linear-gradient(left,  #0f6a62 0%,#084355 100%); 
+		background: linear-gradient(to right,  #0f6a62 0%,#084355 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f6a62', endColorstr='#084355',GradientType=1 ); 
+		.coin-icon{
+			background:rgba($black,0.2);
+		}
+	}
+	.accordion.style-1 .accordion-item,.invoice-list{
+		border-color:$d-border;
+	}
+	.profile-card {
+		border: 1px solid $d-border;
+	}
+	.author-profile .info-list li {
+		border-top: 1px solid $d-border;
+	}
+	.profile-card .card-footer {
+		border-color:$d-border;
+	}
+	.author-profile .card-footer .form-control {
+		border-color:$d-border;
+	}
+	.profile-card .card-header {
+		border-color:$d-border;
+	}
+	.accordion.style-1 .accordion-header.collapsed {
+		.user-info a,.user-info,&>span{
+			color:$white;
+		}
+	}
+	.ic-card {
+		&>a{
+			background:#25479f;
+			&:first-child{
+				border-color:#25479f;
+			}
+		}
+		span{
+			color:$white;
+		}
+	}
+	table.dataTable thead th, table.dataTable thead td{
+		border-color:$d-border!important;
+	}
+	.form-check .form-check-input{
+		background:#161717;
+		border-color:$d-border;
+		&:checked{
+			background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+			background-color:var(--primary);
+			border-color:var(--primary);
+		}
+	}
+	.toggle-switch.form-check .form-check-input{
+		background:#161717;
+		&:checked{
+			background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+			background:var(--rgba-primary-1);
+		}
+	}
+	.checkbox-info .form-check-input:checked {
+    background-color: #D653C1;
+    border-color: #D653C1;
+	}
+	.checkbox-warning .form-check-input:checked {
+    background-color: #FFAB2D;
+    border-color: #FFAB2D;
+	}
+	.checkbox-danger .form-check-input:checked {
+    background-color: #fd5353;
+    border-color: #fd5353;
+	}
+	.form-control-plaintext{
+		color:$white;
+	}
+	label{
+		color:$white;
+	}
+	.input-group-text .form-check-input{
+		background:#161717;
+			&:checked{
+			background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+			background-color:var(--primary);
+			border-color:$white;
+		}
+	}
+	.paging_simple_numbers.dataTables_paginate{
+		background:$d-border;
+	}
+	.dataTables_info{
+		color:$white;	
+	}
+	.dataTables_wrapper .dataTables_paginate span .paginate_button.current,
+	.dataTables_wrapper .dataTables_paginate span .paginate_button:hover{
+		background:var(--primary);
+		color:$white!important;
+	}
+	.dashboard-select{
+		background:var(--rgba-primary-1);
+	}
+	.dashboard-select .list{
+		background:$dark-card;
+	}
+	.dashboard-select .option:hover, .dashboard-select .option.focus, .dashboard-select .option.selected.focus{
+		background:$d-bg;
+	}
+	.card-tabs.style-1 .nav-tabs{
+		background:$dark-card;
+	}
+	.transaction-details,
+	table.dataTable>tbody>tr.child ul.dtr-details>li{
+		border-color:$d-border;
+	}
+	.description{
+		color:$white;
+	}
+	.transaction-details .amount-bx{
+		background:$dark-card;
+		i{
+			background:#8d3b0c;			
+		}
+	}
+	.nice-select .option{
+		background:$dark-card;
+	}
+	.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus{
+		background:$dark-card;
+	}
+	.card-tabs.style-1{
+		border-color:$d-border;
+	}
+	
+	.nice-select .list{
+		background:$d-bg;
+	}
+	.table-search .input-group .input-group-text{
+		background:$dark-card;
+	}
+	.dark-btn{
+		svg{
+			path{
+				stroke: #fff;
+			}
+				
+		}	
+	}
+	.bar-chart{
+		.apexcharts-legend-text{
+			color:$white!important;	
+		}	
+	}
+	.Sales{
+		tspan{
+			fill:$white;	
+		}	
+	}
+	.notification_dropdown .dropdown-menu-end .all-notification{
+		border-color:$d-border;
+	}
+	.timeline-chart{
+		rect{
+			fill:$d-bg;	
+		}	
+	}
+	.header-info{
+		span{
+			color:$white!important;	
+		}	
+	}
+	.smallipop-instance.blue{
+		color:#fff;
+	}
+	.property-map .smallipop.smallimap-mapicon .circle-marker{
+		border-color:$d-border;
+	}
+	.property-features li{
+		color:$white;	
+	}
+	.review-tabs-1{
+		background:$dark-card;	
+	}
+	.coin-tabs{
+		background:#2E2E40;
+		.nav-link{
+			&.active{
+				background:var(--primary)!important;
+				color:$white;
+			}	
+		}
+	}
+	.separate-row > div{
+		border-color:$d-border;	
+	}
+	.bg-white{
+		background:#2E2E40!important;	
+	}
+	
+	.brand-title{
+		path{
+			fill:$white;	
+		}
+		tspan{
+			fill:$white;		
+		}
+	}
+	.shapreter-row > div{
+		border-color:$d-border;		
+	}
+	.chartBar{
+		line{
+			stroke:$d-border;	
+		}	
+	}
+	.search-job .search-dropdown:after{
+		background:$d-border;	
+	}
+	.chartjs{
+		line{
+			stroke:$d-border;	
+		}	
+	}
+	.format-slider{
+		.amount-input{
+			background:$dark-card;	
+		}	
+	}
+	.search-area{
+		.form-control{
+			background:$d-bg;	
+			border:none;
+			&:hover{
+				border-color:$d-border;	
+			}
+		}	
+		.input-group-text{
+			background:$d-bg;	
+			border:none;
+		}
+	}
+	.chartBar{
+		tspan{
+			fill:$white;	
+		}	
+		line{
+			stroke:$d-border;	
+		}
+	}
+	.transactions-tab .card-tabs .nav-tabs {
+		background:$d-border;
+	}
+	.invoice{
+		.form-control{
+			background:$d-bg;	
+			border-color:$d-border;
+			&::placeholder{
+				color:$white;	
+			}
+		}	
+	}
+	.select-client{
+		background:$dark-card;	
+	}
+	.dz-dropzone-box{
+		background:$dark-card;	
+	}
+	.item-desription1{
+		span{
+			color:$white	
+		}	
+	}
+	.transaction-details .user-bx-2 > div span{
+		color:$white;	
+	}
+	.payment i{
+		color:$white;		
+	}
+	.activityChart{
+		.apexcharts-series{
+			rect{
+				fill:$d-bg;	
+			}	
+		}
+		tspan{
+			fill:$white;	
+		}
+	}
+	.select2-container--default .select2-selection--single .select2-selection__rendered{
+		color:$white;	
+	}
+	.swal2-popup #swal2-content{
+		color:$white;	
+	}
+	.fc-theme-standard td, .fc-theme-standard th{
+		border-color:$d-border;	
+	}
+	.fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start{
+				
+		background-color:$d-bg;
+		border-color:$d-border;
+		&:hover{
+			color:$white!important;			
+		}
+	}
+	.fc-theme-standard .fc-scrollgrid.fc-scrollgrid-liquid, .fc-scrollgrid, table{
+		border-color:$d-border;		
+	}
+	.text-muted {
+		--bs-text-opacity: 1;
+		color: #89879f !important;
+	}
+	///fillow dark
+	.revenueMap{
+		line{
+			stroke:$d-border;	
+		}
+		tspan{
+			fill:$white;	
+		}	
+	}
+	.invite {
+		a{
+			color:$white!important;	
+		}	
+	}
+	.fullcalendar .fc-toolbar-chunk button{
+		color:$white;	
+	}
+	.message-received p{
+		color:$white;	
+	}
+	.cm-content-box{
+		background-color:$dark-card;
+	}
+	.cm-content-box .cm-content-body,
+	.datepicker.datepicker-dropdown,
+	.menu-tabs{
+		border-color:$d-border;
+	}
+	.card-link{
+		&:hover{
+			color:var(--priamry);
+		}
+		
+	}
+	.dz-terms{
+		border-color:$d-border;
+	}
+	.card-slider{
+		.owl-nav{
+			.owl-prev,
+			.owl-next{
+				background:#2B2B2B!important;
+				color:$white!important;
+				&:hover{
+					background:#717579!important;	
+				}
+			}
+			.owl-next{
+				margin-left:1.25rem;	
+			}
+		}	
+	}
+	.tryal-gradient {
+		background: var(--primary);
+	}
+	.project-details .big-wind{
+		border-color:$d-border;	
+	}
+	
+	
+	.toolbar{
+		.bg-transparent{
+			i{
+				color:white;
+			}
+		}
+	}
+	#checkAll:checked{
+
+		border-color:var(--primary);
+	}
+	.daterangepicker td.in-range{
+
+		background-color: $dark-card;
+		color:#eee;
+	}
+	.popover-body {
+		padding: 1rem 1rem;
+		color: #828690;
+	}
+	.dd-handle.move-media + .accordion-button{
+		background-color: $d-bg;
+
+	}
+	.dd .accordion-body{
+		border-color:$d-border;
+	}
+	.cm-content-box.style-1 .content-title{
+		border-color:$d-border;
+	}
+	.new-scroll{
+		background-color:$d-bg;
+
+	}
+	.form-control:disabled, .form-control[readonly]{
+
+		background-color:$d-bg!important;
+	}
+	.side-bar-profile{
+		.progress{
+			background-color:$dark-card;
+		}
+	}
+	.email-left-body.active{
+		background-color: $d-bg;
+	}
+	.email-tools-box.active:before{
+		background-color: #fff;
+	}
+	.form-control::-webkit-file-upload-button{
+		background-color:$d-bg!important;	
+		color:$white;
+	}
+	.form-control:hover{
+		&::-webkit-file-upload-button{
+			background-color:$d-bg!important;	
+		}
+	}
+	.sidebar-right {
+		.card-tabs{
+			.nav-tabs{
+				border-color: var(--rgba-primary-1)!important;
+				.nav-item{
+					.nav-link{
+						color:$black!important;
+					}
+				} 
+			}
+		}
+		.form-control{
+			background:$white;
+			color:$black;
+			border-color:$border-color;
+		}
+		.default-select .list{
+			background:$white;
+			.option{
+				&.selected,&.focus,&:hover{
+					background:rgba($black,0.05)!important;
+				}
+			}
+		}
+		.sidebar-right-inner>h4{
+			color:$black!important;
+		}
+		.nice-select .option {
+			background: #fff;
+		}
+    }
+	.brand-title{
+		.logo-dark{
+			display:inline-block
+		}
+		.logo-light{
+
+			display:none;
+		}
+	}
+	.type_msg{
+		.form-control{
+			background-color:$dark-card;
+		}
+	}
+	.contacts-search{
+		.form-control{
+			background-color: $dark-card;
+		}
+		.input-group-text{
+			background-color: $dark-card;
+		}
+
+	}
+	.datepicker .datepicker-switch{
+		color:$white!important;
+	}
+	.profile-card{
+		.bg-white{
+			background-color: $dark-card!important;
+		}
+
+	}
+	.tryal a{
+
+		color:#000;
+		&:hover{
+			color:$white; 
+		}
+	}
+	.apexcharts-tooltip.apexcharts-theme-light{
+		background-color:$d-bg;
+	}
+	.apexcharts-radialbar-hollow{
+			fill:$d-bg;
+	}
+	.dlab-wrapper{
+		.text-black{
+			color: #000 !important;
+		}
+
+	}
+	.bootstrap-select .btn{
+		border-color:$d-border!important;
+	}
+	.sidebar-right .bootstrap-select .btn{
+		border-color:#d1d1d1!important;
+	}
+	
+}

@@ -1,0 +1,44 @@
+// Ckeditor
+.ck.ck-editor{
+	.ck.ck-button{
+		padding: 6px 8px;
+		background-color: var(--rgba-primary-1);
+		color: var(--primary);
+		font-weight: 900;
+		cursor: pointer;
+		
+	}
+	.ck.ck-toolbar{
+		background-color:var(--body-bg);
+		border: 0;
+		padding: 5px 10px;
+	}
+	.ck.ck-toolbar__separator{
+		display: none !important;
+	}
+	.ck-content{
+		background-color: var(--body-bg);
+		border-width: 1px 0 0;
+		border-color: #e7e5ef;
+		
+	}
+}
+.ck-editor__editable{
+	background-color:	var(--bs-card-bg);	
+}
+.ck.ck-editor__main>.ck-editor__editable {
+	background-color: var(--body-bg)!important;
+	@at-root [data-theme-version="dark"] & {
+		background:#161717 ! important;
+	}
+}
+.ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+    border-color: var(--border) ! important;
+}
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {
+	min-height: 9.375rem;
+}
+
+.ck.ck-editor__editable:not(.ck-editor__nested-editable).ck-focused{
+	min-height: 9.375rem;
+}

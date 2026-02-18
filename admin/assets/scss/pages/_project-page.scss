@@ -1,0 +1,32 @@
+
+.project-image{
+	img{
+		height:2.813rem;
+		width:2.813rem;
+		border-radius:50%;
+		margin-right:10px;
+	}
+	
+}
+.customers{	
+	@include custommq ($max:100rem){
+		h3{
+			font-size:1rem!important;		
+		}
+	}	
+	@include respond('phone'){
+		margin-bottom:20px;	
+	}
+}
+
+.bg-progress{
+	background:#E4F5FF;	
+	color:#2DB3FF!important;
+}
+.card{
+	&.project-card{
+
+		margin-bottom: 0.975rem;
+	}
+
+}

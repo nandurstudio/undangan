@@ -1,0 +1,65 @@
+/////////////////
+// Header
+/////////////////
+.header {
+    height: var(--dz-header-height);
+    z-index: 1;
+    position: var(--dz-header-pos);
+    padding: 0rem;
+    background:var(--headerbg);
+    z-index: 3;
+    top: 0;
+    width: 100%;
+    padding-left: var(--dz-sidebar-width);
+	border-bottom:1px solid var(--border);
+    transition: all .2s ease;
+	
+    .header-content {
+        position: relative;
+        height: 100%;
+        padding-left: 5rem;
+        padding-right: 1.875rem;
+        align-items: center;
+        display: flex;
+		
+		@include respond ('tab-land') {
+			padding-left: 4rem;
+		}
+        @include custommq($max: 47.9375rem) {
+            padding-left: 3.75rem;
+			padding-right: 0.938rem;
+        }
+        @include respond ('phone-land'){
+            padding-right:1.638rem;
+        }
+		@include respond ('phone'){
+			padding-right:1.238rem;
+            padding-left:2.35rem;
+
+		}
+        .nav-control{
+            right: auto;
+            left: 1rem;
+        }
+		
+    }
+    .navbar {
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        .navbar-collapse {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    @include respond('phone-land'){
+        padding-left: 5rem;
+    }
+}
+
+[data-header-position="fixed"] {
+    --dz-header-pos : fixed;
+    .content-body {
+        padding-top: var(--dz-header-height);
+    }
+}

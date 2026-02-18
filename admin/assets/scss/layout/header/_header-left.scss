@@ -1,0 +1,50 @@
+.header-left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+	.breadcrumb{
+		margin-bottom:0;
+	}
+	.agenda{
+		a{
+			border-radius:1.75rem;
+			i{
+				margin-right:0.75rem;
+				@include respond ('laptop'){
+					margin-right:0rem;	
+				}
+			}
+			@include custommq ($max:93.75rem){
+				font-size:0;
+				border-radius: 0.75rem;
+				padding: 0.8125rem 0.9375rem;
+				i{
+					font-size:1.25rem;
+					margin-right:0;
+				}
+			}
+		}
+		@include respond('phone') {
+			display:none;	
+		}
+	}
+	.dashboard_bar {
+		font-size: var(--dz-head-title-size);
+		font-weight: 700;
+		color:var(--text-dark);
+		@include respond('phone-land') {
+			display:none;
+		}
+		&.sub-bar{
+			font-size:1.875rem;
+		}		
+		
+	}
+	
+}
+
+[data-sidebar-style="compact"] {
+    .header-left {
+        margin-left: 0;
+    }
+}
