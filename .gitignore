@@ -1,0 +1,26 @@
+*.ai
+site.webmanifest
+/node_modules
+undangan@kkmrat.web.id.coreftp
+
+# ignore vendor and caches
+vendor/
+.DS_Store
+.sass-cache/
+*.bak
+
+# Environment files (do NOT commit real secrets)
+.env
+.env.*
+
+# Editor / OS
+.vscode/
+.idea/
+*.log
+
+# Sensitive / local artifacts
+cookies.txt
+cook.txt
+.DS_Store
+
+
