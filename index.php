@@ -11,7 +11,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<?php
 	include "./php/connection.php";
-	$shout_query = "SELECT * FROM tr_ucapan ORDER BY ucapanId DESC";
+	$shout_query = "SELECT *, date FROM tr_ucapan WHERE date in (SELECT MAX(date) from tr_ucapan GROUP BY namareservasi) ORDER BY `tr_ucapan`.`date` DESC";
 	$shouts = mysqli_query($conn, $shout_query);
 	$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
 	$result_pria = mysqli_query($conn, $sql_pria);
@@ -34,9 +34,27 @@
 	} else {
 		echo "0 results";
 	}
-	$the_wedding = "Wedding of " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_wedding = "Lembar Undangan Rapat Anggota Tahunan Periode Tahun Buku 2024. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_desc = "Assalamu'alaikum Wr. Wb.
+	Bismillahirrahmanirrahim
+	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Rapat Anggota Tahunan Periode Tahun Buku 2024, yang mana akan di pandu oleh 
+	
+	" . $pengantin_pria . "
+	&
+	" . $pengantin_wanita . "
+	
+	Pada :
+	Senin, 10 Mar 2025
+	
+	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memeriahkan acaranya.
+	
+	Terima kasih,
+	Wassalamuallaikum Wr. Wb.
+	
+	Ketua, tim panitia, MC,
+	" . $pengantin_pria . " &amp; " . $pengantin_wanita . "";
 	echo "<title>" . $the_wedding . "</title>";
-	echo "<meta name=\"description\" content=\"" . $the_wedding . "\" />";
+	echo "<meta name=\"description\" content=\"" . $the_desc . "\" />";
 
 	mysqli_close($conn);
 	//https://stackoverflow.com/a/15864222/7772358
@@ -45,9 +63,15 @@
 
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="wedding, Noordiansyah, hilya dina rosyida" />
+	<meta name="keywords" content="invitation, kkmrat, rat" />
 	<meta name="author" content="Nandur Digital Invitation" />
-
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#00a2e1">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#00a2e1">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#00a2e1">
+	<link rel="icon" sizes="192x192" href="images/rat/favicon_io/android-chrome-192x192.png">
 	<!-- 
 	//////////////////////////////////////////////////////
 
@@ -63,25 +87,26 @@
 	 -->
 
 	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:description" content="" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+	<meta property="og:title" content="Undangan KKM RAT" />
+	<meta property="og:image" content="https://www.undangan.kkmrat.web.id/images/rat/og_image.png" />
+	<meta property="og:url" content="https://www.kkmrat.web.id/" />
+	<meta property="og:site_name" content="Undangan Digital KKM RAT" />
+	<meta property="og:description" content="Senin, 10 Mar 2025 - 13:30 | MNF Cikampek & IDC Cakung" />
+	<meta name="twitter:title" content="Undangan KKM RAT" />
+	<meta name="twitter:image" content="https://www.undangan.kkmrat.web.id/images/rat/og_image.png" />
+	<meta name="twitter:url" content="https://www.kkmrat.web.id/" />
+	<meta name="twitter:card" content="Senin, 10 Mar 2025 - 13:30 | MNF Cikampek & IDC Cakung" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="mobile-web-app-capable" content="yes" />
 
-	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Style+Script&display=swap" rel="stylesheet">
-	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,300;1,400;1,500;1,600&family=Karla&display=swap" rel="stylesheet">
+
+	<link rel="icon" type="image/x-icon" href="./images/rat/favicon_io/favicon.ico">
 
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/animate.min.css">
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Bootstrap  -->
@@ -98,6 +123,14 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
+	<!-- Nav style  -->
+	<link rel="stylesheet" href="css/splide.min.css">
+	<link rel="stylesheet" href="css/animate-config.css">
+	<link rel="stylesheet" href="css/slide-up.css">
+
+	<!-- Swall2 Style -->
+	<link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.css">
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -109,163 +142,51 @@
 
 <body id="body1" class="cover-height">
 	<div class="cover" id="cover">
-
-		<!-- Modal -->
-		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Attention!</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<div class="row">
-							<div class="animate-box just-center">
-								<p>This event is carried out by implementing the following health protocols:</br>
-									<img class="protokol-image" src="./images/protokol_en.png" />
-								<p>Without reducing respect, in order to reduce the spread of the pandemic, please always follow the health protocols and arrive on time according to the hours listed on the invitation.</p>
-								<p>Press the close button to close this information/this information will be closed automatically after <span id="countdown">15</span></p>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<div class="container name-cover" id="name-cover">
-			<div class="col-md-4 col-sm-4">
-				<div class="the-wedding-of">
-					THE WEDDING OF
-				</div>
-				<?php
-				include "./php/connection.php";
-				$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
-				$result_pria = mysqli_query($conn, $sql_pria);
-				$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
-				$result_wanita = mysqli_query($conn, $sql_wanita);
-
-				if (mysqli_num_rows($result_pria) > 0) {
-					// output data of each row
-					while ($row = mysqli_fetch_assoc($result_pria)) {
-						echo "<div class=\"nama-pengantin\">" . $row["txtNamaDepan"];
-					}
-				} else {
-					echo "0 results";
-				}
-				echo " &amp; ";
-				if (mysqli_num_rows($result_wanita) > 0) {
-					// output data of each row
-					while ($row = mysqli_fetch_assoc($result_wanita)) {
-						echo $row["txtNamaDepan"] . "</div>";
-					}
-				} else {
-					echo "0 results";
-				}
-
-				mysqli_close($conn);
-				//https://stackoverflow.com/a/15864222/7772358
-
-				//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
-
-				?>
-				<button id="tombol-buka" type="submit" class="btn btn-default btn-block open-invitation">Open Invitation</button>
+			<div class="text-center">
+				<img class="logo-pengantin animate__animated animate__pulse animate__infinite infinite" src="./images/rat/tiket.png" alt="Tiket" width="95%">
+			</div>
+			<div class="animate__animated animate__headShake animate__infinite infinite col-md-8 col-md-offset-2 text-center">
+				<button id="tombol-buka" type="submit" class="animate__animated animate__zoomInDown btn btn-buka">Buka Undangan</button>
 			</div>
 		</div>
 	</div>
-	<div id="page">
-		<!-- <nav class="fh5co-nav" role="navigation">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="./">Wedding<strong>.</strong></a></div>
-					</div>
-					<div class="col-xs-10 text-right menu-1">
-						<ul>
-							<li class="active"><a href="./">Home</a></li>
-							<li><a href="about.html">Story</a></li>
-							<li class="has-dropdown">
-								<a href="services.html">Services</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
-							</li>
-							<li class="has-dropdown">
-								<a href="gallery.html">Gallery</a>
-								<ul class="dropdown">
-									<li><a href="#">HTML5</a></li>
-									<li><a href="#">CSS3</a></li>
-									<li><a href="#">Sass</a></li>
-									<li><a href="#">jQuery</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</nav> -->
-		<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/cover_ian.jpg);" data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
-			<div class="container">
+	<section>
+		<!-- Cover -->
+		<header id="fh5co-header" class="fh5co-cover mid" role="banner" style="background-image:url(images/rat/cover_rat2.jpg);" data-stellar-background-ratio="0.5">
+			<!-- <div class="overlay"></div> -->
+			<div class="container concover">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t">
-							<div class="display-tc animate-box" data-animate-effect="fadeIn">
-								<?php
-								include "./php/connection.php";
-								$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='1'";
-								$result_pria = mysqli_query($conn, $sql_pria);
-								$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang FROM tb_user WHERE txtUndanganId ='2'";
-								$result_wanita = mysqli_query($conn, $sql_wanita);
-
-								if (mysqli_num_rows($result_pria) > 0) {
-									// output data of each row
-									while ($row = mysqli_fetch_assoc($result_pria)) {
-										echo "<h1>" . $row["txtNamaDepan"];
-									}
-								} else {
-									echo "0 results";
-								}
-								echo " &amp; ";
-								if (mysqli_num_rows($result_wanita) > 0) {
-									// output data of each row
-									while ($row = mysqli_fetch_assoc($result_wanita)) {
-										echo $row["txtNamaDepan"] . "</h1>";
-									}
-								} else {
-									echo "0 results";
-								}
-
-								mysqli_close($conn);
-								//https://stackoverflow.com/a/15864222/7772358
-
-								//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
-
-								?>
-								<h2>We Are Getting Married</h2>
-								<!-- <div id="demo"></div> -->
-								<div class="simply-countdown simply-countdown-one"></div>
-								<p><a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=M29jbGwyaGRtYnVxYzdqOXFoaGExbGlrYmggZmFtaWx5MDc3OTU1ODAxMDU0MzM0MjExOTVAZw&tmsrc=family07795580105433421195%40group.calendar.google.com" class="btn btn-default btn-sm" target="blank">Save the date</a></p>
+							<div class="display-tc">
+								<img id="logo-pengantin" style="opacity:0;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/rat/logo_rat_time.png" alt="Logo RAT" width="80%">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div>
+				<div>
+					<svg class="arrows">
+						<path class="a3" d="M12.1,31.8L12.1,31.8c-0.3-0.3-0.3-0.7,0-1l17.8-17.8c0.3-0.3,0.7-0.3,1,0l17.1,17.1c0.3,0.3,0.3,0.7,0,1l0,0
+	c-0.3,0.3-0.7,0.3-1,0L30.8,15c-0.3-0.3-0.7-0.3-1,0L13,31.8C12.8,32.1,12.3,32.1,12.1,31.8z"></path>
+						<path class="a1" d="M12.1,59.7L12.1,59.7c-0.3-0.3-0.3-0.7,0-1L29.8,41c0.3-0.3,0.7-0.3,1,0l17.1,17.1c0.3,0.3,0.3,0.7,0,1l0,0
+	c-0.3,0.3-0.7,0.3-1,0L30.8,42.9c-0.3-0.3-0.7-0.3-1,0L13,59.7C12.8,59.9,12.3,59.9,12.1,59.7z"></path>
+						<path class="a2" d="M12.1,45.7L12.1,45.7c-0.3-0.3-0.3-0.7,0-1L29.8,27c0.3-0.3,0.7-0.3,1,0l17.1,17.1c0.3,0.3,0.3,0.7,0,1l0,0
+	c-0.3,0.3-0.7,0.3-1,0L30.8,29c-0.3-0.3-0.7-0.3-1,0L13,45.7C12.8,46,12.3,46,12.1,45.7z"></path>
+					</svg>
+				</div><br />
+				<div class="hari-pernikahan geser-atas">GESER KE ATAS</div>
+			</div>
 		</header>
-
-		<div id="fh5co-couple" style="background-image: url(images/img_bg_5.jpg); background-size: cover;">
+	</section>
+	<section>
+		<!-- Barcode -->
+		<div id="fh5co-couple" class="bg-carton fit-screen">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center text-papper bg-papper-div">
 						<?php
 						if (isset($_GET['to'])) {
 							$string_to_encrypt = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
@@ -279,781 +200,513 @@
 							} else {
 								$sesi = '1';
 							}
-							$password = "password";
-							$encrypted_string = openssl_encrypt($string_to_encrypt, "AES-128-ECB", $password);
-							$decrypted_string = openssl_decrypt($encrypted_string, "AES-128-ECB", $password);
+						// encryption key must come from environment (.env) — do NOT hardcode
+						$aes_key = getenv('KKMRAT_AES_KEY');
+						if (!empty($aes_key)) {
+							$encrypted_string = openssl_encrypt($string_to_encrypt, "AES-128-ECB", $aes_key);
+							$decrypted_string = openssl_decrypt($encrypted_string, "AES-128-ECB", $aes_key);
+						} else {
+							// fallback: no encryption key provided — use plaintext (safer than committing a key)
+							$decrypted_string = $string_to_encrypt;
+						}
 							$guest_name = str_replace('&amp;', 'dan', $decrypted_string);
 							// echo $string_to_encrypt;
 							// echo $encrypted_string;
 							// echo $decrypted_string;
-							echo "<h2>Dear!</h2><h3>" . $decrypted_string . "</h3>
-							<p>\"Use this QR code as a sign to enter the event\"</p>
-							<a class=\"demo\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\">
-							<img class=\"example-image\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . "&amp;size=150x150\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
-							</a>
-							<p>Click to enlarge</p>";
+							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $decrypted_string . "</div>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode Tahun Buku 2024.</p>
+							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
+							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\">
+							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "&amp;size=200x200\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
+							</a><br \><div class=\"p-protokol js animate__animated\">Klik untuk memperbesar</div>";
 							// https://www.jqueryscript.net/lightbox/lightbox2.html
 						} else {
 							// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
 							// echo $actual_link;
 							$actual_link = "Anonymous";
-							echo "<h2>Dear!</h2><h3>" . $actual_link . "</h3>
-							<p>\"Use this QR code as a sign to enter the event\"</p>
-							<a class=\"demo\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
-							<img class=\"example-image\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=150x150\" alt=\"QR Code " . $actual_link . "\">
-							</a>
-							<p>Click to enlarge</p>";
+							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $actual_link . "</div>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode Tahun Buku 2024.</p>
+							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
+							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
+							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=200x200\" alt=\"QR Code " . $actual_link . "\">
+							</a><br \><div class=\"p-protokol js animate__animated\">Klik untuk memperbesar</div>";
 						}
 						?>
-						</br>
-						</br>
-						<h3>March 27<sup>th</sup>, 2022</br>Bandung, West Java</h3>
-						<p>We invited you to celebrate our wedding</p>
 					</div>
 				</div>
-				<div class="couple-wrap animate-box">
-					<div class="couple-half">
-						<div class="groom">
-							<a href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/81972791996590427740514901082602460536277616799024112984058926406245493506049/" target="blank">
-								<img src="images/pengantin_pria_nft.png" alt="groom" class="img-responsive">
-							</a>
-						</div>
-						<div class="desc-groom">
-							<?php
-							include "./php/connection.php";
-							$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='1'";
-							$sql_ayah_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '3'";
-							$sql_ibu_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '4'";
-							$result_pria = mysqli_query($conn, $sql_pria);
-							$result_ayah_pria = mysqli_query($conn, $sql_ayah_pria);
-							$result_ibu_pria = mysqli_query($conn, $sql_ibu_pria);
-
-							if (mysqli_num_rows($result_pria) > 0) {
-								// output data of each row
-								while ($row = mysqli_fetch_assoc($result_pria)) {
-									$pengantin_pria = $row["txtNamaDepan"];
-								}
-							} else {
-								echo "0 results";
-							}
-							if (mysqli_num_rows($result_ayah_pria) > 0) {
-								// output data of each row
-								while ($row = mysqli_fetch_assoc($result_ayah_pria)) {
-									$ayah_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
-								}
-							} else {
-								echo "0 results";
-							}
-							if (mysqli_num_rows($result_ibu_pria) > 0) {
-								// output data of each row
-								while ($row = mysqli_fetch_assoc($result_ibu_pria)) {
-									$ibu_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
-								}
-							} else {
-								echo "0 results";
-							}
-							echo "<a href=\"https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/81972791996590427740514901082602460536277616799024112984058926407345005133825/\" target=\"blank\">
-							<h3>" . $pengantin_pria . "</h3>
-							</a>";
-							echo "<p>3<sup>rd</sup> child of 3 siblings</br>Son of Mr. " . $ayah_pria . "</br>&amp;</br>Mrs. " . $ibu_pria . "</p>";
-
-							mysqli_close($conn);
-							//https://stackoverflow.com/a/15864222/7772358
-							//echo $_GET['to'];
-							//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
-
-							?>
-						</div>
-					</div>
-					<p class="heart text-center"><i class="icon-heart2"></i></p>
-					<div class="couple-half">
-						<div class="bride">
-							<a href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/81972791996590427740514901082602460536277616799024112984058926407345005133825/" target="blank">
-								<img src="images/pengantin_wanita_nft.png" alt="groom" class="img-responsive">
-							</a>
-						</div>
-						<div class="desc-bride">
-							<?php
-							include "./php/connection.php";
-							$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='2'";
-							$sql_ayah_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '5'";
-							$sql_ibu_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId = '6'";
-							$result_wanita = mysqli_query($conn, $sql_wanita);
-							$result_ayah_wanita = mysqli_query($conn, $sql_ayah_wanita);
-							$result_ibu_wanita = mysqli_query($conn, $sql_ibu_wanita);
-
-							if (mysqli_num_rows($result_wanita) > 0) {
-								// output data of each row
-								while ($row = mysqli_fetch_assoc($result_wanita)) {
-									$pengantin_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];;
-								}
-							} else {
-								echo "0 results";
-							}
-
-							if (mysqli_num_rows($result_ayah_wanita) > 0) {
-								// output data of each row
-								while ($row = mysqli_fetch_assoc($result_ayah_wanita)) {
-									$ayah_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
-								}
-							} else {
-								echo "0 results";
-							}
-
-							if (mysqli_num_rows($result_ibu_wanita) > 0) {
-								// output data of each row
-								while ($row = mysqli_fetch_assoc($result_ibu_wanita)) {
-									$ibu_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"] . " " . $row["txtTitle"];
-								}
-							} else {
-								echo "0 results";
-							}
-
-							echo "<a href=\"https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/81972791996590427740514901082602460536277616799024112984058926407345005133825/\" target=\"blank\">
-							<h3>" . $pengantin_wanita . "</h3>
-							</a>";
-							echo "<p>The 1<sup>st</sup> of 2 siblings</br>Daughter of Mr. " . $ayah_wanita . "</br>&amp;</br>Mrs. " . $ibu_wanita . "</p>";
-							mysqli_close($conn);
-							//https://stackoverflow.com/a/15864222/7772358
-							//echo $_GET['to'];
-							//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
-
-							?>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="text-center">
-				<sup>"This image is a property of non-fungible tokens (NFTs). Established on OpenSea as The world's first and largest digital marketplace for crypto collectibles and NFTs."</br><a href="https://opensea.io/collection/yourweddingnft" target"blank">Let's check it out!</a></sup>
 			</div>
 		</div>
-
-		<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
-			<div class="overlay"></div>
+	</section>
+	<section>
+		<!-- Reservasi -->
+		<div id="fh5co-couple" class="bg-carton vh150">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<span>Our Special Events</span>
-						<h2>Wedding Events</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="display-t">
-						<div class="display-tc">
-							<div class="col-md-10 col-md-offset-1">
-								<div class="col-md-6 col-sm-6 text-center">
-									<div class="event-wrap animate-box">
-										<h3>Main Ceremony (Akad)</h3>
-										<div class="event-col">
-											<i class="icon-clock"></i>
-											<span>08:00 AM</span>
-											<span>10:00 AM</span>
-										</div>
-										<div class="event-col">
-											<i class="icon-calendar"></i>
-											<span>Sunday 27</span>
-											<span>March, 2022</span>
-										</div>
-										<i class="icon-map"></i>
-										<p>GRAHA PINDAD</br>Jalan Gatot Subroto No.517, Kebon Kangkung, Kiaracondong, Sukapura, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40284</p>
+					<div class="col-md-8 col-md-offset-2 js animate__animated">
+						<div class="row">
+							<div class="nama-pengantin-foto js animate__animated">Reservasi Kehadiran</div>
+						</div>
+						<iframe name="content-reservasi" style="display:none">
+						</iframe>
+						<form id="wishForm" class="form-group" action="./php/wish.php" method="post" target="content-reservasi">
+							<div class="row js animate__animated">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="name" class="custom-label"><i class="icon-user"></i> Nama Pada Undangan</label>
+										<input type="name" name="name" id="name" class="form-control" placeholder="Nama tamu" autocomplete="name" readonly>
+										<?php
+										if (isset($_GET['to'])) {
+											$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+											echo "<script>document.querySelector(\"#name\").value = \"" . $rep_guest_name . "\";</script>";
+										} else {
+											echo "<script>document.querySelector(\"#name\").value = \"Anonymous\";</script>";
+										}
+										?>
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-6 text-center">
-									<div class="event-wrap animate-box">
-										<h3>Wedding Party (Resepsi)</h3>
-										<div class="event-col">
-											<i class="icon-clock"></i>
+							</div>
+							<div class="row js animate__animated" style="display:none;">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="alamat" class="custom-label"><i class="icon-address"></i> Alamat</label>
+										<input type="text" class="form-control" id="alamat" placeholder="0" disabled></input>
+										<?php
+										if (isset($_GET['adr'])) {
+											$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
+											echo "<script>document.querySelector(\"#alamat\").value = \"" . $alamat . "\";</script>";
+										} else {
+											echo "<script>document.querySelector(\"#alamat\").value = \"None\";</script>";
+										}
+										?>
+									</div>
+								</div>
+							</div>
+							<div class="row js animate__animated" style="display:none;">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="sesi-reservasi" class="custom-label"><i class="icon-clock2"></i> Sesi</label>
+										<input type="text" class="form-control" id="sesi-reservasi" placeholder="0" disabled></input>
+										<?php
+										if (isset($_GET['s'])) {
+											$sesi = htmlspecialchars($_GET['s']); // Getting parameter value inside PHP variable
+											echo "<script>document.querySelector(\"#sesi-reservasi\").value = \"" . $sesi . "\";</script>";
+										} else {
+											echo "<script>document.querySelector(\"#sesi-reservasi\").value = \"1\";</script>";
+										}
+										?>
+									</div>
+								</div>
+							</div>
+							<div class="row js animate__animated" hidden>
+								<div class="col-md-12">
+									<div class="form-check checkleft">
+										<label for="namachat" class="form-check-label checkcap">Nama saya sama dengan nama pada undangan</label>
+										<input class="form-check-input" type="checkbox" id="namachat" name="namachat" value="namachatsama" checked>
+									</div>
+									<div class="form-group">
+										<label for="namareservasi" class="custom-label">
+											<i class="icon-pencil"></i> Nama Anda
+										</label>
+										<input type="text" id="namareservasi" name="name" class="form-control" placeholder="Nama Anda" autocomplete="name">
+									</div>
+								</div>
+							</div>
+							<div class="row js animate__animated">
+								<div class="col-md-12">
+									<div class="form-group">
+										<select name="konfirmasi-kehadiran" class="form-control" id="konfirmasi-kehadiran">
 											<?php
-											if (isset($_GET['s'])) {
-												$sesi = htmlspecialchars($_GET['s']); // Getting parameter value inside PHP variable
-												if ($sesi == "1") {
-													echo "
-													<span>11:00 AM</span>
-													<span>12:30 PM</span>
-													";
-												} elseif ($sesi == "2") {
-													echo "
-													<span>12:30 PM</span>
-													<span>02:00 PM</span>
-													";
-												} elseif ($sesi == "3") {
-													echo "
-													<span>10:00 PM</span>
-													<span>12:30 PM</span>
-													";
+											include "./php/connection.php";
+											if (isset($_GET['to'])) {
+												$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+												$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+												if (isset($_GET['namareservasi'])) {
+													$nama_reservasi = $_GET['namareservasi'];
 												} else {
-													echo "
-													<span>10:00 AM</span>
-													<span>02:00 PM</span>
-													";
+													$nama_reservasi = '';
 												}
 											} else {
-												// $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."?to=Guest";
-												// echo $actual_link;
-												echo "
-												<span>10:00 AM</span>
-												<span>02:00 PM</span>
-												";
+												$rep_guest_name = 'Anonymous';
 											}
+											if (isset($_GET['adr'])) {
+												$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
+											} else {
+												$alamat = '';
+											}
+											$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+											$result_query = mysqli_query($conn, $query);
+
+											if (mysqli_num_rows($result_query) > 0) {
+												// output data of each row
+												while ($row = mysqli_fetch_assoc($result_query)) {
+													if ($row["attending"] == "0") {
+														echo "<option class=\"optionbox\" disabled hidden value=\"\">Konfirmasi Kehadiran</option>";
+														echo "<option class=\"optionbox\" value=\"1\">Akan Hadir</option>";
+														echo "<option class=\"optionbox\" value=\"0\" selected>Tidak Bisa Hadir</option>";
+													} elseif ($row["attending"] == "1") {
+														echo "<option class=\"optionbox\" disabled hidden value=\"\">Konfirmasi Kehadiran</option>";
+														echo "<option class=\"optionbox\" value=\"1\" selected>Akan Hadir</option>";
+														echo "<option class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
+													} else {
+														echo "<option class=\"optionbox\" selected value=\"\">Konfirmasi Kehadiran</option>";
+														echo "<option class=\"optionbox\" value=\"1\">Akan Hadir</option>";
+														echo "<option class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
+													}
+												}
+											} else {
+												echo "<option class=\"optionbox\" disabled hidden selected value=\"\">Konfirmasi Kehadiran</option>";
+												echo "<option class=\"optionbox\" value=\"1\">Akan Hadir</option>";
+												echo "<option class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
+											}
+											mysqli_close($conn);
+											//https://stackoverflow.com/a/15864222/7772358
+											//echo $_GET['to'];
+											//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
 											?>
-										</div>
-										<div class="event-col">
-											<i class="icon-calendar"></i>
-											<span>Sunday 27</span>
-											<span>March, 2022</span>
-										</div>
-										<i class="icon-map"></i>
-										<p>GRAHA PINDAD</br>Jalan Gatot Subroto No.517, Kebon Kangkung, Kiaracondong, Sukapura, Kec. Kiaracondong, Kota Bandung, Jawa Barat 40284</p>
+											<!-- <option selected="selected" disabled="" hidden="" value="">Konfirmasi Kehadiran</option>
+											<option selected="" style="color: black;" value="1">Akan Hadir</option>
+											<option selected="" style="color: black;" value="0">Tidak Bisa Hadir</option> -->
+										</select>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+							<div class="row js animate__animated">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="wish" class="custom-label"><i class="icon-chat"></i> <span id="komentar">Komentar</span></label>
+										<?php
+										include "./php/connection.php";
+										if (isset($_GET['to'])) {
+											$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+											if (isset($_GET['namareservasi'])) {
+												$nama_reservasi = $_GET['namareservasi'];
+											} else {
+												$nama_reservasi = '';
+											}
+										} else {
+											$rep_guest_name = 'Anonymous';
+											$nama_reservasi = 'Anonymous';
+										}
+										if (isset($_GET['adr'])) {
+											$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
+										} else {
+											$alamat = '';
+										}
+										$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+										$result_query = mysqli_query($conn, $query);
 
-		<div id="fh5co-couple-story" style="background-image: url(images/img_bg_5.jpg); background-size: cover;">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<span>We Love Each Other</span>
-						<h2>Location</h2>
-						<div id="map" class="fh5co-map event-wrap">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15842.506884519555!2d107.6481692!3d-6.9351389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6a9c2e210b3951e1!2sGraha%20Pindad!5e0!3m2!1sen!2sid!4v1644363024996!5m2!1sen!2sid" width="100%" height="100%" style="border:0;min-height:250px" allowfullscreen="" loading="lazy">
-							</iframe>
-							<div class="bride">
-								<a href="https://goo.gl/maps/Q76muirvoCRAswicA" target="_blank"><img src="images/buka-google-maps-logo-indo-1024x123.jpg" alt="groom" style="width:350px;"></a>
-							</div>
-						</div>
-						<!-- END map -->
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Attendance</h2>
-						<p>Please select the button whether you will attend or not. Thanks!</p>
-					</div>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-12 col-md-offset-4">
-					<form class="form-inline">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<div class="feature-center">
-									<span class="icon">
-										<i class="icon-users"></i>
-									</span><?php
-											include "./php/connection.php";
-											$guest_query = "SELECT sum(jumlah_tamu) as jumlah_tamu FROM `tr_reservasi`";
-											$guest_count = mysqli_query($conn, $guest_query);
-											$row = mysqli_fetch_assoc($guest_count);
-											$sum = $row['jumlah_tamu'];
-											echo "<span id=\"guest-count-icon\" class=\"counter js-counter\" data-from=\"0\" data-to=\"" . $sum . "\" data-speed=\"5000\" data-refresh-interval=\"50\">" . $sum;
-											?></span>
-									<span class="counter-label">Estimated Guests</span>
+										if (mysqli_num_rows($result_query) > 0) {
+											// output data of each row
+											while ($row = mysqli_fetch_assoc($result_query)) {
+												echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan komentar atau alasan jika tidak bisa hadir\">" . $row["ucapan"] . "</textarea>";
+											}
+										} else {
+											echo "<textarea name=\"wish\" class=\"form-control\" id=\"wish\" placeholder=\"Berikan komentar atau alasan jika tidak bisa hadir\"></textarea>";
+										}
+										mysqli_close($conn);
+										//https://stackoverflow.com/a/15864222/7772358
+										//echo $_GET['to'];
+										//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+										?>
+									</div>
 								</div>
 							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-			<iframe name="content-reservasi" style="display:none">
-			</iframe>
-			<form id="reservasiForm" class="form-inline" action="./php/reservasi.php" method="post" target="content-reservasi">
-				<div class="row animate-box">
-					<div class="col-md-12 col-md-offset-4">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="name-reservasi" class="custom-label">Guest Name</label>
-								<input type="name" name="name" id="name-reservasi" class="form-control" placeholder="Guest Name" disabled></input>
-								<?php
-								if (isset($_GET['to'])) {
-									$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
-									$rep_guest_name = str_replace('&amp;', '&', $guest_name);
-									echo "<script>document.querySelector(\"#name-reservasi\").value = \"" . $rep_guest_name . "\";</script>";
-								} else {
-									echo "<script>document.querySelector(\"#name-reservasi\").value = \"Anonymous\";</script>";
-								}
-								?>
+							<div class="row js animate__animated" id="divjumlahtamu" hidden>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="jumlahtamu" class="custom-label"><i class="icon-users"></i> Jumlah Tamu Termasuk Anda</label>
+										<input type="number" class="form-control" id="jumlahtamu" placeholder="0"></input>
+										<?php
+										include "./php/connection.php";
+										if (isset($_GET['to'])) {
+											$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
+											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+											if (isset($_GET['namareservasi'])) {
+												$nama_reservasi = $_GET['namareservasi'];
+											} else {
+												$nama_reservasi = '';
+											}
+										} else {
+											$rep_guest_name = 'Anonymous';
+										}
+										if (isset($_GET['adr'])) {
+											$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
+										} else {
+											$alamat = '';
+										}
+										$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+										$result_query = mysqli_query($conn, $query);
+
+										if (mysqli_num_rows($result_query) > 0) {
+											// output data of each row
+											while ($row = mysqli_fetch_assoc($result_query)) {
+												echo "<script>document.querySelector(\"#jumlahtamu\").value = \"" . intval(trim($row['jumlahtamu'])) . "\";</script>";
+											}
+										} else {
+											echo "<script>document.querySelector(\"#jumlahtamu\").value = \"\";</script>";
+										}
+										mysqli_close($conn);
+										//https://stackoverflow.com/a/15864222/7772358
+										//echo $_GET['to'];
+										//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
+										?>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row animate-box">
-					<div class="col-md-12 col-md-offset-4">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="alamat-reservasi" class="custom-label">Address</label>
-								<input type="text" class="form-control" id="alamat-reservasi" placeholder="0" disabled></input>
-								<?php
-								if (isset($_GET['adr'])) {
-									$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
-									echo "<script>document.querySelector(\"#alamat-reservasi\").value = \"" . $alamat . "\";</script>";
-								} else {
-									echo "<script>document.querySelector(\"#alamat-reservasi\").value = \"None\";</script>";
-								}
-								?>
+							<div class="row js animate__animated">
+								<div class="col-md-12">
+									<div class="form-group">
+										<button type="submit" name="submit" value="submit" class="btn btn-default btn-block pull-right" onclick="return clickButton();">Kirim</button>
+									</div>
+								</div>
 							</div>
-						</div>
+						</form>
 					</div>
-				</div>
-				<div class="row animate-box">
-					<div class="col-md-12 col-md-offset-4">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="sesi-reservasi" class="custom-label">Sesi</label>
-								<input type="text" class="form-control" id="sesi-reservasi" placeholder="0" disabled></input>
-								<?php
-								if (isset($_GET['s'])) {
-									$sesi = htmlspecialchars($_GET['s']); // Getting parameter value inside PHP variable
-									echo "<script>document.querySelector(\"#sesi-reservasi\").value = \"" . $sesi . "\";</script>";
-								} else {
-									echo "<script>document.querySelector(\"#sesi-reservasi\").value = \"1\";</script>";
-								}
-								?>
+					<div class="col-md-8 col-md-offset-2 js animate__animated">
+						<form class="form-group">
+							<?php
+							include "./php/connection.php";
+							// COUNT distinct reservasi and return latest date (ONLY_FULL_GROUP_BY safe)
+							$guest_query = "SELECT COUNT(DISTINCT namareservasi) AS namareservasi, MAX(`date`) AS last_date FROM tr_ucapan;";
+							$guest_count = mysqli_query($conn, $guest_query);
+							$row = mysqli_fetch_assoc($guest_count);
+							$ucapan = $row['namareservasi'];
+							echo "<span class=\"custom-label\" id=\"custom-label\"><i class=\"icon-twitter\"></i> " . $ucapan . " Komentar</span>";
+							?>
+
+							<div class="fh5co-started form-control" style="height: 300px; overflow: auto;">
+								<div id="minichat">
+									<?php
+									while ($row = mysqli_fetch_assoc($shouts)) :
+										echo "<div style=\"text-align: left;\">";
+										echo "<strong>" . ucwords(strtolower($row["namareservasi"])) . " </strong>";
+										$att = $row["attending"];
+										$tamu = $row["jumlahtamu"];
+										if ($att == 1) {
+											if ($tamu == 1) {
+												echo "<span class=\"hadir\">Akan Hadir Sendiri</span>";
+											} else {
+												echo "<span class=\"hadir\">Akan Hadir Ber-" . $tamu . "</span>";
+											}
+										} elseif ($att == 0) {
+											echo "<span class=\"hadir tidak-hadir\">Tidak Bisa Hadir</span>";
+										} else {
+											echo "<span class=\"hadir tidak-konfirmasi\">Tidak Konfirmasi</span>";
+										}
+										echo "<p class=\"wishtext\">" . $row['ucapan'];
+										echo "<time class=\"timeago timestamp\" datetime=\"" . $row["date"] . "\">";
+										echo "</time></p></div>";
+									endwhile; ?>
+								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>
-
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Are You Attending?</h2>
-					</div>
-				</div>
-				<div class="row animate-box">
+				<p id="msg" class="js animate__animated"></p>
+				<div class="row js animate__animated">
 					<div class="col-md-12 col-md-offset-4">
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" name="submit" value="submit" id="submit-yes" class="btn btn-default btn-block" onclick="return clickButtonReservasi();">Yes</button>
-						</div>
-					</div>
-				</div>
-				<div class="row animate-box">
-					<div class="col-md-12 col-md-offset-4">
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" name="submit-no" value="submit" id="submit-no" class="btn btn-default btn-block" onclick="return clickButtonReservasiNo();">No</button>
-						</div>
-					</div>
-				</div>
-			</form>
-			<p id="msg-reservasi"></p>
-			<script type="text/javascript">
-				function clickButtonReservasi() {
-					//var $sesi_reservasi = htmlspecialchars($_GET['s']);
-					var name_reservasi = document.getElementById('name-reservasi').value;
-					var sesi_reservasi = document.getElementById('sesi-reservasi').value;
-					var alamat_reservasi = document.getElementById('alamat-reservasi').value;
-					var guest_count = '2';
-					$.ajax({
-						type: "post",
-						url: "./php/reservasi.php",
-						data: {
-							'name-reservasi': name_reservasi,
-							'guest-count': guest_count,
-							'sesi-reservasi': sesi_reservasi,
-							'alamat-reservasi': alamat_reservasi,
-							'attending': '1'
-						},
-						cache: false,
-						success: function(html) {
-							alert('Reservation sent. Thank you!')
-							$('#submit-yes').prop('disabled', true);
-							$('#submit-no').prop('disabled', true);
-							$('#msg-reservasi').html(html);
-							//$('#reservasiForm').trigger('reset');
-							$('#guest-count-icon').html(html);
-							$("#guest-count-icon").load(location.href + " #guest-count-icon");
-						}
-					});
-					return false;
-				}
-
-				function clickButtonReservasiNo() {
-					//var $sesi_reservasi = htmlspecialchars($_GET['s']);
-					var name_reservasi = document.getElementById('name-reservasi').value;
-					var sesi_reservasi = document.getElementById('sesi-reservasi').value;
-					var alamat_reservasi = document.getElementById('alamat-reservasi').value;
-					var guest_count = '0';
-					$.ajax({
-						type: "post",
-						url: "./php/reservasi.php",
-						data: {
-							'name-reservasi': name_reservasi,
-							'guest-count': guest_count,
-							'sesi-reservasi': sesi_reservasi,
-							'alamat-reservasi': alamat_reservasi,
-							'attending': '0'
-						},
-						cache: false,
-						success: function(html) {
-							$('submit-no').prop('disabled', true);
-							$('#submit-yes').prop('disabled', true);
-							alert('Confirmation sent. Thank you!')
-							$('#msg-reservasi').html(html);
-							//$('#reservasiForm').trigger('reset');
-							$('#guest-count-icon').html(html);
-							$("#guest-count-icon").load(location.href + " #guest-count-icon");
-						}
-					});
-					return false;
-				}
-			</script>
-		</div>
-
-		<div id="fh5co-couple-story" style="background-image: url(images/img_bg_5.jpg); background-size: cover;">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<h2>Verse Quote</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-
-						<figure>
-							<p class="color-theme">
-								وَمِنْ ءَايَٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِى ذَٰلِكَ
-								لَءَايَٰتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
-							<p>Wa min āyātihī an khalaqa lakum min anfusikum azwājal litaskunū ilaihā wa ja'ala bainakum mawaddataw wa raḥmah, inna fī żālika la`āyātil liqaumiy yatafakkarụn</p>
-							<blockquote cite="https://nandurstudio.com">
-								<p>Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.
-								</p>
-							</blockquote>
-							<figcaption>—QS. Ar - Rum : <cite>21</cite></figcaption>
-						</figure>
-
-						<!-- END map -->
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Are You Attending?</h2>
-						<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
-					</div>
-				</div>
-				<div class="row animate-box">
-					<div class="col-md-10 col-md-offset-1">
 						<form class="form-inline">
 							<div class="col-md-4 col-sm-4">
 								<div class="form-group">
-									<label for="name" class="sr-only">Name</label>
-									<input type="name" class="form-control" id="name" placeholder="Name">
+									<div class="feature-center">
+										<span class="icon">
+											<i class="icon-users"></i>
+										</span>
+										<span class="counter-label counter-span">Estimasi jumlah tamu hadir: </span>
+										<?php
+										include "./php/connection.php";
+									// Sum latest jumlahtamu per reservation (ONLY_FULL_GROUP_BY safe)
+									$guest_query = "SELECT COALESCE(SUM(jumlahtamu),0) AS jumlahtamu FROM tr_ucapan WHERE date IN (SELECT MAX(date) FROM tr_ucapan GROUP BY namareservasi);";
+										$guest_count = mysqli_query($conn, $guest_query);
+										$row = mysqli_fetch_assoc($guest_count);
+										$sum = $row['jumlahtamu'];
+										echo "<span id=\"guest-count-icon\" class=\"counter js-counter counter-span\" data-from=\"0\" data-to=\"" . $sum . "\" data-speed=\"5000\" data-refresh-interval=\"50\">" . $sum;
+										?></span>
+									</div>
 								</div>
-							</div>
-							<div class="col-md-4 col-sm-4">
-								<div class="form-group">
-									<label for="email" class="sr-only">Email</label>
-									<input type="email" class="form-control" id="email" placeholder="Email">
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-4">
-								<button type="submit" class="btn btn-default btn-block">I am Attending</button>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-		</div> -->
-		<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>Wishes & Do'a</h2>
-						<p>Please fill in your wishes for the bride and groom.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-12 col-md-offset-4">
-					<form class="form-inline">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<div class="fh5co-started form-control" style="height: 300px; overflow: auto;">
-									<div id="minichat">
-										<?php while ($row = mysqli_fetch_assoc($shouts)) : ?>
-											<div>
-												<strong><?php echo ucwords(strtolower($row["nama"])) ?></strong>
-												<p><?php echo $row['ucapan'] ?><small style="
-									text-align: right;
-									display: flex;
-    								flex-direction: column-reverse;
-									"><?php echo $row["date"] ?></small></p>
-											</div>
-										<?php endwhile; ?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-			<iframe name="content" style="display:none">
-			</iframe>
-			<form id="wishForm" class="form-inline" action="./php/wish.php" method="post" target="content">
-				<div class="row animate-box">
-					<div class="col-md-12 col-md-offset-4">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="name" class="custom-label">Name</label>
-								<input type="name" name="name" id="name" class="form-control" placeholder="Name">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row animate-box">
-					<div class="col-md-12 col-md-offset-4">
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="email" class="custom-label">Wishes</label>
-								<textarea name="wish" class="form-control" id="wish" placeholder="Your wish for the bride"></textarea>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row animate-box">
-					<div class="col-md-12 col-md-offset-4">
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" name="submit" value="submit" class="btn btn-default btn-block" onclick="return clickButton();">Send Wishes</button>
-						</div>
-					</div>
-				</div>
-			</form>
-			<p id="msg"></p>
-			<script type="text/javascript">
-				function clickButton() {
-					var name = document.getElementById('name').value;
-					var wish = document.getElementById('wish').value;
-					if ($('#name').val() == '') {
-						alert('Please fill name field');
-						return false;
-					} else if ($('#wish').val() == '') {
-						alert('Please fill the wishes');
-						return false;
-					} else {
-						$.ajax({
-							type: "post",
-							url: "./php/wish.php",
-							data: {
-								'name': name,
-								'wish': wish
-							},
-							cache: false,
-							success: function(html) {
-								$('#msg').html(html);
-								$('#wishForm').trigger('reset');
-								$('#minichat').html(html);
-								$("#minichat").load(location.href + " #minichat");
-							}
-						});
-						return false;
-					}
-				}
-			</script>
 		</div>
-
-		<div id="fh5co-services" class="fh5co-section-gray">
+	</section>
+	<section>
+		<!-- Mempelai Gabungan -->
+		<div id="fh5co-couple" class="bg-carton one-page">
 			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2>This event is supported by</h2>
-						<!-- <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p> -->
-					</div>
-				</div>
-
 				<div class="row">
-					<div class="col-md-6">
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>CPP</h3>
-								<p><a href="https://www.instagram.com/noor.diansyah/" target="blank">@noor.diansyah</a></p>
-								<a href="https://www.instagram.com/noor.diansyah/" target="blank">
-									<img src="./images/pengantin_pria_nft.png" width="200px" height="100%">
-								</a>
-							</div>
-						</div>
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="nama-pengantin-foto mempelai js animate__animated">Master of Ceremony</div>
+						<?php
+						include "./php/connection.php";
 
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>CPW</h3>
-								<p><a href="https://www.instagram.com/hilyadina_/" target="blank">@hilyadina_</a></p>
-								<a href="https://www.instagram.com/hilyadina_/" target="blank">
-									<img src="./images/pengantin_wanita_nft.png" width="200px" height="100%">
+						$sql_pria = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='1'";
+						$sql_wanita = "SELECT txtNamaDepan, txtNamaBelakang, txtTitle FROM tb_user WHERE txtUndanganId ='2'";
+
+						$result_pria = mysqli_query($conn, $sql_pria);
+						$result_wanita = mysqli_query($conn, $sql_wanita);
+
+						$pengantin_pria = "";
+						$pengantin_pria_title = "";
+						$pengantin_wanita = "";
+						$pengantin_wanita_title = "";
+
+						if (mysqli_num_rows($result_pria) > 0) {
+							while ($row = mysqli_fetch_assoc($result_pria)) {
+								$pengantin_pria = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
+								$pengantin_pria_title = $row["txtTitle"];
+							}
+						}
+						echo '<div class="col-md-8 col-md-offset-2 text-center">
+								<a class="demo js animate__animated" href="images/rat/host_duo.png" data-lightbox="example-1">
+									<img src="images/rat/host_duo.png" alt="Foto Pengantin" class="img-responsive foto-pengantin js animate__animated">
 								</a>
 							</div>
-						</div>
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Photography</h3>
-								<p><a href="https://www.instagram.com/mwaafi/" target="blank">@mwaafi</a></p>
-								<a href="https://www.instagram.com/mwaafi/" target="blank">
-									<img src="./images/mwaafi.jpeg" width="200px" height="100%">
-								</a>
-							</div>
-						</div>
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Wedding MC</h3>
-								<p><a href="https://www.instagram.com/edoalfarez/" target="blank">@edoalfarez</a></p>
-								<a href="https://www.instagram.com/edoalfarez/" target="blank">
-									<img src="./images/edoalfrez.jpeg" width="200px" height="100%">
-								</a>
-							</div>
-						</div>
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Decoration and Attire</h3>
-								<p><a href="https://www.instagram.com/baskara_wedding_planner/" target="blank">@baskara_wedding_planner</a></p>
-								<a href="https://www.instagram.com/baskara_wedding_planner/" target="blank">
-									<img src="./images/baskara.jpeg" width="200px" height="100%">
-								</a>
-							</div>
-						</div>
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>MUA</h3>
-								<p><a href="https://www.instagram.com/armeitarivaldi/" target="blank">@armeitarivaldi</a></p>
-								<a href="https://www.instagram.com/armeitarivaldi/" target="blank">
-									<img src="./images/armeita.jpeg" width="200px" height="100%">
-								</a>
-							</div>
-						</div>
+					        <div style="clear:both;"></div>'; // Menambah pemisah
+						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_pria . "</div>";
+						echo "<p class=\"js animate__animated\">" . $pengantin_pria_title . "</p>";
+						echo "<div class=\"big-date js animate__animated animate__fadeInUp\">\n\n\n&amp\n\n\n</div>";
+
+						if (mysqli_num_rows($result_wanita) > 0) {
+							while ($row = mysqli_fetch_assoc($result_wanita)) {
+								$pengantin_wanita = $row["txtNamaDepan"] . " " . $row["txtNamaBelakang"];
+								$pengantin_wanita_title = $row["txtTitle"];
+							}
+						}
+						echo "<div class=\"nama-pengantin-foto onepage js animate__animated\">" . $pengantin_wanita . "</div>";
+						echo "<p class=\"js animate__animated\">" . $pengantin_wanita_title . "</p>";
+
+						mysqli_close($conn);
+						?>
 					</div>
-
-					<div class="col-md-6 animate-box">
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Catering</h3>
-								<p><a href="https://www.instagram.com/teman.catering/" target="blank">@teman.catering</a></p>
-								<a href="https://www.instagram.com/teman.catering/" target="blank">
-									<img src="./images/teman_catering.jpeg" width="200px" height="100%">
-								</a>
-							</div>
-						</div>
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Wedding Organizer</h3>
-								<p><a href="https://www.instagram.com/teman.event/" target="blank">@teman.event</a></p>
-								<a href="https://www.instagram.com/teman.event/" target="blank">
-									<img src="./images/teman_wo.jpeg" width="200px" height="100%">
-								</a>
-							</div>
-						</div>
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Drinks</h3>
-								<p><a href="https://www.instagram.com/ruangketiga_/" target="blank">@ruangketiga_</a></p>
-								<a href="https://www.instagram.com/ruangketiga_/" target="blank">
-									<img src="./images/ruang_ketiga.jpeg" width="200px" height="100%">
-								</a>
-							</div>
-						</div>
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Music & Entertaiment</h3>
-								<p><a href="https://www.instagram.com/dmtmusicentertaiment/" target="blank">@dmtmusicentertaiment</a></p>
-								<a href="https://www.instagram.com/dmtmusicentertaiment/" target="blank">
-									<img src="./images/dmt.jpeg" width="200px" height="100%">
-								</a>
-							</div>
-						</div>
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Printed Invitation Card</h3>
-								<p><a href="https://www.instagram.com/sakinapercetakan/" target="blank">@sakinapercetakan</a></p>
-								<a href="https://www.instagram.com/sakinapercetakan/" target="blank">
-									<img src="./images/sakina.jpeg" width="200px" height="100%">
-								</a>
-							</div>
-						</div>
-						<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
-							<span class="icon">
-								<i class="icon-instagram"></i>
-							</span>
-							<div class="feature-copy">
-								<h3>Support & Digital Invitation</h3>
-								<p><a href="https://www.instagram.com/nandur.studio/" target="blank">@nandur.studio</a></p>
-								<a href="https://www.instagram.com/nandur.studio/" target="blank">
-									<img src="./images/nandur_studio.jpg" width="200px" height="100%">
-								</a>
-							</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<!-- Tanggal dan Counting Timer -->
+		<div id="fh5co-couple" class="bg-carton fit-screen">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="big-date js animate__animated">10.MAR.25</div>
+						<div id="demo"></div>
+						<div class="simply-countdown simply-countdown-one js animate__animated"></div>
+						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20250310T063000Z/20250310T090000Z&crm=AVAILABLE&sprop=website:www.kkmrat.web.id/undangan&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+Tahun+Buku+2024&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk" class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
+						<br />
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<a class="demo js animate__animated" href="images/rat/events.png" data-lightbox="example-1">
+								<img src="images/rat/events.png" alt="Event" class="img-responsive foto-pengantin js animate__animated">
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<footer id="fh5co-footer" role="contentinfo" style="background-image: url(images/img_bg_5.jpg); background-size: cover;">
+	</section>
+	<section>
+		<!-- Lokasi -->
+		<div id="fh5co-couple" class="bg-carton fit-screen">
 			<div class="container">
-
-				<div class="row copyright">
-					<div class="col-md-12 text-center">
-						<p>
-							<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> -->
-							<small class="block">&copy; 2022 Nandur Studio. All Rights Reserved.</small>
-							<!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
-							<small class="block">Designed by <a href="https://www.nandur93.com/search/label/Undangan" target="_blank">Nandur Studio Event</a></br>Master Template: <a href="http://freehtml5.co/" target="_blank">&copy; 2016 Free HTML5. All Rights Reserved.</a></small>
-						</p>
-						<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="https://twitter.com/NandurStudio"><i class="icon-twitter"></i></a></li>
-							<li><a href="https://web.facebook.com/n93animasi"><i class="icon-facebook"></i></a></li>
-							<li><a href="https://www.linkedin.com/in/nandangduryat/"><i class="icon-linkedin"></i></a></li>
-							<li><a href="https://dribbble.com/nandur93"><i class="icon-dribbble"></i></a></li>
-						</ul>
-						</p>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="nama-pengantin-foto js animate__animated">Lokasi 1</div>
+						<div id="map" class="fh5co-map event-wrap">
+							<div class="col-md-8 col-md-offset-2 text-center">
+								<p class="js animate__animated"><span style="font-weight:bold;">MNF Cikampek - Auditorium LT. 1</span><br />PT. Sanghiang Perkasa - Kalbe Nutritionals,<br />Kawasan Industri Indotaisei, Kalihurip, Kec. Cikampek,<br />Karawang, Jawa Barat 41373</p>
+								<p><a href="https://maps.app.goo.gl/3wuVHxG1jPgWjUjt9" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
+								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
+							</div>
+							<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15859.357860273401!2d107.4120537!3d-6.4146679!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e697313a5df4371%3A0x7b098758ed16c78f!2sPT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals!5e0!3m2!1sen!2sid!4v1696298434771!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+							</iframe>
+						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Lokasi -->
+	<div id="fh5co-couple" class="bg-carton fit-screen">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="nama-pengantin-foto js animate__animated">Lokasi 2</div>
+					<div id="map" class="fh5co-map event-wrap">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<p class="js animate__animated"><span style="font-weight:bold;">IDC Cakung</span><br />Innovation and Development Center PT. Sanghiang Perkasa,<br />Jl. Raya Bekasi Km 25, Cakung Tim.,<br />Kec. Cakung, Kota Jakarta Timur,<br />Daerah Khusus Ibukota Jakarta 13910</p>
+							<p><a href="https://maps.app.goo.gl/UAwWRzrS4Wr2CMhi7" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
+							<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
+						</div>
+						<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4880.761365044575!2d106.9509280758678!3d-6.185984660611432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b1067e1b7ab%3A0xcdda5d4c766c0af0!2sInnovation%20and%20Development%20Center%20PT.%20Sanghiang%20Perkasa!5e1!3m2!1sen!2sid!4v1741063595674!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+						</iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section>
+		<!-- Protokol -->
+		<div id="fh5co-couple" class="bg-carton fit-screen">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<div class="nama-pengantin-foto js animate__animated">Protokol</div>
+						<p class="js animate__animated">Tanpa mengurangi rasa hormat, harap mengkuti peraturan yang sudah ditetapkan oleh panitia agar acara berjalan lancar dengan mengikuti protokol berikut:</p>
+						<div class="col-md-8 col-md-offset-2 text-center kolom">
+							<div class="text-center">
+								<img src="images/rat/tumbler.png" alt="Botol tumbler" class="img-responsive logo-qrcode js animate__animated">
+								<div class="p-protokol js animate__animated">Wajib membawa Tumbler untuk yang sedang tidak berpuasa</div>
+							</div>
+							<div class="text-center">
+								<img src="images/rat/team.png" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
+								<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan berupa Nuansa Earth Tone</div>
+							</div>
+						</div>
+						<div class="col-md-8 col-md-offset-2 text-center kolom">
+							<div class="text-center">
+								<img src="images/rat/voucher.png" alt="Tiket" class="img-responsive logo-qrcode js animate__animated">
+								<div class="p-protokol js animate__animated">Siapkan tiket virtual ini sebagai akses masuk</div>
+							</div>
+							<div class="text-center">
+								<img src="images/rat/qr-scan.png" alt="Scan QR Code" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+								<div class="p-protokol js animate__animated">Tunjukan QR Code saat melakukan registrasi</div>
+							</div>
+						</div>
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<img src="images/rat/gadget.png" alt="No Laptop" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+							<div class="p-protokol js animate__animated">Fokus selama acara berlangsung</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer id="fh5co-footer" role="contentinfo" class="bg-carton">
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> -->
+						<small class="block">&copy; 2025 Nandur Studio. All Rights Reserved.</small>
+						<!-- <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
+						<small class="block">Web Invitation by <a href="https://www.nandurstudio.com" target="_blank">Nandur Studio Event</a>
+							</br>Design by <a href="https://instagram.com/nandur.studio" target="_blank">Nandur Studio</a>
+							</br>Master Template: <a href="http://freehtml5.co/" target="_blank">&copy; 2016 Free HTML5. All Rights Reserved.</a></small>
+					</p>
+					<p>
+					<ul class="fh5co-social-icons">
+						<li><a href="https://twitter.com/NandurStudio" target="_blank"><i class="icon-twitter"></i></a></li>
+						<li><a href="https://web.facebook.com/nandurstudioanimasi" target="_blank"><i class="icon-facebook"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/nandangduryat/" target="_blank"><i class="icon-linkedin"></i></a></li>
+						<li><a href="https://dribbble.com/nandurstudio" target="_blank"><i class="icon-dribbble"></i></a></li>
+					</ul>
+					</p>
 				</div>
 			</div>
 		</footer>
-	</div>
+	</section>
 	<div class="music-control">
 		<span class='pause'></span>
 		<span class='play'></span>
@@ -1061,7 +714,9 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-
+	<audio id="myAudio">
+		<source src="./sounds/music_undangan_rat.mp3" type="audio/mp3">
+	</audio>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -1087,9 +742,173 @@
 	<!-- <script src="js/ws_countdown.js"></script> -->
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script src="js/jquery.timeago.js"></script>
+	<script src="node_modules/clipboard/dist/clipboard.min.js"></script>
+	<script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 
-	<script>
-		var d = new Date(new Date("Mar 27, 2022 08:00:00").getTime());
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// Set initial state
+			$('#namareservasi').val($('#name').val());
+
+			// Hide #jumlahtamu initially
+			$('#jumlahtamu').hide('3');
+
+			// Handle konfirmasi kehadiran change event
+			$('#konfirmasi-kehadiran').on('change', function(e) {
+				var valueSelected = $(this).val();
+				if (valueSelected === '0') { //0 tidak bisa hadir
+					$('#komentar').text("Alasan");
+					$('#wish').attr("placeholder", "Berikan alasan kenapa tidak bisa hadir");
+					$('#jumlahtamu').val('');
+				} else {
+					$('#komentar').text("Komentar");
+					$('#wish').attr("placeholder", "Berikan komentar positif untuk acara");
+					$('#jumlahtamu').val(1);
+				}
+			}).trigger('change'); // Trigger change event initially
+
+			// Handle namachat click event
+			$('#namachat').click(function() {
+				var nameValue = $('#name').val();
+				$('#namareservasi').val($(this).prop('checked') ? nameValue : '');
+			});
+		});
+
+		function clickButton() {
+			var name = $('#name').val();
+			var namareservasi = $('#namareservasi').val();
+			var alamat = $('#alamat').val();
+			var wish = $('#wish').val();
+			var attending = $('#konfirmasi-kehadiran').val();
+			var jumlahtamu = $('#jumlahtamu').val();
+			var sesi = $('#sesi-reservasi').val();
+			var konfirmasiText = $('#konfirmasi-kehadiran :selected').text();
+
+			if (namareservasi === '') {
+				Swal.fire({
+					icon: "error",
+					title: "Mohon isi nama terlebih dahulu",
+					showConfirmButton: false,
+					timer: 1500
+				});
+				return false;
+			}
+
+			if (wish === '') {
+				Swal.fire({
+					icon: "info",
+					title: "Silakan untuk mengisi ucapan atau kata-kata penyemangat acara pada kolom komentar!",
+					showConfirmButton: false,
+					timer: 3000
+				});
+				return false;
+			}
+
+			if (konfirmasiText === 'Akan Hadir' && jumlahtamu === '') {
+				Swal.fire({
+					icon: "error",
+					title: "Mohon isi jumlah tamu yang akan hadir",
+					showConfirmButton: false,
+					timer: 1500
+				});
+				return false;
+			}
+
+			if (konfirmasiText === 'Akan Hadir' && jumlahtamu <= 0) {
+				Swal.fire({
+					icon: "error",
+					title: "Jumlah tamu termasuk Anda minimal 1",
+					showConfirmButton: false,
+					timer: 1500
+				});
+				return false;
+			}
+
+			if (konfirmasiText === 'Konfirmasi Kehadiran') {
+				Swal.fire({
+					icon: "error",
+					title: "Tolong isi konfirmasi kehadiran!",
+					showConfirmButton: false,
+					timer: 1500
+				});
+				return false;
+			}
+
+			$.ajax({
+				type: "post",
+				url: "./php/wish.php",
+				data: {
+					'name': name,
+					'namareservasi': namareservasi,
+					'alamat': alamat,
+					'wish': wish,
+					'attending': attending,
+					'jumlahtamu': jumlahtamu,
+					'sesi': sesi
+				},
+				cache: false,
+				success: function(html) {
+					$('#msg').html(html);
+					$('#minichat').html(html);
+					$('#minichat').load(location.href + " #minichat");
+					Swal.fire({
+						icon: "success",
+						title: "Confirmation sent. Thank you!",
+						showConfirmButton: false,
+						timer: 1500
+					});
+					$('#wish').val('');
+					$('#custom-label').load(location.href + " #custom-label");
+					$('#guest-count-icon').html(html);
+					$('#guest-count-icon').load(location.href + " #guest-count-icon");
+				}
+			});
+
+			return false;
+		}
+
+		var $win = $(window);
+		var $stat = $('.js.animate__animated'); // Change this to affect your desired element.
+
+		$win.on('scroll', function() {
+			var scrollTop = $win.scrollTop();
+
+			$stat.each(function() {
+				var $self = $(this);
+				var prev = $self.offset();
+				// console.log(scrollTop);
+				// console.log(prev.top);
+				if ((scrollTop - prev.top) > -900) {
+					$self.removeClass('animate__fadeOutDown').addClass('animate__fadeInUp');
+				} else {
+					$self.removeClass('animate__fadeInUp').addClass('animate__fadeOutDown');
+				}
+
+			});
+
+		}).scroll();
+
+		let cb = new ClipboardJS('.btn');
+		$('.btn').on('click', function() {
+			//get a reference to the JQUERY object of the current button
+			let theButton = $(this);
+			var copy_id = $(this).attr('id');
+
+			var clipboard = new ClipboardJS('#' + copy_id);
+
+			clipboard.on('success', function(e) {
+				let oldtext = e.trigger.textContent
+				e.trigger.textContent = 'Berhasil disalin!'
+				setTimeout(() => e.trigger.textContent = oldtext, 2000)
+			});
+
+		});
+
+		$(function() {
+			$("time.timeago").timeago();
+		});
+		var d = new Date(new Date("Mar 10, 2025 13:30:00").getTime());
 		//var countDownDate = new Date("Mar 27, 2022 08:00:00").getTime();
 
 
@@ -1108,57 +927,54 @@
 			enableUtc: true
 		});
 
-		// https://stackoverflow.com/a/41108381/7772358
-		var audioElement = new Audio('./sounds/turning_page_128kb.mp3');
-
+		var x = document.getElementById("myAudio");
 		$('.pause').on('click', function() {
 			$(this).hide();
 			$('.play').css('display', 'inline-block');
-			audioElement.pause();
+			//audioElement.pause();
+			//soundEffect.pause();
+			pauseAudio();
 		});
 
 		$('.play').on('click', function() {
 			$(this).hide();
 			$('.pause').css('display', 'inline-block');
-			audioElement.play();
+			//soundEffect.play();
+			//audioElement.play();
+			playAudio();
 		});
+
+		function playAudio() {
+			x.play();
+		}
+
+		function pauseAudio() {
+			x.pause();
+		}
 
 		$("#tombol-buka").on('click', function() {
+			playAudio();
+			$("#logo-pengantin").css({
+				opacity: '1'
+			});
 			$("#name-cover").fadeOut(300, function() {
+				// later on when you actually want to play a sound at any point without user interaction
+				//soundEffect.src = './sounds/aurora_existforlove.mp3';
+				//soundEffect.play();
+				//audioElement.play();
 				$(this).remove();
+				// put your default event here
+				$("html").removeClass("cover-height");
+				$("body").removeClass("cover-height").css({
+					'overflow-y': 'auto',
+					'overflow-x': 'hidden'
+				});
+				$("#cover").fadeOut(300, function() {
+					$(this).remove();
+				});
+				$('.play').hide();
+				$('.pause').css('display', 'inline-block');
 			});
-			$('#exampleModalCenter').modal('show');
-			var timeleft = 20;
-			var downloadTimer = setInterval(function() {
-				if (timeleft <= 0) {
-					clearInterval(downloadTimer);
-					// put your default event here
-					$("#exampleModalCenter").modal('hide');
-					$("html").removeClass("cover-height");
-					$("body").removeClass("cover-height");
-					$("#cover").fadeOut(300, function() {
-						$(this).remove();
-					});
-					$('.play').hide();
-					$('.pause').css('display', 'inline-block');
-					audioElement.play();
-				} else {
-					document.getElementById("countdown").innerHTML = timeleft + " seconds.";
-				}
-				timeleft -= 1;
-			}, 1000);
-		});
-
-		$("#exampleModalCenter").on("hidden.bs.modal", function() {
-			// put your default event here
-			$("html").removeClass("cover-height");
-			$("body").removeClass("cover-height");
-			$("#cover").fadeOut(300, function() {
-				$(this).remove();
-			});
-			$('.play').hide();
-			$('.pause').css('display', 'inline-block');
-			audioElement.play();
 		});
 	</script>
 </body>

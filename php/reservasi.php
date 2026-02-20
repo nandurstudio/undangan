@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include_once 'connection.php';
 $reservasi_query = "SELECT * FROM tr_reservasi ORDER BY reservasiId DESC";
 $reservasi = mysqli_query($conn, $reservasi_query);
 // $Submit = isset($_POST['Submit']) ? $_POST['Submit'] : false;

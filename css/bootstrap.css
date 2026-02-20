@@ -151,10 +151,11 @@ select {
 }
 
 button,
-html input[type="button"],
+input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
+  appearance: button;
+  -webkit-appearance: button; /* Untuk browser berbasis WebKit */
   cursor: pointer;
 }
 
@@ -185,7 +186,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="search"] {
-  -webkit-appearance: textfield;
+  appearance: textfield; /* Untuk browser yang mendukung */
+  -webkit-appearance: textfield; /* Untuk browser berbasis WebKit */
   box-sizing: content-box;
 }
 
@@ -240,13 +242,13 @@ th {
     text-decoration: underline;
   }
 
-  a[href]:after {
+  /* a[href]:after {
     content: " ("attr(href) ")";
   }
 
   abbr[title]:after {
     content: " ("attr(title) ")";
-  }
+  } */
 
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
@@ -373,7 +375,7 @@ img {
 }
 
 .img-responsive {
-  display: block;
+  display: inline;
   max-width: 100%;
   height: auto;
 }
@@ -809,10 +811,10 @@ abbr[data-original-title] {
 }
 
 blockquote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
-  font-size: 17.5px;
+  /* padding: 10px 20px;
   border-left: 5px solid #eeeeee;
+  margin: 0 0 20px; */
+  font-size: 17.5px;
 }
 
 blockquote p:last-child,
@@ -935,6 +937,10 @@ pre code {
   padding-right: 15px;
 }
 
+.concover {
+  height: 80%;
+}
+
 .container:before,
 .container:after {
   content: " ";
@@ -947,7 +953,12 @@ pre code {
 
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    /* width: 750px; */
+    height: 100vh;
+  }
+
+  .concover {
+    height: 80%;
   }
 }
 
@@ -955,11 +966,25 @@ pre code {
   .container {
     width: 970px;
   }
+
+  .concover {
+    height: 80%;
+  }
+
+  .geser-atas {
+    left: 50%;
+    position: absolute;
+    margin-left: -40px;
+  }
 }
 
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+
+  .concover {
+    height: 80%;
   }
 }
 
@@ -2285,7 +2310,7 @@ output {
   padding: 10px 20px;
   font-size: 14px;
   line-height: 1.42857;
-  color: #555555;
+  color: #00BCD4;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -2320,8 +2345,12 @@ output {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: #eeeeee;
-  opacity: 1;
+  opacity: 0.7;
+  background-color: tan;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  color: #2a332f;
+  font-family: 'fraunces_9pt_softitalic';
 }
 
 .form-control[disabled],
@@ -2335,6 +2364,7 @@ textarea.form-control {
 
 input[type="search"] {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -2765,7 +2795,7 @@ select[multiple].input-lg,
 @media (min-width: 768px) {
   .form-inline .form-group {
     display: inline-block;
-    margin-bottom: 0;
+    margin-bottom: 15px;
     vertical-align: middle;
   }
 
@@ -3448,7 +3478,7 @@ fieldset[disabled] .btn-link:focus {
 
 .btn-block {
   display: block;
-  width: 100%;
+  width: 25%;
 }
 
 .btn-block+.btn-block {
@@ -6311,7 +6341,8 @@ button.close {
   padding: 0;
   cursor: pointer;
   background: transparent;
-  border: 0;
+  border: none; /* Mengganti "border: 0;" */
+  appearance: none; /* Menambahkan "appearance: none;" */
   -webkit-appearance: none;
 }
 
@@ -7342,7 +7373,7 @@ button.close {
 }
 
 .play {
-  background: transparent url('..//images/music_off_black_24dp.svg') no-repeat;
+  background: transparent url('../images/music_off_black_24dp.svg') no-repeat;
   background-size: cover;
 }
 
@@ -7366,11 +7397,12 @@ button.close {
 
 .cover-height {
   height: 100%;
+  overflow: hidden;
 }
 
 .cover {
   /* The image used */
-  background-image: url("../images/cover_ian.jpg");
+  background-image: url("../images/rat/cover_rat.jpg");
 
   /* Full height */
   height: 100%;
@@ -7384,9 +7416,7 @@ button.close {
   width: 100%;
   height: 100%;
   top: 0px;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
+  display: block;
   left: 0px;
   z-index: 10001;
   padding: 10px;
@@ -7394,13 +7424,17 @@ button.close {
 
 .name-cover {
   z-index: 10002;
-  background-color: #00000094;
+  /* background-color: #00000094; */
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  width: 100%;
+  padding: 50px 10px 10px 10px;
+  width: 95%;
+}
+
+.kepada {
+  color: #00BCD4;
+  font-family: "Karla", Arial, sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .the-wedding-of {
@@ -7411,19 +7445,186 @@ button.close {
 }
 
 .nama-pengantin {
-  font-family: 'Style Script', cursive;
+  font-family: 'fraunces_144pt_softitalic', serif;
+  font-weight: 300;
+  font-style: italic;
   text-align: center;
   font-size: xx-large;
+  font-size: -webkit-xxx-large;
   color: #fff;
+}
+
+.nama-tamu {
+  font-family: 'fraunces_9pt_softitalic', serif;
+  text-align: center;
+  font-size: xx-large;
+  color: #eb1c27;
+}
+
+.nama-pengantin-foto {
+  font-family: 'fraunces_9ptsemibold_italic', serif;
+  text-align: center;
+  font-size: xx-large;
+  color: #00BCD4;
+}
+
+.onepage {
+  font-size: x-large;
+}
+
+.hari-pernikahan {
+  color: #fff;
+  font-size: smaller;
+  font-family: "Karla", Arial, sans-serif;
+  font-weight: lighter;
+}
+
+.akad-nikah {
+  color: #2a332f;
+  font-size: x-large;
+  font-family: 'fraunces_9ptsemibold_italic', serif;
+  text-align: center;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.waktu-akad-nikah {
+  color: #566d66;
+  font-size: large;
+  font-family: 'fraunces_9ptregular', serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+.big-date {
+  color: #fff;
+  font-size: 45px;
+  text-shadow: 4px 4px 4px #917c52;
+  font-family: 'fraunces_9ptregular', serif;
+  text-align: center;
+  background-image: url(../images/rat/separator.webp);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0px 0px 70px 0px;
+}
+
+.nama-tanggal {
+  color: #c3e3d4;
+  font-family: "fraunces_9pt_softlight", Arial, sans-serif;
+  font-weight: 100;
+  font-size: medium;
+}
+
+.pria {
+  font-weight: 500 !important;
+  text-align: left !important;
+  color: #8a6d5a !important;
+}
+
+.wanita {
+  font-weight: 500 !important;
+  text-align: right !important;
+  color: #8a6d5a !important;
+}
+
+.logo-pengantin {
+  position: relative;
+  display: block;
+  margin: -15px auto -15px auto;
+  /* z-index: -1; */
+}
+
+.logo-qrcode {
+  height: 100px;
+  text-align: center;
+  display: inline;
+}
+
+.foto-pengantin {
+  max-width: 100%;
+}
+
+.slide-landscape {
+  padding-top: 15px;
+}
+
+.checkleft {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.checkcap {
+  padding: 3px;
+  color: #7ac043;
+  font: small-caption;
+  float: left !important;
+}
+
+@media screen and (min-width: 481px) {
+  figure {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  figure {
+    width: 45%;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  figure {
+    width: 55%;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .foto-pengantin {
+    max-width: 100%;
+  }
+
+  figure {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .foto-pengantin {
+    max-width: 65%;
+  }
+}
+
+.logo-jaga-jarak {
+  height: 100px !important;
+}
+
+.sec-2 {
+  margin: 20px !important;
+  margin: auto auto 50px auto !important;
+  display: flex !important;
+  align-content: center;
+  justify-content: center;
 }
 
 .open-invitation {
   border-radius: 4px;
   /* opacity: 0.5; */
-  font-family: monospace;
+  font-family: 'Karla', sans-serif !important;
+  text-transform: uppercase;
   color: #fff;
+  font-size: small !important;
+  font-style: normal !important;
   /* font-weight: bold; */
-  background-color: #9a3d1b;
+  background-color: #bfa594;
 }
 
 blockquote {
@@ -7431,29 +7632,30 @@ blockquote {
 }
 
 blockquote p {
-  padding: 15px;
-  background: #eee;
+  /* padding: 15px;
   border-radius: 5px;
-  color: #9a3d1b;
+  background: #eee; */
+  color: #2a332f;
 }
 
 blockquote p::before {
   content: '\201C';
-  color: #9a3d1b;
+  color: #2a332f;
 }
 
 blockquote p::after {
   content: '\201D';
-  color: #9a3d1b;
+  color: #2a332f;
 }
 
 .color-theme {
-  color: #9a3d1b !important;
+  color: #2a332f !important;
+  font-size: x-large;
 }
 
 .protokol-image {
   width: 80%;
-  
+
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -7479,7 +7681,7 @@ blockquote p::after {
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .styled-table tbody tr {
@@ -7498,4 +7700,5 @@ blockquote p::after {
   font-weight: bold;
   color: #009879;
 }
+
 /*# sourceMappingURL=bootstrap.css.map */
