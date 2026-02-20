@@ -1,0 +1,147 @@
+:root {
+    --bgColorMenu: #1d1d27;
+    --animation-duration: 0.7s;
+}
+/* Reset */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    /* Put the navigation to the bottom */
+    display: flex;
+    height: 100vh;
+    align-items: flex-end;
+    justify-content: center;
+    /* set the default background */
+    background-color: #ffb457;
+    transition: background-color var(--animation-duration) ease-out;
+}
+
+.icon {
+    /* basic styling */
+    width: 44px;
+    height: 44px;
+    stroke: white;
+    fill: transparent;
+ 
+    stroke-width: 1pt;
+    stroke-dasharray: 400;
+}
+
+/* animation for the svg icon */
+.menu-item.active .icon {
+    animation: stroke 1s reverse;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 400;
+    }
+}
+
+.menu {
+    /*  */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+    font-size: 16px;
+    padding: 0 34px;
+
+    background-color: var(--bgColorMenu);
+}
+
+.menu-item {
+    /* unset all properties */
+    all: unset;
+    /* center the icons vertical and horizontally  */
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+
+    /* make the buttons not touch the top and bottom */
+    padding: 9px 0 14px;
+    
+    cursor: pointer;
+    /* needed for the bubble */
+    z-index: 100;
+    transition: transform var(--animation-duration);
+}
+
+/* Needed for the color bubble behinde the svg icon */
+.menu-item::before {
+    content: "";
+    z-index: -1;
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    position: absolute;
+    /* needed for the scale animation */
+    transform: scale(0);
+    transition: background-color var(--animation-duration), transform var(--animation-duration);
+}
+
+/* move the active item up  */
+.menu-item.active {
+    transform: translate3d(0, -14px, 0);
+}
+/* make the background animate */
+.menu-item.active::before {
+    transform: scale(1);
+    background-color: var(--bgColorItem);
+}
+
+/* The bubble on top */
+.menu-border {
+    position: absolute;
+    left: 0;
+    bottom: 99%;
+    width: 164px;
+    height: 39px;
+
+    /* The magic for the it not being a rectangle */
+    clip-path: url(#menu);
+    background-color: var(--bgColorMenu);
+}
+
+/* class that can be added or removed for the move animation */
+.menu-border.transition {
+    transition: transform var(--animation-duration);
+}
+
+/* reset for the svg container of the border */
+.svg-container {
+    width: 0;
+    height: 0;
+}
+
+/* colors for the different colors of backgrounds and buttons */
+.orange {
+    --bgColorBody: #ffb457;
+    --bgColorItem: #ff8c00;
+}
+.pink {
+    --bgColorBody: #ff96bd;
+    --bgColorItem: #f54888;
+}
+
+.blue {
+    --bgColorBody: #9999fb;
+    --bgColorItem: #4343f5;
+}
+
+.yellow {
+    --bgColorBody: #ffe797;
+    --bgColorItem: #e0b115;
+}
+
+.teal {
+    --bgColorBody: #cffff1;
+    --bgColorItem: #65ddb7;
+}

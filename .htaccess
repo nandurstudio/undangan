@@ -1,0 +1,36 @@
+# Disable directory listings and prevent Apache from auto-adding trailing slashes
+Options -Indexes
+DirectorySlash Off
+
+RewriteEngine On
+RewriteBase /
+
+# Serve site favicon from images folder so browsers requesting /favicon.ico don't get 404
+# Redirect to the static file so the browser receives the correct Content-Type
+RewriteRule ^favicon\.ico$ /images/rat/favicon_io/favicon.ico [R=302,L]
+
+# Canonicalize: redirect single-segment trailing slash to no-slash when a php page exists
+# /scantamu/  ->  /scantamu  (only if /php/scantamu.php exists)
+RewriteCond %{REQUEST_URI} ^/([^/]+)/$
+RewriteCond %{DOCUMENT_ROOT}/php/%1.php -f
+RewriteRule ^ /%1 [R=301,L]
+
+# If URL is a single path segment (/name or /name/) and /php/name.php exists, serve it
+RewriteCond %{REQUEST_URI} ^/([^/]+)/?$
+RewriteCond %{DOCUMENT_ROOT}/php/%1.php -f
+RewriteRule ^ /php/%1.php [L]
+
+# If a PHP file exists under /php for the requested path (handles /a/b /a etc.), rewrite to it
+# Example: /bukutamu  -> /php/bukutamu.php
+RewriteCond %{DOCUMENT_ROOT}/php%{REQUEST_URI}.php -f
+RewriteRule ^(.*)$ /php/$1.php [L]
+
+# If request explicitly asks for a .php file and it exists under /php, rewrite
+# Example: /bukutamu.php -> /php/bukutamu.php
+RewriteCond %{DOCUMENT_ROOT}/php%{REQUEST_URI} -f
+RewriteRule ^(.+\.php)$ /php/$1 [L]
+
+# If the request is for an existing file or directory, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
