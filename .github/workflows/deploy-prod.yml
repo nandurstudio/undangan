@@ -13,7 +13,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy via SSH
+      - name: Install JS dependencies
+        run: |
+          cd ./
+          npm ci
+
+      - name: Deploy via SSH (git + docker)
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -40,6 +45,15 @@ jobs:
             sudo docker compose exec nginx nginx -t || true
             sudo docker compose restart nginx || true
 
+      - name: Copy node_modules to server
+        uses: appleboy/scp-action@v0.1.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_SSH_PORT }}
+          source: "node_modules/"
+          target: "/opt/stack/web/undangan/"
 # Required repository secrets:
 # - VPS_HOST (e.g. 146.190.87.175)
 # - VPS_USER (e.g. root)
