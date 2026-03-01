@@ -26,7 +26,7 @@ jobs:
             if [ ! -d /opt/stack/web/undangan/.git ]; then
               # first‑time deployment: clone repo directly
               rm -rf /opt/stack/web/undangan
-              git clone --depth 1 --branch prod git@github.com:nandurstudio/undangan.git /opt/stack/web/undangan
+              git clone --depth 1 --branch prod https://github.com/nandurstudio/undangan.git /opt/stack/web/undangan
             else
               cd /opt/stack/web/undangan || exit 1
               git fetch --all --prune
