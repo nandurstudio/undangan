@@ -22,9 +22,13 @@ jobs:
           port: ${{ secrets.VPS_SSH_PORT }}
           script: |
             set -e
-            cd /opt/stack || exit 1
+            # navigate into the undangan sub‑repo which lives under web/
+            cd /opt/stack/web/undangan || exit 1
             git fetch --all --prune
             git reset --hard origin/prod
+
+            # back at stack root for docker commands
+            cd /opt/stack
             sudo docker compose pull --ignore-pull-failures
             sudo docker compose up -d --build
             sudo docker compose exec nginx nginx -t || true
