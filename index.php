@@ -944,11 +944,12 @@
 			x.load();
 		}
 
-		// when a song ends, choose a new one and keep playing
-		x.addEventListener('ended', function() {
-			setRandomTrack();
-			x.play();
-		});
+// when a song ends, do nothing – stop playback instead of advancing
+	// (no listener required)
+	// x.addEventListener('ended', function() {
+	// 	setRandomTrack();
+	// 	x.play();
+	// });
 
 		$('.pause').on('click', function() {
 			$(this).hide();

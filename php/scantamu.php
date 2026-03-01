@@ -141,7 +141,8 @@ include_once __DIR__ . '/header.php';
 									// handle the scanned code as you like, for example:
 									console.log('Code matched = ${decodedText}', decodedResult);
 
-									var string_ori = decodedText;
+									// the QR generator now URL‑encodes the payload, so decode it here
+							var string_ori = decodeURIComponent(decodedText);
 									var string1 = decodedText;
 									if (decodedText.indexOf("From") >= 0) {
 										console.log('Tidak terpotong');
