@@ -7,7 +7,8 @@
 <!--<![endif]-->
 
 <?php
-include "header.php";
+// header.php lives in the same directory as this file
+include __DIR__ . "/header.php";
 ?>
 
 <body>
@@ -87,7 +88,7 @@ include "header.php";
 									<div class="display-tc">
 										<img id="logo-pengantin" style="opacity: 1;" class="logo-pengantin sec-2 animate__animated animate__pulse animate__infinite infinite" src="./images/rat/SVG/logo_rat.svg" alt="Logo Naufal And Denaya" width="20%">
 										<div class="hari-pernikahan" style="color: #7ac043;font-size:1.5em;line-height:0.5">Rapat Anggota Tahunan</div>
-										<div class="nama-pengantin js animate__animated animate__fadeInUp" style="color: #7ac043;">Periode Tahun Buku 2024</div>
+										<div class="nama-pengantin js animate__animated animate__fadeInUp" style="color: #7ac043;">Periode Tahun Buku 2025</div>
 									</div>
 								</div>
 								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated animate__fadeInUp" style="padding-top:50px ;">
@@ -107,6 +108,7 @@ include "header.php";
 								<div class="nama-pengantin-foto" id="guest-count-icon" style="font-size: 4em;">0</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -136,7 +138,47 @@ include "header.php";
 
 			});
 
-			// YouTube API code omitted for brevity
+			// 2. This code loads the IFrame Player API code asynchronously.
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/player_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+			// 3. This function creates an <iframe> (and YouTube player)
+			//    after the API code downloads.
+			var player;
+
+			function onYouTubePlayerAPIReady() {
+				player = new YT.Player('ytplayer', {
+					width: '100%',
+					height: '720px',
+					videoId: 'nXph_hKjF_U',
+					events: {
+						'onReady': onPlayerReady,
+						'onStateChange': onPlayerStateChange
+					}
+				});
+			}
+
+			// 4. The API will call this function when the video player is ready.
+			function onPlayerReady(event) {
+				event.target.playVideo();
+				player.mute(); // comment out if you don't want the auto played video muted
+			}
+
+			// 5. The API calls this function when the player's state changes.
+			//    The function indicates that when playing a video (state=1),
+			//    the player should play for six seconds and then stop.
+			function onPlayerStateChange(event) {
+				if (event.data == YT.PlayerState.ENDED) {
+					player.seekTo(0);
+					player.playVideo();
+				}
+			}
+
+			function stopVideo() {
+				player.stopVideo();
+			}
 		</script>
 
 		<!-- Footer start -->
@@ -149,29 +191,29 @@ include "header.php";
 	</div>
 
 	<!-- jQuery -->
-	<script src="/js/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="/js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="/js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Carousel -->
-	<script src="/js/owl.carousel.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
 	<!-- countTo -->
-	<script src="/js/jquery.countTo.js"></script>
+	<script src="js/jquery.countTo.js"></script>
 
 	<!-- Stellar -->
-	<script src="/js/jquery.stellar.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Magnific Popup -->
-	<script src="/js/jquery.magnific-popup.min.js"></script>
-	<script src="/js/magnific-popup-options.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
 
 	<!-- Main -->
-	<script src="/js/main.js"></script>
-	<script src="/js/splide-extension-auto-scroll.min.js"></script>
-	<script src="/js/splide.min.js"></script>
-	<script src="/js/splide-renderer.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/splide-extension-auto-scroll.min.js"></script>
+	<script src="js/splide.min.js"></script>
+	<script src="js/splide-renderer.min.js"></script>
 </body>
 
 </html>

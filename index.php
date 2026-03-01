@@ -34,17 +34,17 @@
 	} else {
 		echo "0 results";
 	}
-	$the_wedding = "Lembar Undangan Rapat Anggota Tahunan Periode Tahun Buku 2024. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
+	$the_wedding = "Lembar Undangan Rapat Anggota Tahunan Periode Tahun Buku 2025. hosted by " . $pengantin_pria . " &amp; " . $pengantin_wanita;
 	$the_desc = "Assalamu'alaikum Wr. Wb.
 	Bismillahirrahmanirrahim
-	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Rapat Anggota Tahunan Periode Tahun Buku 2024, yang mana akan di pandu oleh 
+	Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara Rapat Anggota Tahunan Periode Tahun Buku 2025, yang mana akan di pandu oleh 
 	
 	" . $pengantin_pria . "
 	&
 	" . $pengantin_wanita . "
 	
 	Pada :
-	Senin, 10 Mar 2025
+	Senin, 10 Mar 2026
 	
 	Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memeriahkan acaranya.
 	
@@ -91,11 +91,11 @@
 	<meta property="og:image" content="https://www.undangan.kkmrat.web.id/images/rat/og_image.png" />
 	<meta property="og:url" content="https://www.kkmrat.web.id/" />
 	<meta property="og:site_name" content="Undangan Digital KKM RAT" />
-	<meta property="og:description" content="Senin, 10 Mar 2025 - 13:30 | MNF Cikampek & IDC Cakung" />
+	<meta property="og:description" content="Senin, 10 Mar 2026 - 12:45 | MNF Cikampek & IDC Cakung" />
 	<meta name="twitter:title" content="Undangan KKM RAT" />
 	<meta name="twitter:image" content="https://www.undangan.kkmrat.web.id/images/rat/og_image.png" />
 	<meta name="twitter:url" content="https://www.kkmrat.web.id/" />
-	<meta name="twitter:card" content="Senin, 10 Mar 2025 - 13:30 | MNF Cikampek & IDC Cakung" />
+	<meta name="twitter:card" content="Senin, 10 Mar 2026 - 12:45 | MNF Cikampek & IDC Cakung" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 
@@ -200,21 +200,21 @@
 							} else {
 								$sesi = '1';
 							}
-						// encryption key must come from environment (.env) — do NOT hardcode
-						$aes_key = getenv('KKMRAT_AES_KEY');
-						if (!empty($aes_key)) {
-							$encrypted_string = openssl_encrypt($string_to_encrypt, "AES-128-ECB", $aes_key);
-							$decrypted_string = openssl_decrypt($encrypted_string, "AES-128-ECB", $aes_key);
-						} else {
-							// fallback: no encryption key provided — use plaintext (safer than committing a key)
-							$decrypted_string = $string_to_encrypt;
-						}
+							// encryption key must come from environment (.env) — do NOT hardcode
+							$aes_key = getenv('KKMRAT_AES_KEY');
+							if (!empty($aes_key)) {
+								$encrypted_string = openssl_encrypt($string_to_encrypt, "AES-128-ECB", $aes_key);
+								$decrypted_string = openssl_decrypt($encrypted_string, "AES-128-ECB", $aes_key);
+							} else {
+								// fallback: no encryption key provided — use plaintext (safer than committing a key)
+								$decrypted_string = $string_to_encrypt;
+							}
 							$guest_name = str_replace('&amp;', 'dan', $decrypted_string);
 							// echo $string_to_encrypt;
 							// echo $encrypted_string;
 							// echo $decrypted_string;
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $decrypted_string . "</div>
-							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode Tahun Buku 2024.</p>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode Tahun Buku 2025.</p>
 							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\" data-lightbox=\"example-1\">
 							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $guest_name . " From " . $alamat . " Sesi " . $sesi . "&amp;size=200x200\" alt=\"QR Code " . $guest_name . " From " . $alamat . " Sesi " . $sesi . "\">
@@ -225,7 +225,7 @@
 							// echo $actual_link;
 							$actual_link = "Anonymous";
 							echo "<h6 class=\"kepada js animate__animated\">Kepada Bapak/Ibu/Saudara/i,</h6><div class=\"nama-tamu js animate__animated js\">" . $actual_link . "</div>
-							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode Tahun Buku 2024.</p>
+							<p class=\"js animate__animated\">Dengan senang hati, kami selaku panitia mengundang Anda untuk hadir di acara<br/>Rapat Anggota Tahunan Periode Tahun Buku 2025.</p>
 							<p class=\"js animate__animated\">Silakan tunjukan QR Code dibawah ini<br/>untuk memasuki tempat acara:</p>
 							<a class=\"demo js animate__animated\" href=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "\" data-lightbox=\"example-1\">
 							<img class=\"example-image js animate__animated\" src=\"https://api.qrserver.com/v1/create-qr-code/?data=" . $actual_link . "&amp;size=200x200\" alt=\"QR Code " . $actual_link . "\">
@@ -517,8 +517,8 @@
 										<span class="counter-label counter-span">Estimasi jumlah tamu hadir: </span>
 										<?php
 										include "./php/connection.php";
-									// Sum latest jumlahtamu per reservation (ONLY_FULL_GROUP_BY safe)
-									$guest_query = "SELECT COALESCE(SUM(jumlahtamu),0) AS jumlahtamu FROM tr_ucapan WHERE date IN (SELECT MAX(date) FROM tr_ucapan GROUP BY namareservasi);";
+										// Sum latest jumlahtamu per reservation (ONLY_FULL_GROUP_BY safe)
+										$guest_query = "SELECT COALESCE(SUM(jumlahtamu),0) AS jumlahtamu FROM tr_ucapan WHERE date IN (SELECT MAX(date) FROM tr_ucapan GROUP BY namareservasi);";
 										$guest_count = mysqli_query($conn, $guest_query);
 										$row = mysqli_fetch_assoc($guest_count);
 										$sum = $row['jumlahtamu'];
@@ -592,10 +592,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="big-date js animate__animated">10.MAR.25</div>
+						<div class="big-date js animate__animated">10.MAR.26</div>
 						<div id="demo"></div>
 						<div class="simply-countdown simply-countdown-one js animate__animated"></div>
-						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20250310T063000Z/20250310T090000Z&crm=AVAILABLE&sprop=website:www.kkmrat.web.id/undangan&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+Tahun+Buku+2024&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk" class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
+						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20260310T061000Z/20260310T092000Z&crm=AVAILABLE&sprop=website:www.undangan.kkmrat.web.id&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+Tahun+Buku+2025&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk" class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
 						<br />
 						<div class="col-md-8 col-md-offset-2 text-center">
 							<a class="demo js animate__animated" href="images/rat/events.png" data-lightbox="example-1">
@@ -663,7 +663,7 @@
 							</div>
 							<div class="text-center">
 								<img src="images/rat/team.png" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
-								<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan berupa Nuansa Earth Tone</div>
+								<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan berupa Monokrom (hitam-putih)</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
@@ -714,8 +714,9 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	<audio id="myAudio">
-		<source src="./sounds/music_undangan_rat.mp3" type="audio/mp3">
+	<audio id="myAudio" preload="auto">
+		<!-- source will be selected randomly by JavaScript -->
+		Your browser does not support the audio element.
 	</audio>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -773,6 +774,11 @@
 				var nameValue = $('#name').val();
 				$('#namareservasi').val($(this).prop('checked') ? nameValue : '');
 			});
+
+			// choose initial audio file now that DOM is ready
+			if (typeof setRandomTrack === 'function') {
+				setRandomTrack();
+			}
 		});
 
 		function clickButton() {
@@ -908,7 +914,7 @@
 		$(function() {
 			$("time.timeago").timeago();
 		});
-		var d = new Date(new Date("Mar 10, 2025 13:30:00").getTime());
+		var d = new Date(new Date("Mar 10, 2026 12:10:00").getTime());
 		//var countDownDate = new Date("Mar 27, 2022 08:00:00").getTime();
 
 
@@ -919,15 +925,31 @@
 			day: d.getDate()
 		});
 
-		//jQuery example
-		$('#simply-countdown-losange').simplyCountdown({
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate(),
-			enableUtc: true
+		// global audio element reference (will be initialised below)
+		var x = document.getElementById("myAudio");
+
+		// list of all files in the sounds folder; add or remove as needed
+		var tracks = [
+			"./sounds/lagu_ceo_ramadhan.mp3",
+			"./sounds/Ramadan_Melodies.mp3",
+			"./sounds/Ramadan_Nights_Karya_Mandiri.mp3",
+			"./sounds/Ramadhan_Riots.mp3",
+		];
+
+		// pick a random track and assign it to the <audio> element
+		function setRandomTrack() {
+			if (tracks.length === 0) return;
+			var idx = Math.floor(Math.random() * tracks.length);
+			x.src = tracks[idx];
+			x.load();
+		}
+
+		// when a song ends, choose a new one and keep playing
+		x.addEventListener('ended', function() {
+			setRandomTrack();
+			x.play();
 		});
 
-		var x = document.getElementById("myAudio");
 		$('.pause').on('click', function() {
 			$(this).hide();
 			$('.play').css('display', 'inline-block');
