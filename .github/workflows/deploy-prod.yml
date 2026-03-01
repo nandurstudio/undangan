@@ -23,9 +23,15 @@ jobs:
           script: |
             set -e
             # navigate into the undangan sub‑repo which lives under web/
-            cd /opt/stack/web/undangan || exit 1
-            git fetch --all --prune
-            git reset --hard origin/prod
+            if [ ! -d /opt/stack/web/undangan/.git ]; then
+              # first‑time deployment: clone repo directly
+              rm -rf /opt/stack/web/undangan
+              git clone --depth 1 --branch prod git@github.com:nandurstudio/undangan.git /opt/stack/web/undangan
+            else
+              cd /opt/stack/web/undangan || exit 1
+              git fetch --all --prune
+              git reset --hard origin/prod
+            fi
 
             # back at stack root for docker commands
             cd /opt/stack
