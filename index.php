@@ -57,10 +57,6 @@
 	echo "<meta name=\"description\" content=\"" . $the_desc . "\" />";
 
 	mysqli_close($conn);
-	//https://stackoverflow.com/a/15864222/7772358
-	//echo $_GET['to'];
-	//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
-
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="invitation, kkmrat, rat" />
@@ -91,11 +87,11 @@
 	<meta property="og:image" content="https://www.undangan.kkmrat.web.id/images/rat/og_image.png" />
 	<meta property="og:url" content="https://www.kkmrat.web.id/" />
 	<meta property="og:site_name" content="Undangan Digital KKM RAT" />
-	<meta property="og:description" content="Senin, 10 Mar 2026 - 12:45 | MNF Cikampek & IDC Cakung" />
+	<meta property="og:description" content="Senin, 10 Mar 2026 - 13:10 | MNF Cikampek & IDC Cakung" />
 	<meta name="twitter:title" content="Undangan KKM RAT" />
 	<meta name="twitter:image" content="https://www.undangan.kkmrat.web.id/images/rat/og_image.png" />
 	<meta name="twitter:url" content="https://www.kkmrat.web.id/" />
-	<meta name="twitter:card" content="Senin, 10 Mar 2026 - 12:45 | MNF Cikampek & IDC Cakung" />
+	<meta name="twitter:card" content="Senin, 10 Mar 2026 - 13:10 | MNF Cikampek & IDC Cakung" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="mobile-web-app-capable" content="yes" />
 
@@ -334,7 +330,7 @@
 											} else {
 												$alamat = '';
 											}
-											$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+											$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu, nik_perwakilan FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
 											$result_query = mysqli_query($conn, $query);
 
 											if (mysqli_num_rows($result_query) > 0) {
@@ -344,30 +340,73 @@
 														echo "<option class=\"optionbox\" disabled hidden value=\"\">Konfirmasi Kehadiran</option>";
 														echo "<option class=\"optionbox\" value=\"1\">Akan Hadir</option>";
 														echo "<option class=\"optionbox\" value=\"0\" selected>Tidak Bisa Hadir</option>";
+														echo "<option class=\"optionbox\" value=\"2\">Diwakilkan</option>";
 													} elseif ($row["attending"] == "1") {
 														echo "<option class=\"optionbox\" disabled hidden value=\"\">Konfirmasi Kehadiran</option>";
 														echo "<option class=\"optionbox\" value=\"1\" selected>Akan Hadir</option>";
 														echo "<option class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
+														echo "<option class=\"optionbox\" value=\"2\">Diwakilkan</option>";
+													} elseif ($row["attending"] == "2") {
+														echo "<option class=\"optionbox\" disabled hidden value=\"\">Konfirmasi Kehadiran</option>";
+														echo "<option class=\"optionbox\" value=\"1\">Akan Hadir</option>";
+														echo "<option class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
+														echo "<option class=\"optionbox\" value=\"2\" selected>Diwakilkan</option>";
 													} else {
 														echo "<option class=\"optionbox\" selected value=\"\">Konfirmasi Kehadiran</option>";
 														echo "<option class=\"optionbox\" value=\"1\">Akan Hadir</option>";
 														echo "<option class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
+														echo "<option class=\"optionbox\" value=\"2\">Diwakilkan</option>";
 													}
 												}
 											} else {
 												echo "<option class=\"optionbox\" disabled hidden selected value=\"\">Konfirmasi Kehadiran</option>";
 												echo "<option class=\"optionbox\" value=\"1\">Akan Hadir</option>";
 												echo "<option class=\"optionbox\" value=\"0\">Tidak Bisa Hadir</option>";
+												echo "<option class=\"optionbox\" value=\"2\">Diwakilkan</option>";
 											}
 											mysqli_close($conn);
-											//https://stackoverflow.com/a/15864222/7772358
-											//echo $_GET['to'];
-											//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
 											?>
-											<!-- <option selected="selected" disabled="" hidden="" value="">Konfirmasi Kehadiran</option>
-											<option selected="" style="color: black;" value="1">Akan Hadir</option>
-											<option selected="" style="color: black;" value="0">Tidak Bisa Hadir</option> -->
 										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row js animate__animated" id="divnikperwakilan" hidden>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="nik_perwakilan" class="custom-label"><i class="icon-wallet"></i> NIK Perwakilan (Nomor Induk Karyawan)</label>
+										<input type="text" class="form-control" id="nik_perwakilan" placeholder="Masukkan NIK Perwakilan (maksimal 10 digit)" maxlength="10"></input>
+										<?php
+										include "./php/connection.php";
+										if (isset($_GET['to'])) {
+											$guest_name = htmlspecialchars($_GET['to']);
+											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
+											if (isset($_GET['namareservasi'])) {
+												$nama_reservasi = $_GET['namareservasi'];
+											} else {
+												$nama_reservasi = '';
+											}
+										} else {
+											$rep_guest_name = 'Anonymous';
+											$nama_reservasi = '';
+										}
+										if (isset($_GET['adr'])) {
+											$alamat = htmlspecialchars($_GET['adr']);
+										} else {
+											$alamat = '';
+										}
+										$query = "SELECT nama, namareservasi, alamat, nik_perwakilan FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
+										$result_query = mysqli_query($conn, $query);
+
+										if (mysqli_num_rows($result_query) > 0) {
+											while ($row = mysqli_fetch_assoc($result_query)) {
+												$nik_val = isset($row['nik_perwakilan']) ? $row['nik_perwakilan'] : '';
+												echo "<script>document.querySelector(\"#nik_perwakilan\").value = \"" . $nik_val . "\";</script>";
+											}
+										} else {
+											echo "<script>document.querySelector(\"#nik_perwakilan\").value = \"\";</script>";
+										}
+										mysqli_close($conn);
+										?>
 									</div>
 								</div>
 							</div>
@@ -414,46 +453,7 @@
 								</div>
 							</div>
 							<div class="row js animate__animated" id="divjumlahtamu" hidden>
-								<div class="col-md-12">
-									<div class="form-group">
-										<label for="jumlahtamu" class="custom-label"><i class="icon-users"></i> Jumlah Tamu Termasuk Anda</label>
-										<input type="number" class="form-control" id="jumlahtamu" placeholder="0"></input>
-										<?php
-										include "./php/connection.php";
-										if (isset($_GET['to'])) {
-											$guest_name = htmlspecialchars($_GET['to']); // Getting parameter value inside PHP variable
-											$rep_guest_name = str_replace('&amp;', '&', $guest_name);
-											if (isset($_GET['namareservasi'])) {
-												$nama_reservasi = $_GET['namareservasi'];
-											} else {
-												$nama_reservasi = '';
-											}
-										} else {
-											$rep_guest_name = 'Anonymous';
-										}
-										if (isset($_GET['adr'])) {
-											$alamat = htmlspecialchars($_GET['adr']); // Getting parameter value inside PHP variable
-										} else {
-											$alamat = '';
-										}
-										$query = "SELECT nama, namareservasi, alamat, ucapan, attending, jumlahtamu FROM tr_ucapan WHERE namareservasi ='$nama_reservasi' and alamat='$alamat' ORDER BY ucapanId DESC LIMIT 1";
-										$result_query = mysqli_query($conn, $query);
-
-										if (mysqli_num_rows($result_query) > 0) {
-											// output data of each row
-											while ($row = mysqli_fetch_assoc($result_query)) {
-												echo "<script>document.querySelector(\"#jumlahtamu\").value = \"" . intval(trim($row['jumlahtamu'])) . "\";</script>";
-											}
-										} else {
-											echo "<script>document.querySelector(\"#jumlahtamu\").value = \"\";</script>";
-										}
-										mysqli_close($conn);
-										//https://stackoverflow.com/a/15864222/7772358
-										//echo $_GET['to'];
-										//https://stackoverflow.com/questions/44003465/get-dynamic-number-parameter-in-php-from-url
-										?>
-									</div>
-								</div>
+								<input type="hidden" id="jumlahtamu" value="1"></input>
 							</div>
 							<div class="row js animate__animated">
 								<div class="col-md-12">
@@ -484,6 +484,7 @@
 										echo "<strong>" . ucwords(strtolower($row["namareservasi"])) . " </strong>";
 										$att = $row["attending"];
 										$tamu = $row["jumlahtamu"];
+										$nik = isset($row['nik_perwakilan']) ? $row['nik_perwakilan'] : '';
 										if ($att == 1) {
 											if ($tamu == 1) {
 												echo "<span class=\"hadir\">Akan Hadir Sendiri</span>";
@@ -492,6 +493,8 @@
 											}
 										} elseif ($att == 0) {
 											echo "<span class=\"hadir tidak-hadir\">Tidak Bisa Hadir</span>";
+										} elseif ($att == 2) {
+											echo "<span class=\"hadir tidak-hadir\">Diwakilkan (NIK: " . $nik . ")</span>";
 										} else {
 											echo "<span class=\"hadir tidak-konfirmasi\">Tidak Konfirmasi</span>";
 										}
@@ -761,11 +764,22 @@
 				if (valueSelected === '0') { //0 tidak bisa hadir
 					$('#komentar').text("Alasan");
 					$('#wish').attr("placeholder", "Berikan alasan kenapa tidak bisa hadir");
-					$('#jumlahtamu').val('');
-				} else {
+					$('#jumlahtamu').val(1);
+					$('#divjumlahtamu').hide();
+					$('#divnikperwakilan').hide();
+				} else if (valueSelected === '1') { // 1 akan hadir
 					$('#komentar').text("Komentar");
 					$('#wish').attr("placeholder", "Berikan komentar positif untuk acara");
 					$('#jumlahtamu').val(1);
+					$('#divjumlahtamu').show();
+					$('#divnikperwakilan').hide();
+					$('#nik_perwakilan').val('');
+				} else if (valueSelected === '2') { // 2 diwakilkan
+					$('#komentar').text("Alasan Diwakilkan");
+					$('#wish').attr("placeholder", "Jelaskan alasan mengapa diwakilkan");
+					$('#jumlahtamu').val(1);
+					$('#divjumlahtamu').hide();
+					$('#divnikperwakilan').show();
 				}
 			}).trigger('change'); // Trigger change event initially
 
@@ -789,6 +803,7 @@
 			var attending = $('#konfirmasi-kehadiran').val();
 			var jumlahtamu = $('#jumlahtamu').val();
 			var sesi = $('#sesi-reservasi').val();
+			var nik_perwakilan = $('#nik_perwakilan').val();
 			var konfirmasiText = $('#konfirmasi-kehadiran :selected').text();
 
 			if (namareservasi === '') {
@@ -831,6 +846,42 @@
 				return false;
 			}
 
+			if (konfirmasiText === 'Diwakilkan' && nik_perwakilan === '') {
+				Swal.fire({
+					icon: "error",
+					title: "Mohon isi nomor induk karyawan",
+					showConfirmButton: false,
+					timer: 1500
+				});
+				return false;
+			}
+
+			// Check if NIK sudah dipakai perwakilan lain (hanya saat Diwakilkan)
+			if (konfirmasiText === 'Diwakilkan' && nik_perwakilan !== '') {
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', './php/check_nik.php', false); // synchronous request
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				xhr.send('nik_perwakilan=' + encodeURIComponent(nik_perwakilan) + '&namareservasi=' + encodeURIComponent(namareservasi) + '&alamat=' + encodeURIComponent(alamat));
+				
+				if (xhr.status === 200) {
+					var response = xhr.responseText.trim();
+					if (response === 'exists') {
+						Swal.fire({
+							icon: "error",
+							title: "Orang dengan NIK " + nik_perwakilan + " sudah jadi perwakilan",
+							showConfirmButton: false,
+							timer: 1500
+						});
+						return false;
+					}
+				}
+			}
+
+			// Clear NIK jika status bukan Diwakilkan
+			if (konfirmasiText !== 'Diwakilkan') {
+				nik_perwakilan = '';
+			}
+
 			if (konfirmasiText === 'Konfirmasi Kehadiran') {
 				Swal.fire({
 					icon: "error",
@@ -851,7 +902,8 @@
 					'wish': wish,
 					'attending': attending,
 					'jumlahtamu': jumlahtamu,
-					'sesi': sesi
+					'sesi': sesi,
+					'nik_perwakilan': nik_perwakilan
 				},
 				cache: false,
 				success: function(html) {

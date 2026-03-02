@@ -63,6 +63,8 @@ body {
   line-height: 1.7;
   color: #828282;
   background: #fff;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 #page {
@@ -2356,4 +2358,15 @@ form label {
 
 .vh150 {
   padding: 50px 10px 20px 10px !important;
+}
+
+/* Smooth Scroll Snapping per Section */
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+#fh5co-couple {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
