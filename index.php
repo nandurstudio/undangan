@@ -140,7 +140,7 @@
 	<div class="cover" id="cover">
 		<div class="container name-cover" id="name-cover">
 			<div class="text-center">
-				<img class="logo-pengantin animate__animated animate__pulse animate__infinite infinite" src="./images/rat/tiket.png" alt="Tiket" width="95%">
+				<img class="logo-pengantin animate__animated animate__pulse animate__infinite infinite" src="./images/rat/tiket.png?v=20260303" alt="Tiket" width="95%">
 			</div>
 			<div class="animate__animated animate__headShake animate__infinite infinite col-md-8 col-md-offset-2 text-center">
 				<button id="tombol-buka" type="submit" class="animate__animated animate__zoomInDown btn btn-buka">Buka Undangan</button>
@@ -601,8 +601,8 @@
 						<p><a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20260310T061000Z/20260310T092000Z&crm=AVAILABLE&sprop=website:www.undangan.kkmrat.web.id&sprop=name:KKMRAT&ctz=Asia/Jakarta&text=Rapat+Anggota+Tahunan+Periode+Tahun+Buku+2025&location=PT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals,%20Kawasan%20Industri%20Indotaisei,%20Kalihurip,%20Kec.%20Cikampek,%20Karawang,%20Jawa%20Barat%2041373,%20Indonesia&details=Tanpa%20mengurangi%20rasa%20hormat%2C%20harap%20datang%2010%20menit%20sebelum%20acara%20dimulai%2C%20gunakan%20Dress%20code%20sesuai%20dengan%20yang%20sudah%20di%20tentukan%2C%20bawa%20undangan%20ini%20dan%20tunjukan%20QR%20Code%20kepada%20panitia%20untuk%20akses%20masuk" class="btn btn-default btn-sm js animate__animated" target="blank" rel="nofollow">Tambah ke Google Kalender</a></p>
 						<br />
 						<div class="col-md-8 col-md-offset-2 text-center">
-							<a class="demo js animate__animated" href="images/rat/events.png" data-lightbox="example-1">
-								<img src="images/rat/events.png" alt="Event" class="img-responsive foto-pengantin js animate__animated">
+							<a class="demo js animate__animated" href="images/rat/events.png?v=20260303" data-lightbox="example-1">
+								<img src="images/rat/events.png?v=20260303" alt="Event" class="img-responsive foto-pengantin js animate__animated">
 							</a>
 						</div>
 					</div>
@@ -621,7 +621,7 @@
 							<div class="col-md-8 col-md-offset-2 text-center">
 								<p class="js animate__animated"><span style="font-weight:bold;">MNF Cikampek - Auditorium LT. 1</span><br />PT. Sanghiang Perkasa - Kalbe Nutritionals,<br />Kawasan Industri Indotaisei, Kalihurip, Kec. Cikampek,<br />Karawang, Jawa Barat 41373</p>
 								<p><a href="https://maps.app.goo.gl/3wuVHxG1jPgWjUjt9" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
-								<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
+								<img src="images/denaya/separator.png?v=20260303" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
 							</div>
 							<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15859.357860273401!2d107.4120537!3d-6.4146679!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e697313a5df4371%3A0x7b098758ed16c78f!2sPT.%20Sanghiang%20Perkasa%20-%20Kalbe%20Nutritionals!5e0!3m2!1sen!2sid!4v1696298434771!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 							</iframe>
@@ -641,7 +641,7 @@
 						<div class="col-md-8 col-md-offset-2 text-center">
 							<p class="js animate__animated"><span style="font-weight:bold;">IDC Cakung</span><br />Innovation and Development Center PT. Sanghiang Perkasa,<br />Jl. Raya Bekasi Km 25, Cakung Tim.,<br />Kec. Cakung, Kota Jakarta Timur,<br />Daerah Khusus Ibukota Jakarta 13910</p>
 							<p><a href="https://maps.app.goo.gl/UAwWRzrS4Wr2CMhi7" class="btn btn-default btn-sm btn-peta js animate__animated" target="blank">Lihat Peta</a></p>
-							<img src="images/denaya/separator.png" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
+							<img src="images/denaya/separator.png?v=20260303" alt="denaya_separator" class="img-responsive flower denaya-separator js animate__animated">
 						</div>
 						<iframe class="js animate__animated" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4880.761365044575!2d106.9509280758678!3d-6.185984660611432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b1067e1b7ab%3A0xcdda5d4c766c0af0!2sInnovation%20and%20Development%20Center%20PT.%20Sanghiang%20Perkasa!5e1!3m2!1sen!2sid!4v1741063595674!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 						</iframe>
@@ -661,26 +661,26 @@
 						<p class="js animate__animated">Tanpa mengurangi rasa hormat, harap mengkuti peraturan yang sudah ditetapkan oleh panitia agar acara berjalan lancar dengan mengikuti protokol berikut:</p>
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
 							<div class="text-center">
-								<img src="images/rat/tumbler.png" alt="Botol tumbler" class="img-responsive logo-qrcode js animate__animated">
+								<img src="images/rat/tumbler.png?v=20260303" alt="Botol tumbler" class="img-responsive logo-qrcode js animate__animated">
 								<div class="p-protokol js animate__animated">Wajib membawa Tumbler untuk yang sedang tidak berpuasa</div>
 							</div>
 							<div class="text-center">
-								<img src="images/rat/team.png" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
+								<img src="images/rat/team.png?v=20260303" alt="Gunakan Jas" class="img-responsive logo-qrcode js animate__animated">
 								<div class="p-protokol js animate__animated">Gunakan Dresscode sesuai ketentuan berupa Monokrom (hitam-putih)</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center kolom">
 							<div class="text-center">
-								<img src="images/rat/voucher.png" alt="Tiket" class="img-responsive logo-qrcode js animate__animated">
+								<img src="images/rat/voucher.png?v=20260303" alt="Tiket" class="img-responsive logo-qrcode js animate__animated">
 								<div class="p-protokol js animate__animated">Siapkan tiket virtual ini sebagai akses masuk</div>
 							</div>
 							<div class="text-center">
-								<img src="images/rat/qr-scan.png" alt="Scan QR Code" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+								<img src="images/rat/qr-scan.png?v=20260303" alt="Scan QR Code" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
 								<div class="p-protokol js animate__animated">Tunjukan QR Code saat melakukan registrasi</div>
 							</div>
 						</div>
 						<div class="col-md-8 col-md-offset-2 text-center">
-							<img src="images/rat/gadget.png" alt="No Laptop" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
+							<img src="images/rat/gadget.png?v=20260303" alt="No Laptop" class="img-responsive logo-qrcode logo-jaga-jarak js animate__animated">
 							<div class="p-protokol js animate__animated">Fokus selama acara berlangsung</div>
 						</div>
 					</div>
