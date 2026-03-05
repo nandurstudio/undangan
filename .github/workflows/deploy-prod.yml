@@ -40,8 +40,19 @@ jobs:
 
             # back at stack root for docker commands
             cd /opt/stack
+            
+            # Clean up orphaned/stuck containers before deployment
+            sudo docker compose down --remove-orphans || true
+            
+            # Pull new images
             sudo docker compose pull --ignore-pull-failures
-            sudo docker compose up -d --build
+            
+            # Build and start containers with proper initialization
+            sudo docker compose build --no-cache php flask || true
+            sudo docker compose up -d --wait || sudo docker compose up -d
+            
+            # Verify services are healthy (with 30 second timeout)
+            sleep 5
             sudo docker compose exec nginx nginx -t || true
             sudo docker compose restart nginx || true
 
