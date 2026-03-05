@@ -65,7 +65,7 @@
     {
       "parameters": {
         "authentication": "serviceAccount",
-        "operation": "appendValues",
+        "operation": "update",
         "documentId": {
           "__rl": true,
           "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
@@ -80,7 +80,7 @@
           "cachedResultName": "tr_ucapan",
           "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=1884691184"
         },
-        "range": "1:1",
+        "range": "A1:J1",
         "valueInputOption": "RAW",
         "values": {
           "parameterized": false,
@@ -103,7 +103,7 @@
     {
       "parameters": {
         "authentication": "serviceAccount",
-        "operation": "appendValues",
+        "operation": "update",
         "documentId": {
           "__rl": true,
           "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
@@ -118,7 +118,7 @@
           "cachedResultName": "tr_tamu",
           "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=425720828"
         },
-        "range": "1:1",
+        "range": "A1:F1",
         "valueInputOption": "RAW",
         "values": {
           "parameterized": false,
