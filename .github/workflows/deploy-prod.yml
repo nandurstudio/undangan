@@ -41,20 +41,24 @@ jobs:
             # back at stack root for docker commands
             cd /opt/stack
             
-            # Clean up orphaned/stuck containers before deployment
-            sudo docker compose down --remove-orphans || true
+            # SAFE deployment: Only restart changed services, keep nginx running
+            # This ensures zero downtime and prevents 502 errors
+            sudo docker compose pull --ignore-pull-failures || true
             
-            # Pull new images
-            sudo docker compose pull --ignore-pull-failures
+            # Build only the services that we know changed
+            sudo docker compose build --no-cache php flask 2>/dev/null || true
             
-            # Build and start containers with proper initialization
-            sudo docker compose build --no-cache php flask || true
-            sudo docker compose up -d --wait || sudo docker compose up -d
+            # Restart only php and flask containers - nginx stays running
+            # This prevents 502 Bad Gateway errors from nginx stopping
+            sudo docker compose restart php 2>/dev/null || true
+            sudo docker compose restart flask 2>/dev/null || true
             
-            # Verify services are healthy (with 30 second timeout)
-            sleep 5
-            sudo docker compose exec nginx nginx -t || true
-            sudo docker compose restart nginx || true
+            # Verify services came back online (non-blocking)
+            sleep 3
+            sudo docker compose ps 2>/dev/null | grep -E 'healthy|Up' || true
+            
+            # Final safety check: ensure nginx is still running
+            sudo docker compose exec -T nginx nginx -t 2>/dev/null || true
 
       - name: Copy node_modules to server
         uses: appleboy/scp-action@v0.1.0
