@@ -65,72 +65,6 @@
     {
       "parameters": {
         "authentication": "serviceAccount",
-        "operation": "getValues",
-        "documentId": {
-          "__rl": true,
-          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
-          "mode": "list",
-          "cachedResultName": "Surat Kuasa RAT 2026",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 1884691184,
-          "mode": "list",
-          "cachedResultName": "tr_ucapan",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=1884691184"
-        },
-        "range": "A1:J1",
-        "options": {}
-      },
-      "id": "check-ucapan-headers",
-      "name": "Check tr_ucapan Headers",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4,
-      "position": [2200, 50],
-      "credentials": {
-        "googleApi": {
-          "id": "jukQx2Pgz2WhuCVz",
-          "name": "Google Sheets account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "authentication": "serviceAccount",
-        "operation": "getValues",
-        "documentId": {
-          "__rl": true,
-          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
-          "mode": "list",
-          "cachedResultName": "Surat Kuasa RAT 2026",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit?usp=drivesdk"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 425720828,
-          "mode": "list",
-          "cachedResultName": "tr_tamu",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=425720828"
-        },
-        "range": "A1:F1",
-        "options": {}
-      },
-      "id": "check-tamu-headers",
-      "name": "Check tr_tamu Headers",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4,
-      "position": [2200, 200],
-      "credentials": {
-        "googleApi": {
-          "id": "jukQx2Pgz2WhuCVz",
-          "name": "Google Sheets account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "authentication": "serviceAccount",
         "operation": "appendValues",
         "documentId": {
           "__rl": true,
@@ -158,7 +92,7 @@
       "name": "Create tr_ucapan Headers",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
-      "position": [2400, 50],
+      "position": [2200, 50],
       "credentials": {
         "googleApi": {
           "id": "jukQx2Pgz2WhuCVz",
@@ -196,7 +130,7 @@
       "name": "Create tr_tamu Headers",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
-      "position": [2400, 200],
+      "position": [2200, 200],
       "credentials": {
         "googleApi": {
           "id": "jukQx2Pgz2WhuCVz",
@@ -247,7 +181,7 @@
       "name": "Write tr_ucapan to Sheets",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
-      "position": [2600, 50],
+      "position": [2400, 50],
       "credentials": {
         "googleApi": {
           "id": "jukQx2Pgz2WhuCVz",
@@ -294,7 +228,7 @@
       "name": "Write tr_tamu to Sheets",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
-      "position": [2600, 200],
+      "position": [2400, 200],
       "credentials": {
         "googleApi": {
           "id": "jukQx2Pgz2WhuCVz",
@@ -311,16 +245,10 @@
       "main": [[{"node": "Query tr_tamu", "type": "main", "index": 0}, {"node": "Query tr_ucapan", "type": "main", "index": 0}]]
     },
     "Query tr_ucapan": {
-      "main": [[{"node": "Check tr_ucapan Headers", "type": "main", "index": 0}]]
+      "main": [[{"node": "Create tr_ucapan Headers", "type": "main", "index": 0}]]
     },
     "Query tr_tamu": {
-      "main": [[{"node": "Check tr_tamu Headers", "type": "main", "index": 0}]]
-    },
-    "Check tr_ucapan Headers": {
-      "main": [[{"node": "Create tr_ucapan Headers", "type": "main", "index": 0}, {"node": "Write tr_ucapan to Sheets", "type": "main", "index": 0}]]
-    },
-    "Check tr_tamu Headers": {
-      "main": [[{"node": "Create tr_tamu Headers", "type": "main", "index": 0}, {"node": "Write tr_tamu to Sheets", "type": "main", "index": 0}]]
+      "main": [[{"node": "Create tr_tamu Headers", "type": "main", "index": 0}]]
     },
     "Create tr_ucapan Headers": {
       "main": [[{"node": "Write tr_ucapan to Sheets", "type": "main", "index": 0}]]
