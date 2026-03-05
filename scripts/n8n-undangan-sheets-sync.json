@@ -23,9 +23,9 @@
     },
     {
       "parameters": {
+        "httpMethod": "POST",
         "path": "undangan-sync",
-        "responseMode": "onReceived",
-        "responseData": "{\n  \"status\": \"sync triggered\"\n}",
+        "responseMode": "lastNode",
         "options": {}
       },
       "id": "webhook-form-submit",

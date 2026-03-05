@@ -33,18 +33,15 @@ function trigger_webhook_sync($table = 'tr_ucapan') {
     
     // Call webhook (async, non-blocking)
     $context = stream_context_create($options);
-    
-    try {
-        // Call webhook in background
-        $response = @file_get_contents($webhook_url, false, $context);
-        
-        // Log success (optional)
-        error_log("[WEBHOOK] Sync triggered for table: $table at " . date('Y-m-d H:i:s'));
-        
-    } catch (Exception $e) {
-        // Log error tapi jangan interrupt form submission
-        error_log("[WEBHOOK ERROR] Failed to trigger sync for table: $table - " . $e->getMessage());
-        // Form tetap berhasil, sync akan jalan di schedule trigger nanti
+
+    // Call webhook and validate result
+    $response = @file_get_contents($webhook_url, false, $context);
+    $statusLine = isset($http_response_header[0]) ? $http_response_header[0] : 'NO_HTTP_STATUS';
+
+    if ($response === false) {
+        error_log("[WEBHOOK ERROR] Failed trigger for table: $table | status: $statusLine | endpoint: $webhook_url");
+    } else {
+        error_log("[WEBHOOK] Sync triggered for table: $table | status: $statusLine | response: $response");
     }
 }
 
