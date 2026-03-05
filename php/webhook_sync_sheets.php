@@ -12,7 +12,7 @@
 
 function trigger_webhook_sync($table = 'tr_ucapan') {
     // n8n webhook endpoint
-    $webhook_url = 'https://nandurstudio.com/n8n/webhook-test/undangan-sync';
+    $webhook_url = 'https://nandurstudio.com/n8n/webhook/undangan-sync';
     
     // Payload
     $payload = json_encode([

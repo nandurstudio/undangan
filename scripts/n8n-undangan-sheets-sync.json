@@ -1,0 +1,342 @@
+{
+  "name": "n8n-undangan-sheets-sync",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [1, "hours"]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [1728, 144]
+    },
+    {
+      "parameters": {
+        "path": "undangan-sync",
+        "responseMode": "onReceived",
+        "responseData": "{\n  \"status\": \"sync triggered\"\n}",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook - Form Submit",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM tr_tamu ORDER BY tamuId ASC LIMIT 500",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [2000, 200],
+      "id": "query-tamu",
+      "name": "Query tr_tamu",
+      "credentials": {
+        "mySql": {
+          "id": "UE7SiOHgym6Vc5pE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM tr_ucapan ORDER BY ucapanId ASC LIMIT 500",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [2000, 50],
+      "id": "query-ucapan",
+      "name": "Query tr_ucapan",
+      "credentials": {
+        "mySql": {
+          "id": "UE7SiOHgym6Vc5pE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "getValues",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1884691184,
+          "mode": "list",
+          "cachedResultName": "tr_ucapan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=1884691184"
+        },
+        "range": "1:1",
+        "options": {}
+      },
+      "id": "check-ucapan-headers",
+      "name": "Check tr_ucapan Headers",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [2200, 50],
+      "credentials": {
+        "googleApi": {
+          "id": "jukQx2Pgz2WhuCVz",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "getValues",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 425720828,
+          "mode": "list",
+          "cachedResultName": "tr_tamu",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=425720828"
+        },
+        "range": "1:1",
+        "options": {}
+      },
+      "id": "check-tamu-headers",
+      "name": "Check tr_tamu Headers",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [2200, 200],
+      "credentials": {
+        "googleApi": {
+          "id": "jukQx2Pgz2WhuCVz",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "appendValues",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1884691184,
+          "mode": "list",
+          "cachedResultName": "tr_ucapan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=1884691184"
+        },
+        "range": "1:1",
+        "valueInputOption": "RAW",
+        "values": {
+          "parameterized": false,
+          "string": "ucapanId\tnama\tnamareservasi\talamat\tucapan\tattending\tjumlahtamu\tnik_perwakilan\tsesi\tdate"
+        },
+        "options": {}
+      },
+      "id": "create-ucapan-headers",
+      "name": "Create tr_ucapan Headers",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [2400, 50],
+      "credentials": {
+        "googleApi": {
+          "id": "jukQx2Pgz2WhuCVz",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "appendValues",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 425720828,
+          "mode": "list",
+          "cachedResultName": "tr_tamu",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=425720828"
+        },
+        "range": "1:1",
+        "valueInputOption": "RAW",
+        "values": {
+          "parameterized": false,
+          "string": "tamuId\tname\talamat\tsesi\tjumlah_tamu\tdate"
+        },
+        "options": {}
+      },
+      "id": "create-tamu-headers",
+      "name": "Create tr_tamu Headers",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [2400, 200],
+      "credentials": {
+        "googleApi": {
+          "id": "jukQx2Pgz2WhuCVz",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1884691184,
+          "mode": "list",
+          "cachedResultName": "tr_ucapan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=1884691184"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": ["ucapanId"],
+          "schema": [
+            {"id": "ucapanId", "displayName": "ucapanId", "required": false, "defaultMatch": true, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "nama", "displayName": "nama", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "namareservasi", "displayName": "namareservasi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "alamat", "displayName": "alamat", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "ucapan", "displayName": "ucapan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "attending", "displayName": "attending", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "jumlahtamu", "displayName": "jumlahtamu", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "nik_perwakilan", "displayName": "nik_perwakilan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "sesi", "displayName": "sesi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "date", "displayName": "date", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true}
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "write-ucapan",
+      "name": "Write tr_ucapan to Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [2600, 50],
+      "credentials": {
+        "googleApi": {
+          "id": "jukQx2Pgz2WhuCVz",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 425720828,
+          "mode": "list",
+          "cachedResultName": "tr_tamu",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=425720828"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": ["tamuId"],
+          "schema": [
+            {"id": "tamuId", "displayName": "tamuId", "required": false, "defaultMatch": true, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "name", "displayName": "name", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "alamat", "displayName": "alamat", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "sesi", "displayName": "sesi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "jumlah_tamu", "displayName": "jumlah_tamu", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
+            {"id": "date", "displayName": "date", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true}
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "write-tamu",
+      "name": "Write tr_tamu to Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [2600, 200],
+      "credentials": {
+        "googleApi": {
+          "id": "jukQx2Pgz2WhuCVz",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [[{"node": "Query tr_tamu", "type": "main", "index": 0}, {"node": "Query tr_ucapan", "type": "main", "index": 0}]]
+    },
+    "Webhook - Form Submit": {
+      "main": [[{"node": "Query tr_tamu", "type": "main", "index": 0}, {"node": "Query tr_ucapan", "type": "main", "index": 0}]]
+    },
+    "Query tr_ucapan": {
+      "main": [[{"node": "Check tr_ucapan Headers", "type": "main", "index": 0}]]
+    },
+    "Query tr_tamu": {
+      "main": [[{"node": "Check tr_tamu Headers", "type": "main", "index": 0}]]
+    },
+    "Check tr_ucapan Headers": {
+      "main": [[{"node": "Create tr_ucapan Headers", "type": "main", "index": 0}, {"node": "Write tr_ucapan to Sheets", "type": "main", "index": 0}]]
+    },
+    "Check tr_tamu Headers": {
+      "main": [[{"node": "Create tr_tamu Headers", "type": "main", "index": 0}, {"node": "Write tr_tamu to Sheets", "type": "main", "index": 0}]]
+    },
+    "Create tr_ucapan Headers": {
+      "main": [[{"node": "Write tr_ucapan to Sheets", "type": "main", "index": 0}]]
+    },
+    "Create tr_tamu Headers": {
+      "main": [[{"node": "Write tr_tamu to Sheets", "type": "main", "index": 0}]]
+    },
+    "Write tr_ucapan to Sheets": {"main": [[]]},
+    "Write tr_tamu to Sheets": {"main": [[]]}
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "errorHandler": "continueOnError"
+  },
+  "id": "02RWogTkDxuxkDU9",
+  "tags": []
+}
