@@ -23,4 +23,7 @@ cookies.txt
 cook.txt
 .DS_Store
 
+# Google Cloud & API credentials (NEVER commit keys!)
+keys/
+
 

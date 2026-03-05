@@ -42,6 +42,10 @@ try {
         throw new Exception('MySQL connection failed: ' . mysqli_connect_error());
     }
 
+    // Set timezone to Asia/Jakarta (crucial for timestamps)
+    mysqli_query($conn, "SET SESSION time_zone='+07:00'");
+    date_default_timezone_set('Asia/Jakarta');
+
     // Pastikan charset utf8mb4
     if (!mysqli_set_charset($conn, 'utf8mb4')) {
         error_log('Warning: could not set mysqli charset to utf8mb4');
@@ -50,6 +54,7 @@ try {
     // Objektif mysqli (beberapa file menggunakan $db1)
     $db1 = new mysqli($servername, $username, $password, $dbname);
     $db1->set_charset('utf8mb4');
+    $db1->query("SET SESSION time_zone='+07:00'");
 
     // Backward-compatible alias jika kode lama mengandalkan $db
     $db = $conn;
