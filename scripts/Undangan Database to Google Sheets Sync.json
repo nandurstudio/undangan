@@ -1,0 +1,397 @@
+{
+  "name": "Undangan Database to Google Sheets Sync",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            1,
+            "hours"
+          ]
+        }
+      },
+      "id": "f9c78d94-0759-4556-826e-71d42136633a",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1728,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "path": "undangan-sync",
+        "responseMode": "onReceived",
+        "responseData": "{\n  \"status\": \"sync triggered\"\n}",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook - Form Submit",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 425720828,
+          "mode": "list",
+          "cachedResultName": "tr_tamu",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=425720828"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "tamuId"
+          ],
+          "schema": [
+            {
+              "id": "tamuId",
+              "displayName": "tamuId",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "alamat",
+              "displayName": "alamat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "sesi",
+              "displayName": "sesi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "jumlah_tamu",
+              "displayName": "jumlah_tamu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "45391788-515d-4874-8055-453073f227c4",
+      "name": "Write tr_tamu to Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        2624,
+        144
+      ],
+      "credentials": {
+        "googleApi": {
+          "id": "jukQx2Pgz2WhuCVz",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1884691184,
+          "mode": "list",
+          "cachedResultName": "tr_ucapan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA/edit#gid=1884691184"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "ucapanId"
+          ],
+          "schema": [
+            {
+              "id": "ucapanId",
+              "displayName": "ucapanId",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nama",
+              "displayName": "nama",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "namareservasi",
+              "displayName": "namareservasi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "alamat",
+              "displayName": "alamat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ucapan",
+              "displayName": "ucapan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "attending",
+              "displayName": "attending",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "jumlahtamu",
+              "displayName": "jumlahtamu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nik_perwakilan",
+              "displayName": "nik_perwakilan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "sesi",
+              "displayName": "sesi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "4c669ed7-d974-4598-9b2e-c548f1ab884d",
+      "name": "Write tr_ucapan to Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        2176,
+        144
+      ],
+      "credentials": {
+        "googleApi": {
+          "id": "jukQx2Pgz2WhuCVz",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM tr_tamu ORDER BY tamuId ASC LIMIT 500",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        2400,
+        144
+      ],
+      "id": "d3ed0ab1-9cf8-4231-a0d2-79b03d30846b",
+      "name": "Execute a SQL query tr_tamu",
+      "credentials": {
+        "mySql": {
+          "id": "UE7SiOHgym6Vc5pE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM tr_ucapan ORDER BY ucapanId ASC LIMIT 500",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        1952,
+        144
+      ],
+      "id": "753abeb7-4941-4394-af44-8fa696cb63fe",
+      "name": "Execute a SQL query tr_ucapan",
+      "credentials": {
+        "mySql": {
+          "id": "UE7SiOHgym6Vc5pE",
+          "name": "MySQL account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query tr_tamu",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Execute a SQL query tr_ucapan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook - Form Submit": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query tr_tamu",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Execute a SQL query tr_ucapan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write tr_tamu to Sheets": {
+      "main": [
+        []
+      ]
+    },
+    "Execute a SQL query tr_tamu": {
+      "main": [
+        [
+          {
+            "node": "Write tr_tamu to Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a SQL query tr_ucapan": {
+      "main": [
+        [
+          {
+            "node": "Write tr_ucapan to Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write tr_ucapan to Sheets": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "58d3b5ac-81a6-4437-9265-b5531eca2348",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "926cf3bd2cc880a15d005efcaa251497d458eaf476251fce18927f1253554ebf"
+  },
+  "id": "02RWogTkDxuxkDU9",
+  "tags": []
+}

@@ -26,4 +26,9 @@ cook.txt
 # Google Cloud & API credentials (NEVER commit keys!)
 keys/
 
+# Draft workflow files (development only)
+scripts/n8n-workflow-*.json
+
+# SQL archive (historical migrations)
+sql_tables/archive/
 
