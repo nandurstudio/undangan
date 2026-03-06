@@ -1,0 +1,392 @@
+{
+  "name": "n8n-undangan-webhook-sync",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "undangan-sync",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "wb-0001-0001-0001-0001-000000000001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "undangan-sync"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Ambil payload dari webhook\nconst body = $input.first().json.body;\n\nconst table = body.table || '';\nconst action = body.action || '';\nconst data = body.data || {};\n\nif (!table || !data) {\n  throw new Error('Payload tidak valid: table dan data harus ada');\n}\n\nreturn [{\n  json: {\n    table,\n    action,   // 'insert' atau 'update'\n    data\n  }\n}];\n"
+      },
+      "id": "wb-0002-0002-0002-0002-000000000002",
+      "name": "Parse Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "cond-table-ucapan",
+              "leftValue": "={{ $json.table }}",
+              "rightValue": "tr_ucapan",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "wb-0003-0003-0003-0003-000000000003",
+      "name": "Table = tr_ucapan?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "cond-action-insert-ucapan",
+              "leftValue": "={{ $json.action }}",
+              "rightValue": "insert",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "wb-0004-0004-0004-0004-000000000004",
+      "name": "Insert or Update? (ucapan)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [900, 180]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "id": "cond-action-insert-tamu",
+              "leftValue": "={{ $json.action }}",
+              "rightValue": "insert",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "wb-0005-0005-0005-0005-000000000005",
+      "name": "Insert or Update? (tamu)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [900, 420]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Flatten data dari payload ke field langsung\nconst item = $input.first().json;\nconst d = item.data;\nreturn [{ json: { ...d } }];\n"
+      },
+      "id": "wb-0006-0006-0006-0006-000000000006",
+      "name": "Flatten ucapan (insert)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 80]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first().json;\nconst d = item.data;\nreturn [{ json: { ...d } }];\n"
+      },
+      "id": "wb-0007-0007-0007-0007-000000000007",
+      "name": "Flatten ucapan (update)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 280]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first().json;\nconst d = item.data;\nreturn [{ json: { ...d } }];\n"
+      },
+      "id": "wb-0008-0008-0008-0008-000000000008",
+      "name": "Flatten tamu (insert)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 380]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first().json;\nconst d = item.data;\nreturn [{ json: { ...d } }];\n"
+      },
+      "id": "wb-0009-0009-0009-0009-000000000009",
+      "name": "Flatten tamu (update)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 520]
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1884691184,
+          "mode": "list",
+          "cachedResultName": "tr_ucapan"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            { "id": "ucapanId", "displayName": "ucapanId", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "nama", "displayName": "nama", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "namareservasi", "displayName": "namareservasi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "alamat", "displayName": "alamat", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "ucapan", "displayName": "ucapan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "attending", "displayName": "attending", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "jumlahtamu", "displayName": "jumlahtamu", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "nik_perwakilan", "displayName": "nik_perwakilan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "sesi", "displayName": "sesi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "date", "displayName": "date", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "wb-0010-0010-0010-0010-000000000010",
+      "name": "Append tr_ucapan to Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [1360, 80],
+      "credentials": {
+        "googleApi": { "id": "jukQx2Pgz2WhuCVz", "name": "Google Sheets account" }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1884691184,
+          "mode": "list",
+          "cachedResultName": "tr_ucapan"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": ["ucapanId"],
+          "schema": [
+            { "id": "ucapanId", "displayName": "ucapanId", "required": false, "defaultMatch": true, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "nama", "displayName": "nama", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "namareservasi", "displayName": "namareservasi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "alamat", "displayName": "alamat", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "ucapan", "displayName": "ucapan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "attending", "displayName": "attending", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "jumlahtamu", "displayName": "jumlahtamu", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "nik_perwakilan", "displayName": "nik_perwakilan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "sesi", "displayName": "sesi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "date", "displayName": "date", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "wb-0011-0011-0011-0011-000000000011",
+      "name": "Update tr_ucapan in Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [1360, 280],
+      "credentials": {
+        "googleApi": { "id": "jukQx2Pgz2WhuCVz", "name": "Google Sheets account" }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 425720828,
+          "mode": "list",
+          "cachedResultName": "tr_tamu"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            { "id": "ucapanId", "displayName": "ucapanId", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "nama", "displayName": "nama", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "namareservasi", "displayName": "namareservasi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "alamat", "displayName": "alamat", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "ucapan", "displayName": "ucapan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "attending", "displayName": "attending", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "jumlahtamu", "displayName": "jumlahtamu", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "nik_perwakilan", "displayName": "nik_perwakilan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "sesi", "displayName": "sesi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "date", "displayName": "date", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "wb-0012-0012-0012-0012-000000000012",
+      "name": "Append tr_tamu to Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [1360, 380],
+      "credentials": {
+        "googleApi": { "id": "jukQx2Pgz2WhuCVz", "name": "Google Sheets account" }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
+          "mode": "list",
+          "cachedResultName": "Surat Kuasa RAT 2026"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 425720828,
+          "mode": "list",
+          "cachedResultName": "tr_tamu"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": ["tamuId"],
+          "schema": [
+            { "id": "tamuId", "displayName": "tamuId", "required": false, "defaultMatch": true, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "ucapanId", "displayName": "ucapanId", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "nama", "displayName": "nama", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "namareservasi", "displayName": "namareservasi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "alamat", "displayName": "alamat", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "ucapan", "displayName": "ucapan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "attending", "displayName": "attending", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "jumlahtamu", "displayName": "jumlahtamu", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "nik_perwakilan", "displayName": "nik_perwakilan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "sesi", "displayName": "sesi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true },
+            { "id": "date", "displayName": "date", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "wb-0013-0013-0013-0013-000000000013",
+      "name": "Update tr_tamu in Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [1360, 520],
+      "credentials": {
+        "googleApi": { "id": "jukQx2Pgz2WhuCVz", "name": "Google Sheets account" }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={ \"success\": true, \"message\": \"Synced to Sheets\" }",
+        "options": {}
+      },
+      "id": "wb-0014-0014-0014-0014-000000000014",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1600, 300]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [[{ "node": "Parse Payload", "type": "main", "index": 0 }]]
+    },
+    "Parse Payload": {
+      "main": [[{ "node": "Table = tr_ucapan?", "type": "main", "index": 0 }]]
+    },
+    "Table = tr_ucapan?": {
+      "main": [
+        [{ "node": "Insert or Update? (ucapan)", "type": "main", "index": 0 }],
+        [{ "node": "Insert or Update? (tamu)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Insert or Update? (ucapan)": {
+      "main": [
+        [{ "node": "Flatten ucapan (insert)", "type": "main", "index": 0 }],
+        [{ "node": "Flatten ucapan (update)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Insert or Update? (tamu)": {
+      "main": [
+        [{ "node": "Flatten tamu (insert)", "type": "main", "index": 0 }],
+        [{ "node": "Flatten tamu (update)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Flatten ucapan (insert)": {
+      "main": [[{ "node": "Append tr_ucapan to Sheets", "type": "main", "index": 0 }]]
+    },
+    "Flatten ucapan (update)": {
+      "main": [[{ "node": "Update tr_ucapan in Sheets", "type": "main", "index": 0 }]]
+    },
+    "Flatten tamu (insert)": {
+      "main": [[{ "node": "Append tr_tamu to Sheets", "type": "main", "index": 0 }]]
+    },
+    "Flatten tamu (update)": {
+      "main": [[{ "node": "Update tr_tamu in Sheets", "type": "main", "index": 0 }]]
+    },
+    "Append tr_ucapan to Sheets": {
+      "main": [[{ "node": "Respond OK", "type": "main", "index": 0 }]]
+    },
+    "Update tr_ucapan in Sheets": {
+      "main": [[{ "node": "Respond OK", "type": "main", "index": 0 }]]
+    },
+    "Append tr_tamu to Sheets": {
+      "main": [[{ "node": "Respond OK", "type": "main", "index": 0 }]]
+    },
+    "Update tr_tamu in Sheets": {
+      "main": [[{ "node": "Respond OK", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "instanceId": "926cf3bd2cc880a15d005efcaa251497d458eaf476251fce18927f1253554ebf"
+  },
+  "id": "webhook-undangan-sync-v1",
+  "tags": []
+}

@@ -5,10 +5,7 @@
       "parameters": {
         "rule": {
           "interval": [
-            {
-              "field": "hours",
-              "value": 1
-            }
+            {}
           ]
         }
       },
@@ -23,24 +20,8 @@
     },
     {
       "parameters": {
-        "httpMethod": "POST",
-        "path": "undangan-sync",
-        "responseMode": "lastNode",
-        "options": {}
-      },
-      "id": "webhook-form-submit",
-      "name": "Webhook - Form Submit",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1,
-      "position": [
-        1552,
-        200
-      ]
-    },
-    {
-      "parameters": {
         "authentication": "serviceAccount",
-        "operation": "update",
+        "operation": "append",
         "documentId": {
           "__rl": true,
           "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
@@ -58,14 +39,98 @@
         "columns": {
           "mappingMode": "autoMapInputData",
           "value": {},
-          "matchingColumns": ["tamuId"],
+          "matchingColumns": [],
           "schema": [
-            {"id": "tamuId", "displayName": "tamuId", "required": false, "defaultMatch": true, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "name", "displayName": "name", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "alamat", "displayName": "alamat", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "sesi", "displayName": "sesi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "jumlah_tamu", "displayName": "jumlah_tamu", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "date", "displayName": "date", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true}
+            {
+              "id": "ucapanId",
+              "displayName": "ucapanId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nama",
+              "displayName": "nama",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "namareservasi",
+              "displayName": "namareservasi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "alamat",
+              "displayName": "alamat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ucapan",
+              "displayName": "ucapan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "attending",
+              "displayName": "attending",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "jumlahtamu",
+              "displayName": "jumlahtamu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nik_perwakilan",
+              "displayName": "nik_perwakilan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "sesi",
+              "displayName": "sesi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
           ],
           "attemptToConvertTypes": false,
           "convertFieldsToString": false
@@ -81,13 +146,16 @@
         144
       ],
       "credentials": {
-        "googleApi": "Google Sheets account"
+        "googleApi": {
+          "id": "jukQx2Pgz2WhuCVz",
+          "name": "Google Sheets account"
+        }
       }
     },
     {
       "parameters": {
         "authentication": "serviceAccount",
-        "operation": "update",
+        "operation": "append",
         "documentId": {
           "__rl": true,
           "value": "1W_QSLm-ZMRdpyEkLcNsePp3s6fcJPdWdV71uJBuIUTA",
@@ -104,19 +172,120 @@
         },
         "columns": {
           "mappingMode": "autoMapInputData",
-          "value": {},
-          "matchingColumns": ["ucapanId"],
+          "value": {
+            "ucapanId": "ucapanId",
+            "nama": "nama",
+            "namareservasi": "namareservasi",
+            "alamat": "alamat",
+            "ucapan": "ucapan",
+            "attending": "attending",
+            "jumlahtamu": "jumlahtamu",
+            "nik_perwakilan": "nik_perwakilan",
+            "sesi": "sesi",
+            "date": "date"
+          },
+          "matchingColumns": [],
           "schema": [
-            {"id": "ucapanId", "displayName": "ucapanId", "required": false, "defaultMatch": true, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "nama", "displayName": "nama", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "namareservasi", "displayName": "namareservasi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "alamat", "displayName": "alamat", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "ucapan", "displayName": "ucapan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "attending", "displayName": "attending", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "jumlahtamu", "displayName": "jumlahtamu", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "nik_perwakilan", "displayName": "nik_perwakilan", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "sesi", "displayName": "sesi", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true},
-            {"id": "date", "displayName": "date", "required": false, "defaultMatch": false, "display": true, "type": "string", "canBeUsedToMatch": true}
+            {
+              "id": "ucapanId",
+              "displayName": "ucapanId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nama",
+              "displayName": "nama",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "namareservasi",
+              "displayName": "namareservasi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "alamat",
+              "displayName": "alamat",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ucapan",
+              "displayName": "ucapan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "attending",
+              "displayName": "attending",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "jumlahtamu",
+              "displayName": "jumlahtamu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "nik_perwakilan",
+              "displayName": "nik_perwakilan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "sesi",
+              "displayName": "sesi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
           ],
           "attemptToConvertTypes": false,
           "convertFieldsToString": false
@@ -132,7 +301,10 @@
         -48
       ],
       "credentials": {
-        "googleApi": "Google Sheets account"
+        "googleApi": {
+          "id": "jukQx2Pgz2WhuCVz",
+          "name": "Google Sheets account"
+        }
       }
     },
     {
@@ -150,7 +322,10 @@
       "id": "27cb6de8-6810-4fec-808b-4b8c6bf53565",
       "name": "Execute a SQL query tr_tamu",
       "credentials": {
-        "mySql": "MySQL account"
+        "mySql": {
+          "id": "UE7SiOHgym6Vc5pE",
+          "name": "MySQL account"
+        }
       }
     },
     {
@@ -168,29 +343,16 @@
       "id": "f5f4d10a-144a-4288-b2ff-02f131d6e4a0",
       "name": "Execute a SQL query tr_ucapan",
       "credentials": {
-        "mySql": "MySQL account"
+        "mySql": {
+          "id": "UE7SiOHgym6Vc5pE",
+          "name": "MySQL account"
+        }
       }
     }
   ],
   "pinData": {},
   "connections": {
     "Schedule Trigger": {
-      "main": [
-        [
-          {
-            "node": "Execute a SQL query tr_tamu",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Execute a SQL query tr_ucapan",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Webhook - Form Submit": {
       "main": [
         [
           {
@@ -235,7 +397,7 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "349b4d02-26ef-4ee3-93b6-28c7fb6cc843",
+  "versionId": "3123e86f-977f-4c66-bc2e-35ec24c193ae",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "926cf3bd2cc880a15d005efcaa251497d458eaf476251fce18927f1253554ebf"
