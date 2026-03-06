@@ -143,6 +143,7 @@
 				<img class="logo-pengantin animate__animated animate__pulse animate__infinite infinite" src="./images/rat/tiket.png?v=<?php echo filemtime('./images/rat/tiket.png'); ?>" alt="Tiket" width="95%">
 			</div>
 			<div class="animate__animated animate__headShake animate__infinite infinite col-md-8 col-md-offset-2 text-center">
+				<h1 class="animate__animated animate__pulse animate__infinite infinite">WAJIB ISI RESERVASI KEHADIRAN!</h1>
 				<button id="tombol-buka" type="submit" class="animate__animated animate__zoomInDown btn btn-buka">Buka Undangan</button>
 			</div>
 		</div>
@@ -373,8 +374,8 @@
 							<div class="row js animate__animated" id="divnikperwakilan" hidden>
 								<div class="col-md-12">
 									<div class="form-group">
-										<label for="nik_perwakilan" class="custom-label"><i class="icon-wallet"></i> NIK Perwakilan (Nomor Induk Karyawan)</label>
-										<input type="text" class="form-control" id="nik_perwakilan" placeholder="Masukkan NIK Perwakilan (maksimal 10 digit)" maxlength="10"></input>
+										<label for="nik_perwakilan" class="custom-label"><i class="icon-wallet"></i> NIK Perwakilan Pengganti (BUKAN NIK ANDA)</label>
+										<input type="text" class="form-control" id="nik_perwakilan" placeholder="Masukkan NIK Perwakilan Pengganti Anda" maxlength="10"></input>
 										<?php
 										include "./php/connection.php";
 										if (isset($_GET['to'])) {
