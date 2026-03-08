@@ -967,15 +967,17 @@
 		$(function() {
 			$("time.timeago").timeago();
 		});
-		var d = new Date(new Date("Mar 10, 2026 12:10:00").getTime());
-		//var countDownDate = new Date("Mar 27, 2022 08:00:00").getTime();
-
+		// Target: Selasa 10 Mar 2026 jam 13:10 (1:10 PM)
+		var d = new Date(2026, 2, 10, 13, 10, 0); // Month is 0-indexed (2 = March)
 
 		// default example
 		simplyCountdown('.simply-countdown-one', {
 			year: d.getFullYear(),
 			month: d.getMonth() + 1,
-			day: d.getDate()
+			day: d.getDate(),
+			hours: d.getHours(),
+			minutes: d.getMinutes(),
+			seconds: d.getSeconds()
 		});
 
 		// global audio element reference (will be initialised below)
