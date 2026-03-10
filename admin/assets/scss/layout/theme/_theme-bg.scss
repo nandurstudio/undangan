@@ -1,0 +1,254 @@
+:root{
+	--nav-headbg: #e9e2f8;
+	--sidebar-bg: #FFFFFF;
+	--headerbg: #f3f0f9;
+}
+
+//background for nav header
+@each $name, $color in $theme_backgrounds {
+	[data-nav-headerbg="#{$name}"][data-theme-version="dark"],
+    [data-nav-headerbg="#{$name}"] {
+        @if $name != "color_1"  {
+			--nav-headbg: #{$color};
+			.nav-header{
+				border-color:$color ! important;
+				.brand-logo{
+					.logo-abbr{
+						path{
+							fill:$white;	
+						}	
+					}
+					.brand-title{
+						
+							path{
+								fill:$white;
+							}
+						
+					}
+					
+				}
+				.hamburger .line{
+					background:$black;
+				}
+			}
+			.header-right .notification_dropdown .nav-link .badge {
+					border:none;
+				}
+			
+		}
+	}
+}
+//background for nav header
+@each $name, $color in $theme_backgrounds {
+	[data-sidebarbg="#{$name}"][data-theme-version="dark"],
+    [data-sidebarbg="#{$name}"] {
+        @if $name != "color_1"  {
+			--sidebar-bg: #{$color};
+			.menu-toggle .dlabnav .metismenu li > ul{
+				background:$color!important;
+			}
+			.dlabnav .metismenu ul a:before{
+				background:rgba($white,0.5);
+			}
+			.dlabnav .header-info2{
+				border-color:rgba($white,0.2)!important;		
+			}
+			.dlabnav{
+				border-color:$color ! important;		
+			}
+			.side-bar-profile{
+				h4{
+					color:$white;
+				}
+				span{
+					color:$white;	
+				}
+				i{
+					color:$white!important;		
+				}
+			}
+			&[data-sidebar-style="full"][data-layout="vertical"]{
+				.dlabnav {
+					.metismenu{
+						&>li{
+							&.mm-active{
+								&>a{
+									i{
+										color:$white;
+									}
+								}
+							}
+						}				
+					} 
+				}
+			}
+			&[data-sidebar-style="mini"],
+			&[data-sidebar-style="modern"],
+			&[data-sidebar-style="compact"],
+			&[data-sidebar-style="icon-hover"][data-layout="horizontal"],
+			&[data-sidebar-style="full"][data-layout="horizontal"]
+			{
+				.dlabnav{
+					.metismenu li ul{
+						background-color: lighten($color: $color, $amount: 10%);
+					}
+				} 
+				.dlabnav .metismenu > li.mm-active > a,
+				.dlabnav .metismenu > li:hover > a{
+						background:rgba($white,0.15)!important;
+				}
+			}
+			&[data-sidebar-style="compact"][data-layout="vertical"]{
+				.dlabnav {
+					.metismenu {
+						&>li {
+							a{
+								&:hover{
+									color:$white;
+								}
+							}
+							&>a{
+								&>i{
+									background: lighten($color: $color, $amount: 3%)!important;
+									color:rgba($white,0.7);
+								}
+							}
+							&.mm-active,&:hover{
+								&>a {
+									box-shadow:none;
+									background:transparent!important;
+									color:$white!important;
+									i{
+										background: lighten($color: $color, $amount: 10%)!important;
+										color:$white!important;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.dlabnav {
+				.metismenu{
+					a{
+						color:rgba($white,0.8)!important;
+					}
+					li{
+						ul{
+							a{
+								&:hover,
+								&:focus,
+								&.mm-active {
+									color:$white;
+								}
+							}
+						}
+					}
+					&>li{
+						&>a{
+							color:rgba($white,0.85)!important;
+							i{
+								color:rgba($white,0.85)!important;
+							}
+						}
+						&.mm-active{
+							&>a{
+								background:rgba($white,0.15)!important;
+								color:$white!important;
+								i{
+									color:$white!important;
+								}
+								&:before{
+									background:$white!important;
+									}
+							}
+						}
+					}
+					.has-arrow:after{
+						border-color: rgba($white,0.85) transparent transparent rgba($white,0.85)!important;
+					}					
+				} 
+				.header-info2 span{
+					color: $white;
+				}
+				.sidebar-info{
+					color: $white; 
+					i{
+						color: $white; 		
+					}
+				}
+			}
+			.plus-box{
+				background-color: lighten($color: $color, $amount: 10%);
+			}
+			.dlabnav{
+				.copyright{
+					color:$white;
+				}
+				.profile-info1{
+					h5{
+						color:$white;
+					}
+				}
+	
+
+			}
+						
+		}
+	}
+}
+
+//background for nav header
+@each $name, $color in $theme_backgrounds {
+	[data-headerbg="#{$name}"][data-theme-version="dark"],
+    [data-headerbg="#{$name}"] {
+        @if $name != "color_1"  {
+			--headerbg: #{$color};
+				.header{
+					border-bottom:1px solid $color! important;
+				}
+				.search-area .input-group-text,
+				.search-area .form-control,.search-area .form-control::placeholder{
+					color:$white;
+				}
+				.search-area .input-group-append .input-group-text i{
+					color:$white;
+				}
+				.dashboard_bar{
+					color:$white;	
+				}
+			.header-right{
+				.search-area .form-control,
+				.search-area .input-group-text{
+					background-color: lighten($color: $color, $amount: 10%);
+					border-color: lighten($color: $color, $amount: 10%);
+					i{
+						color:$white;
+					}
+				}
+				.plus-icon a{
+					background-color: lighten($color: $color, $amount: 10%);	
+				}
+					
+			}
+			.header-right{
+				svg{
+					path{
+						fill:$white;
+					}
+				}
+				
+			}
+			.header-right .notification_dropdown .nav-link i{
+				color:$white;
+			}
+			.header-profile > a.nav-link .header-info small, .header-profile > a.nav-link .header-info span{
+				color:$white;	
+			}
+			.hamburger .line{
+				background:$white!important;
+			}
+			//special work for color
+		}	
+	}
+}

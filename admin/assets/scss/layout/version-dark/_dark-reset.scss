@@ -1,0 +1,23 @@
+@import "./../../abstracts/variable";
+
+
+
+[data-theme-version="dark"] {
+
+    --bs-body-bg:#{$dark-card};
+    --bs-body-color:#{$d-ctl};
+	
+	--nav-headbg : #{$dark-card};
+	--sidebar-bg : #{$d-bg};
+	--headerbg : #{$dark-card};
+	
+	--card : #{$dark-card};
+    --text-dark : #{$d-text-dark};
+    --text-gray : #{$d-text-gray};
+    --text : #{$d-text};
+    --body-bg : #{$d-bg};
+    --light : #{$d-bg};
+    --border : #{$d-border};
+
+
+}

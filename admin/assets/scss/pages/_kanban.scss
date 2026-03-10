@@ -1,0 +1,319 @@
+.kanbanimg{
+	display:flex;	
+	img{
+		height:2.5rem;
+		width:2.5rem;
+		border-radius:50%;
+		object-fit:cover;
+		border:1px solid $white;
+	}	
+	li{
+		margin-right: -10px;	
+		cursor: pointer;
+		transition: all 0.5s;
+		&:hover{
+			transform:translateY(-.188rem);
+		}
+		span{
+			height:2.5rem;
+			width:2.5rem;
+			border-radius:50px;
+			background:var(--primary);
+			color:white;
+			line-height:2.5rem;
+			display:block;
+			font-size:18px;
+			font-weight:600;
+			text-align:center;
+			border:1px solid $white;
+		}
+	}
+}
+.invite{
+	a{
+		font-size:1rem!important
+	}
+}
+.facebook-icon{
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+	border-radius: $radius;	
+	width: 55px;
+	background: #FFFFFF;
+	height: 55px;
+	position: relative;
+	@include respond ('phone'){
+		width:50px;
+		height:50px;
+	}
+	a{
+		height: 27px;
+		width: 27px;
+		display: block;
+		border-radius: 47px;
+		line-height: 27px;
+		text-align: center;
+		background: linear-gradient(209.74deg, #886CC0 4.05%, #AA5DE8 95.37%);
+		color: #fff;
+		font-size: 14px;
+		position: absolute;
+		top: 14px;
+		left: 14px;
+		@include respond ('phone'){
+			height:37px;
+			width:37px;
+			line-height:37px;
+			font-size:16px;
+			top:7px;
+			left:7PX;
+		}
+	}	
+}
+
+.flex-1{
+	flex:1;
+}
+.plus-bx{
+	a{
+		width: 2.5rem;
+		height: 2.5rem;
+		background:var(--primary);
+		line-height:2.688rem;
+		text-align:center;
+		display:block;
+		color: white;
+		border-radius: 50%;
+		font-size: 20px;
+		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	}
+	@include respond('phone'){
+		a{
+			width: 35px;
+			height: 35px;	
+			line-height:35px;	
+			font-size:20px;
+		}
+	}
+}
+.sub-title{
+	color:#FFA7D7;	
+}
+.kanban-user{
+	.users{
+		display:flex;
+		li{
+			margin-right:-10px;
+			img{
+				border-radius: 32px;
+				height: 32px;
+				width: 32px;
+				border: 2px solid #fff;	
+			}	
+		}	
+	}	
+}
+.bg-design{
+	background:#FFA7D7;
+}
+
+.kanban-bx {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+	.col {
+		width: 360px;
+		min-width: 360px;
+		flex-grow: unset;
+		flex-basis: unset;
+		.card {
+			height: auto;
+			cursor: all-scroll;	
+		}
+	}
+	&::-webkit-scrollbar {
+		background-color: #ECECEC;
+		width: 8px;
+		height: 8px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: #7e7e7e;
+		border-radius: 10px;
+	}
+}
+.draggable.card{
+	transition:none;
+}
+
+
+/////message-box
+
+.chat-bx{
+	padding:12px 20px;
+	@include respond ('phone'){
+
+		padding: 12px;
+	}
+	&.active{
+		background:var(--rgba-primary-1);	
+		position:relative;
+		&:before{
+			position:absolute;
+			background:var(--primary);
+			height:100%;
+			width:7px;
+			top:0;
+			left:0;
+			content:"";
+			
+		}
+	}
+}
+.chat-img{
+	img{
+		height:2.813rem;
+		width:2.813rem;
+		border-radius:50%;
+		margin-right:10px;
+	}	
+}
+.fillow-design{
+	a{
+		height:3.125rem;
+		width:3.125rem;
+		border-radius:50%;
+		text-align:center;
+		background:var(--primary);
+		display: block;
+		color: white;
+		font-size: 1.275rem;
+		line-height: 3.125rem;
+		
+	}	
+}
+.activity{
+	ul{
+		li{
+			a{
+				padding:0 8px;	
+				font-size:1.25rem;
+				color: var(--primary);
+				
+			}
+				
+				
+		}	
+			
+	}	
+}
+.chat-box-area{
+	height:630px;	
+}
+.image-box{
+	position: relative;
+	display: inline-block;	
+	.img-1{
+		width: 3rem;
+		height: 3rem;	
+	}
+	span{
+		&.active1{
+			position: absolute;
+			bottom: -5px;
+			right: -5px;
+			height: 1.25rem;
+			width: 1.25rem;
+			background: $success;
+			border: 3px solid #fff;
+			border-radius: 50%;	
+		}	
+	}
+}	
+.message-received {
+	width: 62%;
+    text-align: left;	
+	p{
+		background: rgba(110,110,110,0.14);
+		text-align: left;
+		border-radius: 0 $radius $radius $radius;
+		padding: 10px 20px;
+		color: #000;
+		font-weight: 400;	
+	}
+	@include respond('phone'){
+		width:100%;	
+	}
+}
+.media{
+	display: flex;
+    align-items: flex-start;	
+}
+.message-sent{
+	width: 62%;
+    text-align: right;	
+	@include respond('phone'){
+		width:100%;	
+	}
+}
+.message-sent p {
+	background: #717579;
+    text-align: left;
+    border-radius: 20px 20px 0 20px;
+    padding: 10px 20px;
+    color: #fff;
+}
+.group-pic{
+	margin-right: 15px;
+	img{
+		height: 25px;
+		width: 25px;
+		border-radius: 25px;
+		object-fit: cover;	
+		margin: 2px 2px;
+	}	
+}
+.type-massage{
+	.input-group{
+		textarea{
+			height:5rem ! important;
+			border:0;
+			background:var(--rgba-primary-1);
+			border-radius: $radius $radius 0px 0px;
+			padding:15px
+		}	
+	}	
+	.input-group-append{
+		button{
+			padding: 10px 15px;
+			margin: 15px 0;
+			@include respond('phone'){
+				padding: 0px 9px;	
+			}
+		}	
+	}
+}
+.chat-box-area{
+	height: 630px;
+    padding:0  15px;
+	@include respond ('phone'){
+		padding: 0 11px;
+	}
+}
+
+.chat-sidebar{
+	height:700px;
+}
+.message-tab{
+	.card-tabs .nav-tabs .nav-link{
+		padding: 12px 15px;	
+	}		
+}
+.kanbanPreview-bx {
+    padding: 1rem 1.3rem 1rem;
+    background: linear-gradient(to right, rgba(102, 102, 102, 0.2) 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(rgba(102, 102, 102, 0.2) 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(to right, rgba(102, 102, 102, 0.2) 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(rgba(102, 102, 102, 0.2) 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: top, right, bottom, left;
+    background-repeat: repeat-x, repeat-y;
+    background-size: 10px 1px, 1px 10px;
+}
+.meassge-left-side{
+	padding: 30px 16px;
+}

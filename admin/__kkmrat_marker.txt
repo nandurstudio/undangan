@@ -1,0 +1,2 @@
+kkmrat-landing: site served from F:/laragon/www/undangan/kkmrat-landing
+If you see this file at https://kkmrat.localhost.com/__kkmrat_marker.txt then the vhost is correct.
