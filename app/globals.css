@@ -13,6 +13,11 @@
   --color-cream: #fffaf7;
   --color-paper: #ffffff;
 
+  /* Warna khas template lama */
+  --color-cyan-ink: #00bcd4;
+  --color-red-ink: #eb1c27;
+  --color-gold-ink: #917c52;
+
   --radius-card: 1.25rem;
 
   --animate-fade-up: fade-up 0.8s ease-out both;
