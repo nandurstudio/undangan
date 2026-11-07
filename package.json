@@ -1,6 +1,49 @@
 {
+  "name": "undangan",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Undangan digital — Nandur Studio",
+  "scripts": {
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start -p 3002",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio",
+    "postinstall": "prisma generate"
+  },
   "dependencies": {
-    "clipboard": "^2.0.10",
-    "sweetalert2": "^11.10.5"
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^18.0.9",
+    "jose": "^6.2.15",
+    "nanoid": "^6.0.2",
+    "next": "16.4.5",
+    "pg": "^8.23.1",
+    "qrcode": "^1.5.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^24",
+    "@types/pg": "^8.23.1",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.5",
+    "prisma": "^7.10.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
   }
 }

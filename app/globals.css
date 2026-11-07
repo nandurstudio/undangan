@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palet dari template lama (css/style.css) */
+  --color-brand: #ff4a6a;
+  --color-brand-dark: #e03a58;
+  --color-brand-soft: #ffe4ea;
+  --color-gold: #c69a2f;
+  --color-gold-soft: #f6ecd4;
+  --color-leaf: #7ac043;
+  --color-ink: #2d3431;
+  --color-muted: #828282;
+  --color-cream: #fffaf7;
+  --color-paper: #ffffff;
+
+  --radius-card: 1.25rem;
+
+  --animate-fade-up: fade-up 0.8s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-brand-soft);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

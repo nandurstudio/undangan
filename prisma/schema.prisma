@@ -1,0 +1,146 @@
+// ==============================================================================
+// UNDANGAN DIGITAL — PRISMA SCHEMA
+// Stack: Prisma 7 + PostgreSQL
+// Konvensi: field TypeScript camelCase, kolom database snake_case (@map)
+// ==============================================================================
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ------------------------------------------------------------------------------
+// ENUMS
+// ------------------------------------------------------------------------------
+
+enum Attendance {
+  MENUNGGU
+  HADIR
+  TIDAK_HADIR
+  DIWAKILKAN
+}
+
+enum AdminRole {
+  SUPERADMIN
+  OPERATOR
+}
+
+// ------------------------------------------------------------------------------
+// EVENT & SESI
+// ------------------------------------------------------------------------------
+
+model Event {
+  id        String   @id @default(uuid()) @db.Uuid
+  slug      String   @unique
+  title     String
+  subtitle  String?
+  hostNames String   @map("host_names")
+  eventDate DateTime @map("event_date")
+  venue     String?
+  address   String?
+  mapsUrl   String?  @map("maps_url")
+  quote     String?  @db.Text
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  sessions Session[]
+  guests   Guest[]
+
+  @@map("events")
+}
+
+model Session {
+  id        String    @id @default(uuid()) @db.Uuid
+  eventId   String    @map("event_id") @db.Uuid
+  event     Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  name      String
+  startAt   DateTime? @map("start_at")
+  endAt     DateTime? @map("end_at")
+  quota     Int?
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+
+  guests Guest[]
+
+  @@unique([eventId, name])
+  @@index([eventId])
+  @@map("sessions")
+}
+
+// ------------------------------------------------------------------------------
+// TAMU, RSVP, CHECK-IN
+// ------------------------------------------------------------------------------
+
+model Guest {
+  id           String   @id @default(uuid()) @db.Uuid
+  eventId      String   @map("event_id") @db.Uuid
+  event        Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  sessionId    String?  @map("session_id") @db.Uuid
+  session      Session? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+  token        String   @unique
+  name         String
+  department   String?
+  phone        String?
+  address      String?
+  invitedCount Int      @default(1) @map("invited_count")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  rsvp     Rsvp?
+  checkIns CheckIn[]
+
+  @@index([eventId])
+  @@index([department])
+  @@index([name])
+  @@map("guests")
+}
+
+model Rsvp {
+  id           String     @id @default(uuid()) @db.Uuid
+  guestId      String     @unique @map("guest_id") @db.Uuid
+  guest        Guest      @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  attendance   Attendance @default(MENUNGGU)
+  guestCount   Int        @default(0) @map("guest_count")
+  wish         String?    @db.Text
+  delegateName String?    @map("delegate_name")
+  delegateNik  String?    @map("delegate_nik")
+  createdAt    DateTime   @default(now()) @map("created_at")
+  updatedAt    DateTime   @updatedAt @map("updated_at")
+
+  @@index([attendance])
+  @@map("rsvps")
+}
+
+model CheckIn {
+  id          String   @id @default(uuid()) @db.Uuid
+  guestId     String   @unique @map("guest_id") @db.Uuid
+  guest       Guest    @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  guestCount  Int      @default(0) @map("guest_count")
+  checkedInAt DateTime @default(now()) @map("checked_in_at")
+  checkedInBy String?  @map("checked_in_by")
+
+  @@index([checkedInAt])
+  @@map("check_ins")
+}
+
+// ------------------------------------------------------------------------------
+// ADMIN
+// ------------------------------------------------------------------------------
+
+model AdminUser {
+  id        String    @id @default(uuid()) @db.Uuid
+  email     String    @unique
+  googleSub String?   @unique @map("google_sub")
+  name      String?
+  role      AdminRole @default(OPERATOR)
+  isActive  Boolean   @default(true) @map("is_active")
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+
+  @@map("admin_users")
+}

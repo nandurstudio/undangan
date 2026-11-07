@@ -1,34 +1,40 @@
-*.ai
-site.webmanifest
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
 /node_modules
-undangan@kkmrat.web.id.coreftp
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# ignore vendor and caches
-vendor/
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# prisma
+/lib/generated/
+
+# misc
 .DS_Store
-.sass-cache/
-*.bak
-
-# Environment files (do NOT commit real secrets)
-.env
-.env.*
-
-# Editor / OS
-.vscode/
-.idea/
+*.pem
 *.log
 
-# Sensitive / local artifacts
-cookies.txt
-cook.txt
-.DS_Store
+# env files
+.env*
+!.env.example
 
-# Google Cloud & API credentials (NEVER commit keys!)
-keys/
+# vercel
+.vercel
 
-# Draft workflow files (development only)
-scripts/n8n-workflow-*.json
-
-# SQL archive (historical migrations)
-sql_tables/archive/
-
+# typescript
+*.tsbuildinfo
+next-env.d.ts
