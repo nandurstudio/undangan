@@ -987,12 +987,18 @@ Lebih ringan dari opsi PHP + MariaDB. Tetap disarankan mematikan `hallosptp-dev`
 | TypeScript strict | ✅ `tsc --noEmit` lulus |
 | Tailwind CSS 4.3.5 + tema warna/font template lama | ✅ |
 | Prisma 7.10.1 (`prisma-client` + `@prisma/adapter-pg`) | ✅ |
-| Schema: `Event`, `Session`, `Guest`, `Rsvp`, `CheckIn`, `AdminUser` | ✅ |
-| Migrasi `20261107141006_init` | ✅ diterapkan di `undangan_dev` |
-| Seed contoh (`contoh-2026`) | ✅ |
+| Schema: `Event`, `Session`, `Guest`, `Rsvp`, `CheckIn`, `AdminUser`, `Venue` | ✅ |
+| Migrasi `20261107141006_init` + `20261107144214_add_venue` | ✅ diterapkan di `undangan_dev` |
+| Seed contoh (`contoh-2026`, 2 venue, 2 sesi, guest `demo`) | ✅ |
 | `next build` + `output: standalone` | ✅ |
 | Security headers dasar | ✅ |
 | Font template lama: Fraunces + Karla | ✅ |
+| Halaman undangan publik `/u/[token]` + `not-found.tsx` | ✅ |
+| RSVP form + guestbook + live stats | ✅ |
+| Aset template lama di `public/` (media, audio, favicon) | ✅ |
+| Tema warna legacy (cyan-ink, red-ink, gold-ink) | ✅ |
+| Typecheck `tsc --noEmit` | ✅ lulus |
+| Ujian end-to-end `/u/demo` + `POST /api/rsvp` | ✅ HTTP 200 / `{ ok: true }` |
 
 **Database lokal**
 
@@ -1014,13 +1020,12 @@ npm run dev        # http://localhost:3002
 
 **Belum dikerjakan**
 
-- Halaman undangan publik `/` dan `/u/[token]`.
-- RSVP, guestbook, live count.
-- QR check-in + halaman scanner.
-- Admin dashboard + auth Google.
-- Port aset & animasi template lama ke `public/`.
+- QR check-in + halaman scanner (`/scan?t=<token>` + `POST /api/checkin`).
+- Redirect kompatibilitas format lama `/?to=&adr=&s=` → `/u/[token]`.
+- Admin dashboard + auth Google (verifikasi server-side, mechanism pending).
 - CI/CD GitHub Actions + setup VPS (DB `undangan_db`, PM2 3002, Nginx, Certbot).
 - Test otomatis.
+- Domain nama final.
 
 ---
 
@@ -1033,3 +1038,4 @@ npm run dev        # http://localhost:3002
 | 2026-11-07 | **Arah baru:** rewrite total ke Next.js + TypeScript + Tailwind + Prisma (mengikuti hallo-sptp). Ditambahkan Bagian 13 (studi hallo-sptp, arsitektur target, model data, route, keamanan, migrasi, deployment, effort). Keputusan: snake_case, big-bang di branch. |
 | 2026-11-07 | **Keputusan final:** pakai repo existing `nandurstudio/undangan` branch `v2`; nebeng VPS + PostgreSQL saja (domain/ekosistem sendiri); Google login via Hallo SPTP dengan verifikasi server-side; mulai data bersih; semua fitur lama dipertahankan; look & feel template wedding dipertahankan. Bagian 13.1 & 13.12 diperbarui, 13.8 ditandai tidak dipakai. |
 | 2026-11-07 | **Scaffold selesai:** Next.js 16.4.5 + React 19.3 + TS strict + Tailwind 4.3.5 + Prisma 7.10.1, schema 6 model, migrasi `20261107141006_init` di `undangan_dev`, seed contoh, `next build` + typecheck lulus. Lokal di `E:\Website\undangan`, port 3002. Tidak ada perubahan VPS. Ditambahkan 13.13. |
+| 2026-11-07 | **Fase 1 selesai & dipush ke `origin/v2` (commit `4a91260`):** halaman undangan publik `/u/[token]` dengan cover gate, musik, QR code, RSVP, guestbook, live stats, countdown, 2 lokasi, protokol, dan footer; `POST /api/rsvp` dengan validasi + delegate NIK unik; model `Venue` + migrasi `add_venue`; aset template lama di `public/`; theme warna legacy. `next build`, typecheck, dan ujian end-to-end `/u/demo` lulus. Tidak ada perubahan VPS. |
