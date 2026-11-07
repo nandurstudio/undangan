@@ -519,7 +519,7 @@ env[KKMRAT_AES_KEY] = <key-acak>
 | 5 | Nasib `admin/` | **Tidak dibawa** — diganti `/admin` di app baru | **Diputuskan** |
 | 6 | Runtime hosting | **Rewrite Next.js** (tanpa PHP) | **Diputuskan 2026-11-07** |
 | 7 | Strategi identifier | **snake_case** | **Diputuskan 2026-11-07** |
-| 8 | Penempatan app | **Repo terpisah `undangan-next`** | **Diputuskan 2026-11-07** |
+| 8 | Penempatan app | **Repo existing `nandurstudio/undangan`, branch `v2`** | **Diputuskan 2026-11-07** |
 | 9 | Data lama | **Mulai bersih** | **Diputuskan 2026-11-07** |
 | 10 | Auth admin | **Google login via Hallo SPTP**, verifikasi server-side | **Diputuskan** — mekanisme teknis perlu konfirmasi |
 | 11 | Desain & fitur | **Pertahankan template wedding + semua fitur** | **Diputuskan 2026-11-07** |
@@ -529,7 +529,7 @@ env[KKMRAT_AES_KEY] = <key-acak>
 ## 11. Langkah Berikutnya (disarankan)
 
 1. **Konfirmasi domain final** dan **mekanisme auth Google** ke sisi Hallo SPTP.
-2. **Scaffold `undangan-next`**: Next.js App Router + TypeScript + Tailwind 4 + Prisma + `output: 'standalone'`.
+2. **Scaffold aplikasi Next.js** (branch `v2`): Next.js App Router + TypeScript + Tailwind 4 + Prisma + `output: 'standalone'`.
 3. **Prisma schema**: `Event`, `Session`, `Guest`, `Rsvp`, `CheckIn`, `AdminUser` (snake_case via `@map`).
 4. **Bangun fitur** dengan urutan: undangan publik → RSVP/ucapan → live count → QR check-in → admin dashboard.
 5. **Port desain**: aset, musik, animasi, dan nuansa template wedding lama.
@@ -575,7 +575,7 @@ env[KKMRAT_AES_KEY] = <key-acak>
 |---|---|---|
 | 1 | Stack | **Next.js App Router + TypeScript + Tailwind 4 + Prisma + PostgreSQL** (mengikuti hallo-sptp) |
 | 2 | PHP | **Dihapus total** — tidak ada PHP-FPM, tidak ada MariaDB/MySQL |
-| 3 | Penempatan | **Repo terpisah `undangan-next`** — bukan route di hallo-sptp |
+| 3 | Penempatan | **Repo existing `nandurstudio/undangan`, branch `v2`** — bukan route di hallo-sptp |
 | 4 | Hosting | VPS SPTP, **nebeng hosting + PostgreSQL saja**; PM2 process baru + Nginx server block |
 | 5 | Database | PostgreSQL existing, **DB `undangan_db`** + **user `undangan_user`** terpisah |
 | 6 | Domain | **Domain/ekosistem sendiri** (berbeda dari hallosptp) — nama belum final |
@@ -587,7 +587,7 @@ env[KKMRAT_AES_KEY] = <key-acak>
 | 12 | Migrasi kode | **Big-bang di branch**, tanpa shim `mysqli_*` |
 | 13 | Build & deploy | Build di **GitHub Actions**, output `standalone`, `prisma migrate deploy` (bukan `db push`) |
 
-**Prinsip:** satu VPS, satu PostgreSQL, dua aplikasi terpisah (hallo-sptp & undangan-next) yang tidak saling menjatuhkan.
+**Prinsip:** satu VPS, satu PostgreSQL, dua aplikasi terpisah (hallo-sptp & undangan) yang tidak saling menjatuhkan.
 
 **Yang diambil dari hallo-sptp:** struktur `app/` + `components/` + `lib/`, Prisma singleton & konvensi `@map`, API route tipis, Tailwind 4 theme, `cn()`, `sptpSwal`, pola deploy GitHub Actions → PM2.
 
@@ -654,7 +654,7 @@ env[KKMRAT_AES_KEY] = <key-acak>
 
 | Komponen | Rencana |
 |---|---|
-| Aplikasi | Repo/folder baru `undangan-next` (terpisah dari hallo-sptp) |
+| Aplikasi | Repo `nandurstudio/undangan` branch `v2` (terpisah dari hallo-sptp) |
 | Runtime | Node.js 22 + PM2 `undangan-prod` di port `3002` |
 | Web server | Nginx `undangan.<domain>` → `127.0.0.1:3002` |
 | Database | PostgreSQL existing, DB `undangan_db`, user `undangan_user` |
@@ -943,7 +943,7 @@ Lebih ringan dari opsi PHP + MariaDB. Tetap disarankan mematikan `hallosptp-dev`
 
 | # | Keputusan | Hasil |
 |---|---|---|
-| 1 | Penempatan app | **Repo existing `nandurstudio/undangan`, branch `v2`** (bukan repo baru) |
+| 1 | Penempatan app | **Repo existing `nandurstudio/undangan`, branch `v2`** |
 | 2 | Data lama | **Mulai bersih** |
 | 3 | Desain | **Pertahankan template wedding** (aset, musik, animasi) |
 | 4 | Fitur | **Semua fitur lama dipertahankan** |
